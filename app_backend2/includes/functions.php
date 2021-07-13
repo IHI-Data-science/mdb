@@ -18,7 +18,7 @@ function make_date(){
 }
 
 
-function ed1data($sen,$fr,$dt,$re,$ea,$cr,$cp,$hh,$nah,$sid,$me,$ind,$ht,$st,$ft,$hp,$rnd,$blk,$shh,$stn,$vi,$tr,$dy,$tmp,$hmd,$ws,$oth,$vc,$notes,$dsen) {
+function ed1data($sen,$fr,$dt,$re,$ea,$cr,$cp,$hh,$nah,$sid,$me,$ind,$ht,$st,$ft,$hp,$rnd,$blk,$shh,$stn,$vi,$tr,$dy,$tmp,$hmd,$ws,$oth,$vc,$notes,$su,$sa,$hs,$dr,$ph,$co,$wda,$act,$hc,$dsen) {
 
   global $db;
   $status = false;
