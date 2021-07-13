@@ -75,10 +75,10 @@ function ed1data($sen,$fr,$dt,$re,$ea,$cr,$cp,$hh,$nah,$sid,$me,$ind,$ht,$st,$ft
     }
 
   }
-  $resultf = $db->mysqliquery("INSERT INTO  $ed1 ( projectregsite_id, sen, fr, dt, ea, cr, cp, hh, sid, me, ind, ht, st, ft, hp,  rnd, blk, shh, stn, vi, tr, dy, tmp, hmd, ws, vc, notes, dsen)
+  $resultf = $db->mysqliquery("INSERT INTO  $ed1 ( projectregsite_id, sen, fr, dt, ea, cr, cp, hh, sid, me, ind, ht, st, ft, hp,  rnd, blk, shh, stn, vi, tr, dy, tmp, hmd, ws, vc, notes,su,dso,sa,hs,dr,ph,co,wda,act,hc dsen)
     VALUES($projectregsite,'$sen','$fr','$dt','$ea','$cr','$cp',
     '$hh','$sid','$me','$ind','$ht','$st',
-    '$ft','$hp','$rnd','$blk','$shh','$stn','$vi','$tr','$dy','$tmp','$hmd','$ws','$vc','$notes','$dsen')");
+    '$ft','$hp','$rnd','$blk','$shh','$stn','$vi','$tr','$dy','$tmp','$hmd','$ws','$vc','$notes','$su','$dso','$sa','$hs','$dr','$ph','$co','$wda','$act','$hc','$dsen')");
         // check for successful store
   if ($resultf) {
    $query_insert_edss = "INSERT INTO $edss (ed1id)
