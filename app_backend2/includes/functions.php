@@ -75,7 +75,7 @@ function ed1data($sen,$fr,$dt,$re,$ea,$cr,$cp,$hh,$nah,$sid,$me,$ind,$ht,$st,$ft
     }
 
   }
-  $resultf = $db->mysqliquery("INSERT INTO  $ed1 ( projectregsite_id, sen, fr, dt, ea, cr, cp, hh, sid, me, ind, ht, st, ft, hp,  rnd, blk, shh, stn, vi, tr, dy, tmp, hmd, ws, vc, notes,su,dso,sa,hs,dr,ph,co,wda,act,hc dsen)
+  $resultf = $db->mysqliquery("INSERT INTO  $ed1 ( projectregsite_id, sen, fr, dt, ea, cr, cp, hh, sid, me, ind, ht, st, ft, hp,  rnd, blk, shh, stn, vi, tr, dy, tmp, hmd, ws, vc, notes,su, dso, sa, hs, dr, ph, co, wda, act, hc,dsen)
     VALUES($projectregsite,'$sen','$fr','$dt','$ea','$cr','$cp',
     '$hh','$sid','$me','$ind','$ht','$st',
     '$ft','$hp','$rnd','$blk','$shh','$stn','$vi','$tr','$dy','$tmp','$hmd','$ws','$vc','$notes','$su','$dso','$sa','$hs','$dr','$ph','$co','$wda','$act','$hc','$dsen')");
@@ -387,6 +387,78 @@ function ss3data($sen,$fr,$ssen,$sfr,$sd,$dd,$tx,$sas,$mt,$ch,$rep_no,$cnr_no,$e
 
 
 }
+
+function ss4data($sen, $ssen, $sfr, $fr,$wn, $wl, $de, $ret, $wt,
+ $lwt, $sp, $spc, $n, $sps,  $tc,$nc,$senfr) {
+
+  global $db;
+  
+  $projectid = $GLOBALS['pidss'] ;
+  $siteid = $GLOBALS['sidss'] ;
+
+  //table prefix
+  $prefixtable = $projectid."_";
+  $ed1 = $prefixtable."ed1";
+  $ss4 = $prefixtable."ss4";
+  $edss = $prefixtable."edss";
+  $ssso = $prefixtable."ssso";
+
+  $query_1 = "SELECT id FROM projectregsite WHERE site_id='$siteid' AND projectreg_id='$projectid'";
+  //execute query above
+  $result = $db->mysqliquery($query_1);
+  //fetching link
+  //echo "Fetching link <br />";
+  //check if query execute successfull
+  if($result)
+  {
+    //check number of row`s found in table projectregsite
+    //count number of row return
+    $num_row = $db->num_rows($result);
+    //fetch data from database
+    $row = $db->fetch_assoc($result);  
+    //check if number of row is equal to one
+    if($num_row == 1)
+    {     
+
+      $projectregsite = $row["id"];     
+    } 
+
+
+    $query_fetch="SELECT edss.id FROM $edss as edss
+    INNER JOIN $ed1 as ed1  ON (edss.ed1id = ed1.id)
+    WHERE ed1.sen=$ssen AND ed1.dsen=$sen AND ed1.projectregsite_id='$projectregsite' AND ed1.fr=$sfr";
+
+    $result2 = $db->mysqliquery($query_fetch);
+
+    $row = $db->fetch_assoc($result2);  
+
+    $edssid = $row["id"];
+
+    $senfr = $sen.$fr;
+
+  }
+// please copy sql-$ss4 for both from here
+  $resultft = $db->mysqliquery("INSERT INTO  $ss4 ( edssid, ssen,sfr,sen,fr,wn, wl,de,ret,wt,lwt,sp,spc, n,sps,tc,nc,senfr)
+    VALUES('$edssid','$ssen','$sfr','$sen','$fr','$wn','$wl','$de','$ret','$wt','$lwt','$sp','$spc','$n','$sps','$tc','$nc','$senfr')");
+
+        // check for successful store
+  if ($resultft) {
+
+    $query_insert_edss4 = "INSERT INTO $ssso (ss4id) SELECT `ss4`.`id`
+    FROM $ssso as ssso RIGHT JOIN $ss4 as ss4 ON (`ssso`.`ss4id` = `ss4`.`id`)
+    WHERE ssso.ss4id IS NULL      
+    ";
+
+   //execute query to insert into EdSs table from Ed1 Table
+    $db->mysqliquery($query_insert_edss4);
+
+  } 
+
+   return $resultft;
+
+
+}
+
 
 
 function ss3bdata($sen,$fr,$ssen,$sfr,$st,$dur,$rep_1,$rep_2,$rep_3,$rep_4,$cnr_1,$cnr_2) {
