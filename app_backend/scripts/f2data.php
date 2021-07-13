@@ -28,7 +28,7 @@ if(isset($_POST['tag'])) {
 		for($i=0; $i<count($data) ; $i++)
 		{
 		        
-			$res = ed1data($data[$i]->sen,$data[$i]->fr,$data[$i]->dt,$data[$i]->ea,$data[$i]->cr,$data[$i]->cp,$data[$i]->hh,$data[$i]->sid,$data[$i]->me,$data[$i]->ind,$data[$i]->ht,$data[$i]->st,$data[$i]->ft,$data[$i]->hp,$data[$i]->rnd,$data[$i]->blk,$data[$i]->shh,$data[$i]->stn,$data[$i]->vi,$data[$i]->tr,$data[$i]->dy,$data[$i]->tmp,$data[$i]->hmd,$data[$i]->ws,$data[$i]->oth,$data[$i]->vc,$data[$i]->notes,$data[$i]->dsen);
+			$res = ed1data($data[$i]->sen,$data[$i]->fr,$data[$i]->dt,$data[$i]->ea,$data[$i]->cr,$data[$i]->cp,$data[$i]->hh,$data[$i]->sid,$data[$i]->me,$data[$i]->ind,$data[$i]->ht,$data[$i]->st,$data[$i]->ft,$data[$i]->hp,$data[$i]->rnd,$data[$i]->blk,$data[$i]->shh,$data[$i]->stn,$data[$i]->vi,$data[$i]->tr,$data[$i]->dy,$data[$i]->tmp,$data[$i]->hmd,$data[$i]->ws,$data[$i]->oth,$data[$i]->vc,$data[$i]->notes,$data[$i]->su,$data[$i]->sa,$data[$i]->dso,$data[$i]->hs,$data[$i]->dr,$data[$i]->ph,$data[$i]->co,$data[$i]->wda,$data[$i]->act,$data[$i]->hc$data[$i]->dsen);
 		          
 			if($res){
 
@@ -361,6 +361,81 @@ if(isset($_POST['tag'])) {
 		echo json_encode($a);
 
 	}
+
+	else if ($tag == 'ss4') {
+
+		$json = $_POST["ss4json"];
+
+        
+		if (get_magic_quotes_gpc()){
+			$json = stripslashes($json);
+		}
+        
+		$data = json_decode($json);
+
+		$a=array();
+		$b=array();
+
+   
+		$GLOBALS['pidss'] = $_POST["projectid"];
+		$GLOBALS['sidss'] = $_POST["siteid"];
+
+        
+
+		for($i=0; $i<count($data) ; $i++)
+		{
+        
+			$res2 = ss4data($data[$i]->sen,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->fr,$data[$i]->wn,$data[$i]->wl,$data[$i]->de,$data[$i]->ret,$data[$i]->wt,$data[$i]->lwt,$data[$i]->sp,$data[$i]->spc,$data[$i]->n,$data[$i]->sps,$data[$i]->tc,$data[$i]->nc
+
+			);
+          
+			if($res2){
+
+				$b["id"] = (int)$data[$i]->id;
+				$b["sen"] = (int)$data[$i]->sen;
+				$b["fr"] = (int)$data[$i]->fr;
+				$b["status"] = 'yes';
+				$b["success"] = 1;
+				$b["error"] = 0;
+
+				array_push($a,$b);
+
+			}else{
+
+
+				if ($db->mysqlierrorno() == 1062){
+
+					$b["id"] = (int)$data[$i]->id;
+				        $b["sen"] = (int)$data[$i]->sen;
+				        $b["fr"] = (int)$data[$i]->fr;
+					$b["status"] = 'yes';
+					$b["error"] = 1062;
+					$b["success"] = 1;
+					$b["error_msg"] = "error:".$db->mysqlierror();
+
+					array_push($a,$b);
+
+				}  else{
+
+					$b["id"] = (int)$data[$i]->id;
+				        $b["sen"] = (int)$data[$i]->sen;
+				        $b["fr"] = (int)$data[$i]->fr;
+					$b["status"] = 'no';
+					$b["error"] = 1;
+					$b["success"] = 0;
+					$b["error_msg"] = "error:".$db->mysqlierror();
+
+					array_push($a,$b);
+
+				}
+			}
+		}
+
+		echo json_encode($a);
+
+	} 
+	
+
 
 
 	else if ($tag == 'ss3b') {
