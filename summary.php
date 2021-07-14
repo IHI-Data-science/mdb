@@ -20,6 +20,10 @@ if(isset($_SESSION['expcode'])){
       $hts =find_all_distinct($ed, "ht");
       $trs =find_all_distinct($ed, "tr");
       $vcs =find_all_distinct($ed, "vc");
+      $wdas =find_all_distinct($ed, "wda");
+      $acts =find_all_distinct($ed, "act");
+      $sus =find_all_distinct($ed, "su");
+
    }else if(in_array("ED2", $edformtype)){
       $trs =find_all_distinct($ed, "tr");
    }
@@ -169,6 +173,64 @@ if(isset($_SESSION['expcode'])){
                                        ?>
                                     </select>
                                 </div>
+
+                                <div class="top10 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6">
+                                    <br />
+                                    <p><code>domesticWildanimals (WDA):</code></p>
+                                    <select class="select-full" name="ea" id="ea">
+                                        <option value="">Select</option>
+                                       <?php
+                                       if(count($wdas)>0){
+                                          foreach($wdas as $wda):
+                                             $selected=($_SESSION['wda']==$wda['wda']) ? ' selected="selected"' : '';
+                                             echo '<option '.$selected.' value="'.$wda['wda'].'" >'.labelvalue($domesticWildanimals, "wda", $wda['wda']).'</option>';
+                                          endforeach;
+                                       } else{
+                                          echo '<option value="">No options available</option>';
+                                       }
+                                       ?>
+                                    </select>
+                                </div>
+
+                                <div class="top10 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6">
+                                    <br />
+                                    <p><code>activities (ACT):</code></p>
+                                    <select class="select-full" name="ea" id="ea">
+                                        <option value="">Select</option>
+                                       <?php
+                                       if(count($acts)>0){
+                                          foreach($acts as $act):
+                                             $selected=($_SESSION['act']==$act['act']) ? ' selected="selected"' : '';
+                                             echo '<option '.$selected.' value="'.$act['act'].'" >'.labelvalue($activities, "act", $act['act']).'</option>';
+                                          endforeach;
+                                       } else{
+                                          echo '<option value="">No options available</option>';
+                                       }
+                                       ?>
+                                    </select>
+                                </div>
+
+                                <div class="top10 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6">
+                                    <br />
+                                    <p><code>substrate (SU):</code></p>
+                                    <select class="select-full" name="ea" id="ea">
+                                        <option value="">Select</option>
+                                       <?php
+                                       if(count($sus)>0){
+                                          foreach($sus as $su):
+                                             $selected=($_SESSION['su']==$su['su']) ? ' selected="selected"' : '';
+                                             echo '<option '.$selected.' value="'.$su['su'].'" >'.labelvalue($substrate, "su", $su['su']).'</option>';
+                                          endforeach;
+                                       } else{
+                                          echo '<option value="">No options available</option>';
+                                       }
+                                       ?>
+                                    </select>
+                                </div>
+
+
+
+
                             
                             
                             </div>
@@ -233,6 +295,9 @@ if(isset($_SESSION['expcode'])){
                         <li>
                             <a data-toggle="modal" role="button" data-target="#sumchart6">An. funestus abdominal status</a>
                         </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart7">Snail Population Summary by site </a>
+                        </li>
                     </ul>
                 </div>
                 
@@ -257,6 +322,9 @@ if(isset($_SESSION['expcode'])){
                         </li>
                         <li>
                             <a data-toggle="modal" role="button" data-target="#freqchart6">Treatment</a>
+                        </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#freqchart7">Substrate</a>
                         </li>
                     </ul>
                 </div>
@@ -787,7 +855,65 @@ if(isset($_SESSION['expcode'])){
             </div>
         </div>
     </div>
-    <!-- / modal6 -->
+
+    <!-- / modal7 -->
+
+    <div id="sumchart7" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Snail Population Summary by substrate</h5>
+                </div>
+                <div class="has-padding2">
+                    
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab41">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab42">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab41" class="tab-pane fade active in">
+                            <div id="load4"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f4req('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f4req('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f4req('P')">
+                                <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f4req('D')">
+                            </div>
+                            
+                            <br/>
+							
+							
+							<div style="width: 100%; overflow-x: auto; overflow-y: hidden">
+							  <div style="width: 2000px; height: 500px">
+								
+								<canvas id="canvas4" height="300" width="0"></canvas>
+								<canvas id="canvas4l" height="300" width="0"></canvas>
+								<canvas id="canvas4p" height="300" width="0"></canvas>
+								<canvas id="canvas4d" height="300" width="0"></canvas>
+							  </div>
+							</div>
+							
+							
+                            
+                        
+                        
+                        </div>
+                        <div id="tab42" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal4 -->
 
     <!-- modalf1 -->
     <div id="freqchart1" class="modal fade" tabindex="-1" role="dialog">
@@ -795,7 +921,7 @@ if(isset($_SESSION['expcode'])){
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h5 class="modal-title">Enumeration area</h5>
+                    <h5 class="modal-title">Enumeration are</h5>
                 </div>
     
                 <div class="graph-standard" id="vertical_bars">
@@ -902,6 +1028,23 @@ if(isset($_SESSION['expcode'])){
         </div>
     </div>
     <!-- / modalf6 -->
+
+    <div id="freqchart7" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Substrate</h5>
+                </div>
+    
+                <div class="graph-standard" id="vertical_bars">
+                    <div id="hload1"></div>
+                    <canvas id="hcanvas1"></canvas>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 
 </div>
 
