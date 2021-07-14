@@ -18,7 +18,7 @@ function make_date(){
 }
 
 
-function ed1data($sen,$fr,$dt,$re,$ea,$cr,$cp,$hh,$nah,$sid,$me,$ind,$ht,$st,$ft,$hp,$rnd,$blk,$shh,$stn,$vi,$tr,$dy,$tmp,$hmd,$ws,$oth,$vc,$notes,$su,$dso,$sa,$hs,$dr,$ph,$co,$wda,$act,$hc,$dsen) {
+function ed1data($sen,$fr,$dt,$re,$ea,$cr,$cp,$hh,$nah,$sid,$me,$ind,$htr,$st,$ft,$hp,$rnd,$blk,$shh,$stn,$vi,$tr,$dy,$tmp,$hmd,$ws,$oth,$vc,$notes,$su,$dso,$sa,$hs,$dr,$ph,$co,$wda,$act,$hc,$dsen) {
 
   global $db;
   $status = false;
@@ -75,9 +75,9 @@ function ed1data($sen,$fr,$dt,$re,$ea,$cr,$cp,$hh,$nah,$sid,$me,$ind,$ht,$st,$ft
     }
 
   }
-  $resultf = $db->mysqliquery("INSERT INTO  $ed1 ( projectregsite_id, sen, fr, dt, ea, cr, cp, hh, sid, me, ind, ht, st, ft, hp,  rnd, blk, shh, stn, vi, tr, dy, tmp, hmd, ws, vc, notes,su, dso, sa, hs, dr, ph, co, wda, act, hc,dsen)
+  $resultf = $db->mysqliquery("INSERT INTO  $ed1 ( projectregsite_id, sen, fr, dt, ea, cr, cp, hh, sid, me, ind, htr, st, ft, hp,  rnd, blk, shh, stn, vi, tr, dy, tmp, hmd, ws, vc, notes,su, dso, sa, hs, dr, ph, co, wda, act, hc,dsen)
     VALUES($projectregsite,'$sen','$fr','$dt','$ea','$cr','$cp',
-    '$hh','$sid','$me','$ind','$ht','$st',
+    '$hh','$sid','$me','$ind','$htr','$st',
     '$ft','$hp','$rnd','$blk','$shh','$stn','$vi','$tr','$dy','$tmp','$hmd','$ws','$vc','$notes','$su','$dso','$sa','$hs','$dr','$ph','$co','$wda','$act','$hc','$dsen')");
         // check for successful store
   if ($resultf) {
@@ -245,7 +245,7 @@ function ss1data($sen, $ssen, $sfr, $bf, $fr,$tx, $sas, $n, $notes, $slc,
 
 
 
-function ss2data($sen, $ssen, $sfr, $hf, $htc, $ht, $hw, $hs, $fr, $tx, $bf, $pu, $vl, $vt, $ndi01, $ndi02, $ndi03, $ndi04, $ndi05, $ndi06, $ndi07, $ndi08, $ndi09, $ndi10, $n, $notes, $slc, $ni, $nb, $sid01, $sid02, $sid03, $sid04, $sid05, $sid06, $sid07, $nd) {
+function ss2data($sen, $ssen, $sfr, $hf, $htc, $htr, $hw, $hs, $fr, $tx, $bf, $pu, $vl, $vt, $ndi01, $ndi02, $ndi03, $ndi04, $ndi05, $ndi06, $ndi07, $ndi08, $ndi09, $ndi10, $n, $notes, $slc, $ni, $nb, $sid01, $sid02, $sid03, $sid04, $sid05, $sid06, $sid07, $nd) {
 
   global $db;
   
@@ -294,8 +294,8 @@ function ss2data($sen, $ssen, $sfr, $hf, $htc, $ht, $hw, $hs, $fr, $tx, $bf, $pu
 
   }
 
-  $resultft = $db->mysqliquery("INSERT INTO  $ss2 ( edssid, sen,ssen,sfr,hf, htc, ht,hw,hs,fr,tx,bf,pu,vl,vt,ndi01,ndi02,ndi03,ndi04,ndi05,ndi06,ndi07,ndi08,ndi09,ndi10,n,notes,slc,ni,nb,sid01,sid02,sid03,sid04,sid05,sid06,sid07,nd,senfr)
-    VALUES('$edssid','$sen','$ssen','$sfr','$hf', '$htc', '$ht','$hw','$hs','$fr','$tx','$bf','$pu', '$vl', '$vt','$ndi01','$ndi02','$ndi03','$ndi04','$ndi05','$ndi06','$ndi07','$ndi08','$ndi09','$ndi10','$n','$notes','$slc','$ni','$nb','$sid01','$sid02','$sid03','$sid04','$sid05','$sid06','$sid07','$nd','$senfr')");
+  $resultft = $db->mysqliquery("INSERT INTO  $ss2 ( edssid, sen,ssen,sfr,hf, htc, htr,hw,hs,fr,tx,bf,pu,vl,vt,ndi01,ndi02,ndi03,ndi04,ndi05,ndi06,ndi07,ndi08,ndi09,ndi10,n,notes,slc,ni,nb,sid01,sid02,sid03,sid04,sid05,sid06,sid07,nd,senfr)
+    VALUES('$edssid','$sen','$ssen','$sfr','$hf', '$htc', '$htr','$hw','$hs','$fr','$tx','$bf','$pu', '$vl', '$vt','$ndi01','$ndi02','$ndi03','$ndi04','$ndi05','$ndi06','$ndi07','$ndi08','$ndi09','$ndi10','$n','$notes','$slc','$ni','$nb','$sid01','$sid02','$sid03','$sid04','$sid05','$sid06','$sid07','$nd','$senfr')");
 
         
   if ($resultft) {

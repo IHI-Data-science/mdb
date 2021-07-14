@@ -17,7 +17,7 @@ if(isset($_SESSION['expcode'])){
       $eas =find_all_distinct($ed, "ea");
       $inds=find_all_distinct($ed, "ind");
       $mes =find_all_distinct($ed, "me");
-      $hts =find_all_distinct($ed, "ht");
+      $hts =find_all_distinct($ed, "htr");
       $trs =find_all_distinct($ed, "tr");
       $vcs =find_all_distinct($ed, "vc");
       $wdas =find_all_distinct($ed, "wda");
@@ -140,14 +140,14 @@ if(isset($_SESSION['expcode'])){
                             <div class="row">
                                 <div class="top10 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6">
                                     <br />
-                                    <p><code>Habitat type (HT):</code></p>
+                                    <p><code>Habitat type (htr):</code></p>
                                     <select class="select-full" name="ea" id="ea">
                                         <option value="">Select</option>
                                        <?php
                                        if(count($hts)>0){
-                                          foreach($hts as $ht):
-                                             $selected=($_SESSION['ht']==$ht['ht']) ? ' selected="selected"' : '';
-                                             echo '<option '.$selected.' value="'.$ht['ht'].'" >'.labelvalue($habitattype, "ht", $ht['ht']).'</option>';
+                                          foreach($hts as $htr):
+                                             $selected=($_SESSION['htr']==$htr['htr']) ? ' selected="selected"' : '';
+                                             echo '<option '.$selected.' value="'.$htr['htr'].'" >'.labelvalue($habitattype, "htr", $htr['htr']).'</option>';
                                           endforeach;
                                        } else{
                                           echo '<option value="">No options available</option>';

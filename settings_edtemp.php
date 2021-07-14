@@ -24,7 +24,7 @@ $prefixtable = $expcode."_";
 $temptypeme = "me";
 $tableme = $prefixtable."method";
 
-$temptypeht = "ht";
+$temptypeht = "htr";
 $tableht = $prefixtable."habitattype";
 
 $temptypeea = "ea";

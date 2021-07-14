@@ -78,8 +78,8 @@ $arraycol = explode(",",$col);
 (in_array("tr",$checked_fields) ? $tr = true : $tr = false);
 ($tr ? $arraycol = str_replace('tr', 'treatment.tr', $arraycol) : $arraycol = str_replace('tr', 'ed1.tr', $arraycol));
 
-(in_array("ht",$checked_fields) ? $ht = true : $ht = false);
-($ht ? $arraycol = str_replace('ht', 'habitattype.ht', $arraycol) : $arraycol = str_replace('ht', 'ed1.ht', $arraycol));
+(in_array("htr",$checked_fields) ? $htr = true : $htr = false);
+($htr ? $arraycol = str_replace('htr', 'habitattype.htr', $arraycol) : $arraycol = str_replace('htr', 'ed1.htr', $arraycol));
 
 (in_array("wda",$checked_fields) ? $wda = true : $wda = false);
 ($wda ? $arraycol = str_replace('wda', 'domesticWildAnimals.wda', $arraycol) : $arraycol = str_replace('wda', 'ed1.wda', $arraycol));
@@ -109,7 +109,7 @@ if (strlen($col)>0) {
   LEFT JOIN $cluster as cluster on (ed1.cr=cluster.number)
   LEFT JOIN $compound as compound on (ed1.cp=compound.number)
   LEFT JOIN $treatment as treatment on (ed1.tr=treatment.number)
-  LEFT JOIN $habitattype as habitattype on (ed1.ht=habitattype.number)
+  LEFT JOIN $habitattype as habitattype on (ed1.htr=habitattype.number)
   LEFT JOIN $domesticWildAnimals as domesticWildAnimals on (ed1.wda=domesticWildAnimals.number)
   LEFT JOIN $activities as activities on (ed1.act=activities.number)
   LEFT JOIN $substrate as substrate on (ed1.su=substrate.number)
@@ -126,7 +126,7 @@ if (strlen($col)>0) {
   LEFT JOIN $cluster as cluster on (ed1.cr=cluster.number)
   LEFT JOIN $compound as compound on (ed1.cp=compound.number)
   LEFT JOIN $treatment as treatment on (ed1.tr=treatment.number)
-  LEFT JOIN $habitattype as habitattype on (ed1.ht=habitattype.number)
+  LEFT JOIN $habitattype as habitattype on (ed1.htr=habitattype.number)
   LEFT JOIN $domesticWildAnimals as domesticWildAnimals on (ed1.wda=domesticWildAnimals.number)
   LEFT JOIN $activities as activities on (ed1.act=activities.number)
   LEFT JOIN $substrate as substrate on (ed1.su=substrate.number)

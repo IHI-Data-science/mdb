@@ -28,7 +28,7 @@ if(isset($_POST['tag'])) {
 		for($i=0; $i<count($data) ; $i++)
 		{
 		        
-			$res = ed1data($data[$i]->sen,$data[$i]->fr,$data[$i]->dt,$data[$i]->ea,$data[$i]->cr,$data[$i]->cp,$data[$i]->hh,$data[$i]->sid,$data[$i]->me,$data[$i]->ind,$data[$i]->ht,$data[$i]->st,$data[$i]->ft,$data[$i]->hp,$data[$i]->rnd,$data[$i]->blk,$data[$i]->shh,$data[$i]->stn,$data[$i]->vi,$data[$i]->tr,$data[$i]->dy,$data[$i]->tmp,$data[$i]->hmd,$data[$i]->ws,$data[$i]->oth,$data[$i]->vc,$data[$i]->notes,$data[$i]->su,$data[$i]->sa,$data[$i]->dso,$data[$i]->hs,$data[$i]->dr,$data[$i]->ph,$data[$i]->co,$data[$i]->wda,$data[$i]->act,$data[$i]->hc$data[$i]->dsen);
+			$res = ed1data($data[$i]->sen,$data[$i]->fr,$data[$i]->dt,$data[$i]->ea,$data[$i]->cr,$data[$i]->cp,$data[$i]->hh,$data[$i]->sid,$data[$i]->me,$data[$i]->ind,$data[$i]->htr,$data[$i]->st,$data[$i]->ft,$data[$i]->hp,$data[$i]->rnd,$data[$i]->blk,$data[$i]->shh,$data[$i]->stn,$data[$i]->vi,$data[$i]->tr,$data[$i]->dy,$data[$i]->tmp,$data[$i]->hmd,$data[$i]->ws,$data[$i]->oth,$data[$i]->vc,$data[$i]->notes,$data[$i]->su,$data[$i]->sa,$data[$i]->dso,$data[$i]->hs,$data[$i]->dr,$data[$i]->ph,$data[$i]->co,$data[$i]->wda,$data[$i]->act,$data[$i]->hc$data[$i]->dsen);
 		          
 			if($res){
 
@@ -687,7 +687,7 @@ if(isset($_POST['tag'])) {
 		for($i=0; $i<count($data) ; $i++)
 		{
         
-			$res2 = ss1data($data[$i]->sen,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->hf,$data[$i]->htc,$data[$i]->ht,$data[$i]->hw,$data[$i]->hs,$data[$i]->fr,$data[$i]->tx,$data[$i]->bf,$data[$i]->pu,$data[$i]->vl,$data[$i]->vt,$data[$i]->ndi01,$data[$i]->ndi02,$data[$i]->ndi03,$data[$i]->ndi04,$data[$i]->ndi05,$data[$i]->ndi06,$data[$i]->ndi07,$data[$i]->ndi08,$data[$i]->ndi09,$data[$i]->ndi10,$data[$i]->n,$data[$i]->notes,$data[$i]->slc,$data[$i]->st,$data[$i]->nd,$data[$i]->No_Batches,$data[$i]->st2sid01,$data[$i]->st2sid02,$data[$i]->st2sid03,$data[$i]->st2sid04,$data[$i]->st2sid05,$data[$i]->st2sid06,$data[$i]->st2sid07,$data[$i]->No_Discarded
+			$res2 = ss1data($data[$i]->sen,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->hf,$data[$i]->htc,$data[$i]->htr,$data[$i]->hw,$data[$i]->hs,$data[$i]->fr,$data[$i]->tx,$data[$i]->bf,$data[$i]->pu,$data[$i]->vl,$data[$i]->vt,$data[$i]->ndi01,$data[$i]->ndi02,$data[$i]->ndi03,$data[$i]->ndi04,$data[$i]->ndi05,$data[$i]->ndi06,$data[$i]->ndi07,$data[$i]->ndi08,$data[$i]->ndi09,$data[$i]->ndi10,$data[$i]->n,$data[$i]->notes,$data[$i]->slc,$data[$i]->st,$data[$i]->nd,$data[$i]->No_Batches,$data[$i]->st2sid01,$data[$i]->st2sid02,$data[$i]->st2sid03,$data[$i]->st2sid04,$data[$i]->st2sid05,$data[$i]->st2sid06,$data[$i]->st2sid07,$data[$i]->No_Discarded
 			);		
 				if($res2){
 

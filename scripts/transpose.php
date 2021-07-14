@@ -160,9 +160,9 @@ function renamecol($edcol,$tablename,$formname){
          if( $item == 'ind')
         {
           $new[] = $tablename.'ind AS '.$formname.'_IND';
-        }if( $item == 'ht')
+        }if( $item == 'htr')
         {
-          $new[] = $tablename.'ht AS '.$formname.'_HT';
+          $new[] = $tablename.'htr AS '.$formname.'_HT';
         }
          if( $item == 'st')
         {

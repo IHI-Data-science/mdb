@@ -179,7 +179,7 @@ CREATE TABLE `16_ed1` (
   `sid` int(2) DEFAULT '0' COMMENT 'Structure ID (A free standing building that can have one or more room for residential or commercial use)',
   `me` int(3) NOT NULL DEFAULT '-99' COMMENT 'Method (The method by which the mosquitoes were collected or trapped)',
   `ind` int(1) NOT NULL COMMENT 'hold collection was made indoors a house or hut',
-  `ht` int(3) DEFAULT NULL COMMENT 'Habitat Type (Classification of the aquatic habitat in which the collection was made)',
+  `htr` int(3) DEFAULT NULL COMMENT 'Habitat Type (Classification of the aquatic habitat in which the collection was made)',
   `st` varchar(6) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Start Time (The time that the collection started in 24 time )',
   `ft` varchar(6) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Finish Time (The time that the collection finish in 24 time)',
   `hp` int(4) DEFAULT NULL COMMENT 'Hold Period (The period of time for which the mosquitoes were held for survival analysis after they were collected)',
@@ -208,7 +208,7 @@ CREATE TABLE `16_ed1` (
 -- Dumping data for table `16_ed1`
 --
 
-INSERT INTO `16_ed1` (`id`, `projectregsite_id`, `sen`, `fr`, `dt`, `ea`, `cr`, `cp`, `tcu`, `hh`, `sid`, `me`, `ind`, `ht`, `st`, `ft`, `hp`, `dd`, `rnd`, `blk`, `shh`, `stn`, `vi`, `tr`, `dy`, `hs`, `vc`, `notes`, `dsen`, `livestock`, `hoccupant`, `heaves`, `nss`, `nbh`, `oth`, `created_at`) VALUES
+INSERT INTO `16_ed1` (`id`, `projectregsite_id`, `sen`, `fr`, `dt`, `ea`, `cr`, `cp`, `tcu`, `hh`, `sid`, `me`, `ind`, `htr`, `st`, `ft`, `hp`, `dd`, `rnd`, `blk`, `shh`, `stn`, `vi`, `tr`, `dy`, `hs`, `vc`, `notes`, `dsen`, `livestock`, `hoccupant`, `heaves`, `nss`, `nbh`, `oth`, `created_at`) VALUES
 (33, 19, 1, 3, '2019-01-07', 0, 0, 0, -99, '10', 0, 4, 2, NULL, '1800', '0600', NULL, NULL, -99, -99, '-99', -99, NULL, NULL, 1, '-99', 1, NULL, 4, 0, 0, 0, 0, 0, 0, '2019-01-14 19:18:43'),
 (34, 19, 1, 4, '2019-01-07', 0, 0, 0, -99, '11', 0, 3, 1, NULL, '1800', '0600', NULL, NULL, -99, -99, '-99', -99, NULL, NULL, 1, '-99', 1, NULL, 5, 0, 0, 0, 0, 0, 0, '2019-01-14 19:18:43'),
 (35, 19, 1, 5, '2019-01-07', 0, 0, 0, -99, '11', 0, 3, 2, NULL, '1800', '0600', NULL, NULL, -99, -99, '-99', -99, NULL, NULL, 1, '-99', 1, NULL, 6, 0, 0, 0, 0, 0, 0, '2019-01-14 19:18:43'),
@@ -295,7 +295,7 @@ CREATE TABLE `16_ed1template` (
   `sid` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `me` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ind` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `ht` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `htr` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `st` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ft` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `hp` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -551,14 +551,14 @@ CREATE TABLE `16_fs2` (
 CREATE TABLE `16_habitattype` (
   `id` int(11) NOT NULL,
   `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `ht` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+  `htr` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `16_habitattype`
 --
 
-INSERT INTO `16_habitattype` (`id`, `number`, `ht`) VALUES
+INSERT INTO `16_habitattype` (`id`, `number`, `htr`) VALUES
 (1, '1', 'ht1'),
 (2, '2', 'ht2');
 
@@ -2382,7 +2382,7 @@ INSERT INTO `bodypart` (`body_code`, `body_name`) VALUES
 (5, 'Legs'),
 (6, 'DNA'),
 (7, 'Midgut (MG) homogenate'),
-(8, 'Head/Thorax (HT) homogenate'),
+(8, 'Head/Thorax (htr) homogenate'),
 (9, 'Midgut '),
 (10, 'Ovaries'),
 (11, 'Spermathecae'),
@@ -2768,7 +2768,7 @@ CREATE TABLE `breedingsite_pdadata` (
   `n` double DEFAULT NULL COMMENT 'northing',
   `ha` tinyint(1) DEFAULT NULL COMMENT 'haveaccess',
   `ins` mediumtext COMMENT 'ifnoskip',
-  `ht` text COMMENT 'habitat type',
+  `htr` text COMMENT 'habitat type',
   `vtwh` text COMMENT 'VegetationQuantityInWaterHabitat',
   `vtw` text COMMENT 'VegetationTypeInWaterHabitat',
   `soh` text COMMENT 'ShadeOverHabitat',
@@ -2818,18 +2818,18 @@ CREATE TABLE `custed` (
 
 INSERT INTO `custed` (`pc`, `ft`, `num_split`, `p_attri`, `p_attri2`) VALUES
 (1, 'ED1', 13, 'fr,dt,ea,hh,me,ind,st,ft,vi,dy,vc,dsen,notes', ''),
-(2, 'ED1', 22, 'sen,fr,dt,ea,cr,cp,hh,sid,me,ind,ht,st,ft,hp,rnd,blk,shh,tr,dy,hs,vc,dsen', 'Serial No. (SEN),Formrow (FR),Date of collection (DT),Enumeration area (EA),Cluster (CR),Compound or plot (CP),Household (HH),Structure ID (SID),Method (ME),Indoor (IND),Habitat type (HT),Start time (ST),Finish time (FT),Holding period (HP),Round (RND),Block (BLK),House/Hut (SHH),Treatment (TR),Experimental day (DY),No. Household Sampled (HS),Valid catch (VC),Destination Form Serial (DSEN)'),
+(2, 'ED1', 22, 'sen,fr,dt,ea,cr,cp,hh,sid,me,ind,htr,st,ft,hp,rnd,blk,shh,tr,dy,hs,vc,dsen', 'Serial No. (SEN),Formrow (FR),Date of collection (DT),Enumeration area (EA),Cluster (CR),Compound or plot (CP),Household (HH),Structure ID (SID),Method (ME),Indoor (IND),Habitat type (htr),Start time (ST),Finish time (FT),Holding period (HP),Round (RND),Block (BLK),House/Hut (SHH),Treatment (TR),Experimental day (DY),No. Household Sampled (HS),Valid catch (VC),Destination Form Serial (DSEN)'),
 (3, 'ED1', 10, 'sen,fr,dt,me,ind,st,ft,tr,vc,dsen', 'Serial No. (SEN),Formrow (FR),Date of collection (DT),Method (ME),Indoor (IND),Start time (ST),Finish time (FT),Treatment (TR),Valid catch (VC),Destination Form Serial (DSEN)'),
 (4, 'ED1', 13, 'fr,dt,ea,hh,me,ind,st,ft,rnd,vi,dy,vc,dsen', ''),
 (5, 'ED1', 9, 'sen,fr,dt,me,ind,st,ft,vc,dsen', 'Serial No. (SEN),Formrow (FR),Date of collection (DT),Method (ME),Indoor (IND),Start time (ST),Finish time (FT),Valid catch (VC),Destination Form Serial (DSEN)'),
 (6, 'ED1', 15, 'fr,dt,ea,hh,me,ind,st,ft,vi,dy,oth,vc,dsen,longitude,latitude', ''),
 (7, 'ED1', 15, 'fr,dt,ea,hh,me,ind,st,ft,vi,dy,oth,vc,dsen,\r\nlongitude,latitude', ''),
-(8, 'ED1', 24, 'sen,fr,dt,ea,cr,cp,hh,sid,me,ind,ht,st,ft,hp,rnd,blk,shh,stn,vi,tr,dy,hs,vc,dsen', 'Serial No. (SEN),Formrow (FR),Date of collection (DT),Enumeration area (EA),Cluster (CR),Compound or plot (CP),Household (HH),Structure ID (SID),Method (ME),Indoor (IND),Habitat type (HT),Start time (ST),Finish time (FT),Holding period (HP),Round (RND),Block (BLK),House/Hut (SHH),Station (STN),Volunteer initials (VI),Treatment (TR),Experimental day (DY),No. Household Sampled (HS),Valid catch (VC),Destination Form Serial (DSEN)'),
-(10, 'ED1', 26, 'sen,fr,dt,ea,cr,cp,hh,sid,me,ind,ht,st,ft,hp,rnd,blk,shh,stn,vi,tr,dy,hs,vc,dsen,oth,notes', 'Serial No. (SEN),Formrow (FR),Date of collection (DT),Enumeration area (EA),Cluster (CR),Compound or plot (CP),Household (HH),Structure ID (SID),Method (ME),Indoor (IND),Habitat type (HT),Start time (ST),Finish time (FT),Holding period (HP),Round (RND),Block (BLK),House/Hut (SHH),Station (STN),Volunteer initials (VI),Treatment (TR),Experimental day (DY),No. Household Sampled (HS),Valid catch (VC),Destination Form Serial (DSEN),Other (OTH),Notes (Notes)'),
+(8, 'ED1', 24, 'sen,fr,dt,ea,cr,cp,hh,sid,me,ind,htr,st,ft,hp,rnd,blk,shh,stn,vi,tr,dy,hs,vc,dsen', 'Serial No. (SEN),Formrow (FR),Date of collection (DT),Enumeration area (EA),Cluster (CR),Compound or plot (CP),Household (HH),Structure ID (SID),Method (ME),Indoor (IND),Habitat type (htr),Start time (ST),Finish time (FT),Holding period (HP),Round (RND),Block (BLK),House/Hut (SHH),Station (STN),Volunteer initials (VI),Treatment (TR),Experimental day (DY),No. Household Sampled (HS),Valid catch (VC),Destination Form Serial (DSEN)'),
+(10, 'ED1', 26, 'sen,fr,dt,ea,cr,cp,hh,sid,me,ind,htr,st,ft,hp,rnd,blk,shh,stn,vi,tr,dy,hs,vc,dsen,oth,notes', 'Serial No. (SEN),Formrow (FR),Date of collection (DT),Enumeration area (EA),Cluster (CR),Compound or plot (CP),Household (HH),Structure ID (SID),Method (ME),Indoor (IND),Habitat type (htr),Start time (ST),Finish time (FT),Holding period (HP),Round (RND),Block (BLK),House/Hut (SHH),Station (STN),Volunteer initials (VI),Treatment (TR),Experimental day (DY),No. Household Sampled (HS),Valid catch (VC),Destination Form Serial (DSEN),Other (OTH),Notes (Notes)'),
 (11, 'ED1', 18, 'sen,fr,dt,ea,cr,cp,me,ind,st,ft,hp,rnd,blk,shh,stn,vi,vc,dsen', 'Serial No. (SEN),Formrow (FR),Date of collection (DT),Enumeration area (EA),Cluster (CR),Compound or plot (CP),Method (ME),Indoor (IND),Start time (ST),Finish time (FT),Holding period (HP),Round (RND),Block (BLK),House/Hut (SHH),Station (STN),Volunteer initials (VI),Valid catch (VC),Destination Form Serial (DSEN)'),
-(9, 'ED1', 11, 'sen,fr,dt,ea,me,ind,ht,st,ft,vc,dsen', 'Serial No. (SEN),Formrow (FR),Date of collection (DT),Enumeration area (EA),Method (ME),Indoor (IND),Habitat type (HT),Start time (ST),Finish time (FT),Valid catch (VC),Destination Form Serial (DSEN)'),
+(9, 'ED1', 11, 'sen,fr,dt,ea,me,ind,htr,st,ft,vc,dsen', 'Serial No. (SEN),Formrow (FR),Date of collection (DT),Enumeration area (EA),Method (ME),Indoor (IND),Habitat type (htr),Start time (ST),Finish time (FT),Valid catch (VC),Destination Form Serial (DSEN)'),
 (13, 'ED1', 14, 'fr,dt,ea,hh,me,ind,st,ft,rnd,vi,tr,dy,vc,dsen', ''),
-(12, 'ED1', 15, 'fr,dt,ea,hh,me,ind,ht,st,ft,rnd,vi,dy,vc,notes,dsen', ''),
+(12, 'ED1', 15, 'fr,dt,ea,hh,me,ind,htr,st,ft,rnd,vi,dy,vc,notes,dsen', ''),
 (14, 'ED1', 10, 'sen,fr,dt,me,ind,st,ft,tr,vc,dsen', 'Serial No. (SEN),Formrow (FR),Date of collection (DT),Method (ME),Indoor (IND),Start time (ST),Finish time (FT),Treatment (TR),Valid catch (VC),Destination Form Serial (DSEN)'),
 (16, 'ED2', 16, 'sen,fr,ssen,sfr,slc,sbp,sst,ssid,scc,stx,ssas,ag,n,sd,st,dsen', 'Serial No. (SEN),Formrow (FR),Source Form Serial No. (SSEN),Source Form Row (SFR),Sample Lable Code (SLC),Source Body Part (SBP),Source Sample Type (SST),Source Sample ID (SSID),Source Colony Code (SCC), Source Taxon (STX),Source Sex and Abdominal Status (SSAS),Age (AG),Number of Mosquitoes (N),Start Date (SD),Start Time (ST),Destination Form Serial (DSEN)'),
 (16, 'ED1', 10, 'sen,fr,dt,me,ind,st,ft,vc,notes,dsen', 'Serial No. (SEN),Formrow (FR),Date of collection (DT),Method (ME),Indoor (IND),Start time (ST),Finish time (FT),Valid catch (VC),Notes (Notes),Destination Form Serial (DSEN)');
@@ -3014,7 +3014,7 @@ CREATE TABLE `ed1` (
   `sid` int(2) DEFAULT '0' COMMENT 'Structure ID (A free standing building that can have one or more room for residential or commercial use)',
   `me` int(3) NOT NULL DEFAULT '-99' COMMENT 'Method (The method by which the mosquitoes were collected or trapped)',
   `ind` int(1) NOT NULL COMMENT 'hold collection was made indoors a house or hut',
-  `ht` int(3) DEFAULT NULL COMMENT 'Habitat Type (Classification of the aquatic habitat in which the collection was made)',
+  `htr` int(3) DEFAULT NULL COMMENT 'Habitat Type (Classification of the aquatic habitat in which the collection was made)',
   `st` int(4) UNSIGNED ZEROFILL NOT NULL COMMENT 'Start Time (The time that the collection started in 24 time )',
   `ft` int(4) UNSIGNED ZEROFILL NOT NULL COMMENT 'Finish Time (The time that the collection finish in 24 time)',
   `hp` int(4) DEFAULT NULL COMMENT 'Hold Period (The period of time for which the mosquitoes were held for survival analysis after they were collected)',
@@ -4884,7 +4884,7 @@ CREATE TABLE `so1` (
   `legs` varchar(3) DEFAULT 'NO' COMMENT 'Body Part Stored legs data',
   `dna` varchar(3) DEFAULT 'NO' COMMENT 'Body Part Stored dna data',
   `mghomogenate` varchar(3) DEFAULT 'NO' COMMENT 'Body Part Stored Mg Homogenate data',
-  `hthomogenate` varchar(3) DEFAULT 'NO' COMMENT 'Body Part Stored Ht Homogenate data',
+  `hthomogenate` varchar(3) DEFAULT 'NO' COMMENT 'Body Part Stored htr Homogenate data',
   `discard` varchar(3) DEFAULT 'NO' COMMENT 'Body Part Stored discard data'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -5250,7 +5250,7 @@ CREATE TABLE `_ed1` (
   `sid` int(2) DEFAULT '0' COMMENT 'Structure ID (A free standing building that can have one or more room for residential or commercial use)',
   `me` int(3) NOT NULL DEFAULT '-99' COMMENT 'Method (The method by which the mosquitoes were collected or trapped)',
   `ind` int(1) NOT NULL COMMENT 'hold collection was made indoors a house or hut',
-  `ht` int(3) DEFAULT NULL COMMENT 'Habitat Type (Classification of the aquatic habitat in which the collection was made)',
+  `htr` int(3) DEFAULT NULL COMMENT 'Habitat Type (Classification of the aquatic habitat in which the collection was made)',
   `st` varchar(6) DEFAULT NULL COMMENT 'Start Time (The time that the collection started in 24 time )',
   `ft` varchar(6) DEFAULT NULL COMMENT 'Finish Time (The time that the collection finish in 24 time)',
   `hp` int(4) DEFAULT NULL COMMENT 'Hold Period (The period of time for which the mosquitoes were held for survival analysis after they were collected)',
@@ -5376,7 +5376,7 @@ CREATE TABLE `_so1` (
   `legs` varchar(3) DEFAULT 'NO' COMMENT 'Body Part Stored legs data',
   `dna` varchar(3) DEFAULT 'NO' COMMENT 'Body Part Stored dna data',
   `mghomogenate` varchar(3) DEFAULT 'NO' COMMENT 'Body Part Stored Mg Homogenate data',
-  `hthomogenate` varchar(3) DEFAULT 'NO' COMMENT 'Body Part Stored Ht Homogenate data',
+  `hthomogenate` varchar(3) DEFAULT 'NO' COMMENT 'Body Part Stored htr Homogenate data',
   `discard` varchar(3) DEFAULT 'NO' COMMENT 'Body Part Stored discard data',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -5824,7 +5824,7 @@ ALTER TABLE `ed1`
   ADD PRIMARY KEY (`projectregsite_id`,`sen`,`fr`),
   ADD UNIQUE KEY `id` (`id`),
   ADD KEY `fk_me` (`me`),
-  ADD KEY `fk_ht` (`ht`);
+  ADD KEY `fk_ht` (`htr`);
 
 --
 -- Indexes for table `ed2`
@@ -6055,7 +6055,7 @@ ALTER TABLE `_ed1`
   ADD PRIMARY KEY (`projectregsite_id`,`sen`,`fr`),
   ADD UNIQUE KEY `id` (`id`),
   ADD KEY `fk_me` (`me`),
-  ADD KEY `fk_ht` (`ht`);
+  ADD KEY `fk_ht` (`htr`);
 
 --
 -- Indexes for table `_ed2`

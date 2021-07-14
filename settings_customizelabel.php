@@ -150,7 +150,7 @@ if(isset($_POST['submited2'])){
 
 
     $fields_array = array("Method (ME)","Indoor (IND)","Enumeration area (EA)","Cluster (CR)", "Compound or plot (CP)");
-    array_push($fields_array, "Treatment (TR)","Habitat type (HT)");
+    array_push($fields_array, "Treatment (TR)","Habitat type (htr)");
 
     $disabled_fields_array = array();
                         

@@ -653,7 +653,7 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
   `sid` int(2) DEFAULT '0' COMMENT 'Structure ID (A free standing building that can have one or more room for residential or commercial use)',
   `me` int(3) NOT NULL DEFAULT '-99' COMMENT 'Method (The method by which the mosquitoes were collected or trapped)',
   `ind` int(1) NOT NULL COMMENT 'hold collection was made indoors a house or hut',
-  `ht` int(3) DEFAULT NULL COMMENT 'Habitat Type (Classification of the aquatic habitat in which the collection was made)',
+  `htr` int(3) DEFAULT NULL COMMENT 'Habitat Type (Classification of the aquatic habitat in which the collection was made)',
   `st` varchar(6) COMMENT 'Start Time (The time that the collection started in 24 time )',
   `ft` varchar(6) COMMENT 'Finish Time (The time that the collection finish in 24 time)',
   `hp` int(4) DEFAULT NULL COMMENT 'Hold Period (The period of time for which the mosquitoes were held for survival analysis after they were collected)',
@@ -915,7 +915,7 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `sfr` int(6) NOT NULL COMMENT 'unique identifier for SS2form',
       `hf` int(3) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of Habitat found (1: Yes, 2: No)',
       `htc` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of Habitat type correct (1: Yes, 2: No)',
-      `ht` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of Habitat Type treated (1: Yes, 2: No)',
+      `htr` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of Habitat Type treated (1: Yes, 2: No)',
       `hw` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of Habitat wet (1: Yes, 2: No)',
       `hs` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status Habitat Parameter (1: <10m, 2: 10-100m, 3: >100m)',
       `fr` int(2) NOT NULL COMMENT 'unique identifier of each row on the data collected',
@@ -1037,7 +1037,7 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."habitattype (
          `id` int(11) NOT NULL AUTO_INCREMENT,
          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-         `ht` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+         `htr` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
          PRIMARY KEY (`id`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
@@ -1166,7 +1166,7 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `sfr` varchar(10) NULL,
       `hf` varchar(10) NULL,
       `htc` varchar(10) NULL,
-      `ht` varchar(10) NULL,
+      `htr` varchar(10) NULL,
       `hw` varchar(10) NULL,
       `hs` varchar(10) NULL,
       `fr` varchar(10) NULL,
@@ -1259,7 +1259,7 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `sid` varchar(10) ,
       `me` varchar(10) NULL ,
       `ind` varchar(10) NULL ,
-      `ht` varchar(10) NULL,
+      `htr` varchar(10) NULL,
       `st` varchar(10) NULL ,
       `ft` varchar(10) NULL,
       `hp` varchar(10) NULL,
