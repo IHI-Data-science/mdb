@@ -15,7 +15,9 @@ $prefixtable = $_SESSION['expcode']."_";
 
 $ed1 = $prefixtable."ed1";
 $ss1 = $prefixtable."ss1";
+$ss2 = $prefixtable."ss2";
 $ss3 = $prefixtable."ss3";
+$ss4 = $prefixtable."ss4";
 $edss = $prefixtable."edss";
 $ssso = $prefixtable."ssso";
 
@@ -27,7 +29,9 @@ $compound = $prefixtable."compound";
 $treatment = $prefixtable."treatment";
 $habitattype = $prefixtable."habitattype";
 $enumerationarea = $prefixtable."enumerationarea";
-
+$domesticWildanimals = $prefixtable."domesticWildanimals";
+$activities = $prefixtable."activities";
+$substrate = $prefixtable."substrate";
 
 //filter fields
 $eas = find_all_distinct($ed1,"ea");
@@ -36,6 +40,8 @@ $mes = find_all_distinct($ed1,"me");
 $hts = find_all_distinct($ed1,"ht");
 $trs = find_all_distinct($ed1,"tr");
 $vcs = find_all_distinct($ed1,"vc");
+
+
 
 
 //Customize graphs
@@ -410,6 +416,7 @@ $('#daterange').daterangepicker();
                                         </select>
 
                                     </div>
+
                                     <div class="top10 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6">
 
                                        <p><code>Treatment (TR):</code></p>
@@ -434,6 +441,85 @@ $('#daterange').daterangepicker();
                                         </select>
                                         
                                      </div> 
+
+                                    <div class="top10 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6">
+
+                                       <p><code>domesticWildanimals (WDA):</code></p>
+                                         <select  class="select-full" name="ea" id="ea"> 
+                                          <option value="">Select</option> 
+                                              <?php
+                                              if(count($wdas) > 0){
+                      
+                                                 foreach ($wdas as $wda):
+                                                    $selected = ( $_SESSION['wda'] == $wda['wda'] )? ' selected="selected"': '';
+                                                    echo '<option '.$selected.' value="'.$wda['wda'].'" >'.labelvalue($domesticWildanimals,"wda",$wda['wda']) .'</option>';
+
+                                                  endforeach;
+
+                                              }else{
+
+                                                  echo '<option value="">No options available</option>';
+
+                                              }
+
+                                              ?>
+                                        </select>
+                                        
+                                     </div> 
+
+                                     
+                                     <div class="top10 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6">
+
+                                    <p><code>activities (ACT):</code></p>
+                                    <select  class="select-full" name="ea" id="ea"> 
+                                    <option value="">Select</option> 
+                                    <?php
+                                    if(count($acts) > 0){
+
+                                    foreach ($acts as $act):
+                                    $selected = ( $_SESSION['act'] == $act['act'] )? ' selected="selected"': '';
+                                     echo '<option '.$selected.' value="'.$act['act'].'" >'.labelvalue($activities,"act",$act['act']) .'</option>';
+
+                                    endforeach;
+
+                                    }else{
+
+                                    echo '<option value="">No options available</option>';
+
+                                    }
+
+                                      ?>
+                                    </select>
+                                                    
+                                    </div> 
+
+
+                                    <div class="top10 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-6">
+
+                                    <p><code>substrate (SU):</code></p>
+                                    <select  class="select-full" name="ea" id="ea"> 
+                                    <option value="">Select</option> 
+                                    <?php
+                                    if(count($sus) > 0){
+
+                                    foreach ($sus as $su):
+                                    $selected = ( $_SESSION['su'] == $su['su'] )? ' selected="selected"': '';
+                                     echo '<option '.$selected.' value="'.$su['su'].'" >'.labelvalue($substrate,"su",$su['su']) .'</option>';
+
+                                    endforeach;
+
+                                    }else{
+
+                                    echo '<option value="">No options available</option>';
+
+                                    }
+
+                                      ?>
+                                    </select>
+                                                    
+                                    </div> 
+
+
 
 
 

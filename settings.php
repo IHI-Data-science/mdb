@@ -220,7 +220,7 @@ if(isset($_POST['submited2'])){
 
                         array_push($fields_array, "Block (BLK)", "House/Hut (SHH)","Station (STN)","Volunteer initials (VI)","Treatment (TR)","Experimental day (DY)","Temperature (TMP)",
                           "Humidity (HMD)","Wind speed (WS)","No. Household Sampled (HS)","Sprayed (SP)","Last spray date (LSD)","Insectside (ISE)",
-                          "Valid catch (VC)","Notes (Notes)","GPSlocation (GPS)","Destination Form Serial (DSEN)");
+                          "Valid catch (VC)","Notes (Notes)","GPSlocation (GPS)","Substrate (SU)","Salinity (SA)","Dissolved Oxygen mg/l ppm (DSO)","No. Household Sampled (HS)","No.of Dredges (DR)","Potential of Hydrogen (PH)","Conductivity ms (CO)","WildDomestic Animals (wda)","Activities (ACT)","Health Centre (HC)","Destination Form Serial (DSEN)");
 
 
                         $disabled_fields_array = array("Serial No. (SEN)","Formrow (FR)","Date of collection (DT)");

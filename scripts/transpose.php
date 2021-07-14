@@ -250,6 +250,18 @@ function renamecol($edcol,$tablename,$formname){
         {
           $new[] = $tablename.'other1 AS '.$formname.'_Other1';
         }
+        if( $item == 'wda')
+        {
+          $new[] = $tablename.'wda AS '.$formname.'_WDA';
+        }
+        if( $item == 'act')
+        {
+          $new[] = $tablename.'act AS '.$formname.'_ACT';
+        }
+        if( $item == 'su')
+        {
+          $new[] = $tablename.'su AS '.$formname.'_SU';
+        }
 
     }
 
@@ -521,6 +533,91 @@ function renamecol($edcol,$tablename,$formname){
       return $str ;
 
 }
+
+function renamecolss4($edcol,$tablename,$formname){
+
+  $tablename = $tablename.'.';
+
+$columns = explode(',', $edcol); 
+    
+  $new = array();
+
+  foreach($columns as $item){
+
+    if( $item == 'sen')
+    {
+      $new[] = $tablename.'sen AS '.$formname.'_SEN';
+    }
+     if( $item == 'ssen')
+    {
+      $new[] = $tablename.'ssen AS '.$formname.'_SSEN';
+    }
+     if( $item == 'sfr')
+    {
+      $new[] = $tablename.'sfr AS '.$formname.'_SFR';
+    }
+    
+     if( $item == 'fr')
+    {
+      $new[] = $tablename.'fr AS '.$formname.'_FR';
+    }
+     if( $item == 'wn')
+    {
+      $new[] = $tablename.'wn AS '.$formname.'_WN';
+    }
+     if( $item == 'wl')
+    {
+      $new[] = $tablename.'wl AS '.$formname.'_WL';
+    }
+   
+     if( $item == 'de')
+    {
+      $new[] = $tablename.'de AS '.$formname.'_DE';
+    }
+      if( $item == 'ret')
+    {
+      $new[] = $tablename.'ret AS '.$formname.'_RET';
+    }
+
+     if( $item == 'wt')
+    {
+      $new[] = $tablename.'wt AS '.$formname.'_WT';
+    }
+     if( $item == 'lwt')
+    {
+      $new[] = $tablename.'lwt AS '.$formname.'_LWT';
+    }
+
+     if( $item == 'sp')
+    {
+      $new[] = $tablename.'sp AS '.$formname.'_SP';
+    }
+
+     if( $item == 'spc')
+    {
+      $new[] = $tablename.'spc AS '.$formname.'_SPC';
+    }
+     if( $item == 'tc')
+    {
+      $new[] = $tablename.'tc AS '.$formname.'_TC';
+    }
+      if( $item == 'nc')
+    {
+      $new[] = $tablename.'nc AS '.$formname.'_NC';
+    }
+      
+   
+}
+
+  $str = implode (",", $new);
+
+
+  return $str ;
+
+}
+
+
+
 
  function renamecolso1($edcol,$tablename,$formname){
 

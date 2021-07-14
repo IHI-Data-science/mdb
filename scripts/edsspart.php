@@ -32,7 +32,9 @@ function report($type, $projectcode, $db)
 
 	$ed1 = $prefixtable."ed1";
 	$ss1 = $prefixtable."ss1";
+	$ss2 = $prefixtable."ss2";
 	$ss3 = $prefixtable."ss3";
+	$ss4 = $prefixtable."ss4";
 	$edss = $prefixtable."edss";
 	$ssso = $prefixtable."ssso";
 
@@ -98,6 +100,29 @@ function report($type, $projectcode, $db)
 
                      
         }
+		
+        $ss2query = "SELECT *  FROM custss  WHERE pc=$projectcode AND ft='SS2'";
+        //execute query 
+        $ss2result = $db->query($ss2query);
+        //detect number of row from query execute above
+        $ss2num_row = mysqli_num_rows($ss2result);
+        if($ss3num_row == 1)
+        {
+            //fetch data from query executed above
+            $ss2row = mysqli_fetch_array($ss2result);
+
+               //remove attribute method
+		    $ssen_remove = str_replace("ssen,","",$ss2row["p_attri"]);
+
+		    $ssen_remove = str_replace("sfr,","",$ssen_remove);
+
+          //  $_SESSION["SESS_P_ATTRIss2"] = $ssen_remove; 
+            $ss2col2 =  $ssen_remove;  
+
+            $ss2col =  renamecolss2($ss2col2,"ss1","SS");
+
+                     
+        }
 
         $ss1query = "SELECT * FROM custss  WHERE pc=$projectcode AND ft='SS1'";
         //execute query 
@@ -122,6 +147,32 @@ function report($type, $projectcode, $db)
 
                      
         }
+
+		$ss4query = "SELECT *  FROM custss  WHERE pc=$projectcode AND ft='SS4'";
+        //execute query 
+        $ss3result = $db->query($ss4query);
+        //detect number of row from query execute above
+        $ss4num_row = mysqli_num_rows($ss4result);
+        if($ss4num_row == 1)
+        {
+            //fetch data from query executed above
+            $ss4row = mysqli_fetch_array($ss4result);
+
+               //remove attribute method
+		    $ssen_remove = str_replace("ssen,","",$ss4row["p_attri"]);
+
+		    $ssen_remove = str_replace("sfr,","",$ssen_remove);
+
+          //  $_SESSION["SESS_P_ATTRIss4"] = $ssen_remove; 
+            $ss4col2 =  $ssen_remove;  
+
+            $ss4col =  renamecolss3($ss4col2,"ss1","SS");
+
+                     
+        }
+
+
+
 
         $so1query = "SELECT * FROM custso  WHERE pc=$projectcode AND ft='SO1'";
         //execute query 

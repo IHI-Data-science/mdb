@@ -614,6 +614,22 @@ if($q === 'hfive'){
    $query="SELECT ind, count(*) as frequency FROM ".$prefixtable."ed1 where 1=1 $wherecon GROUP BY ind";   
         
 }
+if($q === 'hsix'){
+    
+    $query="SELECT wda, count(*) as frequency FROM ".$prefixtable."ed1 where 1=1 $wherecon GROUP BY wda";   
+         
+ }
+
+ if($q === 'hseven'){
+    
+    $query="SELECT act, count(*) as frequency FROM ".$prefixtable."ed1 where 1=1 $wherecon GROUP BY act";   
+         
+ }
+ if($q === 'height'){
+    
+    $query="SELECT su, count(*) as frequency FROM ".$prefixtable."ed1 where 1=1 $wherecon GROUP BY su";   
+         
+ }
 
 //execute query
 $result = $db->query($query);

@@ -354,6 +354,25 @@ function getcolumnnametable3($column1,$column2){
 
 }
 
+function getcolumnnametable4($column1,$column2){
+
+  array_unshift($column1,"id");
+  array_unshift($column2,"ID");
+
+  $arrcol = array();
+
+  foreach(array_combine($column1, $column2) as $column1field => $column2field){
+
+    $arrcol[] = '<th data-field="'.$column1field.'">'.$column2field.'</th>'."\n"; 
+
+  }
+
+  $strcol = implode (" ", $arrcol);
+
+  return $strcol ;
+
+}
+
 
 
 function renamecolumn($edcol,$tablename){
@@ -671,6 +690,16 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
   `vc` int(1) NOT NULL DEFAULT '2' COMMENT 'Legitimacy of the collection',
   `notes` text COMMENT 'On site observation about the collection',
   `gps` text COMMENT 'Site geolocation',
+  `su` varchar(100) DEFAULT '0' COMMENT 'substracte (type of soil for snail to lay eggs)',
+  `sa` varchar(15) DEFAULT NULL COMMENT 'salinity',
+  `dso` varchar(15) DEFAULT NULL COMMENT 'Dissolved oxygen ', 
+  `hs` varchar(15) DEFAULT '-99' COMMENT 'Number of household sampled',
+      `dr` varchar(15) DEFAULT '-99' COMMENT 'Number of dredges',
+  `ph` varchar(15) DEFAULT NULL COMMENT 'potential of hydrogen',
+      `co` varchar(15) DEFAULT NULL COMMENT ' Conductivity ms',
+      `wda` varchar(100) DEFAULT '0' COMMENT 'wild domestic anilal  (define jind of animals)',
+      `act` varchar(100) DEFAULT '0' COMMENT 'activity (define either human activities )',
+      `hc` varchar(100) DEFAULT '0' COMMENT 'heath centres (define either heath centres )',
   `dsen` int(6) NOT NULL COMMENT 'Destination form serial number',
   `livestock` int(11) DEFAULT NULL,
   `hoccupant` int(11) DEFAULT NULL,
@@ -724,15 +753,17 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
 
-        $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ssso (
+    $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ssso (
       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
       `ss1id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS1',
       `ss2id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS2',
       `ss3id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS3',
+      `ss4id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS4',
        PRIMARY KEY (`id`),
        KEY `fk_ss1id` (`ss1id`),
          KEY `fk_ss2id` (`ss2id`),
-       KEY `fk_ss3id` (`ss3id`)
+       KEY `fk_ss3id` (`ss3id`),
+       KEY `fk_ss4id` (`ss4id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;";
 
 
@@ -984,6 +1015,8 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
 
+
+
     $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss3b (
       `id_` int(11) NOT NULL AUTO_INCREMENT,
       `edssid` int(11) NOT NULL,
@@ -1006,16 +1039,48 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
     
+    $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss4 (
+      `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
+      `edssid` int(6) NOT NULL COMMENT 'unique identifier for SS4 form',
+      `sen` int(6) NOT NULL COMMENT 'unique identifier for SS4 form',
+      `ssen` int(6) NOT NULL COMMENT 'unique identifier for SS4 form',
+      `sfr` int(6) NOT NULL COMMENT 'unique identifier for SS4 form',
+      `fr` int(2) NOT NULL COMMENT 'unique identifier of each row on the data collected',
+      `wn` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of water body name (1: Yes, 2: No)',
+      `wl` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of water level (1: Yes, 2: No)',
+      `de` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of depth (1: Yes, 2: No)',
+      `ret` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of flow rate (1: Yes, 2: No)',
+      `wt` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of water body type (1: Yes, 2: No)',
+      `lwt` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of longevity of water body type (1: Yes, 2: No)',
+      `sp` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of snail present(1: Yes, 2: No)',
+      `spc` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of snail species collected (1: Yes, 2: No)',
+      `n` int(4) NOT NULL COMMENT 'number of observed (Records the total number of mosquitoes observed in each specific subgroup)',
+      `sps` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of snail species shedded (1: Yes, 2: No)',
+      `tc` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of type of cercaria (1: Yes, 2: No)',
+      `nc` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Bumber of cercaria shadded (1: Yes, 2: No)',
+      `nd` int(3) DEFAULT NULL COMMENT 'number of discarded (This is the number of mosquitoes discarded)',
+      `senfr` int(11) NOT NULL,
+      `created_at` timestamp default now(), 
+      `updated_at` timestamp default now(),
+       PRIMARY KEY (`edssid`,`sen`),
+       UNIQUE KEY `id` (`id`)
+     
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;";
+
+
       $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."sost (
         `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
         `so1id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS1',
         `so2id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS2',
         `so3id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS3',
+        `so4id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS4',
         PRIMARY KEY (`id`),
         KEY `fk_ss1id` (`so1id`),
         KEY `fk_ss2id` (`so2id`),
-        KEY `fk_ss3id` (`so3id`)
+        KEY `fk_ss3id` (`so3id`),
+        KEY `fk_ss4id` (`so4id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
 
 
       $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."method (
@@ -1084,6 +1149,31 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
          PRIMARY KEY (`id`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
+        $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."domesticWildAnimals (
+          `id` int(11) NOT NULL AUTO_INCREMENT,
+          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+          `tr` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+          PRIMARY KEY (`id`)
+         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
+         $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."Substracte (
+          `id` int(11) NOT NULL AUTO_INCREMENT,
+          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+          `bp` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+          PRIMARY KEY (`id`)
+         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+ 
+        
+        
+        $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."activities (
+          `id` int(11) NOT NULL AUTO_INCREMENT,
+          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+          `bp` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+          PRIMARY KEY (`id`)
+         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
+
+
       $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."bodypart (
          `id` int(11) NOT NULL AUTO_INCREMENT,
          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -1111,6 +1201,21 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
        `sas` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
        PRIMARY KEY (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
+      $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."wn (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+        `tx` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+        PRIMARY KEY (`id`)
+       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
+     $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."spc (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+      `sas` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+      PRIMARY KEY (`id`)
+     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
 
       $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."custgraph (
        `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -1238,6 +1343,28 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
        PRIMARY KEY (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
+    $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss4template(
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `sen` varchar(10),
+      `ssen` varchar(10) NULL,
+      `sfr` varchar(10) NULL,
+      `fr` varchar(10) NULL,
+      `wn` varchar(10) NULL,
+      `wl` varchar(20) NULL,
+      `de` varchar(30) NULL,
+      `ret` varchar(10) NULL,
+      `wt` varchar(10) NULL ,
+      `lwt` varchar(10) NULL,
+      `sp` varchar(30) NULL,
+      `spc` varchar(30) NULL,
+      `n` varchar(10) NULL,
+      `sps` varchar(30) NULL,
+      `tc` varchar(10) NULL,
+      `nc` varchar(10) NULL ,
+      
+       PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
 
    // ED1Template table
      $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ed1template (
@@ -1287,6 +1414,17 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `lsd` varchar(10) ,
       `ise` varchar(10) ,
       `gps` text ,
+      `su` varchar(10), 
+      `sa` varchar(10), 
+      `hs` varchar(300) ,
+      `dr` varchar(10),
+      `dso` varchar(10),
+      `ph` varchar(10) ,
+      `co` varchar(10),
+      `wda` varchar(10),
+      `act` varchar(10),
+      `hc` varchar(10),
+
       `dsen` varchar(10) NULL ,
        PRIMARY KEY (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";

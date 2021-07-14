@@ -93,6 +93,36 @@ if(isset($_GET['q'])) {
 		$nodata = "No Data found";
 
 	}
+
+	else if($q == 'domesticWildanimals'){
+
+		$prefixtable = $projectid."_";
+		$domesticWildanimals = $prefixtable."domesticWildanimals";
+
+		$query="SELECT * FROM $domesticWildanimals";
+		$nodata = "No Data found";
+
+	}
+
+        else if($q == 'activities'){
+
+		$prefixtable = $projectid."_";
+		$activities= $prefixtable."activities";
+
+		$query="SELECT * FROM $activities";
+		$nodata = "No Data found";
+
+	}
+	else if($q == 'substracte'){
+
+		$prefixtable = $projectid."_";
+		$substracte = $prefixtable."substracte";
+
+		$query="SELECT * FROM $substracte";
+		$nodata = "No Data found";
+
+	}
+
         
 	else if($q == 'taxon'){
 
@@ -148,6 +178,25 @@ if(isset($_GET['q'])) {
 		$ss1 = $prefixtable."ss1";
 
 		$query="SELECT * FROM $ss1";
+		$nodata = "No Data found";
+
+	}
+	else if($q == 'ss2'){
+
+		$prefixtable = $projectid."_";
+		$ss2 = $prefixtable."ss2";
+
+		$query="SELECT * FROM $ss2";
+		$nodata = "No Data found";
+
+	}
+
+	else if($q == 'ss4'){
+
+		$prefixtable = $projectid."_";
+		$ss4 = $prefixtable."ss4";
+
+		$query="SELECT * FROM $ss4";
 		$nodata = "No Data found";
 
 	}

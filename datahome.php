@@ -203,6 +203,46 @@ if($q==='htwelve'){
    
 }
 
+if($q==='htwelve'){
+   
+   (in_array("wda", $checked_fields) ? $wda=TRUE : $wda=FALSE);
+   
+   ($wda ? $fieldcol="domesticWildanimals.wda" : $fieldcol="ed1.wda");
+   
+   $query="SELECT $fieldcol, count(*) as frequency
+           FROM ".$prefixtable."ed1 as ed1
+           LEFT JOIN ".$prefixtable."domesticWildanimals as domesticWildanimals ON (ed1.wda = domesticWildanimals.number)
+           WHERE 1=1 $wherecon GROUP BY wda";
+   
+}
+
+if($q==='hthirteen'){
+   
+   (in_array("act", $checked_fields) ? $act=TRUE : $act=FALSE);
+   
+   ($act ? $fieldcol="activities.act" : $fieldcol="ed1.act");
+   
+   $query="SELECT $fieldcol, count(*) as frequency
+           FROM ".$prefixtable."ed1 as ed1
+           LEFT JOIN ".$prefixtable."activities as activities ON (ed1.act = activities.number)
+           WHERE 1=1 $wherecon GROUP BY act";
+   
+}
+
+if($q==='hfourteen'){
+   
+   (in_array("su", $checked_fields) ? $su=TRUE : $su=FALSE);
+   
+   ($su ? $fieldcol="substrate.su" : $fieldcol="ed1.su");
+   
+   $query="SELECT $fieldcol, count(*) as frequency
+           FROM ".$prefixtable."ed1 as ed1
+           LEFT JOIN ".$prefixtable."substrate as substrate ON (ed1.su = substrate.number)
+           WHERE 1=1 $wherecon GROUP BY su";
+   
+}
+
+
 //execute query
 $result=$db->query($query);
 
