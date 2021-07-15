@@ -219,8 +219,8 @@ if(isset($_POST['submited2'])){
                         array_push($fields_array, "Season (SN)","Agriculture status (AGRT)","Intervention (INVN)","Livestock (LVK)","Roof type (RFE)","Wall type (WLE)","Eaves (EVS)","Block ventilation (BV)","Block ventilation screening (BVS)","Window screening (WSN)","Window screening Condition (WSNC)","Cooking location (CKL)","Cooking Energy source (CKE)");
 
                         array_push($fields_array, "Block (BLK)", "House/Hut (SHH)","Station (STN)","Volunteer initials (VI)","Treatment (TR)","Experimental day (DY)","Temperature (TMP)",
-                          "Humidity (HMD)","Wind speed (WS)","No. Household Sampled (HS)","Sprayed (SP)","Last spray date (LSD)","Insectside (ISE)",
-                          "Valid catch (VC)","Notes (Notes)","GPSlocation (GPS)","Substrate (SU)","Salinity (SA)","Dissolved Oxygen mg/l ppm (DSO)","No. Household Sampled (HS)","No.of Dredges (DR)","Potential of Hydrogen (PH)","Conductivity ms (CO)","WildDomestic Animals (wda)","Activities (ACT)","Health Centre (HC)","Destination Form Serial (DSEN)");
+                          "Humidity (HMD)","Wind speed (WS)","No. Household Sampled (hos)","Sprayed (SP)","Last spray date (LSD)","Insectside (ISE)",
+                          "Valid catch (VC)","Notes (Notes)","GPSlocation (GPS)","Substrate (SU)","Salinity (SA)","Dissolved Oxygen mg/l ppm (DSO)","No. Household Sampled (hos)","No.of Dredges (DR)","Potential of Hydrogen (PH)","Conductivity ms (CO)","WildDomestic Animals (wda)","Activities (ACT)","Health Centre (HC)","Destination Form Serial (DSEN)");
 
 
                         $disabled_fields_array = array("Serial No. (SEN)","Formrow (FR)","Date of collection (DT)");

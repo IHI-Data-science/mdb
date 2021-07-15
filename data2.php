@@ -614,13 +614,13 @@ if($q === 'hfive'){
    $query="SELECT ind, count(*) as frequency FROM ".$prefixtable."ed1 where 1=1 $wherecon GROUP BY ind";   
         
 }
-if($q === 'hsix'){
+if($q === 'hosix'){
     
     $query="SELECT wda, count(*) as frequency FROM ".$prefixtable."ed1 where 1=1 $wherecon GROUP BY wda";   
          
  }
 
- if($q === 'hseven'){
+ if($q === 'hoseven'){
     
     $query="SELECT act, count(*) as frequency FROM ".$prefixtable."ed1 where 1=1 $wherecon GROUP BY act";   
          
