@@ -246,7 +246,7 @@ function ss1data(
 
 
 
-function ss2data($sen, $ssen, $sfr, $hf, $htc, $htr, $hw, $hos, $fr, $tx, $bf, $pu, $vl, $vt, $ndi01, $ndi02, $ndi03, $ndi04, $ndi05, $ndi06, $ndi07, $ndi08, $ndi09, $ndi10, $n, $notes, $slc, $ni, $nb, $sid01, $sid02, $sid03, $sid04, $sid05, $sid06, $sid07, $nd)
+function ss2data($sen, $ssen, $sfr, $hf, $htc, $htr, $hw, $hs, $fr, $tx, $bf, $pu, $vl,$rl, $vt, $ndi01, $ndi02, $ndi03, $ndi04, $ndi05, $ndi06, $ndi07, $ndi08, $ndi09, $ndi10, $n, $notes, $slc, $ni, $nb, $sid01, $sid02, $sid03, $sid04, $sid05, $sid06, $sid07, $nd)
 {
     global $db;
   
@@ -291,8 +291,8 @@ function ss2data($sen, $ssen, $sfr, $hf, $htc, $htr, $hw, $hos, $fr, $tx, $bf, $
         $senfr = $sen.$fr;
     }
 
-    $resultft = $db->mysqliquery("INSERT INTO  $ss2 ( edssid, sen,ssen,sfr,hf, htc, htr,hw,hos,fr,tx,bf,pu, vl, vt,ndi01,ndi02,ndi03,ndi04,ndi05,ndi06,ndi07,ndi08,ndi09,ndi10,n,notes,slc,ni,nb,sid01,sid02,sid03,sid04,sid05,sid06,sid07,nd,senfr)
-    VALUES('$edssid','$sen','$ssen','$sfr','$hf', '$htc', '$htr','$hw','$hos','$fr','$tx','$bf','$pu', '$vl', '$vt','$ndi01','$ndi02','$ndi03','$ndi04','$ndi05','$ndi06','$ndi07','$ndi08','$ndi09','$ndi10','$n','$notes','$slc','$ni','$nb','$sid01','$sid02','$sid03','$sid04','$sid05','$sid06','$sid07','$nd','$senfr')");
+    $resultft = $db->mysqliquery("INSERT INTO  $ss2 ( edssid, sen,ssen,sfr,hf, htc, htr,hw,hs,fr,tx,bf,pu, vl,rl, vt,ndi01,ndi02,ndi03,ndi04,ndi05,ndi06,ndi07,ndi08,ndi09,ndi10,n,notes,slc,ni,nb,sid01,sid02,sid03,sid04,sid05,sid06,sid07,nd,senfr)
+    VALUES('$edssid','$sen','$ssen','$sfr','$hf', '$htc', '$htr','$hw','$hs','$fr','$tx','$bf','$pu', '$vl','$rl', '$vt','$ndi01','$ndi02','$ndi03','$ndi04','$ndi05','$ndi06','$ndi07','$ndi08','$ndi09','$ndi10','$n','$notes','$slc','$ni','$nb','$sid01','$sid02','$sid03','$sid04','$sid05','$sid06','$sid07','$nd','$senfr')");
 
         
     if ($resultft) {

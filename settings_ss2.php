@@ -204,7 +204,7 @@ $field2 = "ft";
 
                        
                         $fields_array = array("Serial No. (SEN)","ED Form Serial Number (SSEN)","ED Form row (SFR)","Habitat found (HF)","Habitat type correct (HTC)","Habitat treated (HTR)","Habitat Wet (HW)","Habitat Size (HS)");
-                        array_push($fields_array,"Form row (FR)","Taxon (TX)","Body Form (BF)","Pupae(PU)","Vegetation/rice length (VL)","Treated(VT)");
+                        array_push($fields_array,"Form row (FR)","Taxon (TX)","Body Form (BF)","Pupae(PU)","Vegetation (VL)","Rice length (RL)" ,"Treated(VT)");
                         
                         array_push($fields_array,"Number Sampled Dipping 1 (NDI01)","Number Sampled Dipping 2 (NDI02)","Number Sampled Dipping 3 (NDI03)","Number Sampled Dipping 4 (NDI04)","Number Sampled Dipping 5 (NDI05)");
 
