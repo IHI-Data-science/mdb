@@ -39,7 +39,7 @@ else if ($getformtype == 'ED2'){
 
 //$ed1 = $prefixtable."ed1";
 $ss1 = $prefixtable."ss1";
-$ss3 = $prefixtable."ss3";
+$ss5 = $prefixtable."ss5";
 $edss = $prefixtable."edss";
 $ssso = $prefixtable."ssso";
 $so1 = $prefixtable."so1_sk";

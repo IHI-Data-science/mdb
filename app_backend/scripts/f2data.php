@@ -292,9 +292,9 @@ if(isset($_POST['tag'])) {
 
 
 
-	else if ($tag == 'ss3') {
+	else if ($tag == 'ss5') {
 
-		$json = $_POST["ss3json"];
+		$json = $_POST["ss5json"];
 
         
 		if (get_magic_quotes_gpc()){
@@ -314,8 +314,59 @@ if(isset($_POST['tag'])) {
 
 		for($i=0; $i<count($data) ; $i++){
         
-			$res2 = ss3data($data[$i]->sen,$data[$i]->fr,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->sd,$data[$i]->dd,$data[$i]->tx,$data[$i]->sas,$data[$i]->mt,$data[$i]->ch,$data[$i]->replicate_no,$data[$i]->control_no,$data[$i]->exposuretreatment,$data[$i]->st,$data[$i]->duration);
-          
+			        
+			$res2 = ss5data($data[$i]->sen,$data[$i]->ssen, $data[$i]->sfr,$data[$i]->fr,
+
+			$data[$i]->dot, $data[$i]->ga,$data[$i]->gds,
+			$data[$i]->sgds, $data[$i]->ndis, $data[$i]->mo, $data[$i]->mst, $data[$i]->ma,
+
+
+		    $data[$i]->tb,
+			 $data[$i]->bia,$data[$i]->it, $data[$i]->SynT, $data[$i]->ic, $data[$i]->sc, $data[$i]->SRTemp,
+			 $data[$i]->etmax, $data[$i]->etmin, $data[$i]->htmax,
+			 $data[$i]->htmin, $data[$i]->ehmax, $data[$i]->ehmin, $data[$i]->HHMax, $data[$i]->HHMin,
+			 $data[$i]->mti1, $data[$i]->mti2, $data[$i]->mti3, $data[$i]->mti4, $data[$i]->mti5, 
+			 $data[$i]->mti6,
+			 
+			 $data[$i]->mts,$data[$i]->mtisy1,$data[$i]->mtisy2, $data[$i]->mtisy3,
+			 $data[$i]->mtisy4,$data[$i]->mtisy5, $data[$i]->mtisy6,
+			 $data[$i]->mtsy, $data[$i]->btci1,$data[$i]->btci2, $data[$i]->btci3, $data[$i]->btci4,
+			 $data[$i]->btci5, $data[$i]->btci6,
+			 $data[$i]->bc_s,
+			
+			 $data[$i]->btcsy_i1, $data[$i]->btcsy_i2, $data[$i]->btcsy_i3, 
+			 $data[$i]->btcsy_i4, $data[$i]->bc_sy,
+			 $data[$i]->dbc_i1,$data[$i]->dbc_i2,$data[$i]->dbc_i3,$data[$i]->dbc_i4,$data[$i]->dbc_i5,
+			 $data[$i]->dbc_i6,
+			 $data[$i]->dbc_s,
+
+			 $data[$i]->dbc_syi1, $data[$i]->dbc_syi2,$data[$i]->dbc_syi3, 
+			 $data[$i]->dbc_syi4,
+			 $data[$i]->dbc_sy,$data[$i]->tbc_i1, $data[$i]->tbc_i2,$data[$i]->tbc_i3,$data[$i]->tbc_i4,
+			 $data[$i]->tbc_i5,$data[$i]->tbc_i6,
+			 $data[$i]->tbc_s, $data[$i]->tbc_syi1,$data[$i]->tbc_syi2,$data[$i]->tbc_syi3,
+			 $data[$i]->tbc_syi4, $data[$i]->tbc_sy, $data[$i]->kd_d, 
+
+			 $data[$i]->rt,$data[$i]->spd,$data[$i]->liu,$data[$i]->elcm,$data[$i]->mt1,$data[$i]->mt2, $data[$i]->mt3,
+			 $data[$i]->mt4,
+
+			 $data[$i]->mkd1, $data[$i]->mkd2, $data[$i]->mkd3, $data[$i]->mkd4, $data[$i]->mkd5,
+			 $data[$i]->mkd6, $data[$i]->mkd7,
+			 $data[$i]->mkd8, $data[$i]->mkd9, $data[$i]->mkd10,
+			 $data[$i]->mkd11, $data[$i]->mkd12, $data[$i]->mkd13,    
+			 $data[$i]->mkd14,
+			 $data[$i]->mkd15, $data[$i]->mkd16,$data[$i]->mkd17,$data[$i]->mkd18,
+			 $data[$i]->mkd19,$data[$i]->mkd20,
+
+
+
+
+			 $data[$i]->mtir1,$data[$i]->mtir2, $data[$i]->mtir3, 
+			 $data[$i]->mtir4,$data[$i]->mtir5, $data[$i]->mtir6,
+			 $data[$i]->mtsr1, $data[$i]->mtsr2, $data[$i]->mtsr3, $data[$i]->mtsr4,
+			 $data[$i]->mtisyr1, $data[$i]->mtisyr2, $data[$i]->mtisyr3,$data[$i]->mtisyr4);
+			  
+		
 			if($res2){
 
 				$b["id"] = (int)$data[$i]->id;
@@ -363,74 +414,6 @@ if(isset($_POST['tag'])) {
 	}
 
 
-	else if ($tag == 'ss3b') {
-
-		$json = $_POST["ss3bjson"];
-
-        
-		if (get_magic_quotes_gpc()){
-			$json = stripslashes($json);
-		}
-        
-		$data = json_decode($json);
-
-		$a=array();
-		$b=array();
-
-
-		$GLOBALS['pidss'] = $_POST["projectid"];
-		$GLOBALS['sidss'] = $_POST["siteid"];
-
-        
-		for($i=0; $i<count($data) ; $i++){
-        
-			$res2 = ss3bdata($data[$i]->sen,$data[$i]->fr,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->st,$data[$i]->duration,$data[$i]->replicate1,$data[$i]->replicate2,$data[$i]->replicate3,$data[$i]->replicate4,$data[$i]->control1,$data[$i]->control2);
-          
-			if($res2){
-
-				$b["id"] = (int)$data[$i]->id;
-				$b["sen"] = (int)$data[$i]->sen;
-				$b["fr"] = (int)$data[$i]->fr;
-				$b["status"] = 'yes';
-				$b["success"] = 1;
-				$b["error"] = 0;
-
-				array_push($a,$b);
-
-			}else{
-
-
-				if ($db->mysqlierrorno() == 1062){
-
-					$b["id"] = (int)$data[$i]->id;
-				        $b["sen"] = (int)$data[$i]->sen;
-				        $b["fr"] = (int)$data[$i]->fr;
-					$b["status"] = 'yes';
-					$b["error"] = 1062;
-					$b["success"] = 1;
-					$b["error_msg"] = "error:".$db->mysqlierror();
-
-					array_push($a,$b);
-
-				}  else{
-
-					$b["id"] = (int)$data[$i]->id;
-				        $b["sen"] = (int)$data[$i]->sen;
-				        $b["fr"] = (int)$data[$i]->fr;
-					$b["status"] = 'no';
-					$b["error"] = 1;
-					$b["success"] = 0;
-					$b["error_msg"] = "error:".$db->mysqlierror();
-
-					array_push($a,$b);
-
-				}
-			}
-		}
-
-		echo json_encode($a);
-
-	}
 
 //end ss
 

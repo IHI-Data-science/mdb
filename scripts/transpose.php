@@ -262,7 +262,7 @@ function renamecol($edcol,$tablename,$formname){
 
    }
 
-   function renamecolss3($edcol,$tablename,$formname){
+   function renamecolss5($edcol,$tablename,$formname){
 
        $tablename = $tablename.'.';
 

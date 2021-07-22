@@ -728,11 +728,11 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
       `ss1id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS1',
       `ss2id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS2',
-      `ss3id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS3',
+      `ss5id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS5',
        PRIMARY KEY (`id`),
        KEY `fk_ss1id` (`ss1id`),
          KEY `fk_ss2id` (`ss2id`),
-       KEY `fk_ss3id` (`ss3id`)
+       KEY `fk_ss5id` (`ss5id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;";
 
 
@@ -956,25 +956,174 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       KEY `fk_ss2_bf` (`bf`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-    $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss3 (
+    $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss5 (
+       
       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
       `edssid` int(11) NULL COMMENT 'Store value from table EDSS id',
-      `sen` int(6) NOT NULL COMMENT 'unique identifier for SS3 form',
+      `sen` int(6) NOT NULL COMMENT 'unique identifier for SS5 form',
+      `ssen` int(6) NOT NULL COMMENT 'unique identifier for SS5 form',
+      `sfr` int(6) NOT NULL COMMENT 'unique identifier for SS5 form',
       `fr` int(2) NOT NULL COMMENT 'unique identifier of each row on the data collected',
-      `ssen` int(6) NOT NULL COMMENT 'unique identifier for SS3 form',
-      `sfr` int(6) NOT NULL COMMENT 'unique identifier for SS3 form',
-      `sd` date NOT NULL COMMENT 'Start date (The date that the experimental sorting of the specific subgroup was started)',
-      `dd` int(3) DEFAULT '-99' COMMENT 'dead sorting classfication of mosquitoes',
-      `tx` int(3) NOT NULL DEFAULT '-99' COMMENT 'taxon identification number',
-      `sas` int(3) NOT NULL DEFAULT '-99' COMMENT 'sex and abdominal status',
-      `mt` int(3) DEFAULT '-99' COMMENT 'mating status of mosquitoes  if found couple',
-      `ch` int(3) DEFAULT '-99' COMMENT 'choice. used to designated the choise made by project specific',
-      `rep_no` int(2) DEFAULT '-99' COMMENT 'Total number of replicate',
-      `cnr_no` int(2) DEFAULT '-99' COMMENT 'Total number of control',
-      `exp_tr` int(2) DEFAULT '-99' COMMENT 'Exposure to treatment',
-      `st` varchar(10) COMMENT 'start time',
-      `dur` varchar(10) DEFAULT '-99' COMMENT 'Duration of exposure',
-      `notes` varchar(500) DEFAULT 'NA',
+      `dot` date NOT NULL COMMENT 'date of test',
+      `ga` varchar(20) NOT NULL COMMENT 'gps accuracy',
+      `gds` varchar(20) NOT NULL COMMENT 'gps data source',
+      `sgds` varchar(100) NOT NULL COMMENT 'specify gps data source',
+      `ndis` int(20) NOT NULL COMMENT 'nets distributed over the past 3years',
+      `mo` varchar(30) NOT NULL COMMENT 'mosquito origin',
+      `mst` varchar(30) NOT NULL COMMENT 'mosquito species tested',
+      `ma` int(30) NOT NULL COMMENT 'mosquito age',
+
+
+    `tb` varchar(30) NOT NULL COMMENT 'type of bottle bioassay',
+    `bia` varchar(30) NOT NULL COMMENT 'is it bioassay for intensity assay?',
+    `it` varchar(30) NOT NULL COMMENT 'type of insecticide tested',
+    `SynT` varchar(30) NOT NULL COMMENT 'what synergist was tested?',
+    `ic` varchar(30) NOT NULL COMMENT 'insecticide concentration',
+    `sc` int(50) NOT NULL COMMENT 'synergist concentration',
+    `SRTemp` varchar(50) NOT NULL COMMENT 'Storage room temperature',
+    `ETMax` varchar(30) NOT NULL COMMENT 'Maximum Exposure Temperature',
+    `ETMin` varchar(30) NOT NULL COMMENT 'Minimum Exposure Temperature',
+    `HTMax` varchar(30) NOT NULL COMMENT 'Maximum Holding Temperature',
+    `HTMin` varchar(30) NOT NULL COMMENT 'Minimum Holding Temperature',
+    `EHMax` varchar(30) NOT NULL COMMENT 'Maximum Humidity Exposure',
+    `EHMin` varchar(30) NOT NULL COMMENT 'Minimum Humidity Exposure',
+    `HHMax` varchar(30) NOT NULL COMMENT 'Maximum Holding Humidity ',
+    `HHMin` varchar(30) NOT NULL COMMENT 'Minimum Holding Humidity',
+
+    `mti1` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Bottle1 Insecticide',
+    `mti2` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Bottle2 Insecticide',
+    `mti3` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Bottle3 Insecticide',
+    `mti4` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Bottle4 Insecticide',
+    `mti5` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Bottle5 Insecticide',
+    `mti6` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Bottle6 Insecticide',
+
+
+    `mts` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Solvent Control',
+    `mtisy1` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Bottle1 Insecticide & Synergist', 
+    `mtisy2` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Bottle2 Insecticide & Synergist', 
+    `mtisy3` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Bottle3 Insecticide & Synergist', 
+   `mtisy4` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Bottle1 Insecticide & Synergist', 
+   `mtisy5` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Bottle1 Insecticide & Synergist', 
+   `mtisy6` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Bottle1 Insecticide & Synergist', 
+   `mtsy` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Synergist Control', 
+   `BTCI1` varchar (30) NULL COMMENT 'Bottle Code Bottle1 Insecticide', 
+   `BTCI2` varchar (30) NULL COMMENT 'Bottle Code Bottle1 Insecticide', 
+   `BTCI3` varchar (30) NULL COMMENT 'Bottle Code Bottle1 Insecticide', 
+   `BTCI4` varchar (30) NULL COMMENT 'Bottle Code Bottle1 Insecticide', 
+   `BTCI5` varchar (30) NULL COMMENT 'Bottle Code Bottle1 Insecticide', 
+   `BTCI6` varchar (30) NULL COMMENT 'Bottle Code Bottle1 Insecticide', 
+   `BC_S` varchar (30) NULL COMMENT 'Bottle code Solvent Control', 
+
+
+
+
+        
+   `BTCSy_I1` varchar (30) NULL COMMENT 'Bottle Code Bottle1 Synergist & Insecticide', 
+   `BTCSy_I2` varchar (30) NULL COMMENT 'Bottle Code Bottle1 Synergist & Insecticide', 
+   `BTCSy_I3` varchar (30) NULL COMMENT 'Bottle Code Bottle1 Synergist & Insecticide', 
+   `BTCSy_I4` varchar (30) NULL COMMENT 'Bottle Code Bottle1 Synergist & Insecticide', 
+   `BC_Sy` varchar (30) NULL COMMENT 'Bottle Code Synergist Control', 
+   `DBC_I1` varchar (30) NULL COMMENT 'Date Bottle was Coated Bottle1 Insecticide', 
+   `DBC_I2` varchar (30) NULL COMMENT 'Date Bottle was Coated Bottle1 Insecticide',
+   `DBC_I3` varchar (30) NULL COMMENT 'Date Bottle was Coated Bottle1 Insecticide',
+   `DBC_I4` varchar (30) NULL COMMENT 'Date Bottle was Coated Bottle1 Insecticide',
+`DBC_I5` varchar (30) NULL COMMENT 'Date Bottle was Coated Bottle1 Insecticide',
+`DBC_I6` varchar (30) NULL COMMENT 'Date Bottle was Coated Bottle1 Insecticide',
+   `DBC_S` varchar (30) NULL COMMENT 'Date Bottle was Coated Solvent Control',
+
+    
+
+
+
+
+   `DBC_SyI1` varchar (30) NULL COMMENT 'Date Bottle was Coated Bottle1 Synergist & Insecticide',
+   `DBC_SyI2` varchar (30) NULL COMMENT 'Date Bottle was Coated Bottle1 Synergist & Insecticide',
+`DBC_SyI3` varchar (30) NULL COMMENT 'Date Bottle was Coated Bottle1 Synergist & Insecticide',
+`DBC_SyI4` varchar (30) NULL COMMENT 'Date Bottle was Coated Bottle1 Synergist & Insecticide',
+`DBC_Sy` varchar (30) NULL COMMENT 'Date Bottle was Coated Synergist Control',
+`TBC_I1` varchar (30) NULL COMMENT 'Times Bottle coated used Bottle1 Insecticide',
+`TBC_I2` varchar (30) NULL COMMENT 'Times Bottle coated used Bottle1 Insecticide',
+   `TBC_I3` varchar (30) NULL COMMENT 'Times Bottle coated used Bottle1 Insecticide',
+   `TBC_I4` varchar (30) NULL COMMENT 'Times Bottle coated used Bottle1 Insecticide',
+   `TBC_I5` varchar (30) NULL COMMENT 'Times Bottle coated used Bottle1 Insecticide',
+   `TBC_I6` varchar (30) NULL COMMENT 'Times Bottle coated used Bottle1 Insecticide',
+   `TBC_S` varchar (30) NULL COMMENT 'Times Bottle coated used Solvent Control',
+   `TBC_SyI1` varchar (30) NULL COMMENT 'Times Bottle coated used Bottle1 Synergist & Insecticide',
+   `TBC_SyI2` varchar (30) NULL COMMENT 'Times Bottle coated used Bottle1 Synergist & Insecticide',
+   `TBC_SyI3` varchar (30) NULL COMMENT 'Times Bottle coated used Bottle1 Synergist & Insecticide',
+   `TBC_SyI4` varchar (30) NULL COMMENT 'Times Bottle coated used Bottle1 Synergist & Insecticide',
+  `TBC_Sy` varchar (30) NULL COMMENT 'Times Bottle coated used Synergist Control',
+   `KD_D` varchar (30) NULL COMMENT 'Knock Down/Dead',
+
+
+
+   `rt` varchar (30) NULL COMMENT 'Room Type',
+   `spd` varchar (30) NULL COMMENT 'Date of Spray',
+    `liu` varchar (30) NULL COMMENT 'Last Insecticide Used',
+    `elcm` varchar (30) NULL COMMENT 'Exposed Location of Control Mosquitoes',
+    `mt1` varchar (30) NULL COMMENT 'No of Mosquitoes Tested - Cone Height 0.5m',
+    `mt2` varchar (30) NULL COMMENT 'No of Mosquitoes Tested - Cone Height 1.0m', 
+    `mt3` varchar (30) NULL COMMENT 'No of Mosquitoes Tested - Cone Height 2.0m', 
+
+    `mt4` varchar (30) NULL COMMENT 'No of Mosquitoes Tested - Cone Height Other',
+
+
+   `mkd1` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min - Cone Height 0.5m', 
+   `mkd2` varchar (30) NULL COMMENT 'Mosquitoes K/D 60min - Cone Height 0.5m',
+   `mkd3` varchar (30) NULL COMMENT 'Mosquitoes K/D Day1 - Cone Height 0.5m',
+   `mkd4` varchar (30) NULL COMMENT 'Mosquitoes K/D Day2 - Cone Height 0.5m',
+   `mkd5` varchar (30) NULL COMMENT 'Mosquitoes K/D Day3 - Cone Height 0.5m',
+
+   `mkd6` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min - Cone Height 1.0m',
+   `mkd7` varchar (30) NULL COMMENT 'Mosquitoes K/D 60min - Cone Height 1.0m',
+   `mkd8` varchar (30) NULL COMMENT 'Mosquitoes K/D Day1 - Cone Height 1.0m',
+   `mkd9` varchar (30) NULL COMMENT 'Mosquitoes K/D Day2 - Cone Height 1.0m',
+
+   `mkd10` varchar (30) NULL COMMENT 'Mosquitoes K/D Day3 - Cone Height 1.0m',
+
+   `mkd11` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min - Cone Height 1.5m',
+
+   `mkd12` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min - Cone Height 1.5m',
+
+   `mkd13` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min - Cone Height 1.5m',
+
+
+   `mkd14` varchar (30) NULL COMMENT 'Mosquitoes K/D Day2 - Cone Height 1.5m',
+    `mkd15` varchar (30) NULL COMMENT 'Mosquitoes K/D Day3 - Cone Height 1.5m',
+
+    `mkd16` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min - Cone Height 2.0m',
+    `mkd17` varchar (30) NULL COMMENT 'Mosquitoes K/D 60min - Cone Height 2.0m',
+    `mkd18` varchar (30) NULL COMMENT 'Mosquitoes K/D Day1 - Cone Height 2.0m',
+    `mkd19` varchar (30) NULL COMMENT 'Mosquitoes K/D Day2 - Cone Height 2.0m',
+    `mkd20` varchar (30) NULL COMMENT 'Mosquitoes K/D Day3 - Cone Height 2.0m',
+
+
+
+
+    `mtir1` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep1 Insecticide',
+    `mtir2` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep2 Insecticide',
+    `mtir3` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep3 Insecticide',
+    `mtir4` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep4 Insecticide',
+    `mtir5` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep5 Insecticide',
+    `mtir6` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep6 Insecticide',
+
+`mtsr1` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep1 Solvent Control',
+`mtsr2` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep2 Solvent Control',
+`mtsr3` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep3 Solvent Control',
+`mtsr4` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep4 Solvent Control',
+
+`mtisyr1` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep1 Insecticide & Synergist',
+`mtisyr2` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep2 Insecticide & Synergist',
+`mtisyr3` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep3 Insecticide & Synergist',
+`mtisyr4` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep4 Insecticide & Synergist',
+
+
+
+
+
+
+
+
       `senfr` int(11) NOT NULL,
       `created_at` timestamp default now(), 
       `updated_at` timestamp default now(),
@@ -984,37 +1133,16 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
 
-    $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss3b (
-      `id_` int(11) NOT NULL AUTO_INCREMENT,
-      `edssid` int(11) NOT NULL,
-      `sen` int(6) NOT NULL,
-      `fr` int(6) NOT NULL,
-      `ssen` int(6) NOT NULL,
-      `sfr` int(6) NOT NULL,
-      `st` varchar(10) NOT NULL,
-      `dur` varchar(10) NOT NULL,
-      `rep_1` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 1',
-      `rep_2` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 2',
-      `rep_3` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 3',
-      `rep_4` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 4',
-      `cnr_1` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in control 1',
-      `cnr_2` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in control 2',
-      `created_at` timestamp default now(), 
-      `updated_at` timestamp default now(), 
-      PRIMARY KEY (`id_`,`sen`,`fr`),
-      UNIQUE KEY `id_` (`id_`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
-
     
       $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."sost (
         `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
         `so1id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS1',
         `so2id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS2',
-        `so3id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS3',
+        `so3id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS5',
         PRIMARY KEY (`id`),
         KEY `fk_ss1id` (`so1id`),
         KEY `fk_ss2id` (`so2id`),
-        KEY `fk_ss3id` (`so3id`)
+        KEY `fk_ss5id` (`so3id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
 
@@ -1201,41 +1329,180 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
        PRIMARY KEY (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-     $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss3template(
+     $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss5template(
+
+      
+
       `id` int(11) NOT NULL AUTO_INCREMENT,
       `sen` varchar(10),
       `ssen` varchar(10) NULL,
       `sfr` varchar(10) NULL,
-      `sd` varchar(10) NULL,
-      `fd` varchar(10) NULL,
       `fr` varchar(10) NULL,
-      `dd` varchar(10) NULL,
-      `tx` varchar(10) NULL,
-      `sas` varchar(20) NULL,
-      `mt` varchar(10) NULL,
-      `ch` varchar(10) NULL,
-      `la` varchar(10) NULL,
-      `ft` varchar(10) NULL,
-      `bf` varchar(10) NULL,
-      `hp` varchar(10) NULL,
-      `oth5` varchar(10) NULL,
-      `oth6` varchar(10) NULL,
-      `oth7` varchar(10) NULL,
-      `oth8` varchar(10) NULL,
-      `n` varchar(10) NULL,
-      `slc` varchar(30) NULL,
-      `st` varchar(10) NULL,
-      `ni` varchar(10) NULL ,
-      `nb` varchar(10) NULL,
-      `sid01` varchar(10) NULL,
-      `sid02` varchar(10) NULL,
-      `sid03` varchar(10) NULL,
-      `sid04` varchar(10) NULL,
-      `sid05` varchar(10) NULL,
-      `sid06` varchar(10) NULL,
-      `sid07` varchar(10) NULL,
-      `nd` varchar(10) NULL,
-       PRIMARY KEY (`id`)
+
+      `dot` date NOT NULL,
+      `ga` varchar(20) NULL,
+      `gds` varchar(20) NULL,
+      `sgds` varchar(100) NULL,
+      `ndis` int(20) NULL,
+      `mo` varchar(30) NULL,
+      `mst` varchar(30) NULL,
+      `ma` int(30) NULL,
+
+      `tb` varchar(30) NULL,
+      `bia` varchar(30) NULL,
+      `it` varchar(30) NULL,
+      `SynT` varchar(30) NULL,
+      `ic` varchar(30) NULL,
+      `sc` int(50) NULL,
+      `SRTemp` varchar(50),
+      `ETMax` varchar(30) NULL,
+      `ETMin` varchar(30) NULL,
+      `HTMax` varchar(30) NULL,
+      `HTMin` varchar(30) NULL,
+      `EHMax` varchar(30) NULL,
+      `EHMin` varchar(30) NULL,
+      `HHMax` varchar(30) NULL,
+      `HHMin` varchar(30) NULL,
+
+      
+      `mti1` varchar (30) NULL,
+      `mti2` varchar (30) NULL,
+      `mti3` varchar (30) NULL,
+      `mti4` varchar (30) NULL,
+      `mti5` varchar (30) NULL,
+      `mti6` varchar (30) NULL,
+
+
+      `mts` varchar    (30) NULL,
+      `mtisy1` varchar (30) NULL, 
+      `mtisy2` varchar (30) NULL, 
+      `mtisy3` varchar (30) NULL, 
+     `mtisy4` varchar  (30) NULL, 
+     `mtisy5` varchar (30) NULL, 
+     `mtisy6` varchar (30) NULL, 
+     `mtsy` varchar (30) NULL, 
+     `BTCI1` varchar (30) NULL, 
+     `BTCI2` varchar (30) NULL, 
+     `BTCI3` varchar (30) NULL, 
+     `BTCI4` varchar (30) NULL, 
+     `BTCI5` varchar (30) NULL, 
+     `BTCI6` varchar (30) NULL, 
+     `bc_s` varchar (30) NULL, 
+
+
+
+     `btcsy_i1` varchar (30) NULL, 
+     `btcsy_i2` varchar (30) NULL, 
+     `btcsy_i3` varchar (30) NULL, 
+     `btcsy_i4` varchar (30) NULL, 
+     `BC_Sy` varchar (30) NULL, 
+     `DBC_I1` varchar (30) NULL, 
+     `DBC_I2` varchar (30) NULL,
+     `DBC_I3` varchar (30) NULL,
+     `DBC_I4` varchar (30) NULL,
+     `DBC_I5` varchar (30) NULL,
+     `DBC_I6` varchar (30) NULL,
+     `DBC_S` varchar (30) NULL,
+
+
+
+
+     `DBC_SyI1` varchar (30) NULL,
+     `DBC_SyI2` varchar (30) NULL,
+     `DBC_SyI3` varchar (30) NULL,
+     `DBC_SyI4` varchar (30) NULL,
+     `DBC_Sy` varchar (30) NULL,
+     `TBC_I1` varchar (30) NULL,
+     `TBC_I2` varchar (30) NULL,
+     `TBC_I3` varchar (30) NULL,
+     `TBC_I4` varchar (30) NULL,
+     `TBC_I5` varchar (30) NULL,
+     `TBC_I6` varchar (30) NULL,
+
+     `TBC_S` varchar (30) NULL,
+     `tbc_syI1` varchar (30) NULL,
+     `tbc_syI2` varchar (30) NULL,
+     `tbc_SyI3` varchar (30) NULL,
+     `tbc_SyI4` varchar (30) NULL,
+     `tbc_Sy` varchar (30) NULL,
+     `kd_d` varchar (30) NULL,
+
+
+     `rt`varchar (30) NULL,
+     `spd` varchar (30) NULL,
+      `liu` varchar (30) NULL,
+      `elcm` varchar (30) NULL,
+      `mt1` varchar (30) NULL,
+      `mt2` varchar (30) NULL, 
+      `mt3` varchar (30) NULL, 
+ 
+      `mt4` varchar (30) NULL,
+
+
+      `mkd1` varchar (30) NULL,
+      `mkd2` varchar (30) NULL,
+      `mkd3` varchar (30) NULL,
+      `mkd4` varchar (30) NULL,
+      `mkd5` varchar (30) NULL,
+  
+      `mkd6` varchar (30) NULL,
+      `mkd7` varchar (30) NULL,
+      `mkd8` varchar (30) NULL,
+      `mkd9` varchar (30) NULL,
+  
+      `mkd10` varchar (30) NULL,
+  
+
+      `mkd11` varchar (30) NULL,
+      
+      `mkd12` varchar (30) NULL,
+
+      `mkd13` varchar (30) NULL,
+
+
+      `mkd14` varchar (30) NULL,
+      `mkd15` varchar (30) NULL,
+  
+      `mkd16` varchar (30) NULL,
+      `mkd17` varchar (30) NULL,
+      `mkd18` varchar (30) NULL,
+      `mkd19` varchar (30) NULL,
+      `mkd20` varchar (30) NULL,
+
+
+
+
+
+
+      `mtir1` varchar (30) NULL,
+      `mtir2` varchar (30) NULL,
+      `mtir3` varchar (30) NULL,
+      `mtir4` varchar (30) NULL,
+      `mtir5` varchar (30) NULL,
+      `mtir6` varchar (30) NULL,
+  
+  `mtsr1` varchar (30) NULL,
+  `mtsr2` varchar (30) NULL,
+  `mtsr3` varchar (30) NULL,
+  `mtsr4` varchar (30) NULL,
+  
+  `mtisyr1` varchar (30) NULL,
+  `mtisyr2` varchar (30) NULL,
+  `mtisyr3` varchar (30) NULL,
+  `mtisyr4` varchar (30) NULL,
+  
+  
+
+  
+ 
+  
+   
+
+
+     `senfr` int(11) NOT NULL,
+    
+      PRIMARY KEY (`edssid`,`sen`),
+  
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
 
@@ -1321,14 +1588,6 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
        PRIMARY KEY (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-
-    $sql .="CREATE VIEW ".$prefix."ss3_view AS
-           SELECT ss3.id,ss3.edssid,ss3.sen,ss3.fr,ss3.ssen,ss3.sfr,ss3.sd,ss3.dd,ss3.tx,ss3.sas,ss3.mt,ss3.ch,
-	           ss3.rep_no,ss3.cnr_no,ss3.exp_tr,ss3.st,ss3.dur,ss3.notes,rep_1,rep_2,rep_3,rep_4,cnr_1,cnr_2
-           FROM ".$prefix."ss3 ss3 INNER JOIN ".$prefix."ss3b ss3b
-             ON ss3.sen=ss3b.sen AND 
-			    ss3.st=ss3b.st AND 
-			    ss3.dur=ss3b.dur;";	
 
 
    //  $sql .= "";

@@ -152,6 +152,16 @@ if(isset($_GET['q'])) {
 
 	}
 
+	else if($q == 'ss5'){
+
+		$prefixtable = $projectid."_";
+		$ss5 = $prefixtable."ss5";
+	
+		$query="SELECT * FROM $ss5";
+		$nodata = "No Data found";
+	
+	}
+
 	else{
 
 		echo "IEBS App";

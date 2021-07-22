@@ -41,7 +41,7 @@
       );
       validate_fields($req_fields);
       validate_email($_POST['email']);
-      validate_captcha($_POST['g-recaptcha-response']);
+     // validate_captcha($_POST['g-recaptcha-response']);
    
       if(empty($errors)){
       

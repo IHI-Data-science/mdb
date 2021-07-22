@@ -32,7 +32,7 @@ function report($type, $projectcode, $db)
 
 	$ed1 = $prefixtable."ed1";
 	$ss1 = $prefixtable."ss1";
-	$ss3 = $prefixtable."ss3";
+	$ss5 = $prefixtable."ss5";
 	$edss = $prefixtable."edss";
 	$ssso = $prefixtable."ssso";
 
@@ -76,25 +76,25 @@ function report($type, $projectcode, $db)
         }
 
 
-        $ss3query = "SELECT *  FROM custss  WHERE pc=$projectcode AND ft='SS3'";
+        $ss5query = "SELECT *  FROM custss  WHERE pc=$projectcode AND ft='ss5'";
         //execute query 
-        $ss3result = $db->query($ss3query);
+        $ss5result = $db->query($ss5query);
         //detect number of row from query execute above
-        $ss3num_row = mysqli_num_rows($ss3result);
-        if($ss3num_row == 1)
+        $ss5num_row = mysqli_num_rows($ss5result);
+        if($ss5num_row == 1)
         {
             //fetch data from query executed above
-            $ss3row = mysqli_fetch_array($ss3result);
+            $ss5row = mysqli_fetch_array($ss5result);
 
                //remove attribute method
-		    $ssen_remove = str_replace("ssen,","",$ss3row["p_attri"]);
+		    $ssen_remove = str_replace("ssen,","",$ss5row["p_attri"]);
 
 		    $ssen_remove = str_replace("sfr,","",$ssen_remove);
 
-          //  $_SESSION["SESS_P_ATTRIss3"] = $ssen_remove; 
-            $ss3col2 =  $ssen_remove;  
+          //  $_SESSION["SESS_P_ATTRIss5"] = $ssen_remove; 
+            $ss5col2 =  $ssen_remove;  
 
-            $ss3col =  renamecolss3($ss3col2,"ss1","SS");
+            $ss5col =  renamecolss5($ss5col2,"ss1","SS");
 
                      
         }
@@ -115,7 +115,7 @@ function report($type, $projectcode, $db)
 
 
            
-          //  $_SESSION["SESS_P_ATTRIss3"] = $ssen_remove; 
+          //  $_SESSION["SESS_P_ATTRIss5"] = $ssen_remove; 
             $ss1col2 =  $ss1ssen_remove;  
 
             $ss1col =  renamecolss1($ss1col2,"ss1","SS");
@@ -483,7 +483,7 @@ function report($type, $projectcode, $db)
 		,ed1.sen AS ED_SEN
 		,$edcol
 		, method.meth_abbre AS ME
-		,$ss3col
+		,$ss5col
 		FROM
 		projectregsite
 		INNER JOIN projectreg 
@@ -494,7 +494,7 @@ function report($type, $projectcode, $db)
 		ON (ed1.projectregsite_id = projectregsite.id)
 		INNER JOIN $edss as edss
 		ON (ed1.id = edss.ed1id)
-		INNER JOIN $ss3 as ss1 
+		INNER JOIN $ss5 as ss1 
 		ON (ss1.edssid = edss.id)
 		LEFT JOIN method 
 		ON (ed1.me = method.meth_code)
@@ -510,7 +510,7 @@ function report($type, $projectcode, $db)
 		//
 		/*header('Content-Description: File Transfer');
 		header( 'Content-Type: text/csv' );
-		header( 'Content-Disposition: attachment;filename='.$prname.'_ED1_SS3.csv' );
+		header( 'Content-Disposition: attachment;filename='.$prname.'_ED1_ss5.csv' );
 		header('Content-Transfer-Encoding: binary');
 		header('Expires: 0');
 		header('Cache-Control:must-revalidate, post-check=0, pre-check=0');
@@ -521,7 +521,7 @@ function report($type, $projectcode, $db)
 		    mkdir("dataset/".$projectcode, 0777, true);
 		}
 
-		$filename = "dataset/".$projectcode."/".$prname."_ED1_SS3.csv";
+		$filename = "dataset/".$projectcode."/".$prname."_ED1_SS5.csv";
 
 
 		$file = fopen($filename,"w") or die("Can't open file $name for writing.");

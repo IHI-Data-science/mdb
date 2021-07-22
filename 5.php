@@ -1,5 +1,5 @@
 <!-- Sidebar: System manager-->
-<div class="sidebar collapse">
+        <div class="sidebar collapse">
         	<ul class="navigation">
 
                    <li <?php echo (basename($_SERVER['SCRIPT_FILENAME'])=='home.php' ? 'class="active"' : ''); ?>>
@@ -26,7 +26,7 @@
                             <li class="<?php echo $disabless1; ?>"><a href="formss1.php">Sample Sorting 1</a></li>
                             <li class="<?php echo $disabless2; ?>"><a href="formss2.php">Sample Sorting 2</a></li>
                             
-                            <li class="<?php echo $disabless5; ?>"><a href="formss5.php">Sample Sorting 5</a></li>
+                            <li class="<?php echo $disabless5; ?>"><a href="formss5.php">Sample Sorting 3</a></li>
                             <li class="<?php echo $disableso1; ?>"><a href="formso1.php">Sample Observation 1</a></li>
                             <li class="<?php echo $disableso2; ?>"><a href="formso2.php">Sample Observation 2</a></li>
                             <li class="<?php echo $disablest1; ?>"><a href="formst1.php">Sample Storage 1</a></li>
@@ -56,7 +56,7 @@
                             <li class="<?php echo $disabless1; ?>"><a href="datatabless1.php">Sample Sorting 1</a></li>
                             <li class="<?php echo $disabless2; ?>"><a href="datatabless2.php">Sample Sorting 2</a></li>
                             
-                            <li class="<?php echo $disabless5; ?>"><a href="datatabless5.php">Sample Sorting 5</a></li>
+                            <li class="<?php echo $disabless5; ?>"><a href="datatabless5.php">Sample Sorting 3</a></li>
                             <li class="<?php echo $disableso1; ?>"><a href="datatableso1.php">Sample Observation 1</a></li>
                             <li class="<?php echo $disableso2; ?>"><a href="datatableso2.php">Sample Observation 2</a></li>
                             <li class="<?php echo $disablest1; ?>"><a href="datatablest1.php">Sample Storage 1</a></li>

@@ -48,8 +48,8 @@ include_once('layouts/head.php');
                    data-pagination="true"
                    data-show-refresh="false"
                    data-show-columns="true"
-                   data-page-size="100"
-                   data-page-list="[100,500,1000,2000,5000,8000,10000,All]"
+                   data-page-size="200"
+                   data-page-list="[200,500,1000,2000,5000,8000,10000,All]"
                    data-show-export="true"
                    data-export-options='{"fileName": "ss5-<?php echo date('Y-m-d'); ?>"}'
                    data-advanced-search="true"
@@ -83,7 +83,7 @@ include_once('layouts/head.php');
                            data-pagination="true"
                            data-show-refresh="false"
                            data-show-columns="false"
-                           data-page-list="[10, 20, 30, 40, 50, 100]"
+                           data-page-list="[100, 200, 300, 400, 500, 1000]"
                            data-show-export="false"
                            data-search="false">
                         
@@ -157,9 +157,8 @@ include_once('layouts/head.php');
                       
                       echo getcolumnnametable2($array1, $array2);
                       
-                   }
-                   
-                   
+
+                    }
                    
                    ?>
                     
@@ -191,29 +190,29 @@ include_once('layouts/head.php');
 
 
         }
-// // data in the table
-//         $('body').delegate('.iconaudit', 'click', function (e) {
-//             e.preventDefault();
-//             var keyid = $(this).attr('keyid');
-//             $.ajax({
-//                 url: 'auditdetail.php',
-//                 method: 'POST',
-//                 data: {auditdetail: 1, keyid: keyid},
-//                 success: function (data) {
-//                     $('#table tbody').empty();
-//                     $('#table tbody').append(data);
-//                 },
-//                 complete: function (data) {
-//                     $('.loader').fadeOut();
-//                     $('#audit_detail').modal('show');
-//                 },
-//                 beforeSend: function (data) {
-//                     $('#loadmodal').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
-//                 }
+// data in the table
+        $('body').delegate('.iconaudit', 'click', function (e) {
+            e.preventDefault();
+            var keyid = $(this).attr('keyid');
+            $.ajax({
+                url: 'auditdetail.php',
+                method: 'POST',
+                data: {auditdetail: 1, keyid: keyid},
+                success: function (data) {
+                    $('#table tbody').empty();
+                    $('#table tbody').append(data);
+                },
+                complete: function (data) {
+                    $('.loader').fadeOut();
+                    $('#audit_detail').modal('show');
+                },
+                beforeSend: function (data) {
+                    $('#loadmodal').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+                }
 
 
-//             })
-//         })
+            })
+        })
     
     </script>
    

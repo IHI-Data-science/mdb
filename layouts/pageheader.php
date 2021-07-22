@@ -17,7 +17,7 @@
                     echo (basename($_SERVER['SCRIPT_FILENAME'])=='formed2.php' ? 'active' : '');
                     echo (basename($_SERVER['SCRIPT_FILENAME'])=='formss1.php' ? 'active' : '');  
                     echo (basename($_SERVER['SCRIPT_FILENAME'])=='formss2.php' ? 'active' : '');  
-                    echo (basename($_SERVER['SCRIPT_FILENAME'])=='formss3.php' ? 'active' : '');  
+                    echo (basename($_SERVER['SCRIPT_FILENAME'])=='formss5.php' ? 'active' : '');  
                     echo (basename($_SERVER['SCRIPT_FILENAME'])=='formso1.php' ? 'active' : ''); 
                     echo (basename($_SERVER['SCRIPT_FILENAME'])=='formso2.php' ? 'active' : ''); 
                     echo (basename($_SERVER['SCRIPT_FILENAME'])=='formst1.php' ? 'active' : ''); 
@@ -39,7 +39,7 @@
                               <ul class="dropdown-menu">
                                 <li class="<?php echo $disabless1; ?>"><a tabindex="-1" href="formss1.php">Sample Sorting 1</a></li>
                                 <li class="<?php echo $disabless2; ?>"><a tabindex="-1" href="formss2.php">Sample Sorting 2</a></li>
-                                <li class="<?php echo $disabless3; ?>"><a tabindex="-1" href="formss3.php">Sample Sorting 3</a></li>
+                                <li class="<?php echo $disabless5; ?>"><a tabindex="-1" href="formss5.php">Sample Sorting 3</a></li>
                                 
                             </ul>
                         </li>
@@ -68,7 +68,7 @@
                     echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatableed2.php' ? 'active' : '');
                     echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatabless1.php' ? 'active' : '');  
                     echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatabless2.php' ? 'active' : '');  
-                    echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatabless3.php' ? 'active' : ''); 
+                    echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatabless5.php' ? 'active' : ''); 
                     echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatableso1.php' ? 'active' : ''); 
                     echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatableso2.php' ? 'active' : ''); 
                     echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablest1.php' ? 'active' : ''); 
@@ -90,7 +90,7 @@
                               <ul class="dropdown-menu">
                                 <li class="<?php echo $disabless1; ?>"><a tabindex="-1" href="datatabless1.php">Sample Sorting 1</a></li>
                                 <li class="<?php echo $disabless2; ?>"><a tabindex="-1" href="datatabless2.php">Sample Sorting 2</a></li>
-                                <li class="<?php echo $disabless3; ?>"><a tabindex="-1" href="datatabless3.php">Sample Sorting 3</a></li>
+                                <li class="<?php echo $disabless5; ?>"><a tabindex="-1" href="datatabless5.php">Sample Sorting 3</a></li>
                             
                             </ul>
                         </li>

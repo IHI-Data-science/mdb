@@ -20,13 +20,6 @@ $prefixtable = $expcode."_";
 
 
 
-$temptypewn = "Water Body Name";
-$tablewn = $prefixtable."wn";
-
-$temptypespc = "Snail Species Collected";
-$tablespc = $prefixtable."spc";
-
-
 $temptypess1temp = "ss5template";
 $tabless1temp = $prefixtable."ss5template";
 

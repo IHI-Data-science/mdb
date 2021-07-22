@@ -156,7 +156,7 @@ function rowIdentifier($row, $formtype, $headattribute)
 	
 	}//end of condition to determine ED rows
 	//condition to determine SS
-	if($formtype =="ss1" || $formtype =="ss2" || $formtype =="ss3")
+	if($formtype =="ss1" || $formtype =="ss2" || $formtype =="ss5")
 	{
 		//determine row contain serial number, source form row, source form type, source serial number 
 		if($row_array[0] == "SEN:" || $row_array[2] == "sfr:" || $row_array[4] == "sft:" || $row_array[6]== "ssen:")
