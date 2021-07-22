@@ -587,6 +587,60 @@ if($q === 'sevenc'){
 	
 }
 
+
+if($q==='eight'){
+   
+    $query="SELECT
+             MONTHNAME(ed1.dt) AS month,
+             SUM(CASE WHEN ss2.tx = 1 THEN ss2.pu ELSE 0 end) / count(MONTHNAME(dt)) AS Anopheles.sp,
+             SUM(CASE WHEN ss2.tx = 50 THEN ss2.pu ELSE 0 end) / count(MONTHNAME(dt)) AS Culex,
+ 
+             FROM
+             projectregsite
+             INNER JOIN projectreg 
+             ON (projectregsite.projectreg_id = projectreg.id)
+             INNER JOIN site 
+             ON (projectregsite.site_id = site.site_id)
+             INNER JOIN ".$prefixtable."ed1 as ed1
+             ON (ed1.projectregsite_id = projectregsite.id)
+             INNER JOIN ".$prefixtable."edss as edss
+             ON (ed1.id = edss.ed1id)
+             INNER JOIN ".$prefixtable."ss2 as ss2
+             ON (ss2.edssid = edss.id)
+             LEFT JOIN method 
+             ON (ed1.me = method.meth_code)
+             LEFT JOIN taxon 
+             ON (ss2.tx = taxon.taxon_code)
+             where 1=1 $wherecon GROUP BY MONTH(ed1.dt) ORDER BY MONTH(ed1.dt),taxon.taxon_code ASC ";  
+ }
+ 
+ if($q==='nine'){
+    
+    $query="SELECT
+             MONTHNAME(ed1.dt) AS month,
+             SUM(CASE WHEN ss2.bf = 6 THEN ss2.n ELSE 0 end) / count(MONTHNAME(dt)) AS L2&L3,
+             SUM(CASE WHEN ss2.bf = 7 THEN ss2.n ELSE 0 end) / count(MONTHNAME(dt)) AS l3&L4,
+ 
+             FROM
+             projectregsite
+             INNER JOIN projectreg 
+             ON (projectregsite.projectreg_id = projectreg.id)
+             INNER JOIN site 
+             ON (projectregsite.site_id = site.site_id)
+             INNER JOIN ".$prefixtable."ed1 as ed1
+             ON (ed1.projectregsite_id = projectregsite.id)
+             INNER JOIN ".$prefixtable."edss as edss
+             ON (ed1.id = edss.ed1id)
+             INNER JOIN ".$prefixtable."ss2 as ss2
+             ON (ss2.edssid = edss.id)
+             LEFT JOIN method 
+             ON (ed1.me = method.meth_code)
+             LEFT JOIN taxon 
+             ON (ss2.tx = taxon.taxon_code)
+             where 1=1 $wherecon GROUP BY MONTH(ed1.dt) ORDER BY MONTH(ed1.dt),taxon.taxon_code ASC ";  
+ }
+ 
+
 if($q === 'hone'){
     
    $query="SELECT ea, count(*) as frequency FROM ".$prefixtable."ed1 where 1=1 $wherecon GROUP BY ea";   
