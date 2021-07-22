@@ -324,8 +324,35 @@ $field2 = "ft";
             "Times Bottle coated used Bottle2 Synergist & Insecticide (TBC_SyI2)",
             "Times Bottle coated used Bottle3 Synergist & Insecticide (TBC_SyI3)",
             "Times Bottle coated used Bottle4 Synergist & Insecticide (TBC_SyI4)",
-            "Times Bottle coated used Synergist Control (TBC_Sy)",
-            "Knock Down/Dead (KD_D)");
+            "Times Bottle coated used Synergist Control (TBC_Sy)");
+           
+
+
+  
+            array_push($fields_array,
+            "Knock Down/ Dead  Time 0min (KD_D0)",
+            "Knock Down/ Dead  Time 15min (KD_D15)",
+            "Knock Down/ Dead  Time 30min (KD_D30)",
+            "Knock Down/ Dead  Time 45min (KD_D45)",
+            "Knock Down/ Dead  Time 60min (KD_D60)",
+            "Knock Down/ Dead  Time 75min (KD_D75)",
+            "Knock Down/ Dead  Time 90min (KD_D90)",
+            "Knock Down/ Dead  Time 105min (KD_D105)",
+            "Knock Down/ Dead  Time 120min (KD_D120)",
+            "Knock Down/ Dead  Time 24hr (KD_D24)",
+            "Knock Down/ Dead  Time 72hr (KD_D72)");
+
+
+          
+           
+
+
+
+
+
+
+
+
 
 
 

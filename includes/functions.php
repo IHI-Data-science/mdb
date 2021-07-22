@@ -1053,7 +1053,29 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
    `TBC_SyI3` varchar (30) NULL COMMENT 'Times Bottle coated used Bottle1 Synergist & Insecticide',
    `TBC_SyI4` varchar (30) NULL COMMENT 'Times Bottle coated used Bottle1 Synergist & Insecticide',
   `TBC_Sy` varchar (30) NULL COMMENT 'Times Bottle coated used Synergist Control',
-   `KD_D` varchar (30) NULL COMMENT 'Knock Down/Dead',
+  
+
+  `KD_D0` varchar (30) NULL COMMENT 'Knock Down/ Dead Time 0min',
+  `KD_D15` varchar (30) NULL COMMENT 'Knock Down/ Dead Time 15min',
+  `KD_D30` varchar (30) NULL COMMENT 'Knock Down/ Dead Time 30min',
+  `KD_D45` varchar (30) NULL COMMENT 'Knock Down/ Dead Time 45min',
+  `KD_D60` varchar (30) NULL COMMENT 'Knock Down/ Dead Time 60min',
+  `KD_D75` varchar (30) NULL COMMENT 'Knock Down/ Dead Time 75min',
+  `KD_D90` varchar (30) NULL COMMENT 'Knock Down/ Dead Time 90min',
+  `KD_D105` varchar (30) NULL COMMENT 'Knock Down/ Dead Time 105min',
+  `KD_D120` varchar (30) NULL COMMENT 'Knock Down/ Dead Time 120min',
+  `KD_D24` varchar (30) NULL COMMENT 'Knock Down/ Dead Time 24hr',
+  `KD_D72` varchar (30) NULL COMMENT 'Knock Down/ Dead Time 72hr',
+
+  `KD_D1D` varchar (30) NULL COMMENT 'Knock Down/ Dead Time Day1',
+  `KD_D2D` varchar (30) NULL COMMENT 'Knock Down/ Dead Time Day2',
+  `KD_D3D` varchar (30) NULL COMMENT 'Knock Down/ Dead Time Day3',
+  `KD_D4D` varchar (30) NULL COMMENT 'Knock Down/ Dead Time Day4',
+  `KD_D5D` varchar (30) NULL COMMENT 'Knock Down/ Dead Time Day5',
+  `KD_D6D` varchar (30) NULL COMMENT 'Knock Down/ Dead Time Day6',
+  `KD_D7D` varchar (30) NULL COMMENT 'Knock Down/ Dead Time Day7',
+
+
 
 
 
@@ -1506,7 +1528,35 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
      `tbc_SyI3` varchar (30) NULL,
      `tbc_SyI4` varchar (30) NULL,
      `tbc_Sy` varchar (30) NULL,
-     `kd_d` varchar (30) NULL,
+
+
+     `KD_D0` varchar (30) NULL,
+     `KD_D15` varchar (30) NULL,
+     `KD_D30` varchar (30)  NULL,
+     `KD_D45` varchar (30)  NULL,
+     `KD_D60` varchar (30)  NULL,
+     `KD_D75` varchar (30)  NULL,
+     `KD_D90` varchar (30)  NULL,
+     `KD_D105` varchar (30)  NULL,
+     `KD_D120` varchar (30)  NULL,
+     `KD_D24` varchar (30)  NULL,
+     `KD_D72` varchar (30)  NULL,
+
+
+
+     `KD_D1D` varchar (30) NULL,
+     `KD_D2D` varchar (30) NULL,
+     `KD_D3D` varchar (30) NULL,
+     `KD_D4D` varchar (30) NULL,
+     `KD_D5D` varchar (30) NULL,
+     `KD_D6D` varchar (30) NULL,
+     `KD_D7D` varchar (30) NULL,
+
+
+
+
+
+  
 
 
      `rt`varchar (30) NULL,

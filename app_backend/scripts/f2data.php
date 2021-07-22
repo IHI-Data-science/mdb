@@ -345,7 +345,16 @@ if(isset($_POST['tag'])) {
 			 $data[$i]->dbc_sy,$data[$i]->tbc_i1, $data[$i]->tbc_i2,$data[$i]->tbc_i3,$data[$i]->tbc_i4,
 			 $data[$i]->tbc_i5,$data[$i]->tbc_i6,
 			 $data[$i]->tbc_s, $data[$i]->tbc_syi1,$data[$i]->tbc_syi2,$data[$i]->tbc_syi3,
-			 $data[$i]->tbc_syi4, $data[$i]->tbc_sy, $data[$i]->kd_d, 
+			 $data[$i]->tbc_syi4, $data[$i]->tbc_sy, 
+
+             $data[$i]->kd_d0, $data[$i]->kd_d15, $data[$i]->kd_d30,$data[$i]->kd_d45, $data[$i]->kd_d60,
+			 $data[$i]->kd_d75,
+             $data[$i]->kd_d90,$data[$i]->kd_d105, $data[$i]->kd_d120,$data[$i]->kd_d24, $data[$i]->kd_d72,
+
+
+			 $data[$i]->kd_d1d, $data[$i]->kd_d2d, $data[$i]->kd_d3d, $data[$i]->kd_d4d,
+			  $data[$i]->kd_d5d, $data[$i]->kd_d6d, $data[$i]->k_d7d,
+
 
 			 $data[$i]->rt,$data[$i]->spd,$data[$i]->liu,$data[$i]->elcm,$data[$i]->mt1,$data[$i]->mt2, $data[$i]->mt3,
 			 $data[$i]->mt4,

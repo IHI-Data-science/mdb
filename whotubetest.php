@@ -360,8 +360,13 @@ $field2 = "ft";
               "Expiry Date - Rep4 Synergist Control (EDSy4)");
               
               array_push($fields_array,
-              "Knock Down/ Dead (KD_D)");
-              
+              "Knock Down/ Dead Time Day1 (KD_D1D)",
+              "Knock Down/ Dead Time Day2 (KD_D2D)",
+              "Knock Down/ Dead Time Day3 (KD_D3D)", 
+              "Knock Down/ Dead Time Day4 (KD_D4D)", 
+              "Knock Down/ Dead Time Day5 (KD_D5D)", 
+              "Knock Down/ Dead Time Day6 (KD_D6D)", 
+              "Knock Down/ Dead Time Day7 (KD_D7D)"); 
             
 
 

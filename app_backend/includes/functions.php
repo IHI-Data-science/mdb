@@ -325,7 +325,15 @@ $dbc_i1,$dbc_i2,$dbc_i3,$dbc_i4,$dbc_i5,$dbc_i6,$dbc_s,
 
 $dbc_syi1, $dbc_syi2,$dbc_syi3, $dbc_syi4,
 $dbc_sy,$tbc_i1, $tbc_i2,$tbc_i3,$tbc_i4, $tbc_i5,$tbc_i6,
-$tbc_s, $tbc_syi1,$tbc_syi2,$tbc_syi3, $tbc_syi4, $tbc_sy, $kd_d,
+$tbc_s, $tbc_syi1,$tbc_syi2,$tbc_syi3, $tbc_syi4, $tbc_sy,
+
+$kd_d0,$kd_d15, $kd_d30,$kd_d45, $kd_d60,$kd_d75,
+             $kd_d90, $kd_d105,$kd_d120,$kd_d24, $kd_d72,
+
+             $kd_d1d, $kd_d2d, $kd_d3d, $kd_d4d, $kd_d5d, $kd_d6d, $k_d7d,
+
+
+
 $rt,$spd,$liu,$elcm,$mt1,$mt2, $mt3,
 $mt4,$mkd1,$mkd2,$mkd3,$mkd4,$mkd5,$mkd6,$mkd7,
 $mkd8, $mkd9, $mkd10,
@@ -411,7 +419,19 @@ $senfr)
    
    dbc_syi1, dbc_syi2,dbc_syi3, dbc_syi4,
    dbc_sy,tbc_i1, tbc_i2,tbc_i3,tbc_i4, tbc_i5,tbc_i6,
-   tbc_s, tbc_syi1,tbc_syi2,tbc_syi3, tbc_syi4, tbc_sy, kd_d,
+   tbc_s, tbc_syi1,tbc_syi2,tbc_syi3, tbc_syi4, tbc_sy, 
+
+
+
+
+   kd_d0,kd_d15, kd_d30,kd_d45, kd_d60, kd_d75,
+   kd_d90,kd_d105, kd_d120, kd_d24,kd_d72,
+
+
+   
+   kd_d1d, kd_d2d, kd_d3d, kd_d4d, kd_d5d, kd_d6d,k_d7d,
+
+
    rt,spd,liu,elcm,mt1,mt2, mt3,mt4,
    mkd1,mkd2,mkd3,mkd4,mkd5,mkd6,mkd7,
    mkd8, mkd9, mkd10,
@@ -451,7 +471,16 @@ senfr)
   
    '$dbc_syi1', '$dbc_syi2','$dbc_syi3', '$dbc_syi4',
    '$dbc_sy','$tbc_i1', '$tbc_i2','$tbc_i3','$tbc_i4', '$tbc_i5','$tbc_i6',
-   '$tbc_s', '$tbc_syi1','$tbc_syi2','$tbc_syi3', '$tbc_syi4', '$tbc_sy','$kd_d',
+   '$tbc_s', '$tbc_syi1','$tbc_syi2','$tbc_syi3', '$tbc_syi4', '$tbc_sy',
+
+
+   '$kd_d0','$kd_d15', '$kd_d30','$kd_d45', '$kd_d60','$kd_d75',
+             '$kd_d90','$kd_d105','$kd_d120','$kd_d24', '$kd_d72',
+
+             '$kd_d1d', '$kd_d2d', '$kd_d3d', '$kd_d4d', '$kd_d5d', '$kd_d6d', '$k_d7d',
+
+
+
    '$liu','$elcm','$mt1','$mt2', '$mt3','$mt4',
    '$mkd1','$mkd2','$mkd3','$mkd4','$mkd5','$mkd6','$mkd7',
    '$mkd8', '$mkd9', '$mkd10',
