@@ -795,6 +795,100 @@ if(isset($_SESSION['expcode'])){
     </div>
     <!-- / modal6 -->
 
+    <div id="sumchart8" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Pupae Density</h5>
+                </div>
+                <div class="has-padding2">
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab81">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab8" href="#tab82">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab81" class="tab-pane fade active in">
+                            <div id="load8"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f8req('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f8req('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f8req('P')">
+                                <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f8req('D')">
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas8" class="chart1"></canvas>
+                            <canvas id="canvas8l" class="chart1"></canvas>
+                            <canvas id="canvas8p" class="chart1"></canvas>
+                            <canvas id="canvas8d" class="chart1"></canvas>
+                        
+                        </div>
+                        <div id="tab82" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl8"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal8 -->
+
+
+    <!-- modal9 -->
+    <div id="sumchart9" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Larvae Density</h5>
+                </div>
+                <div class="has-padding2">
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab91">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab9" href="#tab82">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab91" class="tab-pane fade active in">
+                            <div id="load9"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f9req('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f9req('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f9req('P')">
+                                <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f9req('D')">
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas9" class="chart1"></canvas>
+                            <canvas id="canvas9l" class="chart1"></canvas>
+                            <canvas id="canvas9p" class="chart1"></canvas>
+                            <canvas id="canvas9d" class="chart1"></canvas>
+                        
+                        </div>
+                        <div id="tab92" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl9"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal9 -->
+
+
+
     <!-- modalf1 -->
     <div id="freqchart1" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
