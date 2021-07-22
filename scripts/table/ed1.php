@@ -20,7 +20,6 @@ $ss1 = $prefixtable."ss1";
 $ss2 = $prefixtable."ss2";
 $ss5 = $prefixtable."ss5";
 
-$ss5 = $prefixtable."ss5";
 $edss = $prefixtable."edss";
 $ssso = $prefixtable."ssso";
 $so1 = $prefixtable."so1_sk";

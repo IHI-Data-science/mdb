@@ -334,7 +334,25 @@ $mkd15, $mkd16,$mkd17,$mkd18, $mkd19,$mkd20,
 
 $mtir1,$mtir2, $mtir3, $mtir4,$mtir5, $mtir6,
 $mtsr1, $mtsr2, $mtsr3, $mtsr4,
-$mtisyr1, $mtisyr2, $mtisyr3,$mtisyr4,$senfr)
+$mtisyr1, $mtisyr2, $mtisyr3,$mtisyr4,
+$mtsyr1, $mtsyr2, $mtsyr3, $mtsyr4,
+$tcir1, $tcir2,$tcir3, $tcir4, $tcir5, $tcir6,
+
+$tc_sr1, $tc_sr2, $tc_sr3, $tc_sr4,
+$tc_syir1, $tc_syir2,  $tc_syir3,  $tc_syir4,
+$tc_sy1r,$tc_sy2r,$tc_sy3r,$tc_sy4r,
+
+$id_ir1, $id_ir2, $id_ir3,$id_ir4,$id_ir5, $id_ir6,
+$id_sr1,$id_sr2,$id_sr3,$id_sr4,$id_syr1,
+$id_syr2, $id_syr3, $id_syr4,
+
+$edi1,$edi2,$edi3,$edi4,$edi5,$edi6,
+$eds1, $eds2, $eds3, $eds4,
+$edisy1, $edisy2, $edisy3, $edisy4,
+$edsy1,$edsy2,$edsy3,$edsy4,
+
+
+$senfr)
  
 {
     global $db;
@@ -402,7 +420,23 @@ $mtisyr1, $mtisyr2, $mtisyr3,$mtisyr4,$senfr)
    
    mtir1,mtir2, mtir3, mtir4,mtir5, mtir6,
  mtsr1, mtsr2, mtsr3, mtsr4,
-mtisyr1, mtisyr2, mtisyr3,mtisyr4,senfr)
+mtisyr1, mtisyr2, mtisyr3,mtisyr4,
+mtsyr1, mtsyr2, mtsyr3, mtsyr4, tcir1, tcir2,tcir3, tcir4, tcir5, tcir6,
+
+
+tc_sr1, tc_sr2, tc_sr3, tc_sr4,
+tc_syir1, tc_syir2, tc_syir3, tc_syir4,
+tc_sy1r,tc_sy2r,tc_sy3r,tc_sy4r,
+
+id_ir1, id_ir2, id_ir3,id_ir4,id_ir5, id_ir6,
+id_sr1,id_sr2,id_sr3,id_sr4,
+
+edi1,edi2,edi3,edi4,edi5,edi6,
+eds1, eds2, eds3, eds4,
+edisy1, edisy2, edisy3, edisy4,
+edsy1,edsy2,edsy3,edsy4,
+
+senfr)
 
    VALUES('$edssid','$sen','$ssen','$sfr', '$fr',
    '$dot','$ga','$gds','$sgds','$ndis','$mo','$mst','$ma',
@@ -427,7 +461,29 @@ mtisyr1, mtisyr2, mtisyr3,mtisyr4,senfr)
 
    '$mtir1','$mtir2', '$mtir3', '$mtir4','$mtir5', '$mtir6',
 '$mtsr1', '$mtsr2', '$mtsr3', '$mtsr4',
-'$mtisyr1', '$mtisyr2', '$mtisyr3','$mtisyr4','$senfr')");
+'$mtisyr1', '$mtisyr2', '$mtisyr3','$mtisyr4',
+'$mtsyr1', '$mtsyr2', '$mtsyr3', '$mtsyr4',
+'$tcir1', '$tcir2','$tcir3', '$tcir4', '$tcir5', '$tcir6',
+
+
+'$tc_sr1', '$tc_sr2', '$tc_sr3', '$tc_sr4',
+'$tc_syir1', '$tc_syir2',  '$tc_syir3', '$tc_syir4',
+'$tc_sy1r','$tc_sy2r','$tc_sy3r','$tc_sy4r',
+
+
+'$id_ir1', '$id_ir2', '$id_ir3','$id_ir4','$id_ir5', '$id_ir6',
+'$id_sr1','$id_sr2','$id_sr3','$id_sr4','$id_syr1',
+'$id_syr2', '$id_syr3', '$id_syr4',
+
+'$edi1','$edi2','$edi3','$edi4','$edi5','$edi6',
+'$eds1', '$eds2', '$eds3', '$eds4',
+'$edisy1', '$edisy2', '$edisy3', '$edisy4',
+'$edsy1','$edsy2','$edsy3','$edsy4',
+
+
+
+
+'$senfr')");
 
  
         // check for successful store

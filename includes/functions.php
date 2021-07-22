@@ -1117,6 +1117,87 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
 `mtisyr3` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep3 Insecticide & Synergist',
 `mtisyr4` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep4 Insecticide & Synergist',
 
+`mtsyr1` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep1 Synergist Control',
+`mtsyr2` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep2 Synergist Control',
+
+`mtsyr3` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep3 Synergist Control',
+`mtsyr4` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep4 Synergist Control',
+
+
+
+
+`tcir1` varchar (30) NULL COMMENT 'Tube Code Rep1 Insecticide',
+`tcir2` varchar (30) NULL COMMENT 'Tube Code Rep2 Insecticide',
+`tcir3` varchar (30) NULL COMMENT 'Tube Code Rep3 Insecticide',
+`tcir4` varchar (30) NULL COMMENT 'Tube Code Rep4 Insecticide',
+`tcir5` varchar (30) NULL COMMENT 'Tube Code Rep5 Insecticide',
+`tcir6` varchar (30) NULL COMMENT 'Tube Code Rep6 Insecticide',
+
+
+
+`tc_sr1` varchar (30) NULL COMMENT 'Tube Code Rep1 Solvent Control',
+`tc_sr2` varchar (30) NULL COMMENT 'Tube Code Rep2 Solvent Control',
+`tc_sr3` varchar (30) NULL COMMENT 'Tube Code Rep3 Solvent Control',
+`tc_sr4` varchar (30) NULL COMMENT 'Tube Code Rep4 Solvent Control',
+
+
+`tc_syir1` varchar (30) NULL COMMENT 'Tube Code Rep1 Insecticide & Synergist',
+`tc_syir2` varchar (30) NULL COMMENT 'Tube Code Rep2 Insecticide & Synergist',
+`tc_syir3` varchar (30) NULL COMMENT 'Tube Code Rep3 Insecticide & Synergist',
+`tc_syir4` varchar (30) NULL COMMENT 'Tube Code Rep4 Insecticide & Synergist',
+
+`tc_sy1r` varchar (30) NULL COMMENT 'Tube Code Rep1 Synergist Control',
+`tc_sy2r` varchar (30) NULL COMMENT 'Tube Code Rep2 Synergist Control',
+`tc_sy3r` varchar (30) NULL COMMENT 'Tube Code Rep3 Synergist Control',
+`tc_sy4r` varchar (30) NULL COMMENT 'Tube Code Rep4 Synergist Control',
+
+
+
+
+`id_ir1` varchar (30) NULL COMMENT 'Impregnation Date Tube1 Insecticide',
+`id_ir2` varchar (30) NULL COMMENT 'Impregnation Date Tube2 Insecticide',
+`id_ir3` varchar (30) NULL COMMENT 'Impregnation Date Tube3 Insecticide',
+`id_ir4` varchar (30) NULL COMMENT 'Impregnation Date Tube4 Insecticide',
+`id_ir5` varchar (30) NULL COMMENT 'Impregnation Date Tube5 Insecticide',
+`id_ir6` varchar (30) NULL COMMENT 'Impregnation Date Tube6 Insecticide',
+
+
+`id_sr1` varchar (30) NULL COMMENT 'Impregnation Date Tube1 Solvent Control',
+`id_sr2` varchar (30) NULL COMMENT 'Impregnation Date Tube2 Solvent Control',
+`id_sr3` varchar (30) NULL COMMENT 'Impregnation Date Tube3 Solvent Control',
+`id_sr4` varchar (30) NULL COMMENT 'Impregnation Date Tube4 Solvent Control',
+
+
+
+
+   `id_syr1` varchar (30) NULL COMMENT 'Impregnation Date Tube1 Synergist Control',
+   `id_syr2` varchar (30) NULL COMMENT 'Impregnation Date Tube2 Synergist Control',
+   `id_syr3` varchar (30) NULL COMMENT 'Impregnation Date Tube3 Synergist Control',
+   `id_syr4` varchar (30) NULL COMMENT 'Impregnation Date Tube4 Synergist Control',
+
+`edi1` varchar (30) NULL COMMENT 'Expiry Date - Rep1 Insecticide(EDI1)',
+`edi2` varchar (30) NULL COMMENT 'Expiry Date - Rep2 Insecticide(EDI2)',
+`edi3` varchar (30) NULL COMMENT 'Expiry Date - Rep3 Insecticide(EDI3)',
+`edi4` varchar (30) NULL COMMENT 'Expiry Date - Rep4 Insecticide(EDI4)',
+`edi5` varchar (30) NULL COMMENT 'Expiry Date - Rep5 Insecticide(EDI5)',
+`edi6` varchar (30) NULL COMMENT 'Expiry Date - Rep6 Insecticide(EDI6)',
+
+`eds1` varchar (30) NULL COMMENT 'Expiry Date - Rep1 Solvent Control',
+`eds2` varchar (30) NULL COMMENT 'Expiry Date - Rep2 Solvent Control',
+`eds3` varchar (30) NULL COMMENT 'Expiry Date - Rep3 Solvent Control',
+`eds4` varchar (30) NULL COMMENT 'Expiry Date - Rep4 Solvent Control',
+
+ `edisy1` varchar (30) NULL COMMENT 'Expiry Date - Rep1 Insecticide & Synergist',
+ `edisy2` varchar (30) NULL COMMENT 'Expiry Date - Rep2 Insecticide & Synergist',
+ `edisy3` varchar (30) NULL COMMENT 'Expiry Date - Rep3 Insecticide & Synergist',
+ `edisy4` varchar (30) NULL COMMENT 'Expiry Date - Rep4 Insecticide & Synergist',
+
+ `edsy1` varchar (30) NULL COMMENT 'Expiry Date - Rep1 Synergist Control',
+ `edsy2` varchar (30) NULL COMMENT 'Expiry Date - Rep2 Synergist Control',
+ `edsy3` varchar (30) NULL COMMENT 'Expiry Date - Rep3 Synergist Control',
+ `edsy4` varchar (30) NULL COMMENT 'Expiry Date - Rep4 Synergist Control',
+
+
 
 
 
@@ -1491,12 +1572,81 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
   `mtisyr3` varchar (30) NULL,
   `mtisyr4` varchar (30) NULL,
   
-  
+  `mtsyr1` varchar (30) NULL,
+  `mtsyr2` varchar (30) NULL,
+
+  `mtsyr3` varchar (30) NULL,
+  `mtsyr4` varchar (30) NULL, 
+
+  `tcir1` varchar (30) NULL,
+  `tcir2` varchar (30) NULL,
+  `tcir3` varchar (30) NULL,
+  `tcir4` varchar (30) NULL,
+  `tcir5` varchar (30) NULL,
+  `tcir6` varchar (30) NULL,
+
+
+`tc_sr1` varchar (30) NULL,
+`tc_sr2` varchar (30) NULL,
+`tc_sr3` varchar (30) NULL,
+`tc_sr4` varchar (30) NULL,
+
+
+`tc_syir1` varchar (30) NULL,
+`tc_syir2` varchar (30) NULL,
+`tc_syir3` varchar (30) NULL,
+`tc_syir4` varchar (30) NULL,
+
+`tc_sy1r` varchar (30) NULL,
+`tc_sy2r` varchar (30) NULL,
+`tc_sy3r` varchar (30) NULL,
+`tc_sy4r` varchar (30) NULL,
 
   
  
-  
+`id_ir1` varchar (30) NULL,
+`id_ir2` varchar (30) NULL,
+`id_ir3` varchar (30) NULL,
+`id_ir4` varchar (30) NULL,
+`id_ir5` varchar (30) NULL,
+`id_ir6` varchar (30) NULL,
+
+
+`id_sr1` varchar (30) NULL,
+`id_sr2` varchar (30) NULL,
+`id_sr3` varchar (30) NULL,
+`id_sr4` varchar (30) NULL,
    
+
+
+`id_syr1` varchar (30) NULL,
+`id_syr2` varchar (30) NULL,
+`id_syr3` varchar (30) NULL,
+`id_syr4` varchar (30) NULL,
+
+`edi1` varchar (30) NULL,
+`edi2` varchar (30) NULL,
+`edi3` varchar (30) NULL,
+`edi4` varchar (30) NULL,
+`edi5` varchar (30) NULL,
+`edi6` varchar (30) NULL,
+
+`eds1` varchar (30) NULL,
+`eds2` varchar (30) NULL,
+`eds3` varchar (30) NULL,
+`eds4` varchar (30) NULL,
+
+`edisy1` varchar (30) NULL,
+`edisy2` varchar (30) NULL,
+`edisy3` varchar (30) NULL,
+`edisy4` varchar (30) NULL,
+
+`edsy1` varchar (30) NULL,
+`edsy2` varchar (30) NULL,
+`edsy3` varchar (30) NULL,
+`edsy4` varchar (30) NULL,
+
+
 
 
      `senfr` int(11) NOT NULL,

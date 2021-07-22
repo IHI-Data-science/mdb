@@ -63,7 +63,7 @@ function report($type, $projectcode, $db)
 
     $ss5colname1 = getcolumnname($_SESSION['expcode'], $custss, substr($ss5, strlen($prefixtable)));
     $ss5colname2 = getcolumnname2($_SESSION['expcode'], $custss, substr($ss5, strlen($prefixtable)));
-    $ss5col = changenametolong(substr($ss5, strlen($prefixtable)), $ss3colname1, $ss5colname2);
+    $ss5col = changenametolong(substr($ss5, strlen($prefixtable)), $ss5colname1, $ss5colname2);
 
     $socolname1 = getcolumnname($_SESSION['expcode'], $custso, substr($so1, strlen($prefixtable)));
     $socolname2 = getcolumnname2($_SESSION['expcode'], $custso, substr($so1, strlen($prefixtable)));

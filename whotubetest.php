@@ -271,8 +271,102 @@ $field2 = "ft";
                 "No of Mosquitoes Tested Rep4 Insecticide & Synergist (MTISyr4)");
              
   
-         
-          
+              array_push($fields_array,
+              "No of Mosquitoes Tested Rep1 Synergist Control (MTSyr1)",
+              "No of Mosquitoes Tested Rep2 Synergist Control (MTSyr2)",
+              "No of Mosquitoes Tested Rep3 Synergist Control (MTSyr3)",
+              "No of Mosquitoes Tested Rep4 Synergist Control (MTSyr4)");
+
+
+
+              array_push($fields_array,
+              "Tube Code Rep1 Insecticide (TCIr1)",
+              "Tube Code Rep2 Insecticide (TCIr2)",
+              "Tube Code Rep3 Insecticide (TCIr3)",
+              "Tube Code Rep4 Insecticide (TCIr4)",
+              "Tube Code Rep5 Insecticide (TCIr5)",
+              "Tube Code Rep6 Insecticide (TCIr6)");
+  
+             
+
+              array_push ($fields_array,
+              "Tube Code Rep1 Solvent Control (TC_Sr1)",
+              "Tube Code Rep2 Solvent Control (TC_Sr2)",
+              "Tube Code Rep3 Solvent Control (TC_Sr3)",
+              "Tube Code Rep4 Solvent Control (TC_Sr4)");
+  
+    
+              array_push ($fields_array,
+              "Tube Code Rep1 Insecticide & Synergist (TC_SyIr1)",
+              "Tube Code Rep2 Insecticide & Synergist (TC_SyIr2)",
+              "Tube Code Rep3 Insecticide & Synergist (TC_SyIr3)",
+              "Tube Code Rep4 Insecticide & Synergist (TC_SyIr4)");
+    
+              array_push($fields_array,
+              "Tube Code Rep1 Synergist Control (TC_Sy1r)",
+              "Tube Code Rep2 Synergist Control (TC_Sy2r)",
+              "Tube Code Rep3 Synergist Control (TC_Sy3r)",
+              "Tube Code Rep4 Synergist Control (TC_Sy4r)");
+
+
+
+              array_push($fields_array,
+              "Impregnation Date  Tube1 Insecticide (ID_Ir1)",
+              "Impregnation Date  Tube2 Insecticide (ID_Ir2)",
+              "Impregnation Date  Tube3 Insecticide (ID_Ir3)",
+              "Impregnation Date  Tube4 Insecticide (ID_Ir4)",
+              "Impregnation Date  Tube5 Insecticide (ID_Ir5)",
+              "Impregnation Date  Tube6 Insecticide (ID_Ir6)");
+  
+              array_push($fields_array,
+              "Impregnation Date  Tube1 Solvent Control (ID_Sr1)",
+              "Impregnation Date  Tube2 Solvent Control (ID_Sr2)",
+              "Impregnation Date  Tube3 Solvent Control (ID_Sr3)",
+              "Impregnation Date  Tube4 Solvent Control (ID_Sr4)");
+
+
+
+
+              array_push($fields_array,
+              "Impregnation Date Tube1 Synergist Control (ID_Syr1)",
+              "Impregnation Date Tube2 Synergist Control (ID_Syr2)",
+              "Impregnation Date Tube3 Synergist Control (ID_Syr3)",
+              "Impregnation Date Tube4 Synergist Control (ID_Syr4)");
+  
+              array_push($fields_array,
+              "Expiry Date - Rep1 Insecticide (EDI1)",
+              "Expiry Date - Rep2 Insecticide (EDI2)",
+              "Expiry Date - Rep3 Insecticide (EDI3)",
+              "Expiry Date - Rep4 Insecticide (EDI4)",
+              "Expiry Date - Rep5 Insecticide (EDI5)",
+              "Expiry Date - Rep6 Insecticide (EDI6)");
+  
+              array_push($fields_array,
+              "Expiry Date - Rep1 Solvent Control (EDS1)",
+              "Expiry Date - Rep2 Solvent Control (EDS2)",
+              "Expiry Date - Rep3 Solvent Control (EDS3)",
+              "Expiry Date - Rep4 Solvent Control (EDS4)");
+    
+              array_push($fields_array,
+              "Expiry Date - Rep1 Insecticide & Synergist (EDISy1)",
+              "Expiry Date - Rep2 Insecticide & Synergist (EDISy2)",
+              "Expiry Date - Rep3 Insecticide & Synergist (EDISy3)",
+              "Expiry Date - Rep4 Insecticide & Synergist (EDISy4)");
+    
+              array_push($fields_array,
+              "Expiry Date - Rep1 Synergist Control (EDSy1)",
+              "Expiry Date - Rep2 Synergist Control (EDSy2)",
+              "Expiry Date - Rep3 Synergist Control (EDSy3)",
+              "Expiry Date - Rep4 Synergist Control (EDSy4)");
+              
+              array_push($fields_array,
+              "Knock Down/ Dead (KD_D)");
+              
+            
+
+
+
+
 
 
                   

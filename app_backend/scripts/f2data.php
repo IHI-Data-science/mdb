@@ -364,7 +364,28 @@ if(isset($_POST['tag'])) {
 			 $data[$i]->mtir1,$data[$i]->mtir2, $data[$i]->mtir3, 
 			 $data[$i]->mtir4,$data[$i]->mtir5, $data[$i]->mtir6,
 			 $data[$i]->mtsr1, $data[$i]->mtsr2, $data[$i]->mtsr3, $data[$i]->mtsr4,
-			 $data[$i]->mtisyr1, $data[$i]->mtisyr2, $data[$i]->mtisyr3,$data[$i]->mtisyr4);
+			 $data[$i]->mtisyr1, $data[$i]->mtisyr2, $data[$i]->mtisyr3,$data[$i]->mtisyr4,
+			 $data[$i]->mtsyr1, $data[$i]->mtsyr2, $data[$i]->mtsyr3, $data[$i]->mtsyr4,
+			
+			 $data[$i]->tcir1, $data[$i]->tcir2,$data[$i]->tcir3, $data[$i]->tcir4, 
+			 $data[$i]->tcir5, $data[$i]->tcir6,
+			
+			
+			 $data[$i]->tc_sr1, $data[$i]->tc_sr2, $data[$i]->tc_sr3, $data[$i]->tc_sr4,
+			 $data[$i]->tc_syir1, $data[$i]->tc_syir2,  $data[$i]->tc_syir3,  $data[$i]->tc_syir4,
+			 $data[$i]->tc_sy1r,$data[$i]->tc_sy2r,$data[$i]->tc_sy3r,$data[$i]->tc_sy4r,
+
+
+			 $data[$i]->id_ir1, $data[$i]->id_ir2, $data[$i]->id_ir3,$data[$i]->id_ir4,$data[$i]->id_ir5, 
+			 $data[$i]->id_ir6,
+			 $data[$i]->id_sr1,$data[$i]->id_sr2,$data[$i]->id_sr3,$data[$i]->id_sr4,
+			
+			 $data[$i]->id_syr1,
+			 $data[$i]->id_syr2, $data[$i]->id_syr3, $data[$i]->id_syr4,
+			 $data[$i]->edi1,$data[$i]->edi2,$data[$i]->edi3,$data[$i]->edi4,$data[$i]->edi5,$data[$i]->edi6,
+			 $data[$i]->eds1, $data[$i]->eds2, $data[$i]->eds3, $data[$i]->eds4,
+			 $data[$i]->edisy1, $data[$i]->edisy2, $data[$i]->edisy3, $data[$i]->edisy4,
+			 $data[$i]->edsy1,$data[$i]->edsy2,$data[$i]->edsy3,$data[$i]->edsy4);
 			  
 		
 			if($res2){
