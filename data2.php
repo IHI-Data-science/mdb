@@ -672,20 +672,19 @@ if($q === 'hfive'){
    $query="SELECT ind, count(*) as frequency FROM ".$prefixtable."ed1 where 1=1 $wherecon GROUP BY ind";   
         
 }
-echo "Hi there before query";
+// echo "Hi there before query";
 //execute query
 $result = $db->query($query);
 echo $query;
-echo "Hi there after querry";
+// echo "Hi there after querry";
 //loop through the returned data
 $data = array();
 foreach ($result as $row) {
 	$data[] = $row;
 }
 
-echo 'Hi there i am results';
-echo '<br>';
-echo $data;
+
+// echo $data;
 
 //free memory associated with result
 $result->close();
