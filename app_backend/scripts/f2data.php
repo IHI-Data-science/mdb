@@ -367,6 +367,8 @@ if(isset($_POST['tag'])) {
 			 $data[$i]->mkd15, $data[$i]->mkd16,$data[$i]->mkd17,$data[$i]->mkd18,
 			 $data[$i]->mkd19,$data[$i]->mkd20,
 
+			 $data[$i]->O1, $data[$i]->O2, $data[$i]->O3,
+
 
 
 

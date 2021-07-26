@@ -316,21 +316,21 @@ $SynT,$ic,$sc,$SRTemp,$ETMax,$ETMin,$HTMax,$HTMin,
 $EHMax,$EHMin,$HHMax,$HHMin, $mti1,$mti2,$mti3,$mti4,$mti5,$mti6,
 $mts,$mtisy1,$mtisy2, $mtisy3,$mtisy4,$mtisy5, $mtisy6,
 
-$mtsy, $btci1,  $btci2, $btci3, $btci4, $btci5, $btci6,
-$bc_s,
+ $mtsy, $btci1,  $btci2, $btci3, $btci4, $btci5, $btci6,
+ $bc_s,
 
-$btcsy_i1, $btcsy_i2, $btcsy_i3, $btcsy_i4, $bc_sy,
-$dbc_i1,$dbc_i2,$dbc_i3,$dbc_i4,$dbc_i5,$dbc_i6,$dbc_s,
+ $btcsy_i1, $btcsy_i2, $btcsy_i3, $btcsy_i4, $bc_sy,
+ $dbc_i1,$dbc_i2,$dbc_i3,$dbc_i4,$dbc_i5,$dbc_i6,$dbc_s,
 
 
-$dbc_syi1, $dbc_syi2,$dbc_syi3, $dbc_syi4,
-$dbc_sy,$tbc_i1, $tbc_i2,$tbc_i3,$tbc_i4, $tbc_i5,$tbc_i6,
-$tbc_s, $tbc_syi1,$tbc_syi2,$tbc_syi3, $tbc_syi4, $tbc_sy,
+ $dbc_syi1, $dbc_syi2,$dbc_syi3, $dbc_syi4,
+ $dbc_sy,$tbc_i1, $tbc_i2,$tbc_i3,$tbc_i4, $tbc_i5,$tbc_i6,
+ $tbc_s, $tbc_syi1,$tbc_syi2,$tbc_syi3, $tbc_syi4, $tbc_sy,
 
-$kd_d0,$kd_d15, $kd_d30,$kd_d45, $kd_d60,$kd_d75,
-             $kd_d90, $kd_d105,$kd_d120,$kd_d24, $kd_d72,
+ $kd_d0,$kd_d15, $kd_d30,$kd_d45, $kd_d60,$kd_d75,
+ $kd_d90, $kd_d105,$kd_d120,$kd_d24, $kd_d72,
 
-             $kd_d1d, $kd_d2d, $kd_d3d, $kd_d4d, $kd_d5d, $kd_d6d, $k_d7d,
+ $kd_d1d, $kd_d2d, $kd_d3d, $kd_d4d, $kd_d5d, $kd_d6d, $k_d7d,
 
 
 
@@ -339,6 +339,11 @@ $mt4,$mkd1,$mkd2,$mkd3,$mkd4,$mkd5,$mkd6,$mkd7,
 $mkd8, $mkd9, $mkd10,
 $mkd11, $mkd12, $mkd13, $mkd14,
 $mkd15, $mkd16,$mkd17,$mkd18, $mkd19,$mkd20,
+
+
+$O1, $O2, $O3,
+
+
 
 $mtir1,$mtir2, $mtir3, $mtir4,$mtir5, $mtir6,
 $mtsr1, $mtsr2, $mtsr3, $mtsr4,

@@ -1151,6 +1151,82 @@ ORDER BY ss1.sen ASC,ss1.fr ASC";
 
 	
 	}
+
+
+
+ //Just ss5
+ if($type == 15)
+ {
+
+	 $query="SELECT
+site.site_name AS SITE_NAME
+,projectreg.pc AS PROJECT_CODE
+,projectreg.expno AS EXPERIMENT
+,$ss5col
+FROM
+projectregsite
+INNER JOIN projectreg 
+ON (projectregsite.projectreg_id = projectreg.id)
+INNER JOIN site 
+ON (projectregsite.site_id = site.site_id)
+INNER JOIN $ed1 as ed1
+ON (ed1.projectregsite_id = projectregsite.id)
+INNER JOIN $edss as edss
+ON (ed1.id = edss.ed1id)
+INNER JOIN $ss1 as ss1 
+ON (ss5.edssid = edss.id)
+ORDER BY ss5.sen ASC,ss5.fr ASC";
+
+	 $result = $db->query($query ) or die( mysqli_error( $db ) );
+	 //
+	 // send response headers to the browser
+	 // following headers instruct the browser to treat the data as a csv file called EDSS_partialy.csv
+	 //
+ /*	header('Content-Description: File Transfer');
+	 header( 'Content-Type: text/csv' );
+	 header( 'Content-Disposition: attachment;filename='.$prname.'_SS1.csv' );
+	 header('Content-Transfer-Encoding: binary');
+	 header('Expires: 0');
+	 header('Cache-Control:must-revalidate, post-check=0, pre-check=0');
+	 header('Pragma: public'); */
+
+
+	 if (!file_exists("dataset/".$projectcode)) {
+		 mkdir("dataset/".$projectcode, 0777, true);
+	 }
+
+	 $filename = "dataset/".$projectcode."/".$prname."_SS5.csv";
+
+
+	 $file = fopen($filename,"w") or die("Can't open file $name for writing.");
+
+
+	 $row = mysqli_fetch_assoc( $result );
+	 if ( $row )
+	 {
+	 //echocsv( array_keys( $row ) );
+	 fputcsv($file, array_keys( $row ));
+	 }
+	 //
+	 // output data rows (if atleast one row exists)
+	 //
+	 while ( $row )
+	 {
+	 //echocsv( $row );
+	 fputcsv($file, $row);
+	 $row = mysqli_fetch_assoc( $result );
+	 }
+
+	 $gt =  $base_url."/".$filename;
+
+	 //echo $gt;
+
+	 //echo '<p><input type="button" name="Back" value="Back" onclick="window.location ='.$filename.'" /></p>';
+
+	 echo '<button type="button" class="btn btn-primary btn-lg"><a class="btn-custom" href = "'.$filename.'" download>  <i class="fa fa-download"> </i>Click to Download!</a></button>';
+
+ }
+
 	//Just so1
 	if($type == 16)
 	{

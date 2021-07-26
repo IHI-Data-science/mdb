@@ -346,17 +346,7 @@ $field2 = "ft";
           
            
 
-
-
-
-
-
-
-
-
-
-
-                
+  
 
             $disabled_fields_array = array("Serial No. (SEN)","ED Form Serial Number (SSEN)","ED Form row (SFR)", "Form row (FR)");
          

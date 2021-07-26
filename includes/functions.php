@@ -1121,6 +1121,11 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
 
 
 
+    `O1` varchar (30) NULL COMMENT 'Mosquitoes K/D in net other1 mins',
+    `O2` varchar (30) NULL COMMENT 'Mosquitoes K/D in net other2 mins',
+    `O3` varchar (30) NULL COMMENT 'Mosquitoes K/D in net other3 mins',
+
+
 
     `mtir1` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep1 Insecticide',
     `mtir2` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Rep2 Insecticide',
@@ -1553,6 +1558,10 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
      `KD_D7D` varchar (30) NULL,
 
 
+     
+
+
+
 
 
 
@@ -1601,6 +1610,9 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `mkd20` varchar (30) NULL,
 
 
+      `O1` varchar (30) NULL,
+      `O2` varchar (30) NULL,
+      `O3` varchar (30) NULL,
 
 
 

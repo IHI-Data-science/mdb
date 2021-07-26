@@ -275,6 +275,9 @@ $field2 = "ft";
                   "Mosquitoes K/D Day2 - Cone Height 2.0m (MKD19)",
                    "Mosquitoes K/D Day3 - Cone Height 2.0m (MKD20)");
 
+
+                   array_push ($fields_array, "Mosquitoes K/D net other1 mins (O1)",
+                   "Mosquitoes K/D net other2 mins (O2)", "Mosquitoes K/D net other3 mins (O3)");
                    
   
                       $disabled_fields_array = array("Serial No. (SEN)","ED Form Serial Number (SSEN)","ED Form row (SFR)", "Form row (FR)");
