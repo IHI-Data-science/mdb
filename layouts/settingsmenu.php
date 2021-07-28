@@ -23,7 +23,7 @@ if(isset($_SESSION['expcode'])){
    $ss2ft="";
    $ss3ft="";
    $ss4ft="";
-
+   
    if(count($ssft)==0){
       $ss1ft="";
       $ss2ft="";
@@ -31,30 +31,26 @@ if(isset($_SESSION['expcode'])){
       $ss4ft="";
    } else if(in_array("SS1", $ssft)){
       $ss3ft="disabled";
-      $ss2ft="disabled";
       $ss4ft="disabled";
+      $ss2ft="disabled";
       $ss1ft="";
    } else if(in_array("SS2", $ssft)){
       $ss3ft="disabled";
-      $ss1ft="disabled";
       $ss4ft="disabled";
+      $ss1ft="disabled";
       $ss2ft="";
    } else if(in_array("SS3", $ssft)){
       $ss1ft="disabled";
-      $ss2ft="disabled";
       $ss4ft="disabled";
+      $ss2ft="disabled";
       $ss3ft="";
-   }
-// ss4 snail
-
-} else if(in_array("SS4", $ssft)){
+   }else if(in_array("SS4", $ssft)){
     $ss1ft="disabled";
     $ss2ft="disabled";
     $ss3ft="disabled";
     $ss4ft="";
- }
-
-
+   }
+   
    //form type so
    $soft =cust_formtype('custso', $_SESSION['expcode']);
    $so1ft="";
@@ -70,14 +66,13 @@ if(isset($_SESSION['expcode'])){
      // $so1ft="disabled";
      // $so2ft="";
    }
-else{
+}else{
    
    $ed1ft="disabled";
    $ed2ft="disabled";
    $ss1ft="disabled";
    $ss2ft="disabled";
    $ss3ft="disabled";
-   $ss4ft="disabled";
    $so1ft="disabled";
    $so2ft="disabled";
    $st1ft="disabled";
