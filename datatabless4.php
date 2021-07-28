@@ -51,7 +51,7 @@ include_once('layouts/head.php');
                    data-page-size="100"
                    data-page-list="[100,500,1000,2000,5000,8000,10000,All]"
                    data-show-export="true"
-                   data-export-options='{"fileName": "ss4-<?php echo date('Y-m-d'); ?>"}'
+                   data-export-options='{"fileName": "SS4-<?php echo date('Y-m-d'); ?>"}'
                    data-advanced-search="true"
                    data-search="true">
                 <thead>
@@ -142,7 +142,7 @@ include_once('layouts/head.php');
                    <?php
                    
                    $table="custss";
-                   $table2="ss4";
+                   $table2="SS4";
                    
                    
                    $col=getcolumnname($_SESSION['expcode'], $table, $table2);
@@ -191,7 +191,7 @@ include_once('layouts/head.php');
 
 
         }
-
+// data in the table
         $('body').delegate('.iconaudit', 'click', function (e) {
             e.preventDefault();
             var keyid = $(this).attr('keyid');
