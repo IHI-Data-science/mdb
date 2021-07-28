@@ -625,13 +625,6 @@ function sendMail($email, $message, $subject){
     
 }
 
-
-
-  function createtables($prefix){
-
-    global $db;
-
-    $prefix = $prefix."_";
 //  ED1 table
  function createtables($prefix){
 

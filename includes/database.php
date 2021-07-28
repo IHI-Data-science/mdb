@@ -48,7 +48,8 @@
         $this->query_id = $this->con->query($sql);
       }
       if(!$this->query_id){
-        die("");
+        //die("");
+        echo $sql;
       }
       
       return $this->query_id;
