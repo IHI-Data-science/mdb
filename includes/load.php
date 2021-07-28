@@ -79,6 +79,7 @@ if(isset($_SESSION['expcode'])){
   $disabless1 = "disabled";
   $disabless2 = "disabled";
   $disabless3 = "disabled";
+  $disabless4 = "disabled";
  
    if(in_array("SS1", $ssformtype)){
       $ss =$prefixtable."ss1";
@@ -102,6 +103,13 @@ if(isset($_SESSION['expcode'])){
       $ssresult=$db->query("SELECT * FROM $ss");
       
       $disabless3="";
+   }else if(in_array("SS4", $ssformtype)){
+      $ss        =$prefixtable."ss4";
+      $ssso      =$prefixtable."ssso";
+      $ssssid    ="$ssso.ss4id";
+      $ssresult=$db->query("SELECT * FROM $ss");
+      
+      $disabless4="";
    }
    
   
@@ -157,6 +165,7 @@ if(isset($_SESSION['expcode'])){
    $disabless1 = "disabled";
    $disabless2 = "disabled";
    $disabless3 = "disabled";
+   $disabless4 = "disabled";
    $disableso1 = "disabled";
    $disableso2 = "disabled";
    $disablest1 = "disabled";
