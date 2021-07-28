@@ -21,7 +21,7 @@ function make_date()
 }
 
 
-function ed1data($sen, $fr, $dt, $ea, $cr, $cp, $hh, $sid, $me, $ind, $ht, $st, $ft, $hp, $rnd, $blk, $shh, $stn, $vi, $tr, $dy, $tmp, $hmd, $ws, $oth, $vc, $notes, $dsen)
+function ed1data($sen,$fr,$dt,$ea,$cr,$cp,$hh,$sid,$me,$ind,$ht,$st,$ft,$hp,$rnd,$sn,$agrt,$invn,$lvk,$rfe,$wle,$evs,$wsn,$wsnc,$ckl,$cke,$blk,$shh,$stn,$vi,$tr,$dy,$tmp,$hmd,$ws,$hos,$vc,$notes,$gps,$hc,$dsen)
 {
     global $db;
     $status = false;
