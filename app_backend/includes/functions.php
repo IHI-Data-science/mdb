@@ -21,7 +21,7 @@ function make_date()
 }
 
 
-function ed1data($sen,$fr,$dt,$ea,$cr,$cp,$hh,$sid,$me,$ind,$ht,$st,$ft,$hp,$rnd,$sn,$agrt,$invn,$lvk,$rfe,$wle,$evs,$wsn,$wsnc,$ckl,$cke,$blk,$shh,$stn,$vi,$tr,$dy,$tmp,$hmd,$ws,$hos,$vc,$notes,$gps,$hc,$dsen)
+function ed1data($sen,$fr,$dt,$ea,$cr,$cp,$hh,$sid,$me,$ind,$ht,$st,$ft,$hp,$rnd,$sn,$agrt,$invn,$lvk,$rfe,$wle,$evs,$wsn,$wsnc,$ckl,$cke,$blk,$shh,$stn,$vi,$tr,$dy,$tmp,$hmd,$ws,$hos,$vc,$notes,$gps,$dsen)
 {
     global $db;
     $status = false;
@@ -445,7 +445,7 @@ function ss3bdata($sen, $fr, $ssen, $sfr, $st, $dur, $rep_1, $rep_2, $rep_3, $re
 
 // addition of functions ss4 snail rwanda
 
-function ss4data($sen, $ssen, $sfr, $fr,$wn, $wl,$su,$sa,$dso,$dr,$ph,$co,$wda,$act,
+function ss4data($sen, $ssen, $sfr, $fr,$hc,$wn, $wl,$su,$sa,$dso,$dr,$ph,$co,$wda,$act,
 $de, $ret, $wt,
  $lwt, $sp, $spc, $n, $sps,  $tc,$nc,$senfr) {
 
@@ -496,14 +496,14 @@ $de, $ret, $wt,
 
   }
 
-  $resultft = $db->mysqliquery("INSERT INTO  $ss4 ( edssid, ssen,sfr,sen,fr,wn, wl,de,ret,wt,lwt,sp,spc, n,sps,tc,nc,senfr)
-    VALUES('$edssid','$ssen','$sfr','$sen','$fr','$su','$sa','$dso','$dr','$ph','$co','$wda','$act','$wn','$wl','$de','$ret','$wt','$lwt','$sp','$spc','$n','$sps','$tc','$nc','$senfr')");
+  $resultft = $db->mysqliquery("INSERT INTO  $ss4 ( edssid, ssen,sfr,sen,fr,hc,wn, wl,de,ret,wt,lwt,sp,spc, n,sps,tc,nc,senfr)
+    VALUES('$edssid','$ssen','$sfr','$sen','$fr','$hc',$su','$sa','$dso','$dr','$ph','$co','$wda','$act','$wn','$wl','$de','$ret','$wt','$lwt','$sp','$spc','$n','$sps','$tc','$nc','$senfr')");
 
         // check for successful store
   if ($resultft) {
 
     $query_insert_edss4 = "INSERT INTO $ssso (ss4id) SELECT `ss1`.`id`
-    FROM $ssso as ssso RIGHT JOIN $ss1 as ss1 ON (`ssso`.`ss4id` = `ss1`.`id`)
+    FROM $ssso as ssso RIGHT JOIN $ss4 as ss1 ON (`ssso`.`ss4id` = `ss1`.`id`)
     WHERE ssso.ss1id IS NULL      
     ";
 

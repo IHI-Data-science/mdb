@@ -207,7 +207,7 @@ $field2 = "ft";
  
                        
                         $fields_array = array("Serial No. (SEN)","ED Form Serial Number (SSEN)","ED Form row (SFR)");
-                        array_push($fields_array, "Form row (FR)","Water Body Name (WN)","Water Level (WL)","Depth (DE)","Flow Rate (RET)","Water Body Type (WT)","Longevity of Water Body Type (LWT)","Snail Present (SP)","Snail Species Collected (SPC)","Number Collected (N)","Snail Species Shedded (SPS)","Type of Cercaria (TC)","Number Cercaria Shedded (NC)");
+                        array_push($fields_array, "Form row (FR)","Health Centre (HC)","Water Body Name (WN)","Water Level (WL)","Depth (DE)","Flow Rate (RET)","Water Body Type (WT)","Longevity of Water Body Type (LWT)","Snail Present (SP)","Snail Species Collected (SPC)","Number Collected (N)","Snail Species Shedded (SPS)","Type of Cercaria (TC)","Number Cercaria Shedded (NC)");
                         
  
  

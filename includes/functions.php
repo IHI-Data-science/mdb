@@ -667,8 +667,6 @@ function sendMail($email, $message, $subject){
         `vc` int(1) NOT NULL DEFAULT '2' COMMENT 'Legitimacy of the collection',
         `notes` text COMMENT 'On site observation about the collection',
         `gps` text COMMENT 'Site geolocation',
-       
-        `hc` varchar(100) DEFAULT '0' COMMENT 'heath centres (define either heath centres )',
         `dsen` int(6) NOT NULL COMMENT 'Destination form serial number',
         `livestock` int(11) DEFAULT NULL,
         `hoccupant` int(11) DEFAULT NULL,
@@ -721,10 +719,13 @@ function sendMail($email, $message, $subject){
       `ss1id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS1',
       `ss2id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS2',
       `ss3id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS3',
+      `ss4id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS4',
+
        PRIMARY KEY (`id`),
        KEY `fk_ss1id` (`ss1id`),
          KEY `fk_ss2id` (`ss2id`),
        KEY `fk_ss3id` (`ss3id`)
+       KEY `fk_ss4id` (`ss4id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;";
 
 
@@ -983,12 +984,12 @@ function sendMail($email, $message, $subject){
       `ssen` int(6) NOT NULL COMMENT 'unique identifier for SS4 form',
       `sfr` int(6) NOT NULL COMMENT 'unique identifier for SS4 form',
       `fr` int(2) NOT NULL COMMENT 'unique identifier of each row on the data collected',
-
+      `hc` varchar(100) DEFAULT '0' COMMENT 'heath centres (define either heath centres )',
       `su` varchar(100) DEFAULT '0' COMMENT 'substracte (type of soil for snail to lay eggs)',
- `sa` varchar(15) DEFAULT NULL COMMENT 'salinity',
+      `sa` varchar(15) DEFAULT NULL COMMENT 'salinity',
       `dso` varchar(15) DEFAULT NULL COMMENT 'Dissolved oxygen ',
- `dr` varchar(15) DEFAULT '-99' COMMENT 'Number of dredges',
- `ph` varchar(15) DEFAULT NULL COMMENT 'potential of hydrogen',
+      `dr` varchar(15) DEFAULT '-99' COMMENT 'Number of dredges',
+      `ph` varchar(15) DEFAULT NULL COMMENT 'potential of hydrogen',
       `co` varchar(15) DEFAULT NULL COMMENT ' Conductivity ms',
       `wda` varchar(100) DEFAULT '0' COMMENT 'wild domestic anilal  (define jind of animals)',
       `act` varchar(100) DEFAULT '0' COMMENT 'activity (define either human activities )',
@@ -1041,6 +1042,7 @@ function sendMail($email, $message, $subject){
         `so1id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS1',
         `so2id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS2',
         `so3id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS3',
+        
         PRIMARY KEY (`id`),
         KEY `fk_ss1id` (`so1id`),
         KEY `fk_ss2id` (`so2id`),
@@ -1274,7 +1276,7 @@ function sendMail($email, $message, $subject){
       `ssen` varchar(10) NULL,
       `sfr` varchar(10) NULL,
       `fr` varchar(10) NULL,
-
+      `hc` varchar(100),
       `su` varchar(100),
       `sa` varchar(15), 
            `dso` varchar(15), 
@@ -1343,7 +1345,6 @@ function sendMail($email, $message, $subject){
     `ckl` varchar(10) ,
     `cke` varchar(10) ,
     `gps` text ,
-    `hc` varchar(10),
     `dsen` varchar(10) NULL ,
      PRIMARY KEY (`id`)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
