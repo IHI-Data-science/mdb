@@ -19,7 +19,7 @@ require_once(LIB_PATH_INC . 'database.php');
 require_once(LIB_PATH_INC . 'sql.php');
 
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 
 $k = "fgnhgDFGGHN34567JVCBNM";
 define('SEC', $k);
@@ -104,9 +104,10 @@ if(isset($_SESSION['expcode'])){
       
       $disabless3="";
    }else if(in_array("SS4", $ssformtype)){
-      $ss        =$prefixtable."ss4";
-      $ssso      =$prefixtable."ssso";
-      $ssssid    ="$ssso.ss4id";
+      $ss =$prefixtable."ss4";
+      $ssso =$prefixtable."ssso";
+      $ssssid ="$ssso.ss4id";
+      
       $ssresult=$db->query("SELECT * FROM $ss");
       
       $disabless4="";
