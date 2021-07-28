@@ -73,6 +73,7 @@ if(isset($_SESSION['expcode'])){
    $ss1ft="disabled";
    $ss2ft="disabled";
    $ss3ft="disabled";
+   $ss4ft="disabled";
    $so1ft="disabled";
    $so2ft="disabled";
    $st1ft="disabled";
