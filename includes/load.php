@@ -19,7 +19,7 @@ require_once(LIB_PATH_INC . 'database.php');
 require_once(LIB_PATH_INC . 'sql.php');
 
 error_reporting(E_ALL);
-ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 
 $k = "fgnhgDFGGHN34567JVCBNM";
 define('SEC', $k);

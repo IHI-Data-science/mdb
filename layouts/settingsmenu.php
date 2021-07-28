@@ -70,7 +70,7 @@ if(isset($_SESSION['expcode'])){
      // $so1ft="disabled";
      // $so2ft="";
    }
-}else{
+else{
    
    $ed1ft="disabled";
    $ed2ft="disabled";
