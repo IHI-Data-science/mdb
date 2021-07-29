@@ -6,8 +6,8 @@ include_once('../../includes/load.php');
 $limit = $_GET['limit'];
 $offset = $_GET['offset'];
 
-// $limit = 100;
-// $offset = 20;
+//$limit = 100;
+//$offset = 20;
 
 
 $table = "custed";
@@ -20,7 +20,6 @@ $ss1 = $prefixtable."ss1";
 $ss2 = $prefixtable."ss2";
 $ss3 = $prefixtable."ss3";
 $ss4 = $prefixtable."ss4";
-$ss5 = $prefixtable."ss5";
 $edss = $prefixtable."edss";
 $ssso = $prefixtable."ssso";
 $so1 = $prefixtable."so1_sk";
@@ -33,10 +32,10 @@ $compound = $prefixtable."compound";
 $treatment = $prefixtable."treatment";
 $habitattype = $prefixtable."habitattype";
 $enumerationarea = $prefixtable."enumerationarea";
-// $DomesticWildAnimals = $prefixtable."DomesticWildAnimals";
-// $activity = $prefixtable."activity";
-// $substrate = $prefixtable."substrate";
-
+$enumerationarea = $prefixtable."enumerationarea";
+$domesticWildanimals = $prefixtable."domesticWildanimals";
+$activities = $prefixtable."activities";
+$substrate = $prefixtable."substrate";
 
 
 
@@ -81,14 +80,14 @@ $arraycol = explode(",",$col);
 (in_array("ht",$checked_fields) ? $ht = true : $ht = false);
 ($ht ? $arraycol = str_replace('ht', 'habitattype.ht', $arraycol) : $arraycol = str_replace('ht', 'ed1.ht', $arraycol));
 
-// (in_array("wda",$checked_fields) ? $wda = true : $wda = false);
-// ($wda ? $arraycol = str_replace('wda', 'DomesticWildAnimals.wda', $arraycol) : $arraycol = str_replace('wda', 'ed1.wda', $arraycol));
+(in_array("wda",$checked_fields) ? $wda = true : $wda = false);
+($wda ? $arraycol = str_replace('wda', 'domesticWildAnimals.wda', $arraycol) : $arraycol = str_replace('wda', 'ed1.wda', $arraycol));
 
-// (in_array("act",$checked_fields) ? $act = true : $act = false);
-// ($act ? $arraycol = str_replace('act', 'activity.act', $arraycol) : $arraycol = str_replace('act', 'ed1.act', $arraycol));
+(in_array("act",$checked_fields) ? $act = true : $act = false);
+($act ? $arraycol = str_replace('act', 'activities.act', $arraycol) : $arraycol = str_replace('act', 'ed1.act', $arraycol));
  
-// (in_array("su",$checked_fields) ? $su = true : $su = false);
-// ($su ? $arraycol = str_replace('su', 'substrate.su', $arraycol) : $arraycol = str_replace('su', 'ed1.su', $arraycol));
+(in_array("su",$checked_fields) ? $su = true : $su = false);
+($su ? $arraycol = str_replace('su', 'substrate.su', $arraycol) : $arraycol = str_replace('su', 'ed1.su', $arraycol));
 
 $col = implode(",", $arraycol);
 
@@ -110,9 +109,7 @@ if (strlen($col)>0) {
   LEFT JOIN $compound as compound on (ed1.cp=compound.number)
   LEFT JOIN $treatment as treatment on (ed1.tr=treatment.number)
   LEFT JOIN $habitattype as habitattype on (ed1.ht=habitattype.number)
-  -- LEFT JOIN $DomesticWildAnimals as DomesticWildAnimals on (ed1.wda=DomesticWildAnimals.number)
-  -- LEFT JOIN $activity as activity on (ed1.act=activity.number)
-  -- LEFT JOIN $substrate as substrate on (ed1.su=substrate.number)
+  
 
   LEFT JOIN (
              SELECT * FROM $audit_trail as audit_trail 
@@ -127,11 +124,7 @@ if (strlen($col)>0) {
   LEFT JOIN $compound as compound on (ed1.cp=compound.number)
   LEFT JOIN $treatment as treatment on (ed1.tr=treatment.number)
   LEFT JOIN $habitattype as habitattype on (ed1.ht=habitattype.number)
-  -- LEFT JOIN $DomesticWildAnimals as DomesticWildAnimals on (ed1.wda=DomesticWildAnimals.number)
-  -- LEFT JOIN $activity as activity on (ed1.act=activity.number)
-  -- LEFT JOIN $substrate as substrate on (ed1.su=substrate.number)
- 
-
+  
 
   LEFT JOIN (
             SELECT * FROM $audit_trail as audit_trail 

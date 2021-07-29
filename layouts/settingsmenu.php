@@ -22,25 +22,35 @@ if(isset($_SESSION['expcode'])){
    $ss1ft="";
    $ss2ft="";
    $ss3ft="";
-
+   $ss4ft="";
+   
    if(count($ssft)==0){
       $ss1ft="";
       $ss2ft="";
       $ss3ft="";
+      $ss4ft="";
    } else if(in_array("SS1", $ssft)){
       $ss3ft="disabled";
+      $ss4ft="disabled";
       $ss2ft="disabled";
       $ss1ft="";
    } else if(in_array("SS2", $ssft)){
       $ss3ft="disabled";
+      $ss4ft="disabled";
       $ss1ft="disabled";
       $ss2ft="";
    } else if(in_array("SS3", $ssft)){
       $ss1ft="disabled";
+      $ss4ft="disabled";
       $ss2ft="disabled";
       $ss3ft="";
+   }else if(in_array("SS4", $ssft)){
+    $ss1ft="disabled";
+    $ss2ft="disabled";
+    $ss3ft="disabled";
+    $ss4ft="";
    }
-
+   
    //form type so
    $soft =cust_formtype('custso', $_SESSION['expcode']);
    $so1ft="";
@@ -108,6 +118,7 @@ if(isset($_SESSION['expcode'])){
                                 <li class="<?php echo $ss1ft; ?>"><a tabindex="-1" href="settings_ss1.php">Sample Sorting 1</a></li>
                                 <li class="<?php echo $ss2ft; ?>"><a tabindex="-1" href="settings_ss2.php">Sample Sorting 2</a></li>
                                 <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="settings_ss3.php">Sample Sorting 3</a></li>
+                                <li class="<?php echo $ss4ft; ?>"><a tabindex="-1" href="settings_ss4.php">Sample Sorting 4</a></li>
                             </ul>
                         </div>
                     

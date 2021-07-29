@@ -328,7 +328,7 @@ function show_report($recorded, $skip, $errors){
                                               
                                               $query_part="INSERT INTO $ss1 (edssid,$patternattribute,senfr) VALUES($edssid,$line_array,$senfr)";
                                               
-                                              //echo $query_part."<br />";
+                                             //  echo $query_part."<br />";
                                               //execute query
                                               $result=$db->mysqliquery($query_part);
                                               //successful of query

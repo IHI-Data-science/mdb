@@ -78,7 +78,12 @@ include_once('layouts/head.php');
                                 <label class="opa2">
                                     <input type="radio" name="ss" id="ss" value="15" disabled="disabled">SS3</label>
                             </div>
+                            <div class="radio">
+                                <label class="opa2"><input type="radio" name="ss" id="ss" value="23" disabled="disabled">SS4</label>
+                            </div>
+ 
                         </td>
+                        
                         <td>
                             <div class="radio">
                                 <label class="opa3"><input type="radio" name="so" id="so" value="16" disabled="disabled">SO1</label>

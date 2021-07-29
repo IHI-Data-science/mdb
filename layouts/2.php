@@ -1,5 +1,5 @@
 <!-- Sidebar: System manager-->
-        <div class="sidebar collapse">
+<div class="sidebar collapse">
             <ul class="navigation">
 
                    <li <?php echo (basename($_SERVER['SCRIPT_FILENAME'])=='home.php' ? 'class="active"' : ''); ?>>
@@ -14,6 +14,7 @@
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_ss1.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_ss2.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_ss3.php' ? 'id="second-level"' : '');
+                        echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_ss4.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_so1.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_so2.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_st1.php' ? 'id="second-level"' : '');
@@ -25,6 +26,7 @@
                             <li class="<?php echo $disabless1; ?>"><a href="formss1.php">Sample Sorting 1</a></li>
                             <li class="<?php echo $disabless2; ?>"><a href="formss2.php">Sample Sorting 2</a></li>
                             <li class="<?php echo $disabless3; ?>"><a href="formss3.php">Sample Sorting 3</a></li>
+                            <li class="<?php echo $disabless4; ?>"><a href="formss4.php">Sample Sorting 4</a></li>
                             <li class="<?php echo $disableso1; ?>"><a href="formso1.php">Sample Observation 1</a></li>
                             <li class="<?php echo $disableso2; ?>"><a href="formso2.php">Sample Observation 2</a></li>
                             <li class="<?php echo $disablest1; ?>"><a href="formst1.php">Sample Storage 1</a></li>
@@ -41,6 +43,7 @@
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesss1.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesss2.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesss3.php' ? 'id="second-level"' : '');
+                        echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesss4.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesso1.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesso2.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesst1.php' ? 'id="second-level"' : '');
@@ -53,6 +56,7 @@
                             <li class="<?php echo $disabless1; ?>"><a href="datatabless1.php">Sample Sorting 1</a></li>
                             <li class="<?php echo $disabless2; ?>"><a href="datatabless2.php">Sample Sorting 2</a></li>
                             <li class="<?php echo $disabless3; ?>"><a href="datatabless3.php">Sample Sorting 3</a></li>
+                            <li class="<?php echo $disabless4; ?>"><a href="datatabless4.php">Sample Sorting 4</a></li>
                             <li class="<?php echo $disableso1; ?>"><a href="datatableso1.php">Sample Observation 1</a></li>
                             <li class="<?php echo $disableso2; ?>"><a href="datatableso2.php">Sample Observation 2</a></li>
                             <li class="<?php echo $disablest1; ?>"><a href="datatablest1.php">Sample Storage 1</a></li>

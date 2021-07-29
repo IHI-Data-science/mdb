@@ -1,19 +1,19 @@
 <?php
 include_once ('../../includes/load.php');
- 
+
 $limit = $_GET['limit'];
 $offset = $_GET['offset'];
- 
+
 //$limit = 10;
 //$offset = 20;
- 
+
 $table = "custss";
 $table2 = "ss4";
- 
+
 $col = getcolumnname($_SESSION['expcode'], $table, $table2);
- 
+
 $col = renamecolumn($col, "ss4");
- 
+
 if (isset($_GET['search'])){
     $searchText = $_GET['search'];
     $where = "WHERE CONCAT_WS('', $col) LIKE '%".$searchText."%'";
@@ -21,13 +21,13 @@ if (isset($_GET['search'])){
 else{
     $where = '';
 }
- 
+
 $prefixtable = $_SESSION['expcode']."_";
- 
+
 $getcusted = find_by_('custed', 'pc', (int)$_SESSION['expcode']);
- 
+
 $getformtype = $getcusted['ft'];
- 
+
 if ($getformtype == 'ED1'){
     $ed1 = $prefixtable."ed1";
     $edssid = "edss.ed1id";
@@ -36,16 +36,16 @@ else if ($getformtype == 'ED2'){
     $ed1 = $prefixtable."ed2";
     $edssid = "edss.ed2id";
 }
- 
+
 //$ed1 = $prefixtable."ed1";
 $ss4 = $prefixtable."ss4";
 $ss3 = $prefixtable."ss3";
 $edss = $prefixtable."edss";
 $ssso = $prefixtable."ssso";
 $so1 = $prefixtable."so1_sk";
- 
+
 $audit_trail = $prefixtable."audit_trail";
- 
+
 $sql = "SELECT
          site.site_name AS SITENAME
         ,projectreg.pc AS PROJECT_CODE
@@ -68,7 +68,7 @@ $sql = "SELECT
              GROUP BY CONCAT(auditsen,':',auditfr)
           ) AS audit ON (ss4.sen = audit.auditsen and ss4.fr = audit.auditfr and audit.auditformtype = 2)
             $where ORDER BY ss4.sen ASC,ss4.fr ASC limit $offset, $limit ";
- 
+
 $sql2 = "SELECT
          site.site_name AS SITENAME
         ,projectreg.pc AS PROJECT_CODE
@@ -91,19 +91,18 @@ $sql2 = "SELECT
              GROUP BY CONCAT(auditsen,':',auditfr)
           ) AS audit ON (ss4.sen = audit.auditsen and ss4.fr = audit.auditfr and audit.auditformtype = 2)  
         ORDER BY ss4.sen ASC,ss4.fr ASC";
- 
+
 $ed1data = find_by_sql($sql);
- 
+
 $count = find_row_count($sql2);
- 
+
 $test = array(
     'total' => $count,
     'rows' => $ed1data
 );
- 
+
 header('Content-Type: application/json');
- 
+
 echo json_encode($test);
- 
+
 ?>
- 

@@ -1,15 +1,15 @@
 <?php
- 
+
 /**
- * Created by Gerald  @ Ifakara Health Insitute (2018)
+ * Created by Dickson Msaky @ Ifakara Health Insitute (2018)
  **/
 require_once('includes/load.php');
 $page_title='Sample Sorting';
 page_require_level(3);
 include_once('layouts/head.php');
- 
+
 ?>
- 
+
 <!-- Page content -->
 <div class="page-content">
     <!-- Page title -->
@@ -103,12 +103,12 @@ include_once('layouts/head.php');
     
     
     <script>
- 
+
         $(function () {
             tabless4();
         });
         function tabless4() {
- 
+
             $('#tabledata').bootstrapTable('destroy').bootstrapTable({
                 classes: 'table table-responsive',
                 queryParams: function (params) {
@@ -120,7 +120,7 @@ include_once('layouts/head.php');
                         ordername: params.sort,
                     };
                 },
- 
+
                 search: true,
                 mobileResponsive: true,
                 maintainSelected: true,
@@ -137,7 +137,7 @@ include_once('layouts/head.php');
                 paginationLastText: "Last",
                 paginationPreText: "Previous",
                 paginationNextText: "Next",
- 
+
                 columns: [
                    <?php
                    
@@ -169,52 +169,55 @@ include_once('layouts/head.php');
                      align: 'center',
                      formatter: auditFormatter
                      } */
- 
+
                 ],
- 
+
                 formatLoadingMessage: function () {
                     return '<h4><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> Loading... please wait.... </h4>';
                 }
- 
+
             });
         }
- 
- 
+
+
         function auditFormatter(value, row, index) {
- 
+
             if (value) {
- 
+
                 return ['<a class="btn btn-primary iconaudit" keyid="' + value + '" title="Audit"><i class="fa fa-eye">Audit Logs</i></a>'];
             } else {
                 return ['<a class="btn btn-primary iconaudit" keyid="' + value + '" title="Audit" disabled="disabled"><i class="fa fa-eye">Audit Logs</i></a>'];
             }
- 
- 
+
+
         }
 // data in the table
-        // $('body').delegate('.iconaudit', 'click', function (e) {
-        //     e.preventDefault();
-        //     var keyid = $(this).attr('keyid');
-        //     $.ajax({
-        //         url: 'auditdetail.php',
-        //         method: 'POST',
-        //         data: {auditdetail: 1, keyid: keyid},
-        //         success: function (data) {
-        //             $('#table tbody').empty();
-        //             $('#table tbody').append(data);
-        //         },
-        //         complete: function (data) {
-        //             $('.loader').fadeOut();
-        //             $('#audit_detail').modal('show');
-        //         },
-        //         beforeSend: function (data) {
-        //             $('#loadmodal').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
-        //         }
- 
- 
-        //     })
-        // })
+        $('body').delegate('.iconaudit', 'click', function (e) {
+            e.preventDefault();
+            var keyid = $(this).attr('keyid');
+            $.ajax({
+                url: 'auditdetail.php',
+                method: 'POST',
+                data: {auditdetail: 1, keyid: keyid},
+                success: function (data) {
+                    $('#table tbody').empty();
+                    $('#table tbody').append(data);
+                },
+                complete: function (data) {
+                    $('.loader').fadeOut();
+                    $('#audit_detail').modal('show');
+                },
+                beforeSend: function (data) {
+                    $('#loadmodal').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+                }
+
+
+            })
+        })
     
     </script>
    
    <?php include_once('layouts/foot.php'); ?>
+      
+  
+           
