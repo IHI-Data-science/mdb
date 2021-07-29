@@ -1,11 +1,11 @@
 <!-- Sidebar: System manager-->
 <div class="sidebar collapse">
-            <ul class="navigation">
- 
+        	<ul class="navigation">
+
                    <li <?php echo (basename($_SERVER['SCRIPT_FILENAME'])=='home.php' ? 'class="active"' : ''); ?>>
                            <a href="home.php"   ><i class="fa fa-home"></i> Home</a>
                    </li>
- 
+
              <li>
                         <a href="#" class="expand" 
                         <?php 
@@ -33,7 +33,7 @@
                             <li class="<?php echo $disablest2; ?>"><a href="formst2.php">Sample Storage 2</a></li>
                         </ul>
                     </li>
- 
+
                       <li>
                         <a href="#" class="expand" 
                         <?php 
@@ -56,30 +56,33 @@
                             <li class="<?php echo $disabless1; ?>"><a href="datatabless1.php">Sample Sorting 1</a></li>
                             <li class="<?php echo $disabless2; ?>"><a href="datatabless2.php">Sample Sorting 2</a></li>
                             <li class="<?php echo $disabless3; ?>"><a href="datatabless3.php">Sample Sorting 3</a></li>
-                            <li class="<?php echo $disabless4; ?>"><a href="datatabless4.php">Sample Sorting 4</a></li>
+                            <li class="<?php echo $disabless3; ?>"><a href="datatabless4.php">Sample Sorting 4</a></li>
                             <li class="<?php echo $disableso1; ?>"><a href="datatableso1.php">Sample Observation 1</a></li>
                             <li class="<?php echo $disableso2; ?>"><a href="datatableso2.php">Sample Observation 2</a></li>
                             <li class="<?php echo $disablest1; ?>"><a href="datatablest1.php">Sample Storage 1</a></li>
                             <li class="<?php echo $disablest2; ?>"><a href="datatablest2.php">Sample Storage 2</a></li>
- 
+
                         </ul>
                     </li>
- 
+
                      <li <?php echo (basename($_SERVER['SCRIPT_FILENAME'])=='summary.php' ? 'class="active"' : ''); ?>>
                            <a href="summary.php"   ><i class="fa fa-bar-chart-o"></i>Summary</a>
                    </li>
- 
+
                     <li <?php echo (basename($_SERVER['SCRIPT_FILENAME'])=='dataset.php' ? 'class="active"' : ''); ?>>
                            <a href="dataset.php"   ><i class="fa fa-archive"></i> Dataset</a>
                    </li>
                    
- 
+
     
             </ul>
- 
+
                         
         </div>
         <!-- /sidebar -->
- 
- 
- 
+
+
+
+
+       
+

@@ -1,5 +1,5 @@
 <!-- Sidebar: System manager-->
-        <div class="sidebar collapse">
+<div class="sidebar collapse">
         	<ul class="navigation">
 
                    <li <?php echo (basename($_SERVER['SCRIPT_FILENAME'])=='home.php' ? 'class="active"' : ''); ?>>
