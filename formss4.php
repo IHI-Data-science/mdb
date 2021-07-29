@@ -1,5 +1,5 @@
 <?php
- 
+
 /**
  * Created by Dickson Msaky @ Ifakara Health Insitute (2018)
  **/
@@ -7,14 +7,14 @@ require_once('includes/load.php');
 $page_title='Sample Sorting';
 page_require_level(3);
 include_once('layouts/head.php');
- 
+
 $formtype="SS4";
 $table   ="custss";
- 
+
 ?>
- 
+
 <?php
- 
+
 //Show error occur during posting of data
 function show_report($recorded, $skip, $errors){
    
@@ -36,10 +36,10 @@ function show_report($recorded, $skip, $errors){
     ";
    
 }
- 
+
 ?>
- 
- 
+
+
 <!-- Page content -->
 <div class="page-content">
    <?php echo display_msg_popup($msg); ?>
@@ -453,12 +453,15 @@ function show_report($recorded, $skip, $errors){
     
     </div>
 </div>
- 
- 
+
+
 <?php include_once('layouts/foot.php'); ?>
- 
- 
+
+
 <?php
 }
 ?>
- 
+
+    
+  
+           
