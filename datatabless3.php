@@ -43,7 +43,7 @@ include_once('layouts/head.php');
             <table id="tabledata"
                    data-toggle="table"
                    name="tabledata"
-                   data-url="scripts/table/ss5.php"
+                   data-url="scripts/table/ss3.php"
                    data-row-style="rowStyle"
                    data-pagination="true"
                    data-show-refresh="false"
@@ -51,7 +51,7 @@ include_once('layouts/head.php');
                    data-page-size="200"
                    data-page-list="[200,500,1000,2000,5000,8000,10000,All]"
                    data-show-export="true"
-                   data-export-options='{"fileName": "ss5-<?php echo date('Y-m-d'); ?>"}'
+                   data-export-options='{"fileName": "ss3-<?php echo date('Y-m-d'); ?>"}'
                    data-advanced-search="true"
                    data-search="true">
                 <thead>
@@ -142,7 +142,7 @@ include_once('layouts/head.php');
                    <?php
                    
                    $table="custss";
-                   $table2="ss5";
+                   $table2="ss3";
                    
                    
                    $col=getcolumnname($_SESSION['expcode'], $table, $table2);

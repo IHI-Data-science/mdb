@@ -292,7 +292,7 @@ if(isset($_POST['tag'])) {
 
 
 
-	else if ($tag == 'ss5') {
+	else if ($tag == 'ss3') {
 
 		$json = $_POST["ss5json"];
 

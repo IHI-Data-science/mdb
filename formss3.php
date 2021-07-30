@@ -9,7 +9,7 @@ page_require_level(3);
 include_once('layouts/head.php');
 
 
-$formtype="SS5";
+$formtype="SS3";
 $table   ="custss";
 
 ?>
@@ -138,13 +138,13 @@ function show_report($recorded, $skip, $errors){
                       
                       global $db;
                       
-                      $formtype="SS5";
+                      $formtype="ss3";
                       $table   ="custss";
                       
                       $prefixtable=$projectid."_";
                       
                       $ed1 =$prefixtable."ed1";
-                      $ss1 =$prefixtable."ss5";
+                      $ss1 =$prefixtable."ss3";
                       $edss=$prefixtable."edss";
                       $ssso=$prefixtable."ssso";
                       
@@ -262,7 +262,7 @@ function show_report($recorded, $skip, $errors){
                                      //Replace all occurrences of  \r in haystack with "".
                                      $line=str_replace("\r", "", $line);
                                      //call function rowIdentifier
-                                     list($rowtype, $data)=rowIdentifier($line, "SS5", $patternattribute);
+                                     list($rowtype, $data)=rowIdentifier($line, "ss3", $patternattribute);
                                      //echo $line."<br />";
                                      //start to detect which type of row
                                      //row contain serial number of ED

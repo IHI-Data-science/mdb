@@ -8,7 +8,7 @@ $page_title = 'Settings';
 page_require_level(2);
 include_once('layouts/head.php');
 
-$formtype = "SS5";
+$formtype = "ss3";
 $table = "custss";
 
 $field = "pc";
@@ -95,7 +95,7 @@ $field2 = "ft";
     }else{
     
         $sql = "DELETE FROM ".$db->escape($table);
-        $sql .= " WHERE ".$db->escape($field)."=".$_SESSION['expcode']." AND ".$db->escape($field2)."="."'SS5'";
+        $sql .= " WHERE ".$db->escape($field)."=".$_SESSION['expcode']." AND ".$db->escape($field2)."="."'ss3'";
         $sql .= " LIMIT 1";
 
       
@@ -272,7 +272,7 @@ $field2 = "ft";
                   array_push($fields_array, "Mosquitoes K/D 30min - Cone Height 2.0m (MKD16)",
                   "Mosquitoes K/D 60min - Cone Height 2.0m (MKD17)",
                    "Mosquitoes K/D Day1 - Cone Height 2.0m (MKD18)",
-                  "Mosquitoes K/D Day2 - Cone Height 2.0m (MKD19)",
+                  "Mosquitoes K/D Day2 - Cone Height 2.0m (MKD19)",  
                    "Mosquitoes K/D Day3 - Cone Height 2.0m (MKD20)");
 
 

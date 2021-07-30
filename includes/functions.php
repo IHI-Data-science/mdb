@@ -728,7 +728,7 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
       `ss1id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS1',
       `ss2id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS2',
-      `ss5id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS5',
+      `ss5id` int(11) DEFAULT NULL COMMENT 'Hold data link to ss3',
        PRIMARY KEY (`id`),
        KEY `fk_ss1id` (`ss1id`),
          KEY `fk_ss2id` (`ss2id`),
@@ -956,13 +956,13 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       KEY `fk_ss2_bf` (`bf`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-    $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss5 (
+    $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss3 (
        
       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
       `edssid` int(11) NULL COMMENT 'Store value from table EDSS id',
-      `sen` int(6) NOT NULL COMMENT 'unique identifier for SS5 form',
-      `ssen` int(6) NOT NULL COMMENT 'unique identifier for SS5 form',
-      `sfr` int(6) NOT NULL COMMENT 'unique identifier for SS5 form',
+      `sen` int(6) NOT NULL COMMENT 'unique identifier for ss3 form',
+      `ssen` int(6) NOT NULL COMMENT 'unique identifier for ss3 form',
+      `sfr` int(6) NOT NULL COMMENT 'unique identifier for ss3 form',
       `fr` int(2) NOT NULL COMMENT 'unique identifier of each row on the data collected',
       `dot` date NOT NULL COMMENT 'date of test',
       `ga` varchar(20) NOT NULL COMMENT 'gps accuracy',
@@ -1246,7 +1246,7 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
         `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
         `so1id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS1',
         `so2id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS2',
-        `so3id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS5',
+        `so3id` int(11) DEFAULT NULL COMMENT 'Hold data link to ss3',
         PRIMARY KEY (`id`),
         KEY `fk_ss1id` (`so1id`),
         KEY `fk_ss2id` (`so2id`),

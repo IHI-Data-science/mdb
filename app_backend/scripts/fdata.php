@@ -152,12 +152,12 @@ if(isset($_GET['q'])) {
 
 	}
 
-	else if($q == 'ss5'){
+	else if($q == 'ss3'){
 
 		$prefixtable = $projectid."_";
-		$ss5 = $prefixtable."ss5";
+		$ss3 = $prefixtable."ss3";
 	
-		$query="SELECT * FROM $ss5";
+		$query="SELECT * FROM $ss3";
 		$nodata = "No Data found";
 	
 	}

@@ -8,11 +8,11 @@ $offset = $_GET['offset'];
 //$offset = 20;
 
 $table = "custss";
-$table2 = "ss5";
+$table2 = "ss3";
 
 $col = getcolumnname($_SESSION['expcode'], $table, $table2);
 
-$col = renamecolumn($col, "ss5");
+$col = renamecolumn($col, "ss3");
 
 if (isset($_GET['search'])){
     $searchText = $_GET['search'];
@@ -38,7 +38,7 @@ else if ($getformtype == 'ED2'){
 }
 
 //$ed1 = $prefixtable."ed1";
-$ss5 = $prefixtable."ss5";
+$ss3 = $prefixtable."ss3";
 $edss = $prefixtable."edss";
 $ssso = $prefixtable."ssso";
 $so1 = $prefixtable."so1_sk";
@@ -49,7 +49,7 @@ $sql = "SELECT
          site.site_name AS SITENAME
         ,projectreg.pc AS PROJECT_CODE
         ,projectreg.expno AS EXPERIMENT
-        ,ss5.id as id ,$col ,CONCAT(auditsen,':',auditfr) AS keyid
+        ,ss3.id as id ,$col ,CONCAT(auditsen,':',auditfr) AS keyid
          FROM
         projectregsite
         INNER JOIN projectreg 
@@ -60,19 +60,19 @@ $sql = "SELECT
         ON (ed1.projectregsite_id = projectregsite.id)
         INNER JOIN ".$prefixtable."edss as edss
         ON (ed1.id = $edssid)
-        INNER JOIN ".$prefixtable."ss5 as ss5 
-        ON (ss5.edssid = edss.id)
+        INNER JOIN ".$prefixtable."ss3 as ss3 
+        ON (ss3.edssid = edss.id)
         LEFT JOIN (
             SELECT * FROM $audit_trail as audit_trail 
              GROUP BY CONCAT(auditsen,':',auditfr)
-          ) AS audit ON (ss5.sen = audit.auditsen and ss5.fr = audit.auditfr and audit.auditformtype = 2)
-            $where ORDER BY ss5.sen ASC,ss5.fr ASC limit $offset, $limit ";
+          ) AS audit ON (ss3.sen = audit.auditsen and ss3.fr = audit.auditfr and audit.auditformtype = 2)
+            $where ORDER BY ss3.sen ASC,ss3.fr ASC limit $offset, $limit ";
 
 $sql2 = "SELECT
          site.site_name AS SITENAME
         ,projectreg.pc AS PROJECT_CODE
         ,projectreg.expno AS EXPERIMENT
-        ,ss5.id as id ,$col ,CONCAT(auditsen,':',auditfr) AS keyid 
+        ,ss3.id as id ,$col ,CONCAT(auditsen,':',auditfr) AS keyid 
         FROM
         projectregsite
         INNER JOIN projectreg 
@@ -83,13 +83,13 @@ $sql2 = "SELECT
         ON (ed1.projectregsite_id = projectregsite.id)
         INNER JOIN ".$prefixtable."edss as edss
         ON (ed1.id = edss.ed1id)
-        INNER JOIN ".$prefixtable."ss5 as ss5 
-        ON (ss5.edssid = $edssid)
+        INNER JOIN ".$prefixtable."ss3 as ss3 
+        ON (ss3.edssid = $edssid)
         LEFT JOIN (
             SELECT * FROM $audit_trail as audit_trail 
              GROUP BY CONCAT(auditsen,':',auditfr)
-          ) AS audit ON (ss5.sen = audit.auditsen and ss5.fr = audit.auditfr and audit.auditformtype = 2)  
-        ORDER BY ss5.sen ASC,ss5.fr ASC";
+          ) AS audit ON (ss3.sen = audit.auditsen and ss3.fr = audit.auditfr and audit.auditformtype = 2)  
+        ORDER BY ss3.sen ASC,ss3.fr ASC";
 
 $ed1data = find_by_sql($sql);
 

@@ -32,7 +32,7 @@ function report($type, $projectcode, $db)
 
 	$ed1 = $prefixtable."ed1";
 	$ss1 = $prefixtable."ss1";
-	$ss5 = $prefixtable."ss5";
+	$ss3 = $prefixtable."ss3";
 	$edss = $prefixtable."edss";
 	$ssso = $prefixtable."ssso";
 
@@ -76,7 +76,7 @@ function report($type, $projectcode, $db)
         }
 
 
-        $ss5query = "SELECT *  FROM custss  WHERE pc=$projectcode AND ft='ss5'";
+        $ss5query = "SELECT *  FROM custss  WHERE pc=$projectcode AND ft='ss3'";
         //execute query 
         $ss5result = $db->query($ss5query);
         //detect number of row from query execute above
@@ -494,7 +494,7 @@ function report($type, $projectcode, $db)
 		ON (ed1.projectregsite_id = projectregsite.id)
 		INNER JOIN $edss as edss
 		ON (ed1.id = edss.ed1id)
-		INNER JOIN $ss5 as ss1 
+		INNER JOIN $ss3 as ss1 
 		ON (ss1.edssid = edss.id)
 		LEFT JOIN method 
 		ON (ed1.me = method.meth_code)
@@ -1154,7 +1154,7 @@ ORDER BY ss1.sen ASC,ss1.fr ASC";
 
 
 
- //Just ss5
+ //Just ss3
  if($type == 15)
  {
 
@@ -1174,8 +1174,8 @@ ON (ed1.projectregsite_id = projectregsite.id)
 INNER JOIN $edss as edss
 ON (ed1.id = edss.ed1id)
 INNER JOIN $ss1 as ss1 
-ON (ss5.edssid = edss.id)
-ORDER BY ss5.sen ASC,ss5.fr ASC";
+ON (ss3.edssid = edss.id)
+ORDER BY ss3.sen ASC,ss3.fr ASC";
 
 	 $result = $db->query($query ) or die( mysqli_error( $db ) );
 	 //

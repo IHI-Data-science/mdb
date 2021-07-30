@@ -35,7 +35,7 @@ if(isset($_SESSION['expcode'])){
       $ss5ft="disabled";
       $ss1ft="disabled";
       $ss2ft="";
-   } else if(in_array("SS5", $ssft)){
+   } else if(in_array("ss3", $ssft)){
       $ss1ft="disabled";
       $ss2ft="disabled";
       $ss5ft="";

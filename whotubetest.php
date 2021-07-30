@@ -8,7 +8,7 @@ $page_title = 'Settings';
 page_require_level(2);
 include_once('layouts/head.php');
 
-$formtype = "SS5";
+$formtype = "ss3";
 $table = "custss";
 
 $field = "pc";
@@ -95,7 +95,7 @@ $field2 = "ft";
     }else{
     
         $sql = "DELETE FROM ".$db->escape($table);
-        $sql .= " WHERE ".$db->escape($field)."=".$_SESSION['expcode']." AND ".$db->escape($field2)."="."'SS5'";
+        $sql .= " WHERE ".$db->escape($field)."=".$_SESSION['expcode']." AND ".$db->escape($field2)."="."'ss3'";
         $sql .= " LIMIT 1";
 
       

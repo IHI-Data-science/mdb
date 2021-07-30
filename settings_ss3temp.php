@@ -8,7 +8,7 @@ $page_title = 'Settings';
 page_require_level(2);
 include_once('layouts/head.php');
 
-$formtype = "SS5";
+$formtype = "ss3";
 $table = "custss";
 
 

@@ -376,7 +376,7 @@ $senfr)
     //table prefix
     $prefixtable = $projectid."_";
     $ed1 = $prefixtable."ed1";
-    $ss5 = $prefixtable."ss5";
+    $ss3 = $prefixtable."ss3";
     $edss = $prefixtable."edss";
     $ssso = $prefixtable."ssso";
 
@@ -413,7 +413,7 @@ $senfr)
 
 
     
-   $resultft = $db->mysqliquery("INSERT INTO  $ss5 (edssid,sen,ssen,sfr,fr,
+   $resultft = $db->mysqliquery("INSERT INTO  $ss3 (edssid,sen,ssen,sfr,fr,
    dot,ga,gds,sgds,ndis,mo,mst,ma,tb,bia,it,synt,
    ic,sc,SRTemp,ETMax,ETMin,HTMax,HTMin,EHMax,EHMin,HHMax,HHMin, mti1,mti2,mti3,
    mti4, mti5, mti6, mts,mtisy1,mtisy2, mtisy3,mtisy4,mtisy5, mtisy6,
