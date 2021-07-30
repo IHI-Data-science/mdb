@@ -728,11 +728,11 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
       `ss1id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS1',
       `ss2id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS2',
-      `ss5id` int(11) DEFAULT NULL COMMENT 'Hold data link to ss3',
+      `ss3id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS3',
        PRIMARY KEY (`id`),
        KEY `fk_ss1id` (`ss1id`),
          KEY `fk_ss2id` (`ss2id`),
-       KEY `fk_ss5id` (`ss5id`)
+       KEY `fk_ss3id` (`ss3id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;";
 
 
@@ -1250,7 +1250,7 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
         PRIMARY KEY (`id`),
         KEY `fk_ss1id` (`so1id`),
         KEY `fk_ss2id` (`so2id`),
-        KEY `fk_ss5id` (`so3id`)
+        KEY `fk_ss3id` (`so3id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
 
@@ -1437,7 +1437,7 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
        PRIMARY KEY (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-     $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss5template(
+     $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss3template(
 
       
 

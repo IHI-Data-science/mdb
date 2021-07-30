@@ -98,7 +98,7 @@ if(isset($_SESSION['expcode'])){
    } else if(in_array("ss3", $ssformtype)){
       $ss        =$prefixtable."ss3";
       $ssso      =$prefixtable."ssso";
-      $ssssid    ="$ssso.ss5id";
+      $ssssid    ="$ssso.ss3id";
       $ssresult=$db->query("SELECT * FROM $ss");
       
       $disabless3="";

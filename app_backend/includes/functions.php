@@ -309,7 +309,7 @@ function ss2data($sen, $ssen, $sfr, $hf, $htc, $htr, $hw, $hs, $fr, $tx, $bf, $p
 }
 
 
-function ss5data($sen,$ssen, $sfr,$fr,
+function ss3data($sen,$ssen, $sfr,$fr,
 $dot,$ga,$gds,$sgds,$ndis,$mo,$mst,$ma,
 $tb,$bia,$it,
 $SynT,$ic,$sc,$SRTemp,$ETMax,$ETMin,$HTMax,$HTMin,
@@ -523,13 +523,13 @@ senfr)
         // check for successful store
         if ($resultft) {
 
-            $query_insert_edss5 = "INSERT INTO $ssso (ss5id) SELECT `ss1`.`id`
-            FROM $ssso as ssso RIGHT JOIN $ss1 as ss1 ON (`ssso`.`ss5id` = `ss1`.`id`)
+            $query_insert_edss3 = "INSERT INTO $ssso (ss3id) SELECT `ss1`.`id`
+            FROM $ssso as ssso RIGHT JOIN $ss1 as ss1 ON (`ssso`.`ss3id` = `ss1`.`id`)
             WHERE ssso.ss1id IS NULL      
             ";
         
            //execute query to insert into EdSs table from Ed1 Table
-            $db->mysqliquery($query_insert_edss5);
+            $db->mysqliquery($query_insert_edss3);
         
           } 
         

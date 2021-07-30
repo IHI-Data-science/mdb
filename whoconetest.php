@@ -8,7 +8,7 @@ $page_title = 'Settings';
 page_require_level(2);
 include_once('layouts/head.php');
 
-$formtype = "ss3";
+$formtype = "SS3";
 $table = "custss";
 
 $field = "pc";
@@ -187,9 +187,9 @@ $field2 = "ft";
     <ul class="dropdown-menu">
 
 
-    <li class="<?php echo $ss5ft; ?>"><a tabindex="-1" href="cdctest.php">CDC Test</a></li>
-         <li class="<?php echo $ss5ft; ?>"><a tabindex="-1" href="whoconetest.php">WHO Cone Test</a></li>
-         <li class="<?php echo $ss5ft; ?>"><a tabindex="-1" href="whotubetest.php">WHO Tube Test</a></li>
+    <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="cdctest.php">CDC Test</a></li>
+         <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="whoconetest.php">WHO Cone Test</a></li>
+         <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="whotubetest.php">WHO Tube Test</a></li>
     </ul>
 </div>
 
