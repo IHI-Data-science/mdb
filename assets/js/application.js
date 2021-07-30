@@ -17,7 +17,7 @@ $(function () {
         }
     });
 
-    $("li.disabled a").click(function() {
+    $("li.disabled a").click(function () {
         return false;
     });
 
@@ -60,7 +60,7 @@ $(function () {
         buttonClass: 'btn btn-default',
         onChange: function (element, checked) {
             $.uniform.update();
-            $.jGrowl('Change event invoked!', {header: 'Update', position: 'center', life: 1500});
+            $.jGrowl('Change event invoked!', { header: 'Update', position: 'center', life: 1500 });
         }
     });
 
@@ -151,13 +151,13 @@ $(function () {
         allowClear: true,
         minimumInputLength: 1,
         query: function (query) {
-            var data = {results: []}, i, j, s;
+            var data = { results: [] }, i, j, s;
             for (i = 1; i < 5; i++) {
                 s = "";
                 for (j = 0; j < i; j++) {
                     s = s + query.term;
                 }
-                data.results.push({id: query.term + i, text: s});
+                data.results.push({ id: query.term + i, text: s });
             }
             query.callback(data);
         }
@@ -218,11 +218,11 @@ $(function () {
         filters: {
             max_file_size: '10mb',
             mime_types: [
-                {title: "Image files", extensions: "jpg,gif,png"},
-                {title: "Zip files", extensions: "zip"}
+                { title: "Image files", extensions: "jpg,gif,png" },
+                { title: "Zip files", extensions: "zip" }
             ]
         },
-        resize: {width: 320, height: 240, quality: 90}
+        resize: { width: 320, height: 240, quality: 90 }
     });
 
 
@@ -254,7 +254,7 @@ $(function () {
 
     //===== Tags Input =====//
 
-    $('.tags').tagsInput({width: '100%'});
+    $('.tags').tagsInput({ width: '100%' });
     $('.tags-autocomplete').tagsInput({
         width: '100%',
         autocomplete_url: 'tags_autocomplete.html'
@@ -263,7 +263,7 @@ $(function () {
 
     //===== Form elements styling =====//
 
-    $(".styled, .multiselect-container input").uniform({radioClass: 'choice', selectAutoWidth: false});
+    $(".styled, .multiselect-container input").uniform({ radioClass: 'choice', selectAutoWidth: false });
 
 
     /* # Form Validation
@@ -358,7 +358,7 @@ $(function () {
 
     //===== Time pickers =====//
 
-    $('#defaultValueExample, #time').timepicker({'scrollDefaultNow': true});
+    $('#defaultValueExample, #time').timepicker({ 'scrollDefaultNow': true });
 
     $('#durationExample').timepicker({
         'minTime': '2:00pm',
@@ -371,8 +371,8 @@ $(function () {
         $('#onselectTarget').text($(this).val());
     });
 
-    $('#timeformatExample1, #timeformatExample3').timepicker({'timeFormat': 'H:i:s'});
-    $('#timeformatExample2, #timeformatExample4').timepicker({'timeFormat': 'h:i A'});
+    $('#timeformatExample1, #timeformatExample3').timepicker({ 'timeFormat': 'H:i:s' });
+    $('#timeformatExample2, #timeformatExample4').timepicker({ 'timeFormat': 'h:i A' });
 
 
     //===== Color picker =====//
@@ -391,7 +391,7 @@ $(function () {
         dateFormat: 'yy-mm-dd'
     });
 
-    $(".datepicker-inline").datepicker({showOtherMonths: true});
+    $(".datepicker-inline").datepicker({ showOtherMonths: true });
 
     $(".datepicker-multiple").datepicker({
         showOtherMonths: true,
@@ -425,7 +425,7 @@ $(function () {
         }
     });
 
-    $(".datepicker-restricted").datepicker({minDate: -20, maxDate: "+1M +10D", showOtherMonths: true});
+    $(".datepicker-restricted").datepicker({ minDate: -20, maxDate: "+1M +10D", showOtherMonths: true });
 
 
     //===== Jquery UI sliders =====//
@@ -655,7 +655,7 @@ function rowStyle(row, index) {
     var classes = ['active', 'success', 'info', 'warning', 'danger'];
     console.log(row, row.keyid);
     if (parseInt(row.keyid) > 0) {
-        return {classes: "warning"}
+        return { classes: "warning" }
     }
     return {};
 }
@@ -716,7 +716,7 @@ function sortdata(dataset, labels) {
 
     var list = [];
     for (var j = 0; j < dataset.length; j++)
-        list.push({'data': dataset[j], 'label': labels[j]});
+        list.push({ 'data': dataset[j], 'label': labels[j] });
 
     list.sort(function (a, b) {
         return ((a.data > b.data) ? -1 : ((a.data == b.data) ? 0 : 1));
@@ -731,13 +731,13 @@ function LineChart(carea, cdata, ctitle) {
     var options = {
         responsive: true,
         maintainAspectRatio: false,
-		
-		plugins: {
-           colorschemes: {
-              scheme: 'tableau.Classic10'
+
+        plugins: {
+            colorschemes: {
+                scheme: 'tableau.Classic10'
             }
         },
-		
+
 
         legend: {
             display: true,
@@ -782,8 +782,8 @@ function LineChart(carea, cdata, ctitle) {
                     color: "#E0E0E0"
                 },
                 ticks: {
-                    min: 1
-                                       
+                    min: 0
+
                 }
             }]
         }
@@ -812,8 +812,8 @@ function BarChart(carea, cdata, ctitle) {
                 render: 'value',
                 fontSize: 9,
             },
-			colorschemes: {
-              scheme: 'tableau.Classic10'
+            colorschemes: {
+                scheme: 'tableau.Classic10'
             }
         },
 
@@ -870,7 +870,7 @@ function BarChart(carea, cdata, ctitle) {
                 }
             }]
         }
-		
+
     };
 
     Chart.defaults.global.defaultFontFamily = "Calibri";
@@ -904,9 +904,9 @@ function DoughnutChart(carea, cdata, ctitle) {
                 usePointStyle: true
             }
         },
-		plugins: {
-           colorschemes: {
-              scheme: 'tableau.Classic10'
+        plugins: {
+            colorschemes: {
+                scheme: 'tableau.Classic10'
             }
         },
         animation: {
@@ -954,8 +954,8 @@ function PieChart(carea, cdata, ctitle) {
                     precision: 2
                 }
             ],
-			colorschemes: {
-              scheme: 'tableau.Classic10'
+            colorschemes: {
+                scheme: 'tableau.Classic10'
             }
         },
         legend: {
@@ -1024,13 +1024,13 @@ function hBarChart(carea, cdata, ctitle) {
                 usePointStyle: true
             }
         },
-		plugins: {
+        plugins: {
             labels: {
                 render: 'value',
                 fontSize: 9,
             },
-			colorschemes: {
-              scheme: 'tableau.Classic10'
+            colorschemes: {
+                scheme: 'tableau.Classic10'
             }
         },
         title: {
@@ -1107,8 +1107,8 @@ function PolarChart(carea, cdata, ctitle) {
                     precision: 2
                 }
             ],
-			colorschemes: {
-              scheme: 'tableau.Classic10'
+            colorschemes: {
+                scheme: 'tableau.Classic10'
             }
         },
         legend: {

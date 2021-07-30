@@ -588,17 +588,13 @@ if($q === 'sevenc'){
 }
 
 
-
-//ss2
-
-
 if($q==='eight'){
    
     $query="SELECT
-             MONTHNAME(ed1.dt) AS month,
-             SUM(CASE WHEN ss2.tx = 1 THEN ss2.pu ELSE 0 end) / count(MONTHNAME(dt)) AS An_gambiae,
-             SUM(CASE WHEN ss2.tx = 50 THEN ss2.pu ELSE 0 end) / count(MONTHNAME(dt)) AS Culex,
- 
+            MONTHNAME(ed1.dt) AS Month,
+			SUM(CASE WHEN ss2.tx = 1 THEN ss2.pu ELSE 0 end) / count(MONTHNAME(dt)) AS AnophelesSp,
+         SUM(CASE WHEN ss2.tx = 50 THEN ss2.pu ELSE 0 end) / count(MONTHNAME(dt)) AS Culex 
+
              FROM
              projectregsite
              INNER JOIN projectreg 
@@ -619,15 +615,15 @@ if($q==='eight'){
  }
  
 
-//ss2
 
 
-if($q==='nine'){
-   
+ 
+ if($q==='nine'){
+    
     $query="SELECT
              MONTHNAME(ed1.dt) AS month,
-             SUM(CASE WHEN ss2.bf = 6 THEN ss2.n ELSE 0 end) / count(MONTHNAME(dt)) AS L2&L3,
-             SUM(CASE WHEN ss2.bf = 7 THEN ss2.n ELSE 0 end) / count(MONTHNAME(dt)) AS l3&L4,
+             SUM(CASE WHEN ss2.bf = 6 THEN ss2.n ELSE 0 end) / count(MONTHNAME(dt)) AS L2L3,
+             SUM(CASE WHEN ss2.bf = 7 THEN ss2.n ELSE 0 end) / count(MONTHNAME(dt)) AS l3L4
  
              FROM
              projectregsite
@@ -647,35 +643,7 @@ if($q==='nine'){
              ON (ss2.tx = taxon.taxon_code)
              where 1=1 $wherecon GROUP BY MONTH(ed1.dt) ORDER BY MONTH(ed1.dt),taxon.taxon_code ASC ";  
  }
-
- //endss2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 if($q === 'hone'){
     
@@ -704,16 +672,19 @@ if($q === 'hfive'){
    $query="SELECT ind, count(*) as frequency FROM ".$prefixtable."ed1 where 1=1 $wherecon GROUP BY ind";   
         
 }
-
+// echo "Hi there before query";
 //execute query
 $result = $db->query($query);
-//echo $query;
-
+echo $query;
+// echo "Hi there after querry";
 //loop through the returned data
 $data = array();
 foreach ($result as $row) {
 	$data[] = $row;
 }
+
+
+// echo $data;
 
 //free memory associated with result
 $result->close();

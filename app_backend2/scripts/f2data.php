@@ -292,6 +292,228 @@ if(isset($_POST['tag'])) {
 
 
 
+<<<<<<< HEAD
+=======
+	else if ($tag == 'ss3') {
+
+		$json = $_POST["ss3json"];
+
+        
+		if (get_magic_quotes_gpc()){
+			$json = stripslashes($json);
+		}
+        
+		$data = json_decode($json);
+
+		$a=array();
+		$b=array();
+
+
+		$GLOBALS['pidss'] = $_POST["projectid"];
+		$GLOBALS['sidss'] = $_POST["siteid"];
+
+        //$sen,$ssen,$sfr,$sd,$fd,$fr,$dd,$tx,$sas,$mt,$ch,$la,$ft,$bf,$hp,$oth5,$oth6,$oth7,$oth8,$n,$slc,$st,$ni,$nb,$sid01,$sid02,$sid03,$sid04,$sid05,$sid06,$sid07,$nd
+
+		for($i=0; $i<count($data) ; $i++){
+        
+			$res2 = ss3data($data[$i]->sen,$data[$i]->fr,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->sd,$data[$i]->dd,$data[$i]->tx,$data[$i]->sas,$data[$i]->mt,$data[$i]->ch,$data[$i]->replicate_no,$data[$i]->control_no,$data[$i]->exposuretreatment,$data[$i]->st,$data[$i]->duration);
+          
+			if($res2){
+
+				$b["id"] = (int)$data[$i]->id;
+				$b["sen"] = (int)$data[$i]->sen;
+				$b["fr"] = (int)$data[$i]->fr;
+				$b["status"] = 'yes';
+				$b["success"] = 1;
+				$b["error"] = 0;
+
+				array_push($a,$b);
+
+			}else{
+
+
+				if ($db->mysqlierrorno() == 1062){
+
+					$b["id"] = (int)$data[$i]->id;
+				        $b["sen"] = (int)$data[$i]->sen;
+				        $b["fr"] = (int)$data[$i]->fr;
+					$b["status"] = 'yes';
+					$b["error"] = 1062;
+					$b["success"] = 1;
+					$b["error_msg"] = "error:".$db->mysqlierror();
+
+					array_push($a,$b);
+
+				}  else{
+
+					$b["id"] = (int)$data[$i]->id;
+				        $b["sen"] = (int)$data[$i]->sen;
+				        $b["fr"] = (int)$data[$i]->fr;
+					$b["status"] = 'no';
+					$b["error"] = 1;
+					$b["success"] = 0;
+					$b["error_msg"] = "error:".$db->mysqlierror();
+
+					array_push($a,$b);
+
+				}
+			}
+		}
+
+		echo json_encode($a);
+
+	}
+
+
+	else if ($tag == 'ss3b') {
+
+		$json = $_POST["ss3bjson"];
+
+        
+		if (get_magic_quotes_gpc()){
+			$json = stripslashes($json);
+		}
+        
+		$data = json_decode($json);
+
+		$a=array();
+		$b=array();
+
+
+		$GLOBALS['pidss'] = $_POST["projectid"];
+		$GLOBALS['sidss'] = $_POST["siteid"];
+
+        
+		for($i=0; $i<count($data) ; $i++){
+        
+			$res2 = ss3bdata($data[$i]->sen,$data[$i]->fr,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->st,$data[$i]->duration,$data[$i]->replicate1,$data[$i]->replicate2,$data[$i]->replicate3,$data[$i]->replicate4,$data[$i]->control1,$data[$i]->control2);
+          
+			if($res2){
+
+				$b["id"] = (int)$data[$i]->id;
+				$b["sen"] = (int)$data[$i]->sen;
+				$b["fr"] = (int)$data[$i]->fr;
+				$b["status"] = 'yes';
+				$b["success"] = 1;
+				$b["error"] = 0;
+
+				array_push($a,$b);
+
+			}else{
+
+
+				if ($db->mysqlierrorno() == 1062){
+
+					$b["id"] = (int)$data[$i]->id;
+				        $b["sen"] = (int)$data[$i]->sen;
+				        $b["fr"] = (int)$data[$i]->fr;
+					$b["status"] = 'yes';
+					$b["error"] = 1062;
+					$b["success"] = 1;
+					$b["error_msg"] = "error:".$db->mysqlierror();
+
+					array_push($a,$b);
+
+				}  else{
+
+					$b["id"] = (int)$data[$i]->id;
+				        $b["sen"] = (int)$data[$i]->sen;
+				        $b["fr"] = (int)$data[$i]->fr;
+					$b["status"] = 'no';
+					$b["error"] = 1;
+					$b["success"] = 0;
+					$b["error_msg"] = "error:".$db->mysqlierror();
+
+					array_push($a,$b);
+
+				}
+			}
+		}
+
+		echo json_encode($a);
+
+	}
+
+		// adding for ss4 snail
+
+		else if ($tag == 'ss4') {
+
+			$json = $_POST["ss4json"];
+	
+			
+			if (get_magic_quotes_gpc()){
+				$json = stripslashes($json);
+			}
+			
+			$data = json_decode($json);
+	
+			$a=array();
+			$b=array();
+	
+	   
+			$GLOBALS['pidss'] = $_POST["projectid"];
+			$GLOBALS['sidss'] = $_POST["siteid"];
+	
+			
+	
+			for($i=0; $i<count($data) ; $i++)
+			{
+			
+				$res2 = ss4data($data[$i]->sen,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->fr,$data[$i]->hc,$data[$i]->su,$data[$i]->sa,$data[$i]->dso,$data[$i]->dr,$data[$i]->ph,$data[$i]->co,$data[$i]->wda,$data[$i]->act,
+				$data[$i]->wn,$data[$i]->wl,$data[$i]->de,$data[$i]->ret,$data[$i]->wt,$data[$i]->lwt,$data[$i]->sp,$data[$i]->spc,$data[$i]->n,$data[$i]->sps,$data[$i]->tc,$data[$i]->nc
+	
+				);
+			  
+				if($res2){
+	
+					$b["id"] = (int)$data[$i]->id;
+					$b["sen"] = (int)$data[$i]->sen;
+					$b["fr"] = (int)$data[$i]->fr;
+					$b["status"] = 'yes';
+					$b["success"] = 1;
+					$b["error"] = 0;
+	
+					array_push($a,$b);
+	
+				}else{
+	
+	
+					if ($db->mysqlierrorno() == 1062){
+	
+						$b["id"] = (int)$data[$i]->id;
+							$b["sen"] = (int)$data[$i]->sen;
+							$b["fr"] = (int)$data[$i]->fr;
+						$b["status"] = 'yes';
+						$b["error"] = 1062;
+						$b["success"] = 1;
+						$b["error_msg"] = "error:".$db->mysqlierror();
+	
+						array_push($a,$b);
+	
+					}  else{
+	
+						$b["id"] = (int)$data[$i]->id;
+							$b["sen"] = (int)$data[$i]->sen;
+							$b["fr"] = (int)$data[$i]->fr;
+						$b["status"] = 'no';
+						$b["error"] = 1;
+						$b["success"] = 0;
+						$b["error_msg"] = "error:".$db->mysqlierror();
+	
+						array_push($a,$b);
+	
+					}
+				}
+			}
+	
+			echo json_encode($a);
+	
+		} 
+
+
+//end ss
+
+>>>>>>> 18d49522400a28739f1e8f2152f70487bb62aed2
 
 	else if ($tag == 'so1') {
 

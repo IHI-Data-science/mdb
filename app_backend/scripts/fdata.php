@@ -152,6 +152,7 @@ if(isset($_GET['q'])) {
 
 	}
 
+<<<<<<< HEAD
 	else if($q == 'ss3'){
 
 		$prefixtable = $projectid."_";
@@ -160,6 +161,26 @@ if(isset($_GET['q'])) {
 		$query="SELECT * FROM $ss3";
 		$nodata = "No Data found";
 	
+=======
+	else if($q == 'ss2'){
+
+		$prefixtable = $projectid."_";
+		$ss2 = $prefixtable."ss2";
+
+		$query="SELECT * FROM $ss2";
+		$nodata = "No Data found";
+
+	}
+
+	else if($q == 'ss4'){
+
+		$prefixtable = $projectid."_";
+		$ss4 = $prefixtable."ss4";
+
+		$query="SELECT * FROM $ss4";
+		$nodata = "No Data found";
+
+>>>>>>> 18d49522400a28739f1e8f2152f70487bb62aed2
 	}
 
 	else{

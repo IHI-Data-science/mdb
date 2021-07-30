@@ -8,7 +8,14 @@ define( 'DB_HOST', 'localhost' );
 define( 'DB_USER', 'root' );             
 define( 'DB_PASS', '' );            
 define( 'DB_NAME', 'iebsweb5' );       
-define( 'URL', 'http://localhost/mdb' ); 
+define( 'URL', 'http://mosquitodb.io/mdb' );
+
+
+// define( 'DB_HOST', 'localhost' );          
+// define( 'DB_USER', 'root' );             
+// define( 'DB_PASS', '' );            
+// define( 'DB_NAME', 'MDB4' );       
+// define( 'URL', 'http://localhost/MDB4' ); 
 
 
 /*

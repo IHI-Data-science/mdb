@@ -3,7 +3,7 @@
 <head>
    <?php
    require_once('includes/load.php');
-
+   
    $theme = get_theme($settings['organization_theme']);
    
    ?>
@@ -32,7 +32,6 @@
     <link type="text/css" rel="stylesheet" href="assets/css/ui.daterangepicker.css"/>
     <link type="text/css" rel="stylesheet" href="assets/css/daterangepicker-bs3.css">
     
-    
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
@@ -45,8 +44,7 @@
     <script type="text/javascript" src="assets/js/api.js"></script>
     <script type="text/javascript" src="app2.js"></script>
     <script type="text/javascript" src="chome.js"></script>
-    <script type="text/javascript" src="assets/js/chartjs-plugin-colorschemes.js"></script>
-
+    
     <script type="text/javascript" src="assets/js/daterange/date.js"></script>
     <script type="text/javascript" src="assets/js/chartjs-plugin-labels.js"></script>
     <script type="text/javascript" src="assets/js/daterange/daterangepicker.jQuery.js"></script>
@@ -83,38 +81,6 @@
     <script type="text/javascript" src="assets/js/table/jquery.base64.js"></script>
     <script type="text/javascript" src="assets/js/table/bootstrap-table-toolbar.js"></script>
     <script type="text/javascript" src="assets/js/table/bootstrap-table-sticky-header.js"></script>
-    <!-- add this -->
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
-<div id="google_translate_element" style="display:none"></div>. 
-<style> .goog-te-banner-frame.skiptranslate {
-    display: none !important;
-    body {
-    top: 0px !important; 
-    }
-    } 
-
-    </style>
-<script>
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element');
-}
-
-function translateLanguage(lang) {
-  googleTranslateElementInit();
-  var $frame = $('.goog-te-menu-frame:first');
-  if (!$frame.size()) {
-    alert("Error: Could not find Google translate frame.");
-    return false;
-  }
-  $frame.contents().find('.goog-te-menu2-item span.text:contains(' + lang + ')').get(0).click();
-  return false;
-}
-
-// $(function(){
-//   $('.selectpicker').selectpicker();
-// });
-</script>
-<!-- to here-->
 </head>
 
 <body class="static-navbar">
@@ -165,12 +131,6 @@ function translateLanguage(lang) {
         <ul class="nav navbar-nav navbar-right collapse" id="navbar-right">
             <li> <a id="tguide"> <span> Guide</span> </a> </li>
             <li> <a href="logout.php"> <i class="fa fa-mail-forward"></i> <span>Logout</span> </a> </li>
-           <!-- add this -->
-            <li> <select class="selectpicker" data-width="fit" style="background-color:#009551;color:#f5f5f5" onchange="translateLanguage(this.value);">
-               <option data-content='<span class="flag-icon flag-icon-af"></span> English' value="English">English</option>
-               <option  data-content='<span class="flag-icon flag-icon-al"></span> French' value="French">French</option>
-               </select></li> 
-               <!-- to here-->
         </ul>
     </div>
 </div>

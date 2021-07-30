@@ -8,7 +8,7 @@ $page_title='Sample Sorting';
 page_require_level(3);
 include_once('layouts/head.php');
 
-$formtype="SS2";
+$formtype="SS4";
 $table   ="custss";
 
 ?>
@@ -137,13 +137,13 @@ function show_report($recorded, $skip, $errors){
                       
                       global $db;
                       
-                      $formtype="SS2";
+                      $formtype="SS4";
                       $table   ="custss";
                       
                       $prefixtable=$projectid."_";
                       
                       $ed1 =$prefixtable."ed1";
-                      $ss1 =$prefixtable."ss2";
+                      $ss1 =$prefixtable."ss4";
                       $edss=$prefixtable."edss";
                       $ssso=$prefixtable."ssso";
                       
@@ -261,7 +261,7 @@ function show_report($recorded, $skip, $errors){
                                      //Replace all occurrences of  \r in haystack with "".
                                      $line=str_replace("\r", "", $line);
                                      //call function rowIdentifier
-                                     list($rowtype, $data)=rowIdentifier($line, "SS2", $patternattribute);
+                                     list($rowtype, $data)=rowIdentifier($line, "SS4", $patternattribute);
                                      //echo $line."<br />";
                                      //start to detect which type of row
                                      //row contain serial number of ED
@@ -280,7 +280,7 @@ function show_report($recorded, $skip, $errors){
                                         //$linearray = split(",", $line, $_SESSION["num_split"]);
                                         $line_array=explode(",", $line, $umbersplit);
                                         //combine array $linearray to one variable
-                                        $line_array=implode(",", $line_array);
+                                        $line_array="'".implode("', '", $line_array)."'";
                                         //echo $line_array;
                                         //message to user
                                         //  echo "<span class=\"has-padding\"> --> Row number:".$numberline." Prepare information.. ";
@@ -295,14 +295,14 @@ function show_report($recorded, $skip, $errors){
                                         
                                         //create query for fetching link value from edss entity
                                         $query_fetch="SELECT
-                                          edss.id
-                                          FROM
-                                          $edss as edss
-                                          INNER JOIN
-                                          $ed1 as ed1
-                                          ON (edss.ed1id = ed1.id)
-                                          WHERE ed1.sen=$ssen AND ed1.dsen=$sen AND
-                                          ed1.projectregsite_id=$projectregsite AND ed1.fr=$sfr";
+                                              edss.id
+                                              FROM
+                                              $edss as edss
+                                              INNER JOIN
+                                              $ed1 as ed1
+                                              ON (edss.ed1id = ed1.id)
+                                              WHERE ed1.sen=$ssen AND ed1.dsen=$sen AND
+                                              ed1.projectregsite_id=$projectregsite AND ed1.fr=$sfr";
                                         //echo query_fetch data
                                         //echo $query_fetch.'<br />';
                                         //execute query
@@ -328,7 +328,7 @@ function show_report($recorded, $skip, $errors){
                                               
                                               $query_part="INSERT INTO $ss1 (edssid,$patternattribute,senfr) VALUES($edssid,$line_array,$senfr)";
                                               
-                                             //  echo $query_part."<br />";
+                                              //echo $query_part."<br />";
                                               //execute query
                                               $result=$db->mysqliquery($query_part);
                                               //successful of query
@@ -376,26 +376,11 @@ function show_report($recorded, $skip, $errors){
                                      //increment number line
                                      $numberline++;
                                   }//end of foreach function
-                                  //create query for insertion of data to EdSs Table which link to Ss table
-                                  
-                                  $query_insert_edss="INSERT INTO  $ssso (ss2id) SELECT `ss1`.`id` FROM
-                                      $ssso as ssso RIGHT JOIN  $ss1 as ss1 ON (`ssso`.`ss2id` = `ss1`.`id`) WHERE ssso.ss1id IS NULL
-                                      ";
-                                  
-                                  $result=$db->query($query_insert_edss);
-                                  
-                                  show_report($recorded, $skip, $errors);
-                                  //message to user to show row`s recorded successfull and failed
-                                  //echo "<h5><span class=\"has-padding\"> --><font color=\"green\">Rows Successfully Recorded: <b>$recorded</b></font> ; <font color=\"red\">Failed: <b>$skip </b> </span></font></h5>";
-                                  show_formdown();
-                                  exit();
                                   
                                }//endifcolumnnotmatch
                                
                                else{
-                                  
-                                  //read file contents
-                                  echo "<span class=\"has-padding\"> <font color=\"red\"> <h3> ** Fields dont much with template ** </h3></font><span> <br />";
+                                  echo "<span class=\"has-padding\"> <font color=\"red\"> <h3> ** Fields dont match with template ** </h3></font><span> <br />";
                                   
                                   echo "
                                       <div class=\"btn-group pull-right\">
@@ -404,6 +389,17 @@ function show_report($recorded, $skip, $errors){
                                       ";
                                   exit();
                                }
+                               
+                               $query_insert_edss="INSERT INTO  $ssso (ss4id) SELECT `ss1`.`id` FROM
+                                  $ssso as ssso RIGHT JOIN  $ss1 as ss1 ON (`ssso`.`ss4id` = `ss1`.`id`) WHERE ssso.ss1id IS NULL";
+                               
+                               $result=$db->query($query_insert_edss);
+                               
+                               show_report($recorded, $skip, $errors);
+                               //message to user to show row`s recorded successfull and failed
+                               //echo "<h5><span class=\"has-padding\"> --><font color=\"green\">Rows Successfully Recorded: <b>$recorded</b></font> ; <font color=\"red\">Failed: <b>$skip </b> </span></font></h5>";
+                               show_formdown();
+                               exit();
                                
                             }
                             
@@ -457,6 +453,7 @@ function show_report($recorded, $skip, $errors){
     
     </div>
 </div>
+
 
 <?php include_once('layouts/foot.php'); ?>
 

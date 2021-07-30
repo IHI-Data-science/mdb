@@ -632,70 +632,63 @@ function sendMail($email, $message, $subject){
     global $db;
 
     $prefix = $prefix."_";
-//  ED1 table
-$sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment links to SS',
-  `projectregsite_id` int(11) NOT NULL COMMENT 'Store value from table projectregsite id',
-  `sen` int(6) NOT NULL COMMENT 'unique identifier for ED1 form',
-  `fr` int(2) NOT NULL COMMENT 'unique identifier of each row on the data collected',
-  `dt` date NOT NULL COMMENT 'date of collection (morning on which the mosquitoes were collected)',
-  `re`  varchar(100) DEFAULT '0' COMMENT 'Region (Define specific Region in the Country)',
-  `di`  varchar(100) DEFAULT '0' COMMENT 'District (Define specific District in a Region )',
-  `sec`  varchar(100) DEFAULT '0' COMMENT 'Sector/Council (Define specific Sector in the District)',
-  `cew`  varchar(100) DEFAULT '0' COMMENT 'Cell/Ward (Define specific Cell/ in the Sector)',
-  `vis`  varchar(100) DEFAULT '0' COMMENT 'Village/Street (Define specific Village/Street in the Cell/Ward)',
-  `ea` varchar(100) DEFAULT '0' COMMENT 'Enumaration area (Define geographic location within the study site)',
-  `cr` bigint(13) DEFAULT '0' COMMENT 'Cluster (The smallest geographic statistical unit within enumaration area)',
-  `cp` int(2) DEFAULT '0' COMMENT 'Compound or Plot (A specific physical area within an identifiable owner)',
-  `tcu` bigint(11) DEFAULT '-99' COMMENT 'Hold Ten Cell Unit',
-  `hh` varchar(100) DEFAULT '0' COMMENT 'Household (A person or group of people who live together in the same dwelling unit)',
-  `nah` varchar(100) DEFAULT '0' COMMENT 'Animals in Household (An animal or group of animals who live together with people in same dwelling unit)',
-  `sid` int(2) DEFAULT '0' COMMENT 'Structure ID (A free standing building that can have one or more room for residential or commercial use)',
-  `me` int(3) NOT NULL DEFAULT '-99' COMMENT 'Method (The method by which the mosquitoes were collected or trapped)',
-  `ind` int(1) NOT NULL COMMENT 'hold collection was made indoors a house or hut',
-  `ht` int(3) DEFAULT NULL COMMENT 'Habitat Type (Classification of the aquatic habitat in which the collection was made)',
-  `st` varchar(6) COMMENT 'Start Time (The time that the collection started in 24 time )',
-  `ft` varchar(6) COMMENT 'Finish Time (The time that the collection finish in 24 time)',
-  `hp` int(4) DEFAULT NULL COMMENT 'Hold Period (The period of time for which the mosquitoes were held for survival analysis after they were collected)',
-  `rnd` int(3) DEFAULT '-99' COMMENT 'Round (One cycle or rotation of the treatment )',
-  `blk` int(3) DEFAULT '-99' COMMENT 'Block (A set of position through which treatments are rotated in a Latin)',
-  `shh` varchar(200) DEFAULT '-99' COMMENT 'A project specific house or experiment hut',
-  `stn` int(3) DEFAULT '-99' COMMENT 'A project specific where station where a trap may be positioned',
-  `vi` varchar(25) DEFAULT NULL COMMENT 'Initial of person that caught the mosquitoes',
-  `tr` varchar(50) DEFAULT NULL COMMENT 'Treatment (Coding for the unique experimental treatment)',
-  `dy` int(3) DEFAULT '-99' COMMENT 'Experiment Day (The consecutive nth day since the experiment commenced)',
-  `tmp` varchar(15) DEFAULT NULL COMMENT 'Temperature',
-  `hmd` varchar(15) DEFAULT NULL COMMENT 'Humidity',
-  `ws` varchar(15) DEFAULT NULL COMMENT 'wind speed',
-  `hs` varchar(15) DEFAULT '-99' COMMENT 'Number of household sampled',
-  `vc` int(1) NOT NULL DEFAULT '2' COMMENT 'Legitimacy of the collection',
-  `notes` text COMMENT 'On site observation about the collection',
-  `gps` text COMMENT 'Site geolocation',
-  `dsen` int(6) NOT NULL COMMENT 'Destination form serial number',
-  `livestock` int(11) DEFAULT NULL,
-  `hoccupant` int(11) DEFAULT NULL,
-  `heaves` int(11) DEFAULT NULL,
-  `nss` int(11) DEFAULT NULL,
-  `nbh` int(11) DEFAULT NULL,
-  `oth` int(11) DEFAULT NULL,
-  `sn` int(3) DEFAULT '-99' COMMENT 'Season',
-  `agrt` int(3) DEFAULT '-99' COMMENT 'Agriculture',
-  `invn` int(3) DEFAULT '-99' COMMENT 'Intervention',
-  `lvk` int(3) DEFAULT '-99' COMMENT 'Livestock',
-  `rfe` int(3) DEFAULT '-99' COMMENT 'Roof type',
-  `wle` int(3) DEFAULT '-99' COMMENT 'Wall type',
-  `evs` int(3) DEFAULT '-99' COMMENT 'Eaves',
-  `bv` int(3) DEFAULT '-99' COMMENT 'Block ventilation',
-  `bvs` int(3) DEFAULT '-99' COMMENT 'Block ventilation screening',
-  `wsn` int(3) DEFAULT '-99' COMMENT 'Window screening',
-  `wsnc` int(3) DEFAULT '-99' COMMENT 'Window screening Condition',
-  `ckl` int(3) DEFAULT '-99' COMMENT 'Cooking location',
-  `cke` int(3) DEFAULT '-99' COMMENT 'Cooking Energy source',
-  `sp` int(3) DEFAULT '-99' COMMENT 'Sprayed',
-  `lsd` date NOT NULL COMMENT 'Last spray date',
-  `ise` int(3) DEFAULT '-99' COMMENT 'Insectside',
-  `created_at` timestamp default now(),  
-  `updated_at` timestamp default now(),
+
+      $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
+      `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment links to SS',
+      `projectregsite_id` int(11) NOT NULL COMMENT 'Store value from table projectregsite id',
+      `sen` int(6) NOT NULL COMMENT 'unique identifier for ED1 form',
+      `fr` int(2) NOT NULL COMMENT 'unique identifier of each row on the data collected',
+      `dt` date NOT NULL COMMENT 'date of collection (morning on which the mosquitoes were collected)',
+      `ea` varchar(100) DEFAULT '0' COMMENT 'Enumaration area (Define geographic location within the study site)',
+      `cr` bigint(13) DEFAULT '0' COMMENT 'Cluster (The smallest geographic statistical unit within enumaration area)',
+      `cp` int(2) DEFAULT '0' COMMENT 'Compound or Plot (A specific physical area within an identifiable owner)',
+      `tcu` bigint(11) DEFAULT '-99' COMMENT 'Hold Ten Cell Unit',
+      `hh` varchar(100) DEFAULT '0' COMMENT 'Household (A person or group of people who live together in the same dwelling unit)',
+      `sid` int(2) DEFAULT '0' COMMENT 'Structure ID (A free standing building that can have one or more room for residential or commercial use)',
+      `me` int(3) NOT NULL DEFAULT '-99' COMMENT 'Method (The method by which the mosquitoes were collected or trapped)',
+      `ind` int(1) NOT NULL COMMENT 'hold collection was made indoors a house or hut',
+      `ht` int(3) DEFAULT NULL COMMENT 'Habitat Type (Classification of the aquatic habitat in which the collection was made)',
+      `st` varchar(6) COMMENT 'Start Time (The time that the collection started in 24 time )',
+      `ft` varchar(6) COMMENT 'Finish Time (The time that the collection finish in 24 time)',
+      `hp` int(4) DEFAULT NULL COMMENT 'Hold Period (The period of time for which the mosquitoes were held for survival analysis after they were collected)',
+      `rnd` int(3) DEFAULT '-99' COMMENT 'Round (One cycle or rotation of the treatment )',
+      `blk` int(3) DEFAULT '-99' COMMENT 'Block (A set of position through which treatments are rotated in a Latin)',
+      `shh` varchar(200) DEFAULT '-99' COMMENT 'A project specific house or experiment hut',
+      `stn` int(3) DEFAULT '-99' COMMENT 'A project specific where station where a trap may be positioned',
+      `vi` varchar(25) DEFAULT NULL COMMENT 'Initial of person that caught the mosquitoes',
+      `tr` varchar(50) DEFAULT NULL COMMENT 'Treatment (Coding for the unique experimental treatment)',
+      `dy` int(3) DEFAULT '-99' COMMENT 'Experiment Day (The consecutive nth day since the experiment commenced)',
+      
+      `tmp` varchar(15) DEFAULT NULL COMMENT 'Temperature',
+     
+      `hmd` varchar(15) DEFAULT NULL COMMENT 'Humidity',
+      `ws` varchar(15) DEFAULT NULL COMMENT 'wind speed',
+      `hos` varchar(15) DEFAULT '-99' COMMENT 'Number of household sampled',
+     
+      `vc` int(1) NOT NULL DEFAULT '2' COMMENT 'Legitimacy of the collection',
+      `notes` text COMMENT 'On site observation about the collection',
+      `gps` text COMMENT 'Site geolocation',
+     
+      `dsen` int(6) NOT NULL COMMENT 'Destination form serial number',
+      `livestock` int(11) DEFAULT NULL,
+      `hoccupant` int(11) DEFAULT NULL,
+      `heaves` int(11) DEFAULT NULL,
+      `nss` int(11) DEFAULT NULL,
+      `nbh` int(11) DEFAULT NULL,
+      `oth` int(11) DEFAULT NULL,
+      `sn` int(3) DEFAULT '-99' COMMENT 'Season',
+      `agrt` int(3) DEFAULT '-99' COMMENT 'Agriculture',
+      `invn` int(3) DEFAULT '-99' COMMENT 'Intervention',
+      `lvk` int(3) DEFAULT '-99' COMMENT 'Livestock',
+      `rfe` int(3) DEFAULT '-99' COMMENT 'Roof type',
+      `wle` int(3) DEFAULT '-99' COMMENT 'Wall type',
+      `evs` int(3) DEFAULT '-99' COMMENT 'Eaves',
+      `wsn` int(3) DEFAULT '-99' COMMENT 'Window screening',
+      `wsnc` int(3) DEFAULT '-99' COMMENT 'Window screening Condition',
+      `ckl` int(3) DEFAULT '-99' COMMENT 'Cooking location',
+      `cke` int(3) DEFAULT '-99' COMMENT 'Cooking Energy source',
+      `created_at` timestamp default now(), 
+      `updated_at` timestamp default now(),
       PRIMARY KEY (`projectregsite_id`,`sen`,`fr`),
       UNIQUE KEY `id` (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ; ";
@@ -728,11 +721,13 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
       `ss1id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS1',
       `ss2id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS2',
-      `ss5id` int(11) DEFAULT NULL COMMENT 'Hold data link to ss3',
+      `ss3id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS3',
+      `ss4id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS4',
        PRIMARY KEY (`id`),
        KEY `fk_ss1id` (`ss1id`),
          KEY `fk_ss2id` (`ss2id`),
-       KEY `fk_ss5id` (`ss5id`)
+       KEY `fk_ss3id` (`ss3id`),
+       KEY `fk_ss4id` (`ss4id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;";
 
 
@@ -915,7 +910,7 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `sfr` int(6) NOT NULL COMMENT 'unique identifier for SS2form',
       `hf` int(3) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of Habitat found (1: Yes, 2: No)',
       `htc` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of Habitat type correct (1: Yes, 2: No)',
-      `htr` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of Habitat Type treated (1: Yes, 2: No)',
+      `ht` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of Habitat Type treated (1: Yes, 2: No)',
       `hw` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of Habitat wet (1: Yes, 2: No)',
       `hs` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status Habitat Parameter (1: <10m, 2: 10-100m, 3: >100m)',
       `fr` int(2) NOT NULL COMMENT 'unique identifier of each row on the data collected',
@@ -1241,16 +1236,76 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
 
-    
+    $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss3b (
+      `id_` int(11) NOT NULL AUTO_INCREMENT,
+      `edssid` int(11) NOT NULL,
+      `sen` int(6) NOT NULL,
+      `fr` int(6) NOT NULL,
+      `ssen` int(6) NOT NULL,
+      `sfr` int(6) NOT NULL,
+      `st` varchar(10) NOT NULL,
+      `dur` varchar(10) NOT NULL,
+      `rep_1` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 1',
+      `rep_2` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 2',
+      `rep_3` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 3',
+      `rep_4` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 4',
+      `cnr_1` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in control 1',
+      `cnr_2` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in control 2',
+      `created_at` timestamp default now(), 
+      `updated_at` timestamp default now(), 
+      PRIMARY KEY (`id_`,`sen`,`fr`),
+      UNIQUE KEY `id_` (`id_`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
+    $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss4 (
+      `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
+      `edssid` int(6) NOT NULL COMMENT 'unique identifier for SS4 form',
+      `sen` int(6) NOT NULL COMMENT 'unique identifier for SS4 form',
+      `ssen` int(6) NOT NULL COMMENT 'unique identifier for SS4 form',
+      `sfr` int(6) NOT NULL COMMENT 'unique identifier for SS4 form',
+      `fr` int(2) NOT NULL COMMENT 'unique identifier of each row on the data collected',
+
+      `su` varchar(100) DEFAULT '0' COMMENT 'substracte (type of soil for snail to lay eggs)',
+ `sa` varchar(15) DEFAULT NULL COMMENT 'salinity',
+      `dso` varchar(15) DEFAULT NULL COMMENT 'Dissolved oxygen ',
+ `dr` varchar(15) DEFAULT '-99' COMMENT 'Number of dredges',
+ `ph` varchar(15) DEFAULT NULL COMMENT 'potential of hydrogen',
+      `co` varchar(15) DEFAULT NULL COMMENT ' Conductivity ms',
+      `wda` varchar(100) DEFAULT '0' COMMENT 'wild domestic anilal  (define jind of animals)',
+      `act` varchar(100) DEFAULT '0' COMMENT 'activity (define either human activities )',
+      `wn` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of water body name (1: Yes, 2: No)',
+      `wl` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of water level (1: Yes, 2: No)',
+      `de` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of depth (1: Yes, 2: No)',
+      `ret` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of flow rate (1: Yes, 2: No)',
+      `wt` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of water body type (1: Yes, 2: No)',
+      `lwt` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of longevity of water body type (1: Yes, 2: No)',
+      `sp` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of snail present(1: Yes, 2: No)',
+      `spc` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of snail species collected (1: Yes, 2: No)',
+      `n` int(4) NOT NULL COMMENT 'number of observed (Records the total number of mosquitoes observed in each specific subgroup)',
+      `sps` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of snail species shedded (1: Yes, 2: No)',
+      `tc` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of type of cercaria (1: Yes, 2: No)',
+      `nc` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Bumber of cercaria shadded (1: Yes, 2: No)',
+      `nd` int(3) DEFAULT NULL COMMENT 'number of discarded (This is the number of mosquitoes discarded)',
+      `senfr` int(11) NOT NULL,
+      `created_at` timestamp default now(), 
+      `updated_at` timestamp default now(),
+       PRIMARY KEY (`edssid`,`sen`),
+       UNIQUE KEY `id` (`id`)
+     
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;";
+
+
       $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."sost (
         `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
         `so1id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS1',
         `so2id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS2',
-        `so3id` int(11) DEFAULT NULL COMMENT 'Hold data link to ss3',
+        `so3id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS3',
+        `so4id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS4',
         PRIMARY KEY (`id`),
         KEY `fk_ss1id` (`so1id`),
         KEY `fk_ss2id` (`so2id`),
-        KEY `fk_ss5id` (`so3id`)
+        KEY `fk_ss3id` (`so3id`),
+        KEY `fk_ss4id` (`so4id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
 
@@ -1278,49 +1333,81 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
 
-      $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."enumerationarea (
+      
+        $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."enumerationarea (
          `id` int(11) NOT NULL AUTO_INCREMENT,
          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
          `ea` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
          PRIMARY KEY (`id`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-      $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."cluster (
+      
+        $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."cluster (
          `id` int(11) NOT NULL AUTO_INCREMENT,
          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
          `cr` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
          PRIMARY KEY (`id`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-      $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."compound (
+     
+        $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."compound (
          `id` int(11) NOT NULL AUTO_INCREMENT,
          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
          `cp` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
          PRIMARY KEY (`id`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-      $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."treatment (
+      
+        $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."treatment (
          `id` int(11) NOT NULL AUTO_INCREMENT,
          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
          `tr` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
          PRIMARY KEY (`id`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-      $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."treatment_two (
+        $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."DomesticWildAnimals (
+          `id` int(11) NOT NULL AUTO_INCREMENT,
+          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+          `tr` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+          PRIMARY KEY (`id`)
+         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
+     
+         $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."treatment_two (
           `id` int(11) NOT NULL AUTO_INCREMENT,
           `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
           `tr` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
           PRIMARY KEY (`id`)
          ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";  
 
-      $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."colonycode (
+     
+         $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."colonycode (
          `id` int(11) NOT NULL AUTO_INCREMENT,
          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
          `cc` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
          PRIMARY KEY (`id`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-      $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."bodypart (
+        $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."Substracte (
+          `id` int(11) NOT NULL AUTO_INCREMENT,
+          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+          `bp` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+          PRIMARY KEY (`id`)
+         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+ 
+        
+        
+        $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."Activities (
+          `id` int(11) NOT NULL AUTO_INCREMENT,
+          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+          `bp` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+          PRIMARY KEY (`id`)
+         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
+      
+      
+        
+         $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."bodypart (
          `id` int(11) NOT NULL AUTO_INCREMENT,
          `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
          `bp` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -1358,6 +1445,8 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
        PRIMARY KEY (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
+  
+
        $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."custlabel (
        `id` int(11) NOT NULL AUTO_INCREMENT,
        `pc` int(11) NOT NULL ,
@@ -1367,6 +1456,20 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
        `p_attri2` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
        PRIMARY KEY (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
+      $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."wn (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+        `tx` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+        PRIMARY KEY (`id`)
+       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
+     $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."spc (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `number` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+      `sas` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+      PRIMARY KEY (`id`)
+     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
    
      $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss1template(
@@ -1402,7 +1505,7 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `sfr` varchar(10) NULL,
       `hf` varchar(10) NULL,
       `htc` varchar(10) NULL,
-      `htr` varchar(10) NULL,
+      `ht` varchar(10) NULL,
       `hw` varchar(10) NULL,
       `hs` varchar(10) NULL,
       `fr` varchar(10) NULL,
@@ -1717,28 +1820,57 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
   
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
+    $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss4template(
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `sen` varchar(10),
+      `ssen` varchar(10) NULL,
+      `sfr` varchar(10) NULL,
+      `fr` varchar(10) NULL,
 
-   // ED1Template table
+      `su` varchar(100),
+      `sa` varchar(15), 
+           `dso` varchar(15), 
+      `dr` varchar(15),
+      `ph` varchar(15) NULL ,
+     `co` varchar(15)  NULL, 
+    `wda` varchar(100) NULL, 
+    `act` varchar(100) NULL, 
+      `wl` varchar(10) NULL,
+      `wl` varchar(20) NULL,
+      `de` varchar(30) NULL,
+      `ret` varchar(10) NULL,
+      `wt` varchar(10) NULL ,
+      `lwt` varchar(10) NULL,
+      `sp` varchar(30) NULL,
+      `spc` varchar(30) NULL,
+      `n` varchar(10) NULL,
+      `sps` varchar(30) NULL,
+      `tc` varchar(10) NULL,
+      `nc` varchar(10) NULL ,
+      
+       PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+
+
+   
      $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ed1template (
       `id` int(11) NOT NULL AUTO_INCREMENT,
       `sen` varchar(10) NULL,
       `fr` varchar(10)  ,
       `dt` varchar(10) NULL ,
-      `re`  varchar(100)  ,
-      `di`  varchar(100) ,
-      `ea` varchar(200) NULL ,
-      `cr` varchar(100) NULL ,
-      `cp` varchar(100) NULL ,
-      `tcu` varchar(100) NULL,
-      `hh` varchar(100) NULL ,
-      `nah` varchar(100) NULL,
-      `sid` varchar(10) NULL ,
+      `ea` varchar(10) ,
+      `cr` varchar(10) ,
+      `cp` varchar(10) ,
+      `tcu` varchar(10),
+      `hh` varchar(20) ,
+      `sid` varchar(10) ,
       `me` varchar(10) NULL ,
       `ind` varchar(10) NULL ,
       `ht` varchar(10) NULL,
       `st` varchar(10) NULL ,
       `ft` varchar(10) NULL,
       `hp` varchar(10) NULL,
+      `dd` varchar(10) NULL,
       `rnd` varchar(10) ,
       `blk` varchar(10) ,
       `shh` varchar(10),
@@ -1746,7 +1878,7 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `vi` varchar(10) NULL ,
       `tr` varchar(10) NULL ,
       `dy` varchar(10) ,
-	  `hs` varchar(300) ,
+      `hos` varchar(300) ,
       `vc` varchar(10) NULL,
       `notes` text ,
       `sn` varchar(10) ,
@@ -1756,16 +1888,12 @@ $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `rfe` varchar(10) ,
       `wle` varchar(10) ,
       `evs` varchar(10) ,
-      `bv` varchar(10),
-      `bvs` varchar(10),
       `wsn` varchar(10) ,
       `wsnc` varchar(10) ,
       `ckl` varchar(10) ,
       `cke` varchar(10) ,
-      `sp` varchar(10) ,
-      `lsd` varchar(10) ,
-      `ise` varchar(10) ,
       `gps` text ,
+      
       `dsen` varchar(10) NULL ,
        PRIMARY KEY (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
