@@ -309,7 +309,64 @@ function ss2data($sen, $ssen, $sfr, $hf, $htc, $htr, $hw, $hs, $fr, $tx, $bf, $p
 }
 
 
-function ss3data($sen, $fr, $ssen, $sfr, $sd, $dd, $tx, $sas, $mt, $ch, $rep_no, $cnr_no, $exp_tr, $st, $dur)
+function ss5data($sen,$ssen, $sfr,$fr,
+$dot,$ga,$gds,$sgds,$ndis,$mo,$mst,$ma,
+$tb,$bia,$it,
+$SynT,$ic,$sc,$SRTemp,$ETMax,$ETMin,$HTMax,$HTMin,
+$EHMax,$EHMin,$HHMax,$HHMin, $mti1,$mti2,$mti3,$mti4,$mti5,$mti6,
+$mts,$mtisy1,$mtisy2, $mtisy3,$mtisy4,$mtisy5, $mtisy6,
+
+ $mtsy, $btci1,  $btci2, $btci3, $btci4, $btci5, $btci6,
+ $bc_s,
+
+ $btcsy_i1, $btcsy_i2, $btcsy_i3, $btcsy_i4, $bc_sy,
+ $dbc_i1,$dbc_i2,$dbc_i3,$dbc_i4,$dbc_i5,$dbc_i6,$dbc_s,
+
+
+ $dbc_syi1, $dbc_syi2,$dbc_syi3, $dbc_syi4,
+ $dbc_sy,$tbc_i1, $tbc_i2,$tbc_i3,$tbc_i4, $tbc_i5,$tbc_i6,
+ $tbc_s, $tbc_syi1,$tbc_syi2,$tbc_syi3, $tbc_syi4, $tbc_sy,
+
+ $kd_d0,$kd_d15, $kd_d30,$kd_d45, $kd_d60,$kd_d75,
+ $kd_d90, $kd_d105,$kd_d120,$kd_d24, $kd_d72,
+
+ $kd_d1d, $kd_d2d, $kd_d3d, $kd_d4d, $kd_d5d, $kd_d6d, $k_d7d,
+
+
+
+$rt,$spd,$liu,$elcm,$mt1,$mt2, $mt3,
+$mt4,$mkd1,$mkd2,$mkd3,$mkd4,$mkd5,$mkd6,$mkd7,
+$mkd8, $mkd9, $mkd10,
+$mkd11, $mkd12, $mkd13, $mkd14,
+$mkd15, $mkd16,$mkd17,$mkd18, $mkd19,$mkd20,
+
+
+$O1, $O2, $O3,
+
+
+
+$mtir1,$mtir2, $mtir3, $mtir4,$mtir5, $mtir6,
+$mtsr1, $mtsr2, $mtsr3, $mtsr4,
+$mtisyr1, $mtisyr2, $mtisyr3,$mtisyr4,
+$mtsyr1, $mtsyr2, $mtsyr3, $mtsyr4,
+$tcir1, $tcir2,$tcir3, $tcir4, $tcir5, $tcir6,
+
+$tc_sr1, $tc_sr2, $tc_sr3, $tc_sr4,
+$tc_syir1, $tc_syir2,  $tc_syir3,  $tc_syir4,
+$tc_sy1r,$tc_sy2r,$tc_sy3r,$tc_sy4r,
+
+$id_ir1, $id_ir2, $id_ir3,$id_ir4,$id_ir5, $id_ir6,
+$id_sr1,$id_sr2,$id_sr3,$id_sr4,$id_syr1,
+$id_syr2, $id_syr3, $id_syr4,
+
+$edi1,$edi2,$edi3,$edi4,$edi5,$edi6,
+$eds1, $eds2, $eds3, $eds4,
+$edisy1, $edisy2, $edisy3, $edisy4,
+$edsy1,$edsy2,$edsy3,$edsy4,
+
+
+$senfr)
+ 
 {
     global $db;
   
@@ -355,93 +412,132 @@ function ss3data($sen, $fr, $ssen, $sfr, $sd, $dd, $tx, $sas, $mt, $ch, $rep_no,
     }
 
 
-    $resultft = $db->mysqliquery("INSERT INTO  $ss3 (edssid,sen,fr,ssen,sfr,sd,dd,tx,sas,mt,ch,rep_no,cnr_no,exp_tr,st,dur,senfr)
-    VALUES('$edssid','$sen','$fr','$ssen','$sfr','$sd','$dd','$tx','$sas','$mt','$ch','$rep_no','$cnr_no','$exp_tr','$st','$dur','$senfr')");
-
-    // check for successful store
-    /* if ($resultft) {
-
-       $query_insert_edss2 = "INSERT INTO $ssso (ss1id) SELECT `ss1`.`id`
-       FROM $ssso as ssso RIGHT JOIN $ss1 as ss1 ON (`ssso`.`ss1id` = `ss1`.`id`)
-       WHERE ssso.ss1id IS NULL
-       ";
-
-      //execute query to insert into EdSs table from Ed1 Table
-       $db->mysqliquery($query_insert_edss2);
-
-     }  */
-
-    return $resultft;
-}
+    
+   $resultft = $db->mysqliquery("INSERT INTO  $ss3 (edssid,sen,ssen,sfr,fr,
+   dot,ga,gds,sgds,ndis,mo,mst,ma,tb,bia,it,synt,
+   ic,sc,SRTemp,ETMax,ETMin,HTMax,HTMin,EHMax,EHMin,HHMax,HHMin, mti1,mti2,mti3,
+   mti4, mti5, mti6, mts,mtisy1,mtisy2, mtisy3,mtisy4,mtisy5, mtisy6,
+   mtsy, btci1, btci2, btci3, btci4, btci5, btci6,
+   bc_s, btcsy_i1, btcsy_i2, btcsy_i3, btcsy_i4, bc_sy,
+   dbc_i1,dbc_i2,dbc_i3,dbc_i4,dbc_i5,dbc_i6,
+   dbc_s,
+   
+   dbc_syi1, dbc_syi2,dbc_syi3, dbc_syi4,
+   dbc_sy,tbc_i1, tbc_i2,tbc_i3,tbc_i4, tbc_i5,tbc_i6,
+   tbc_s, tbc_syi1,tbc_syi2,tbc_syi3, tbc_syi4, tbc_sy, 
 
 
-function ss3bdata($sen, $fr, $ssen, $sfr, $st, $dur, $rep_1, $rep_2, $rep_3, $rep_4, $cnr_1, $cnr_2)
-{
-    global $db;
+
+
+   kd_d0,kd_d15, kd_d30,kd_d45, kd_d60, kd_d75,
+   kd_d90,kd_d105, kd_d120, kd_d24,kd_d72,
+
+
+   
+   kd_d1d, kd_d2d, kd_d3d, kd_d4d, kd_d5d, kd_d6d,k_d7d,
+
+
+   rt,spd,liu,elcm,mt1,mt2, mt3,mt4,
+   mkd1,mkd2,mkd3,mkd4,mkd5,mkd6,mkd7,
+   mkd8, mkd9, mkd10,
+   mkd11,mkd12, mkd13,mkd14,
+   mkd15, mkd16,mkd17,mkd18, mkd19,mkd20,
+   
+   mtir1,mtir2, mtir3, mtir4,mtir5, mtir6,
+ mtsr1, mtsr2, mtsr3, mtsr4,
+mtisyr1, mtisyr2, mtisyr3,mtisyr4,
+mtsyr1, mtsyr2, mtsyr3, mtsyr4, tcir1, tcir2,tcir3, tcir4, tcir5, tcir6,
+
+
+tc_sr1, tc_sr2, tc_sr3, tc_sr4,
+tc_syir1, tc_syir2, tc_syir3, tc_syir4,
+tc_sy1r,tc_sy2r,tc_sy3r,tc_sy4r,
+
+id_ir1, id_ir2, id_ir3,id_ir4,id_ir5, id_ir6,
+id_sr1,id_sr2,id_sr3,id_sr4,
+
+edi1,edi2,edi3,edi4,edi5,edi6,
+eds1, eds2, eds3, eds4,
+edisy1, edisy2, edisy3, edisy4,
+edsy1,edsy2,edsy3,edsy4,
+
+senfr)
+
+   VALUES('$edssid','$sen','$ssen','$sfr', '$fr',
+   '$dot','$ga','$gds','$sgds','$ndis','$mo','$mst','$ma',
+   '$tb','$bia','$it','$SynT','$ic','$sc','$SRTemp','$ETMax','$ETMin','$HTMax','$HTMin',
+   '$EHMax','$EHMin','$HHMax','$HHMin', '$mti1','$mti2',
+   '$mti3','$mti4','$mti5','$mti6','$mts','$mtisy1','$mtisy2', '$mtisy3','$mtisy4',
+   '$mtisy5', '$mtisy6','$mtsy', '$btci1',  '$btci2', '$btci3', '$btci4', '$btci5', '$btci6',
+   '$bc_s',
+   '$btcsy_i1', '$btcsy_i2', '$btcsy_i3', '$btcsy_i4', '$bc_sy',
+   '$dbc_i1','$dbc_i2','$dbc_i3','$dbc_i4','$dbc_i5','$dbc_i6',
+   '$dbc_s',  
   
-    $projectid = $GLOBALS['pidss'] ;
-    $siteid = $GLOBALS['sidss'] ;
+   '$dbc_syi1', '$dbc_syi2','$dbc_syi3', '$dbc_syi4',
+   '$dbc_sy','$tbc_i1', '$tbc_i2','$tbc_i3','$tbc_i4', '$tbc_i5','$tbc_i6',
+   '$tbc_s', '$tbc_syi1','$tbc_syi2','$tbc_syi3', '$tbc_syi4', '$tbc_sy',
 
-    //table prefix
-    $prefixtable = $projectid."_";
-    $ed1 = $prefixtable."ed1";
-    $ss3 = $prefixtable."ss3b";
-    $edss = $prefixtable."edss";
-    $ssso = $prefixtable."ssso";
 
-    $query_1 = "SELECT id FROM projectregsite WHERE site_id='$siteid' AND projectreg_id='$projectid'";
-    //execute query above
-    $result = $db->mysqliquery($query_1);
-    //fetching link
-    //echo "Fetching link <br />";
-    //check if query execute successfull
-    if ($result) {
-        //check number of row`s found in table projectregsite
-        //count number of row return
-        $num_row = $db->num_rows($result);
-        //fetch data from database
-        $row = $db->fetch_assoc($result);
-        //check if number of row is equal to one
-        if ($num_row == 1) {
-            $projectregsite = $row["id"];
+   '$kd_d0','$kd_d15', '$kd_d30','$kd_d45', '$kd_d60','$kd_d75',
+             '$kd_d90','$kd_d105','$kd_d120','$kd_d24', '$kd_d72',
+
+             '$kd_d1d', '$kd_d2d', '$kd_d3d', '$kd_d4d', '$kd_d5d', '$kd_d6d', '$k_d7d',
+
+
+
+   '$liu','$elcm','$mt1','$mt2', '$mt3','$mt4',
+   '$mkd1','$mkd2','$mkd3','$mkd4','$mkd5','$mkd6','$mkd7',
+   '$mkd8', '$mkd9', '$mkd10',
+   '$mkd11', '$mkd12', '$mkd13','$mkd14',
+   '$mkd15', '$mkd16','$mkd17','$mkd18', '$mkd19','$mkd20',    
+
+
+   '$mtir1','$mtir2', '$mtir3', '$mtir4','$mtir5', '$mtir6',
+'$mtsr1', '$mtsr2', '$mtsr3', '$mtsr4',
+'$mtisyr1', '$mtisyr2', '$mtisyr3','$mtisyr4',
+'$mtsyr1', '$mtsyr2', '$mtsyr3', '$mtsyr4',
+'$tcir1', '$tcir2','$tcir3', '$tcir4', '$tcir5', '$tcir6',
+
+
+'$tc_sr1', '$tc_sr2', '$tc_sr3', '$tc_sr4',
+'$tc_syir1', '$tc_syir2',  '$tc_syir3', '$tc_syir4',
+'$tc_sy1r','$tc_sy2r','$tc_sy3r','$tc_sy4r',
+
+
+'$id_ir1', '$id_ir2', '$id_ir3','$id_ir4','$id_ir5', '$id_ir6',
+'$id_sr1','$id_sr2','$id_sr3','$id_sr4','$id_syr1',
+'$id_syr2', '$id_syr3', '$id_syr4',
+
+'$edi1','$edi2','$edi3','$edi4','$edi5','$edi6',
+'$eds1', '$eds2', '$eds3', '$eds4',
+'$edisy1', '$edisy2', '$edisy3', '$edisy4',
+'$edsy1','$edsy2','$edsy3','$edsy4',
+
+
+
+
+'$senfr')");
+
+ 
+        // check for successful store
+        if ($resultft) {
+
+            $query_insert_edss5 = "INSERT INTO $ssso (ss5id) SELECT `ss1`.`id`
+            FROM $ssso as ssso RIGHT JOIN $ss1 as ss1 ON (`ssso`.`ss5id` = `ss1`.`id`)
+            WHERE ssso.ss1id IS NULL      
+            ";
+        
+           //execute query to insert into EdSs table from Ed1 Table
+            $db->mysqliquery($query_insert_edss5);
+        
+          } 
+        
+           return $resultft;
+        
+        
         }
 
-
-        $query_fetch="SELECT edss.id FROM $edss as edss
-    INNER JOIN $ed1 as ed1  ON (edss.ed1id = ed1.id)
-    WHERE ed1.sen=$ssen AND ed1.dsen=$sen AND ed1.fr=$sfr";
-
-
-        // SELECT edss.id FROM $edss as edss INNER JOIN $ed1 as ed1  ON (edss.ed2id = ed1.id)
-
-        $result2 = $db->mysqliquery($query_fetch);
-
-        $row = $db->fetch_assoc($result2);
-
-        $edssid = 0;
-
-        $senfr = $sen.$fr;
-    }
-
-
-    $resultft = $db->mysqliquery("INSERT INTO  $ss3 (edssid,sen,fr,ssen,sfr,st,dur,rep_1,rep_2,rep_3,rep_4,cnr_1,cnr_2)
-    VALUES('$edssid','$sen','$fr','$ssen','$sfr','$st','$dur','$rep_1','$rep_2','$rep_3','$rep_4','$cnr_1','$cnr_2')");
-
-    // check for successful store
-    /* if ($resultft) {
-
-       $query_insert_edss2 = "INSERT INTO $ssso (ss1id) SELECT `ss1`.`id`
-       FROM $ssso as ssso RIGHT JOIN $ss1 as ss1 ON (`ssso`.`ss1id` = `ss1`.`id`)
-       WHERE ssso.ss1id IS NULL
-       ";
-
-      //execute query to insert into EdSs table from Ed1 Table
-       $db->mysqliquery($query_insert_edss2);
-
-     }  */
-
-    return $resultft;
-}
 
 // addition of functions ss4 snail rwanda
 

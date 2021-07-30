@@ -292,6 +292,7 @@ if(isset($_POST['tag'])) {
 
 
 
+<<<<<<< HEAD
 	else if ($tag == 'ss3') {
 
 		$json = $_POST["ss3json"];
@@ -511,6 +512,8 @@ if(isset($_POST['tag'])) {
 
 //end ss
 
+=======
+>>>>>>> Njire-C
 
 	else if ($tag == 'so1') {
 

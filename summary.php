@@ -233,12 +233,11 @@ if(isset($_SESSION['expcode'])){
                         <li>
                             <a data-toggle="modal" role="button" data-target="#sumchart6">An. funestus abdominal status</a>
                         </li>
-                        <li>
-                            <a data-toggle="modal" role="button" data-target="#sumchart8">Pupae density</a>
-                        </li>
-                        <li>
-                            <a data-toggle="modal" role="button" data-target="#sumchart9">Larvae density</a>
-                        </li>
+
+
+                    
+
+
                     </ul>
                 </div>
                 
@@ -746,6 +745,8 @@ if(isset($_SESSION['expcode'])){
         </div>
     </div>
     <!-- / modal5 -->
+
+
     
     <!-- modal6 -->
     <div id="sumchart6" class="modal fade" tabindex="-1" role="dialog">

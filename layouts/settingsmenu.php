@@ -21,34 +21,35 @@ if(isset($_SESSION['expcode'])){
    $ssft =cust_formtype('custss', $_SESSION['expcode']);
    $ss1ft="";
    $ss2ft="";
-   $ss3ft="";
+   $ss5ft="";
    $ss4ft="";
    
    if(count($ssft)==0){
       $ss1ft="";
       $ss2ft="";
-      $ss3ft="";
+      $ss5ft="";
       $ss4ft="";
    } else if(in_array("SS1", $ssft)){
-      $ss3ft="disabled";
+      $ss5ft="disabled";
       $ss4ft="disabled";
       $ss2ft="disabled";
       $ss1ft="";
    } else if(in_array("SS2", $ssft)){
-      $ss3ft="disabled";
+      $ss5ft="disabled";
       $ss4ft="disabled";
       $ss1ft="disabled";
       $ss2ft="";
-   } else if(in_array("SS3", $ssft)){
+   } else if(in_array("ss3", $ssft)){
       $ss1ft="disabled";
       $ss4ft="disabled";
       $ss2ft="disabled";
-      $ss3ft="";
+      $ss5ft="";
    }else if(in_array("SS4", $ssft)){
     $ss1ft="disabled";
     $ss2ft="disabled";
-    $ss3ft="disabled";
+    $ss5ft="disabled";
     $ss4ft="";
+      
    }
    
    //form type so
@@ -72,7 +73,7 @@ if(isset($_SESSION['expcode'])){
    $ed2ft="disabled";
    $ss1ft="disabled";
    $ss2ft="disabled";
-   $ss3ft="disabled";
+   $ss5ft="disabled";
    $so1ft="disabled";
    $so2ft="disabled";
    $st1ft="disabled";
@@ -117,7 +118,7 @@ if(isset($_SESSION['expcode'])){
                             <ul class="dropdown-menu">
                                 <li class="<?php echo $ss1ft; ?>"><a tabindex="-1" href="settings_ss1.php">Sample Sorting 1</a></li>
                                 <li class="<?php echo $ss2ft; ?>"><a tabindex="-1" href="settings_ss2.php">Sample Sorting 2</a></li>
-                                <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="settings_ss3.php">Sample Sorting 3</a></li>
+                                <li class="<?php echo $ss5ft; ?>"><a tabindex="-1" href="settings_ss3.php">Sample Sorting 3</a></li>
                                 <li class="<?php echo $ss4ft; ?>"><a tabindex="-1" href="settings_ss4.php">Sample Sorting 4</a></li>
                             </ul>
                         </div>

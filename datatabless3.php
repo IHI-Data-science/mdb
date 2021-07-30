@@ -41,22 +41,18 @@ include_once('layouts/head.php');
         <div class="table-responsive has-padding2">
             
             <table id="tabledata"
-                   class="table"
                    data-toggle="table"
                    name="tabledata"
                    data-url="scripts/table/ss3.php"
                    data-row-style="rowStyle"
                    data-pagination="true"
-                   data-pagination="true"
                    data-show-refresh="false"
                    data-show-columns="true"
-                   data-toolbar="#toolbar"
-                   data-page-size="100"
-                   data-page-list="[100,500,1000,2000,5000,8000,10000,All]"
+                   data-page-size="200"
+                   data-page-list="[200,500,1000,2000,5000,8000,10000,All]"
                    data-show-export="true"
-                   data-export-options='{"fileName": "SS3-<?php echo date('Y-m-d'); ?>"}'
+                   data-export-options='{"fileName": "ss3-<?php echo date('Y-m-d'); ?>"}'
                    data-advanced-search="true"
-                   data-maintain-meta-data="true"
                    data-search="true">
                 <thead>
             
@@ -67,12 +63,51 @@ include_once('layouts/head.php');
     </div>
     <!-- /pre-scrollable table -->
     
+    
+    <div class="modal fade" id="audit_detail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Audit Logs</h4>
+                </div>
+                <div class="modal-body">
+                    
+                    <div class="table-responsive has-padding2">
+                        
+                        <table
+                           id="table"
+                           class="table table-hover table-striped table-responsive table-bordered"
+                           data-toggle="table"
+                           data-pagination="true"
+                           data-show-refresh="false"
+                           data-show-columns="false"
+                           data-page-list="[100, 200, 300, 400, 500, 1000]"
+                           data-show-export="false"
+                           data-search="false">
+                        
+                        
+                        </table>
+                    
+                    </div>
+                
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
     <script>
 
         $(function () {
-            tabless3();
+            tabless5();
         });
-        function tabless3() {
+        function tabless5() {
 
             $('#tabledata').bootstrapTable('destroy').bootstrapTable({
                 classes: 'table table-responsive',
@@ -86,7 +121,7 @@ include_once('layouts/head.php');
                     };
                 },
 
-
+                search: true,
                 mobileResponsive: true,
                 maintainSelected: true,
                 paginationVAlign: 'both',
@@ -102,11 +137,13 @@ include_once('layouts/head.php');
                 paginationLastText: "Last",
                 paginationPreText: "Previous",
                 paginationNextText: "Next",
+
                 columns: [
                    <?php
                    
                    $table="custss";
-                   $table2="SS3";
+                   $table2="ss3";
+                   
                    
                    $col=getcolumnname($_SESSION['expcode'], $table, $table2);
                    $col2=getcolumnname2($_SESSION['expcode'], $table, $table2);
@@ -114,12 +151,14 @@ include_once('layouts/head.php');
                    $array1=explode(',', $col);
                    $array2=explode(',', $col2);
                    
+                   
+                   
                    if(strlen($col)>0){
                       
                       echo getcolumnnametable2($array1, $array2);
                       
-                   }
-                   
+
+                    }
                    
                    ?>
                     
@@ -139,20 +178,45 @@ include_once('layouts/head.php');
             });
         }
 
+
         function auditFormatter(value, row, index) {
 
             if (value) {
-                return ['<a class="btn btn-primary iconaudit" pid="' + value + '" title="Audit"><i class="fa fa-eye">Audit Logs</i></a>'];
+
+                return ['<a class="btn btn-primary iconaudit" keyid="' + value + '" title="Audit"><i class="fa fa-eye">Audit Logs</i></a>'];
             } else {
-                return ['<a class="btn btn-primary iconaudit" pid="' + value + '" title="Audit" disabled="disabled"><i class="fa fa-eye">Audit Logs</i></a>'];
+                return ['<a class="btn btn-primary iconaudit" keyid="' + value + '" title="Audit" disabled="disabled"><i class="fa fa-eye">Audit Logs</i></a>'];
             }
 
 
         }
+// data in the table
+        $('body').delegate('.iconaudit', 'click', function (e) {
+            e.preventDefault();
+            var keyid = $(this).attr('keyid');
+            $.ajax({
+                url: 'auditdetail.php',
+                method: 'POST',
+                data: {auditdetail: 1, keyid: keyid},
+                success: function (data) {
+                    $('#table tbody').empty();
+                    $('#table tbody').append(data);
+                },
+                complete: function (data) {
+                    $('.loader').fadeOut();
+                    $('#audit_detail').modal('show');
+                },
+                beforeSend: function (data) {
+                    $('#loadmodal').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+                }
+
+
+            })
+        })
     
     </script>
    
    <?php include_once('layouts/foot.php'); ?>
-			
-	
+      
+  
            

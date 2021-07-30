@@ -1115,6 +1115,18 @@ if ($type == "1116") {
         if (!file_exists("dataset/" . $projectcode)) {
             mkdir("dataset/" . $projectcode, 0777, true);
         }
+        $ss5query = "SELECT *  FROM custss  WHERE pc=$projectcode AND ft='ss3'";
+        //execute query 
+        $ss5result = $db->query($ss5query);
+        //detect number of row from query execute above
+        $ss5num_row = mysqli_num_rows($ss5result);
+        if($ss5num_row == 1)
+        {
+            //fetch data from query executed above
+            $ss5row = mysqli_fetch_array($ss5result);
+
+               //remove attribute method
+		    $ssen_remove = str_replace("ssen,","",$ss5row["p_attri"]);
 
         $filename = "dataset/" . $projectcode . "/" . $prname . "_ED1_SS3_SO1.csv";
 
@@ -1122,6 +1134,10 @@ if ($type == "1116") {
 
         $row = mysqli_fetch_assoc($result);
         if ($row) {
+          //  $_SESSION["SESS_P_ATTRIss5"] = $ssen_remove; 
+            $ss5col2 =  $ssen_remove;  
+
+            $ss5col =  renamecolss5($ss5col2,"ss1","SS");
 
             fputcsv($file, array_keys($row));
         }
@@ -1189,6 +1205,9 @@ if ($type == "111617") {
 	$filename = "dataset/" . $projectcode . "/" . $prname . "_ED1_SS4_SO1.csv";
 
 	$file = fopen($filename, "w") or die("Can't open file $name for writing.");
+           
+          //  $_SESSION["SESS_P_ATTRIss5"] = $ssen_remove; 
+            $ss1col2 =  $ss1ssen_remove;  
 
 	$row = mysqli_fetch_assoc($result);
 	if ($row) {
@@ -1440,6 +1459,8 @@ if ($type == "111617") {
 		,$edcol
 		,$ss4col
 		,$socol
+		, method.meth_abbre AS ME
+		,$ss5col
 		FROM
 		projectregsite
 		INNER JOIN projectreg
@@ -1455,6 +1476,45 @@ if ($type == "111617") {
 		left JOIN $so1 as so1
         ON (ss4.sen = so1.ssen AND ss4.fr = so1.sfr)
 	    ORDER BY ed1.sen ASC,ed1.fr ASC";
+		$result = $db->query($query ) or die( mysqli_error( $db ) );
+		//
+		// send response headers to the browser
+		// following headers instruct the browser to treat the data as a csv file called EDSS_partialy.csv
+		//
+		/*header('Content-Description: File Transfer');
+		header( 'Content-Type: text/csv' );
+		header( 'Content-Disposition: attachment;filename='.$prname.'_ED1_ss5.csv' );
+		header('Content-Transfer-Encoding: binary');
+		header('Expires: 0');
+		header('Cache-Control:must-revalidate, post-check=0, pre-check=0');
+		header('Pragma: public'); */
+		
+
+		if (!file_exists("dataset/".$projectcode)) {
+		    mkdir("dataset/".$projectcode, 0777, true);
+		}
+
+		$filename = "dataset/".$projectcode."/".$prname."_ED1_SS5.csv";
+
+
+		$file = fopen($filename,"w") or die("Can't open file $name for writing.");
+
+
+		$row = mysqli_fetch_assoc( $result );
+		if ( $row )
+		{
+		//echocsv( array_keys( $row ) );
+		fputcsv($file, array_keys( $row ));
+		}
+		//
+		// output data rows (if atleast one row exists)
+		//
+		while ( $row )
+		{
+		//echocsv( $row );
+		fputcsv($file, $row);
+		$row = mysqli_fetch_assoc( $result );
+		}
 
         $result = $db->query($query) or die(mysqli_error($db));
 
@@ -2007,6 +2067,93 @@ if ($type == "111617") {
 		,projectreg.expno AS Experiment
 		,$edcol
 		,$ss1col
+	
+	}
+
+
+
+ //Just ss3
+ if($type == 15)
+ {
+
+	 $query="SELECT
+site.site_name AS SITE_NAME
+,projectreg.pc AS PROJECT_CODE
+,projectreg.expno AS EXPERIMENT
+,$ss5col
+FROM
+projectregsite
+INNER JOIN projectreg 
+ON (projectregsite.projectreg_id = projectreg.id)
+INNER JOIN site 
+ON (projectregsite.site_id = site.site_id)
+INNER JOIN $ed1 as ed1
+ON (ed1.projectregsite_id = projectregsite.id)
+INNER JOIN $edss as edss
+ON (ed1.id = edss.ed1id)
+INNER JOIN $ss1 as ss1 
+ON (ss3.edssid = edss.id)
+ORDER BY ss3.sen ASC,ss3.fr ASC";
+
+	 $result = $db->query($query ) or die( mysqli_error( $db ) );
+	 //
+	 // send response headers to the browser
+	 // following headers instruct the browser to treat the data as a csv file called EDSS_partialy.csv
+	 //
+ /*	header('Content-Description: File Transfer');
+	 header( 'Content-Type: text/csv' );
+	 header( 'Content-Disposition: attachment;filename='.$prname.'_SS1.csv' );
+	 header('Content-Transfer-Encoding: binary');
+	 header('Expires: 0');
+	 header('Cache-Control:must-revalidate, post-check=0, pre-check=0');
+	 header('Pragma: public'); */
+
+
+	 if (!file_exists("dataset/".$projectcode)) {
+		 mkdir("dataset/".$projectcode, 0777, true);
+	 }
+
+	 $filename = "dataset/".$projectcode."/".$prname."_SS5.csv";
+
+
+	 $file = fopen($filename,"w") or die("Can't open file $name for writing.");
+
+
+	 $row = mysqli_fetch_assoc( $result );
+	 if ( $row )
+	 {
+	 //echocsv( array_keys( $row ) );
+	 fputcsv($file, array_keys( $row ));
+	 }
+	 //
+	 // output data rows (if atleast one row exists)
+	 //
+	 while ( $row )
+	 {
+	 //echocsv( $row );
+	 fputcsv($file, $row);
+	 $row = mysqli_fetch_assoc( $result );
+	 }
+
+	 $gt =  $base_url."/".$filename;
+
+	 //echo $gt;
+
+	 //echo '<p><input type="button" name="Back" value="Back" onclick="window.location ='.$filename.'" /></p>';
+
+	 echo '<button type="button" class="btn btn-primary btn-lg"><a class="btn-custom" href = "'.$filename.'" download>  <i class="fa fa-download"> </i>Click to Download!</a></button>';
+
+ }
+
+	//Just so1
+	if($type == 16)
+	{
+
+		 $query="SELECT
+         site.site_name AS SITE_NAME
+		,projectreg.pc AS PROJECT_CODE
+		,projectreg.expno AS EXPERIMENT
+		,so1.sen AS SO_SEN
 		,$so1col
 		FROM
 		projectregsite

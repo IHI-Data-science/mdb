@@ -8,7 +8,7 @@ $page_title = 'Settings';
 page_require_level(2);
 include_once('layouts/head.php');
 
-$formtype = "SS3";
+$formtype = "ss3";
 $table = "custss";
 
 
@@ -20,15 +20,8 @@ $prefixtable = $expcode."_";
 
 
 
-$temptypetx = "taxon";
-$tabletx = $prefixtable."taxon";
-
-$temptypesas = "sas";
-$tablesas = $prefixtable."sas";
-
-
-$temptypess1temp = "ss3template";
-$tabless1temp = $prefixtable."ss3template";
+$temptypess1temp = "ss5template";
+$tabless1temp = $prefixtable."ss5template";
 
 
 }
@@ -91,7 +84,7 @@ function confirm_msg(e) {
  			<!-- col1 -->
  			<div class="panel panel-default">
  				<div class="panel-heading">
- 					<h6 class="panel-title">Taxon</h6>
+ 					<h6 class="panel-title">Water Body Name</h6>
 
 					<div class="btn-group pull-right">
 		             <form action="scripts/exporttemplate.php" method="post">
@@ -103,8 +96,8 @@ function confirm_msg(e) {
 		              <button onClick="confirm_msg(event);" type="submit" name='deleteall' id='deleteall' class="btn btn-default"> <i class="fa fa-trash-o"></i> </button>
 
 		              
-		              <input type="hidden" name="te" value="<?php echo $temptypetx; ?>" >  
-		              <input type="hidden" name="ta" value="<?php echo $tabletx; ?>" >  
+		              <input type="hidden" name="te" value="<?php echo $temptypewn; ?>" >  
+		              <input type="hidden" name="ta" value="<?php echo $tablewn; ?>" >  
 
 		            </form> 
 		           </div>
@@ -123,8 +116,8 @@ function confirm_msg(e) {
  									<input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
  								</div>
 
- 								 <input type="hidden" name="fo" value="<?php echo $formtypetx; ?>" >  
-                                 <input type="hidden" name="ta" value="<?php echo $tabletx; ?>" > 
+ 								 <input type="hidden" name="fo" value="<?php echo $formtypewn; ?>" >  
+                                 <input type="hidden" name="ta" value="<?php echo $tablewn; ?>" > 
 
  							</form>
  						</div>
@@ -152,7 +145,7 @@ function confirm_msg(e) {
 				                <tbody>
 				                <?php
 				                    //get records from database
-				                    $query = $db->query("SELECT * FROM {$db->escape($tabletx)} ORDER BY id ASC");
+				                    $query = $db->query("SELECT * FROM {$db->escape($tablewn)} ORDER BY id ASC");
 				                    if($query->num_rows > 0){ 
 				                        while($row = $query->fetch_assoc()){ ?>
 				                    <tr>
@@ -182,7 +175,7 @@ function confirm_msg(e) {
  			<!-- col2 -->
  			<div class="panel panel-default">
  				<div class="panel-heading">
- 					<h6 class="panel-title">Sex & abdominal status</h6>
+ 					<h6 class="panel-title">Snail Species</h6>
 
  					<div class="btn-group pull-right">
 		             <form action="scripts/exporttemplate.php" method="post">
@@ -192,8 +185,8 @@ function confirm_msg(e) {
 		               <button onClick="confirm_msg(event);" type="submit" name='deleteall' id='deleteall' class="btn btn-default"> <i class="fa fa-trash-o"></i> </button>
 
 
-		              <input type="hidden" name="te" value="<?php echo $temptypesas; ?>" >  
-		              <input type="hidden" name="ta" value="<?php echo $tablesas; ?>" >  
+		              <input type="hidden" name="te" value="<?php echo $temptypespc; ?>" >  
+		              <input type="hidden" name="ta" value="<?php echo $tablespc; ?>" >  
 
 		            </form> 
 		           </div>
@@ -211,8 +204,8 @@ function confirm_msg(e) {
  									<input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
  								</div>
 
- 								 <input type="hidden" name="fo" value="<?php echo $formtypesas; ?>" >  
-                                 <input type="hidden" name="ta" value="<?php echo $tablesas; ?>" > 
+ 								 <input type="hidden" name="fo" value="<?php echo $formtypespc; ?>" >  
+                                 <input type="hidden" name="ta" value="<?php echo $tablespc; ?>" > 
 
  							</form>
  						</div>
@@ -240,7 +233,7 @@ function confirm_msg(e) {
 				                <tbody>
 				                <?php
 				                    //get records from database
-				                    $query = $db->query("SELECT * FROM {$db->escape($tablesas)} ORDER BY id ASC");
+				                    $query = $db->query("SELECT * FROM {$db->escape($tablespc)} ORDER BY id ASC");
 				                    if($query->num_rows > 0){ 
 				                        while($row = $query->fetch_assoc()){ ?>
 				                    <tr>
