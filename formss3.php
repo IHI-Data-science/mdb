@@ -391,8 +391,8 @@ function show_report($recorded, $skip, $errors){
                                   exit();
                                }
                                
-                               $query_insert_edss="INSERT INTO  $ssso (ss5id) SELECT `ss1`.`id` FROM
-                                  $ssso as ssso RIGHT JOIN  $ss1 as ss1 ON (`ssso`.`ss5id` = `ss1`.`id`) WHERE ssso.ss1id IS NULL";
+                               $query_insert_edss="INSERT INTO  $ssso (ss3id) SELECT `ss1`.`id` FROM
+                                  $ssso as ssso RIGHT JOIN  $ss1 as ss1 ON (`ssso`.`ss3id` = `ss1`.`id`) WHERE ssso.ss1id IS NULL";
                                
                                $result=$db->query($query_insert_edss);
                                

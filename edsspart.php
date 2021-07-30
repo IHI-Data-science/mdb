@@ -30,8 +30,7 @@ function report($type, $projectcode, $db)
     $ss1 = $prefixtable . "ss1";
     $ss2 = $prefixtable . "ss2";
     $ss3 = $prefixtable . "ss3";
-    $ss4 = $prefixtable . "ss4";
-    $ss3view = $prefixtable . "ss3_view";
+ 
 
     $edss = $prefixtable . "edss";
     $ssso = $prefixtable . "ssso";

@@ -56,7 +56,7 @@
                             <li class="<?php echo $disabless1; ?>"><a href="datatabless1.php">Sample Sorting 1</a></li>
                             <li class="<?php echo $disabless2; ?>"><a href="datatabless2.php">Sample Sorting 2</a></li>
                             <li class="<?php echo $disabless3; ?>"><a href="datatabless3.php">Sample Sorting 3</a></li>
-                            <li class="<?php echo $disabless3; ?>"><a href="datatabless4.php">Sample Sorting 4</a></li>
+                            <li class="<?php echo $disabless4; ?>"><a href="datatabless4.php">Sample Sorting 4</a></li>
                             <li class="<?php echo $disableso1; ?>"><a href="datatableso1.php">Sample Observation 1</a></li>
                             <li class="<?php echo $disableso2; ?>"><a href="datatableso2.php">Sample Observation 2</a></li>
                             <li class="<?php echo $disablest1; ?>"><a href="datatablest1.php">Sample Storage 1</a></li>

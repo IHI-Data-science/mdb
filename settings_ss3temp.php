@@ -8,7 +8,7 @@ $page_title = 'Settings';
 page_require_level(2);
 include_once('layouts/head.php');
 
-$formtype = "ss3";
+$formtype = "SS3";
 $table = "custss";
 
 
@@ -20,8 +20,8 @@ $prefixtable = $expcode."_";
 
 
 
-$temptypess1temp = "ss5template";
-$tabless1temp = $prefixtable."ss5template";
+$temptypess1temp = "ss3template";
+$tabless1temp = $prefixtable."ss3template";
 
 
 }

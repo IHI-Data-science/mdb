@@ -8,7 +8,7 @@ $page_title = 'Settings';
 page_require_level(2);
 include_once('layouts/head.php');
 
-$formtype = "ss3";
+$formtype = "SS3";
 $table = "custss";
 
 $field = "pc";
@@ -161,7 +161,7 @@ $field2 = "ft";
              <form action="scripts/exporttemp.php" method="post">
 
       
-               <a href="settings_ss5temp.php" <button class="btn btn-default"><i class="fa fa-cog"></i>Customize General Template</button> </a>
+               <a href="settings_ss3temp.php" <button class="btn btn-default"><i class="fa fa-cog"></i>Customize General Template</button> </a>
 
               <button type="submit" name='downloadtemp' class="btn btn-default"><i class="fa fa-download"></i>Download Entry Template</button>
 
@@ -187,9 +187,9 @@ $field2 = "ft";
     <ul class="dropdown-menu">
 
 
-    <li class="<?php echo $ss5ft; ?>"><a tabindex="-1" href="cdctest.php">CDC Test</a></li>
-         <li class="<?php echo $ss5ft; ?>"><a tabindex="-1" href="whoconetest.php">WHO Cone Test</a></li>
-         <li class="<?php echo $ss5ft; ?>"><a tabindex="-1" href="whotubetest.php">WHO Tube Test</a></li>
+    <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="cdctest.php">CDC Test</a></li>
+         <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="whoconetest.php">WHO Cone Test</a></li>
+         <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="whotubetest.php">WHO Tube Test</a></li>
     </ul>
 </div>
 

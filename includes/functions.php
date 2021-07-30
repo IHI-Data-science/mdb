@@ -721,12 +721,12 @@ function sendMail($email, $message, $subject){
       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
       `ss1id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS1',
       `ss2id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS2',
-      `ss5id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS3',
+      `ss3id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS3',
       `ss4id` int(11) DEFAULT NULL COMMENT 'Hold data link to SS4',
        PRIMARY KEY (`id`),
        KEY `fk_ss1id` (`ss1id`),
          KEY `fk_ss2id` (`ss2id`),
-       KEY `fk_ss5id` (`ss5id`),
+       KEY `fk_ss3id` (`ss3id`),
        KEY `fk_ss4id` (`ss4id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;";
 
@@ -1236,27 +1236,6 @@ function sendMail($email, $message, $subject){
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
 
-    $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss3b (
-      `id_` int(11) NOT NULL AUTO_INCREMENT,
-      `edssid` int(11) NOT NULL,
-      `sen` int(6) NOT NULL,
-      `fr` int(6) NOT NULL,
-      `ssen` int(6) NOT NULL,
-      `sfr` int(6) NOT NULL,
-      `st` varchar(10) NOT NULL,
-      `dur` varchar(10) NOT NULL,
-      `rep_1` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 1',
-      `rep_2` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 2',
-      `rep_3` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 3',
-      `rep_4` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 4',
-      `cnr_1` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in control 1',
-      `cnr_2` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in control 2',
-      `created_at` timestamp default now(), 
-      `updated_at` timestamp default now(), 
-      PRIMARY KEY (`id_`,`sen`,`fr`),
-      UNIQUE KEY `id_` (`id_`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
-
     $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss4 (
       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
       `edssid` int(6) NOT NULL COMMENT 'unique identifier for SS4 form',
@@ -1304,7 +1283,7 @@ function sendMail($email, $message, $subject){
         PRIMARY KEY (`id`),
         KEY `fk_ss1id` (`so1id`),
         KEY `fk_ss2id` (`so2id`),
-        KEY `fk_ss5id` (`so3id`),
+        KEY `fk_ss3id` (`so3id`),
         KEY `fk_ss4id` (`so4id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
@@ -1540,7 +1519,7 @@ function sendMail($email, $message, $subject){
        PRIMARY KEY (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-     $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss5template(
+     $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss3template(
 
       
 

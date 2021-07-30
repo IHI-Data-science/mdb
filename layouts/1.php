@@ -13,7 +13,7 @@
                 echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_ss2.php' ? 'id="second-level"' : '');
                 echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_ss3.php' ? 'id="second-level"' : '');
                 echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_ss4.php' ? 'id="second-level"' : '');
-                echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_ss5.php' ? 'id="second-level"' : '');
+                echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_ss3.php' ? 'id="second-level"' : '');
                 echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_so1.php' ? 'id="second-level"' : '');
                 echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_so2.php' ? 'id="second-level"' : '');
                 echo (basename($_SERVER['SCRIPT_FILENAME'])=='form_st1.php' ? 'id="second-level"' : '');
@@ -43,7 +43,7 @@
                 echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesss2.php' ? 'id="second-level"' : '');
                 echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesss3.php' ? 'id="second-level"' : '');
                 echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesss4.php' ? 'id="second-level"' : '');
-                echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesss5.php' ? 'id="second-level"' : '');
+                echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesss3.php' ? 'id="second-level"' : '');
                 echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesso1.php' ? 'id="second-level"' : '');
                 echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesso2.php' ? 'id="second-level"' : '');
                 echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesst1.php' ? 'id="second-level"' : '');
