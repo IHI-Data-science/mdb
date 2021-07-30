@@ -1250,7 +1250,7 @@ function sendMail($email, $message, $subject){
  `dr` varchar(15) DEFAULT '-99' COMMENT 'Number of dredges',
  `ph` varchar(15) DEFAULT NULL COMMENT 'potential of hydrogen',
       `co` varchar(15) DEFAULT NULL COMMENT ' Conductivity ms',
-      `wda` varchar(100) DEFAULT '0' COMMENT 'wild domestic anilal  (define jind of animals)',
+      `wda` varchar(100) DEFAULT '0' COMMENT 'wild domestic animal  (define jind of animals)',
       `act` varchar(100) DEFAULT '0' COMMENT 'activity (define either human activities )',
       `wn` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of water body name (1: Yes, 2: No)',
       `wl` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of water level (1: Yes, 2: No)',
