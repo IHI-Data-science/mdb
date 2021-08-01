@@ -294,8 +294,8 @@ function ss2data($sen, $ssen, $sfr, $hf, $hbt,$htc, $htr, $hw, $hs,$dnh, $fr, $t
 
   }
 
-  $resultft = $db->mysqliquery("INSERT INTO  $ss2 ( edssid, sen,ssen,sfr,hf,hbt,htc,htr,hw,hs,dnh,fr,tx,bfegg,bfl1,bfl2,bfl3,bfl4,l1l2,l3l4,tlv,no,notes,slc,ni,nb,sid01,sid02,sid03,sid04,sid05,sid06,sid07,nod,senfr)
-  VALUES('$edssid','$sen','$ssen','$sfr','$hf','$hbt','$htc',$htr','$hw','$hs,'$dnh','$fr','$tx','$bfegg','$bfl1','$bfl2','$bfl3','$bfl4','$l1l2',$l3l4,'$tlv,$pu','$vl','$rl','$vt','$no','$notes','$slc','$ni','$nb','$sid01','$sid02','$sid03','$sid04','$sid05','$sid06','$sid07','$nod','$senfr')");
+  $resultft = $db->mysqliquery("INSERT INTO  $ss2 ( edssid, sen,ssen,sfr,hf,hbt,htr,hw,hs,dnh,fr,dip,tx,bfegg,bfl1,bfl2,bfl3,bfl4,l1l2,l3l4,tlv,no,notes,slc,ni,nb,sid01,sid02,sid03,sid04,sid05,sid06,sid07,nod,senfr)
+  VALUES('$edssid','$sen','$ssen','$sfr','$hf','$hbt',$htr','$hw','$hs','$dnh','$fr','$dip','$tx','$bfegg','$bfl1','$bfl2','$bfl3','$bfl4','$l1l2',$l3l4,'$tlv,$pu','$vl','$rl','$vt','$no','$notes','$slc','$ni','$nb','$sid01','$sid02','$sid03','$sid04','$sid05','$sid06','$sid07','$nod','$senfr')");
 
 
         
