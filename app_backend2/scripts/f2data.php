@@ -293,7 +293,10 @@ if(isset($_POST['tag'])) {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ss3-to-main
 	else if ($tag == 'ss3') {
 
 		$json = $_POST["ss3json"];
@@ -365,74 +368,6 @@ if(isset($_POST['tag'])) {
 	}
 
 
-	else if ($tag == 'ss3b') {
-
-		$json = $_POST["ss3bjson"];
-
-        
-		if (get_magic_quotes_gpc()){
-			$json = stripslashes($json);
-		}
-        
-		$data = json_decode($json);
-
-		$a=array();
-		$b=array();
-
-
-		$GLOBALS['pidss'] = $_POST["projectid"];
-		$GLOBALS['sidss'] = $_POST["siteid"];
-
-        
-		for($i=0; $i<count($data) ; $i++){
-        
-			$res2 = ss3bdata($data[$i]->sen,$data[$i]->fr,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->st,$data[$i]->duration,$data[$i]->replicate1,$data[$i]->replicate2,$data[$i]->replicate3,$data[$i]->replicate4,$data[$i]->control1,$data[$i]->control2);
-          
-			if($res2){
-
-				$b["id"] = (int)$data[$i]->id;
-				$b["sen"] = (int)$data[$i]->sen;
-				$b["fr"] = (int)$data[$i]->fr;
-				$b["status"] = 'yes';
-				$b["success"] = 1;
-				$b["error"] = 0;
-
-				array_push($a,$b);
-
-			}else{
-
-
-				if ($db->mysqlierrorno() == 1062){
-
-					$b["id"] = (int)$data[$i]->id;
-				        $b["sen"] = (int)$data[$i]->sen;
-				        $b["fr"] = (int)$data[$i]->fr;
-					$b["status"] = 'yes';
-					$b["error"] = 1062;
-					$b["success"] = 1;
-					$b["error_msg"] = "error:".$db->mysqlierror();
-
-					array_push($a,$b);
-
-				}  else{
-
-					$b["id"] = (int)$data[$i]->id;
-				        $b["sen"] = (int)$data[$i]->sen;
-				        $b["fr"] = (int)$data[$i]->fr;
-					$b["status"] = 'no';
-					$b["error"] = 1;
-					$b["success"] = 0;
-					$b["error_msg"] = "error:".$db->mysqlierror();
-
-					array_push($a,$b);
-
-				}
-			}
-		}
-
-		echo json_encode($a);
-
-	}
 
 		// adding for ss4 snail
 
@@ -513,7 +448,12 @@ if(isset($_POST['tag'])) {
 
 //end ss
 
+<<<<<<< HEAD
 >>>>>>> 18d49522400a28739f1e8f2152f70487bb62aed2
+=======
+=======
+>>>>>>> Njire-C
+>>>>>>> ss3-to-main
 
 	else if ($tag == 'so1') {
 

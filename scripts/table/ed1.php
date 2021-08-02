@@ -110,7 +110,6 @@ if (strlen($col)>0) {
   LEFT JOIN $treatment as treatment on (ed1.tr=treatment.number)
   LEFT JOIN $habitattype as habitattype on (ed1.ht=habitattype.number)
   
-
   LEFT JOIN (
              SELECT * FROM $audit_trail as audit_trail 
              GROUP BY CONCAT(auditsen,':',auditfr)
@@ -125,7 +124,6 @@ if (strlen($col)>0) {
   LEFT JOIN $treatment as treatment on (ed1.tr=treatment.number)
   LEFT JOIN $habitattype as habitattype on (ed1.ht=habitattype.number)
   
-
   LEFT JOIN (
             SELECT * FROM $audit_trail as audit_trail 
              GROUP BY CONCAT(auditsen,':',auditfr)

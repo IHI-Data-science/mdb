@@ -49,6 +49,7 @@ if(isset($_SESSION['expcode'])){
     $ss2ft="disabled";
     $ss3ft="disabled";
     $ss4ft="";
+      
    }
    
    //form type so
@@ -72,7 +73,7 @@ if(isset($_SESSION['expcode'])){
    $ed2ft="disabled";
    $ss1ft="disabled";
    $ss2ft="disabled";
-   $ss5ft="disabled";
+   $ss3ft="disabled";
    $so1ft="disabled";
    $so2ft="disabled";
    $st1ft="disabled";
@@ -117,7 +118,7 @@ if(isset($_SESSION['expcode'])){
                             <ul class="dropdown-menu">
                                 <li class="<?php echo $ss1ft; ?>"><a tabindex="-1" href="settings_ss1.php">Sample Sorting 1</a></li>
                                 <li class="<?php echo $ss2ft; ?>"><a tabindex="-1" href="settings_ss2.php">Sample Sorting 2</a></li>
-                                <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="settings_ss3.php">Sample Sorting 3</a></li>
+                                <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="cdctest.php">Sample Sorting 3</a></li>
                                 <li class="<?php echo $ss4ft; ?>"><a tabindex="-1" href="settings_ss4.php">Sample Sorting 4</a></li>
                             </ul>
                         </div>

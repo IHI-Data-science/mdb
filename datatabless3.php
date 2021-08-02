@@ -105,9 +105,9 @@ include_once('layouts/head.php');
     <script>
 
         $(function () {
-            tabless5();
+            tabless3();
         });
-        function tabless5() {
+        function tabless3() {
 
             $('#tabledata').bootstrapTable('destroy').bootstrapTable({
                 classes: 'table table-responsive',
@@ -142,7 +142,7 @@ include_once('layouts/head.php');
                    <?php
                    
                    $table="custss";
-                   $table2="ss3";
+                   $table2="SS3";
                    
                    
                    $col=getcolumnname($_SESSION['expcode'], $table, $table2);

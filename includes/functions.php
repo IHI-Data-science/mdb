@@ -1236,27 +1236,6 @@ function sendMail($email, $message, $subject){
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
 
-    $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss3b (
-      `id_` int(11) NOT NULL AUTO_INCREMENT,
-      `edssid` int(11) NOT NULL,
-      `sen` int(6) NOT NULL,
-      `fr` int(6) NOT NULL,
-      `ssen` int(6) NOT NULL,
-      `sfr` int(6) NOT NULL,
-      `st` varchar(10) NOT NULL,
-      `dur` varchar(10) NOT NULL,
-      `rep_1` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 1',
-      `rep_2` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 2',
-      `rep_3` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 3',
-      `rep_4` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in replicate 4',
-      `cnr_1` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in control 1',
-      `cnr_2` varchar(3) DEFAULT 'NA' COMMENT 'Total number observed in control 2',
-      `created_at` timestamp default now(), 
-      `updated_at` timestamp default now(), 
-      PRIMARY KEY (`id_`,`sen`,`fr`),
-      UNIQUE KEY `id_` (`id_`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
-
     $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss4 (
       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment to links to SO',
       `edssid` int(6) NOT NULL COMMENT 'unique identifier for SS4 form',
@@ -1271,7 +1250,7 @@ function sendMail($email, $message, $subject){
  `dr` varchar(15) DEFAULT '-99' COMMENT 'Number of dredges',
  `ph` varchar(15) DEFAULT NULL COMMENT 'potential of hydrogen',
       `co` varchar(15) DEFAULT NULL COMMENT ' Conductivity ms',
-      `wda` varchar(100) DEFAULT '0' COMMENT 'wild domestic anilal  (define jind of animals)',
+      `wda` varchar(100) DEFAULT '0' COMMENT 'wild domestic animal  (define jind of animals)',
       `act` varchar(100) DEFAULT '0' COMMENT 'activity (define either human activities )',
       `wn` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of water body name (1: Yes, 2: No)',
       `wl` int(1) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of water level (1: Yes, 2: No)',
@@ -1540,7 +1519,7 @@ function sendMail($email, $message, $subject){
        PRIMARY KEY (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 
-     $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss5template(
+     $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."ss3template(
 
       
 

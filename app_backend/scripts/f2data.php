@@ -294,7 +294,7 @@ if(isset($_POST['tag'])) {
 
 	else if ($tag == 'ss3') {
 
-		$json = $_POST["ss5json"];
+		$json = $_POST["ss3json"];
 
         
 		if (get_magic_quotes_gpc()){
@@ -315,7 +315,7 @@ if(isset($_POST['tag'])) {
 		for($i=0; $i<count($data) ; $i++){
         
 			        
-			$res2 = ss5data($data[$i]->sen,$data[$i]->ssen, $data[$i]->sfr,$data[$i]->fr,
+			$res2 = ss3data($data[$i]->sen,$data[$i]->ssen, $data[$i]->sfr,$data[$i]->fr,
 
 			$data[$i]->dot, $data[$i]->ga,$data[$i]->gds,
 			$data[$i]->sgds, $data[$i]->ndis, $data[$i]->mo, $data[$i]->mst, $data[$i]->ma,

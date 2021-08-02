@@ -8,7 +8,7 @@ $offset = $_GET['offset'];
 //$offset = 20;
 
 $table = "custss";
-$table2 = "ss3";
+$table2 = "SS3";
 
 $col = getcolumnname($_SESSION['expcode'], $table, $table2);
 
