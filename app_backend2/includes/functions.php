@@ -245,7 +245,7 @@ function ss1data($sen, $ssen, $sfr, $bf, $fr,$tx, $sas, $n, $notes, $slc,
 
 
 
-function ss2data($sen,$ssen,$sfr,$hw,$hs,$fr,$tx,$bf,$ndi01,$ndi02,$ndi03,$ndi04,$ndi05,$ndi06,$ndi07,$ndi08,$ndi09,$ndi10,$n,$notes,$slc,$st,$ni,$nb,$sid01,$sid02,$sid03,$sid04,$sid05,$sid06,$sid07,$nd) {
+function ss2data($sen, $ssen, $sfr, $hf, $hbt,$htc, $htr, $hw, $hs,$dnh, $fr, $tx, $bfegg,$bfl1,$bfl2,$bfl3,$bfl4,$l1l2,$l3l4,$tlv, $pu, $vl,$rl, $vt,$no, $notes, $slc, $ni, $nb, $sid01, $sid02, $sid03, $sid04, $sid05, $sid06, $sid07, $nod) {
 
   global $db;
   
@@ -294,14 +294,15 @@ function ss2data($sen,$ssen,$sfr,$hw,$hs,$fr,$tx,$bf,$ndi01,$ndi02,$ndi03,$ndi04
 
   }
 
-  $resultft = $db->mysqliquery("INSERT INTO  $ss1 ( edssid, sen,ssen,sfr,hw,hs,fr,tx,bf,ndi01,ndi02,ndi03,ndi04,ndi05,ndi06,ndi07,ndi08,ndi09,ndi10,n,notes,slc,st,ni,nb,sid01,sid02,sid03,sid04,sid05,sid06,sid07,nd,senfr)
-    VALUES('$edssid','$sen','$ssen','$sfr','$hw','$hs','$fr','$tx','$bf','$ndi01','$ndi02','$ndi03','$ndi04','$ndi05','$ndi06','$ndi07','$ndi08','$ndi09','$ndi10','$n','$notes','$slc','$st','$ni','$nb','$sid01','$sid02','$sid03','$sid04','$sid05','$sid06','$sid07','$nd','$senfr')");
+  $resultft = $db->mysqliquery("INSERT INTO  $ss2 ( edssid, sen,ssen,sfr,hf,hbt,htr,hw,hs,dnh,fr,dip,tx,bfegg,bfl1,bfl2,bfl3,bfl4,l1l2,l3l4,tlv,no,notes,slc,ni,nb,sid01,sid02,sid03,sid04,sid05,sid06,sid07,nod,senfr)
+  VALUES('$edssid','$sen','$ssen','$sfr','$hf','$hbt',$htr','$hw','$hs','$dnh','$fr','$dip','$tx','$bfegg','$bfl1','$bfl2','$bfl3','$bfl4','$l1l2',$l3l4,'$tlv,$pu','$vl','$rl','$vt','$no','$notes','$slc','$ni','$nb','$sid01','$sid02','$sid03','$sid04','$sid05','$sid06','$sid07','$nod','$senfr')");
+
 
         
   if ($resultft) {
 
-    $query_insert_edss2 = "INSERT INTO $ssso (ss2id) SELECT `ss1`.`id`
-    FROM $ssso as ssso RIGHT JOIN $ss1 as ss1 ON (`ssso`.`ss2id` = `ss1`.`id`)
+    $query_insert_edss2 = "INSERT INTO $ssso (ss2id) SELECT `ss2`.`id`
+    FROM $ssso as ssso RIGHT JOIN $ss2 as ss1 ON (`ssso`.`ss2id` = `ss1`.`id`)
     WHERE ssso.ss1id IS NULL      
     ";
 
