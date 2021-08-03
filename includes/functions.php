@@ -925,7 +925,6 @@ function sendMail($email, $message, $subject){
       `l1l2`varchar(30) unsigned NOT NULL DEFAULT '1' COMMENT 'larvae stage l1l2 (l1l2)',
       `l3l4`varchar(30) unsigned NOT NULL DEFAULT '1' COMMENT 'larvae stage l3l4 (l3l4)',
       `tlv`varchar(30) unsigned NOT NULL DEFAULT '1' COMMENT 'larvae stage total larvae (tlv)',
-
       `pu` varchar(30) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of pupae (1: Total)',
       `vl` varchar(30) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of vegitation length(1: Absent, 2: Short grasses, 3: Tall grasses)',
       `rl` varchar(30) unsigned NOT NULL DEFAULT '1' COMMENT 'Hold status of rice length (1: Absent, 2: Short grasses, 3: Tall grasses)',
