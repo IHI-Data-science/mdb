@@ -14,8 +14,8 @@
 define( 'DB_HOST', 'localhost' );          
 define( 'DB_USER', 'root' );             
 define( 'DB_PASS', '' );            
-define( 'DB_NAME', 'MDB4' );       
-define( 'URL', 'http://localhost/MDB4' ); 
+define( 'DB_NAME', 'MDB' );       
+define( 'URL', 'http://localhost/MDB' ); 
 
 
 /*

@@ -204,7 +204,7 @@ $field2 = "ft";
 
                        
                          $fields_array = array("Serial No. (SEN)","Form row (FR)","ED Form Serial Number (SSEN)","ED Form row (SFR)","Habitat ID (HF)","Habitat type (HBT)","Habitat treated (HTR)","Habitat Wet (HW)","Habitat Size (HS)","Distance to next house (DNH)","Vegetation (VL)","Rice length (RL)","Treated(VT)");
-                         array_push($fields_array,"Taxon (TX)","Egg (Egg)","Larval stage_L1 (L1)","Larval stage_L2 (L2)","Larval stage_L3 (L3)","Larval stage_L4 (L4)","Larval stage_L1L2 (L1L2)","Larval stage_L3L4 (L3L4)","Total larvae (TLV)","Pupae(PU)");
+                         array_push($fields_array,"Dipping effort (DIP)","Taxon (TX)","bfEgg (bfEgg)","Larval stage_L1 (bfL1)","Larval stage_L2 (bfL2)","Larval stage_L3 (bfL3)","Larval stage_L4 (bfL4)","Larval stage_L1L2 (L1L2)","Larval stage_L3L4 (L3L4)","Total larvae (TLV)","Pupae(PU)");
                          
                          // array_push($fields_array,"Number Sampled Dipping 1 (NDI01)","Number Sampled Dipping 2 (NDI02)","Number Sampled Dipping 3 (NDI03)","Number Sampled Dipping 4 (NDI04)","Number Sampled Dipping 5 (NDI05)");
  

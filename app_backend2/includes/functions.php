@@ -245,7 +245,7 @@ function ss1data($sen, $ssen, $sfr, $bf, $fr,$tx, $sas, $n, $notes, $slc,
 
 
 
-function ss2data($sen, $ssen, $sfr, $hf, $hbt,$htc, $htr, $hw, $hs,$dnh, $fr, $tx, $bfegg,$bfl1,$bfl2,$bfl3,$bfl4,$l1l2,$l3l4,$tlv, $pu, $vl,$rl, $vt,$no, $notes, $slc, $ni, $nb, $sid01, $sid02, $sid03, $sid04, $sid05, $sid06, $sid07, $nod) {
+function ss2data($sen, $ssen, $sfr, $hf, $hbt, $htr, $hw, $hs,$dnh, $fr, $tx, $bfEgg,$bfL1,$bfL2,$bfL3,$bfL4,$L1L2,$L3L4,$tlv, $pu, $vl,$rl, $vt,$no, $notes, $slc, $ni, $nb, $sid01, $sid02, $sid03, $sid04, $sid05, $sid06, $sid07, $nod) {
 
   global $db;
   
@@ -294,16 +294,16 @@ function ss2data($sen, $ssen, $sfr, $hf, $hbt,$htc, $htr, $hw, $hs,$dnh, $fr, $t
 
   }
 
-  $resultft = $db->mysqliquery("INSERT INTO  $ss2 ( edssid, sen,ssen,sfr,hf,hbt,htr,hw,hs,dnh,fr,dip,tx,bfegg,bfl1,bfl2,bfl3,bfl4,l1l2,l3l4,tlv,no,notes,slc,ni,nb,sid01,sid02,sid03,sid04,sid05,sid06,sid07,nod,senfr)
-  VALUES('$edssid','$sen','$ssen','$sfr','$hf','$hbt',$htr','$hw','$hs','$dnh','$fr','$dip','$tx','$bfegg','$bfl1','$bfl2','$bfl3','$bfl4','$l1l2',$l3l4,'$tlv,$pu','$vl','$rl','$vt','$no','$notes','$slc','$ni','$nb','$sid01','$sid02','$sid03','$sid04','$sid05','$sid06','$sid07','$nod','$senfr')");
+  $resultft = $db->mysqliquery("INSERT INTO  $ss2 ( edssid, sen,ssen,sfr,hf,hbt,htr,hw,hs,dnh,fr,dip,tx,bfEgg,bfL1,bfL2,bfL3,bfL4,L1L2,L3L4,tlv,notes,slc,ni,nb,sid01,sid02,sid03,sid04,sid05,sid06,sid07,nod,senfr)
+  VALUES('$edssid','$sen','$ssen','$sfr','$hf','$hbt',$htr','$hw','$hs','$dnh','$fr','$dip','$tx','$bfEgg','$bfL1','$bfL2','$bfL3','$bfL4','$L1L2',$L3L4,'$tlv,$pu','$vl','$rl','$vt','$no','$notes','$slc','$ni','$nb','$sid01','$sid02','$sid03','$sid04','$sid05','$sid06','$sid07','$nod','$senfr')");
 
 
         
   if ($resultft) {
 
     $query_insert_edss2 = "INSERT INTO $ssso (ss2id) SELECT `ss2`.`id`
-    FROM $ssso as ssso RIGHT JOIN $ss2 as ss1 ON (`ssso`.`ss2id` = `ss1`.`id`)
-    WHERE ssso.ss1id IS NULL      
+    FROM $ssso as ssso RIGHT JOIN $ss2 as ss2 ON (`ssso`.`ss2id` = `ss2`.`id`)
+    WHERE ssso.ss2id IS NULL      
     ";
 
    //execute query to insert into EdSs table from Ed1 Table
