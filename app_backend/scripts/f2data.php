@@ -240,7 +240,9 @@ if(isset($_POST['tag'])) {
 		for($i=0; $i<count($data) ; $i++)
 		{
         
-			$res2 = ss1data($data[$i]->sen,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->hw,$data[$i]->hs,$data[$i]->fr,$data[$i]->tx,$data[$i]->bf,$data[$i]->ndi01,$data[$i]->ndi02,$data[$i]->ndi03,$data[$i]->ndi04,$data[$i]->ndi05,$data[$i]->ndi06,$data[$i]->ndi07,$data[$i]->ndi08,$data[$i]->ndi09,$data[$i]->ndi10,$data[$i]->n,$data[$i]->notes,$data[$i]->slc,$data[$i]->st,$data[$i]->nd,$data[$i]->No_Batches,$data[$i]->st2sid01,$data[$i]->st2sid02,$data[$i]->st2sid03,$data[$i]->st2sid04,$data[$i]->st2sid05,$data[$i]->st2sid06,$data[$i]->st2sid07,$data[$i]->No_Discarded
+			$res2 = ss2data($data[$i]->sen,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->hf,$data[$i]->hbt,$data[$i]->htr,$data[$i]->hw,$data[$i]->hs,$data[$i]->dnh,$data[$i]->fr,$data[$i]->dip,$data[$i]->tx,$data[$i]->bfEgg,$data[$i]->bfL1,$data[$i]->bfL2,$data[$i]->bfL3,$data[$i]->bfL4,$data[$i]->L1L2,$data[$i]->L3L4,$data[$i]->pu,$data[$i]->vl,$data[$i]->rl,$data[$i]->vt,$data[$i]->tlv,$data[$i]->notes,$data[$i]->slc,$data[$i]->ni,$data[$i]->nb,$data[$i]->st2sid01,$data[$i]->st2sid02,$data[$i]->st2sid03,$data[$i]->st2sid04,$data[$i]->st2sid05,$data[$i]->st2sid06,$data[$i]->st2sid07,$data[$i]->nod
+
+
 
 			);
           
