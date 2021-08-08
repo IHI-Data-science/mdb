@@ -1,8 +1,8 @@
 <?php 
-
 /**
  * Created by Dickson Msaky @ Ifakara Health Insitute (2018)
  */
+
 require_once('includes/load.php');
 $page_title = 'Settings'; 
 page_require_level(2);
@@ -18,13 +18,10 @@ $field2 = "ft";
 
     if(!empty($_POST['fieldsarr'])) {
 
-        
-        $postfield = $_POST['fieldsarr'];
-        array_push($postfield,"Replicate 1 (rep_1)","Replicate 2 (rep_2)","Replicate 3 (rep_3)","Replicate 4 (rep_4)","Control 1 (cnr_1)","Control 1 (cnr_2)");
 
         $fieldsshort_array = array();
 
-        foreach($postfield as $field){
+        foreach($_POST['fieldsarr'] as $field){
 
         preg_match('#\((.*?)\)#', $field, $match);
         $my =  strtolower($match[1])."\n";
@@ -34,13 +31,13 @@ $field2 = "ft";
         }
 
 
-         $fieldsarr = implode(",",$postfield);
+         $fieldsarr = implode(",",$_POST['fieldsarr']);
          $fieldsarr = str_replace("\n", "", $fieldsarr);
 
          $fieldsshort_array2 = implode(",",$fieldsshort_array);
          $fieldsshort_array2 = str_replace("\n", "", $fieldsshort_array2);
 
-         $fieldarraysize = sizeof($postfield);
+         $fieldarraysize = sizeof($_POST['fieldsarr']);
 
       
 
@@ -98,7 +95,7 @@ $field2 = "ft";
     }else{
     
         $sql = "DELETE FROM ".$db->escape($table);
-        $sql .= " WHERE ".$db->escape($field)."=".$_SESSION['expcode']." AND ".$db->escape($field2)."="."'SS3'";
+        $sql .= " WHERE ".$db->escape($field)."=".$_SESSION['expcode']." AND ".$db->escape($field2)."="."'ss3'";
         $sql .= " LIMIT 1";
 
       
@@ -159,28 +156,49 @@ $field2 = "ft";
 
   <div class="panel panel-default">
          <div class="panel-heading"><h6 class="panel-title">Sample Sorting 3 Customize</h6>
-
-           <div class="btn-group pull-right">
+          
+          <div class="btn-group pull-right">
              <form action="scripts/exporttemp.php" method="post">
 
-              
-              <a href="settings_ss3temp.php" <button class="btn btn-default"><i class="fa fa-cog"></i>Customize General Template</button> </a>
+      
+               <a href="settings_ss3temp.php" <button class="btn btn-default"><i class="fa fa-cog"></i>Customize General Template</button> </a>
 
               <button type="submit" name='downloadtemp' class="btn btn-default"><i class="fa fa-download"></i>Download Entry Template</button>
-
 
               <input type="hidden" name="fo" value="<?php echo $formtype; ?>" >  
               <input type="hidden" name="ta" value="<?php echo $table; ?>" >  
 
             </form> 
           </div>
-          
+
+
          </div>
     <div class="panel-body">
 
-         <h3>Sample Sorting 3 Customize</h3>
+        <h3>Sample Sorting 3 Customize</h3>
 
                      <form method="post" action=""><br/>
+
+                     <div class="btn-group">
+    <button class="btn btn-primary">  <i class="fa fa-file-text"></i>WHO Cone Test</button>
+    <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+        <span class="caret caret-split"></span>
+    </button>
+    <ul class="dropdown-menu">
+
+
+    <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="cdctest.php">CDC Test</a></li>
+         <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="whoconetest.php">WHO Cone Test</a></li>
+         <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="whotubetest.php">WHO Tube Test</a></li>
+    </ul>
+</div>
+
+</td>
+
+<br><br>
+
+
+
                         <?php
 
                         $checked_fields = array();
@@ -208,13 +226,79 @@ $field2 = "ft";
                          }
 
 
-               
-                      $fields_array = array("Serial No. (SEN)","Form row (FR)","ED Form Serial Number (SSEN)","ED Form row (SFR)");
-                      array_push($fields_array,"Start Date (SD)","Dead (DD)","Taxon (TX)","Sex and Abdominal Status (SAS)","Mates (MT)","Choice (CH)");
-                      array_push($fields_array,"Replicate number (REP_NO)","Control number (CNR_NO)","Treatment Exposure (EXP_TR)","Start Time (ST)","Duration (DUR)","Notes (Notes)");               
+                      $fields_array = array("Serial No. (SEN)","ED Form Serial Number (SSEN)","ED Form row (SFR)", "Form row (FR)");
+
+                    array_push($fields_array,"Date of Test (DOT)");
+                    
+                    array_push($fields_array, "GPS Accuracy (GA)", "GPS Data Source (GDS)");
+                    
+                    array_push( $fields_array,"Specify GPS data source (SGDS)" , 
+                    "Room Type (RT)", "Date of Spray (SpD)","Last Insecticide Used (LIU)");
+                     
+                                      
+                    array_push($fields_array,
+                  "Mosquito Origin (MO)", "Mosquito Species Tested (MST)", "Mosquito Age (MA)");
                   
-                      $disabled_fields_array = array("Serial No. (SEN)","Form row (FR)","ED Form Serial Number (SSEN)","ED Form row (SFR)");
-                      array_push($disabled_fields_array, "Start Date (SD)","Dead (DD)","Taxon (TX)","Sex and Abdominal Status (SAS)","Replicate number (REP_NO)","Control number (CNR_NO)","Treatment Exposure (EXP_TR)","Start Time (ST)","Duration (DUR)");
+                  array_push($fields_array,"Exposure Period Max Temp (ETMax)", "Exposure Period Min Temp (ETMin)" ,"Holding Period Max Temp (HTMax)","Holding Period Min Temp (HTMin)", "Exposure Period Max Humidity (EHMax)", "Exposure Period Min Humidity (EHMin)",
+                  "Holding Period Max Humidity (HHMax)", "Holding Period Min Humidity (HHMin)");
+                   
+                  array_push($fields_array, "Exposed Location of Control Mosquitoes(ELCM)", 
+                  "No of Mosquitoes Tested - Cone Height 0.5m (MT1)",
+                  "No of Mosquitoes Tested - Cone Height 1.0m (MT2)", 
+                  "No of Mosquitoes Tested - Cone Height 2.0m (MT3)",
+                  "No of Mosquitoes Tested - Cone Height Other (MT4)");
+
+                  array_push($fields_array, "Mosquitoes K/D 30min - Cone Height 0.5m (MKD1)",
+                  "Mosquitoes K/D 60min - Cone Height 0.5m (MKD2)",
+                   "Mosquitoes K/D Day1 - Cone Height 0.5m (MKD3)",
+                  "Mosquitoes K/D Day2 - Cone Height 0.5m (MKD4)",
+                   "Mosquitoes K/D Day3 - Cone Height 0.5m (MKD5)");
+
+                        array_push($fields_array, "Mosquitoes K/D 30min - Cone Height 1.0m (MKD6)",
+                  "Mosquitoes K/D 60min - Cone Height 1.0m (MKD7)", 
+                  "Mosquitoes K/D Day1 - Cone Height 1.0m (MKD8)",
+                  "Mosquitoes K/D Day2 - Cone Height 1.0m (MKD9)", 
+                  "Mosquitoes K/D Day3 - Cone Height 1.0m (MKD10)");
+
+                  array_push($fields_array, "Mosquitoes K/D 30min - Cone Height 1.5m (MKD11)");
+
+
+                  array_push($fields_array, "Mosquitoes K/D 60min - Cone Height 1.5m (MKD12)",
+                  
+                    "Mosquitoes K/D Day1 - Cone Height 1.5m (MKD13)",
+                  "Mosquitoes K/D Day2 - Cone Height 1.5m (MKD14)", 
+                  "Mosquitoes K/D Day3 - Cone Height 1.5m (MKD15)");
+
+                  array_push($fields_array, "Mosquitoes K/D 30min - Cone Height 2.0m (MKD16)",
+                  "Mosquitoes K/D 60min - Cone Height 2.0m (MKD17)",
+                   "Mosquitoes K/D Day1 - Cone Height 2.0m (MKD18)",
+                  "Mosquitoes K/D Day2 - Cone Height 2.0m (MKD19)",  
+                   "Mosquitoes K/D Day3 - Cone Height 2.0m (MKD20)");
+
+
+                   array_push ($fields_array, "Mosquitoes K/D net other1 mins (O1)",
+                   "Mosquitoes K/D net other2 mins (O2)", "Mosquitoes K/D net other3 mins (O3)");
+                   
+  
+                      $disabled_fields_array = array("Serial No. (SEN)","ED Form Serial Number (SSEN)","ED Form row (SFR)", "Form row (FR)");
+                     
+                      array_push($disabled_fields_array,"Date of Test (DOT)");
+                    
+                      array_push($disabled_fields_array, "GPS Accuracy (GA)", "GPS Data Source (GDS)");
+                      
+                      array_push($disabled_fields_array,"Specify GPS data source (SGDS)" , 
+                      "Room Type (RT)", "Date of Spray (SpD)","Last Insecticide Used (LIU)");
+                       
+                                        
+                      array_push($disabled_fields_array,
+                    "Mosquito Origin (MO)", "Mosquito Species Tested (MST)", "Mosquito Age (MA)");
+                    
+                    array_push($disabled_fields_array,"Exposure Period Max Temp (ETMax)", "Exposure Period Min Temp (ETMin)" ,"Holding Period Max Temp (HTMax)","Holding Period Min Temp (HTMin)", "Exposure Period Max Humidity (EHMax)", "Exposure Period Min Humidity (EHMin)",
+                    "Holding Period Max Humidity (HHMax)", "Holding Period Min Humidity (HHMin)");
+
+
+
+
 
                         echo '<ul style="list-style-type:square">';
 
@@ -222,40 +306,35 @@ $field2 = "ft";
                             
                               $disable= "";     
                               $checked = "";
+                              
 
                               if(in_array($field,$checked_fields)){
                               $checked = "checked";}
 
+                             
                               if (in_array($field,$disabled_fields_array)){
                               $checked = "checked";}
+
                               
                               if (in_array($field,$disabled_fields_array)){
                               $disable = 'readonly="readonly"';} 
 
                               
-                              echo '<input type="checkbox" name="fieldsarr[]" value="'.$field.'" '.$disable.' '.$checked.' > '.$field.' <br/>';
+                              echo '<input type="checkbox" name="fieldsarr[]" value="'.$field.'" '.$disable.'  '.$checked.' > '.$field.' <br/>';
                               
                             }
                         echo '</ul>';
             
                         ?>
-                     
 
                      <div class="panel-footer form-actions text-right">
 
                           <button name="cleared" name="cleared" type="submit" id="cleared" class="btn btn-danger btn-lg"> <i class="fa fa-times" aria-hidden="true"></i> Delete saved </button>
 
                           <button name="submited2" name="submited2" type="submit" id="submited2" class="btn btn-primary btn-lg"> <i class="fa fa-check" aria-hidden="true"></i> Save fields </button>
-
                      </div>  
 
-
                  </form>
-
     </div>
-  </div>
-              
-<?php include_once('layouts/foot.php'); ?>    
-      
-  
-           
+  </div>             
+<?php include_once('layouts/foot.php'); ?>                  

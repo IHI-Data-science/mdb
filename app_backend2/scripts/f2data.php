@@ -240,7 +240,7 @@ if(isset($_POST['tag'])) {
 		for($i=0; $i<count($data) ; $i++)
 		{
         
-			$res2 = ss1data($data[$i]->sen,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->hw,$data[$i]->hs,$data[$i]->fr,$data[$i]->tx,$data[$i]->bf,$data[$i]->ndi01,$data[$i]->ndi02,$data[$i]->ndi03,$data[$i]->ndi04,$data[$i]->ndi05,$data[$i]->ndi06,$data[$i]->ndi07,$data[$i]->ndi08,$data[$i]->ndi09,$data[$i]->ndi10,$data[$i]->n,$data[$i]->notes,$data[$i]->slc,$data[$i]->st,$data[$i]->nd,$data[$i]->No_Batches,$data[$i]->st2sid01,$data[$i]->st2sid02,$data[$i]->st2sid03,$data[$i]->st2sid04,$data[$i]->st2sid05,$data[$i]->st2sid06,$data[$i]->st2sid07,$data[$i]->No_Discarded
+			$res2 = ss2data($data[$i]->sen,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->hf,$data[$i]->hbt,$data[$i]->htr,$data[$i]->hw,$data[$i]->hs,$data[$i]->dnh,$data[$i]->fr,$data[$i]->fr,$data[$i]->dip,$data[$i]->tx,$data[$i]->bfEgg,$data[$i]->bfL1,$data[$i]->bfL2,$data[$i]->bfL3,$data[$i]->bfL4,$data[$i]->L1L2,$data[$i]->L3L4,$data[$i]->pu,$data[$i]->vl,$data[$i]->rl,$data[$i]->vt,$data[$i]->tlv,$data[$i]->no,$data[$i]->notes,$data[$i]->slc,$data[$i]->ni,$data[$i]->nb,$data[$i]->st2sid01,$data[$i]->st2sid02,$data[$i]->st2sid03,$data[$i]->st2sid04,$data[$i]->st2sid05,$data[$i]->st2sid06,$data[$i]->st2sid07,$data[$i]->nod
 
 			);
           
@@ -292,6 +292,11 @@ if(isset($_POST['tag'])) {
 
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> ss3-to-main
 	else if ($tag == 'ss3') {
 
 		$json = $_POST["ss3json"];
@@ -363,74 +368,6 @@ if(isset($_POST['tag'])) {
 	}
 
 
-	else if ($tag == 'ss3b') {
-
-		$json = $_POST["ss3bjson"];
-
-        
-		if (get_magic_quotes_gpc()){
-			$json = stripslashes($json);
-		}
-        
-		$data = json_decode($json);
-
-		$a=array();
-		$b=array();
-
-
-		$GLOBALS['pidss'] = $_POST["projectid"];
-		$GLOBALS['sidss'] = $_POST["siteid"];
-
-        
-		for($i=0; $i<count($data) ; $i++){
-        
-			$res2 = ss3bdata($data[$i]->sen,$data[$i]->fr,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->st,$data[$i]->duration,$data[$i]->replicate1,$data[$i]->replicate2,$data[$i]->replicate3,$data[$i]->replicate4,$data[$i]->control1,$data[$i]->control2);
-          
-			if($res2){
-
-				$b["id"] = (int)$data[$i]->id;
-				$b["sen"] = (int)$data[$i]->sen;
-				$b["fr"] = (int)$data[$i]->fr;
-				$b["status"] = 'yes';
-				$b["success"] = 1;
-				$b["error"] = 0;
-
-				array_push($a,$b);
-
-			}else{
-
-
-				if ($db->mysqlierrorno() == 1062){
-
-					$b["id"] = (int)$data[$i]->id;
-				        $b["sen"] = (int)$data[$i]->sen;
-				        $b["fr"] = (int)$data[$i]->fr;
-					$b["status"] = 'yes';
-					$b["error"] = 1062;
-					$b["success"] = 1;
-					$b["error_msg"] = "error:".$db->mysqlierror();
-
-					array_push($a,$b);
-
-				}  else{
-
-					$b["id"] = (int)$data[$i]->id;
-				        $b["sen"] = (int)$data[$i]->sen;
-				        $b["fr"] = (int)$data[$i]->fr;
-					$b["status"] = 'no';
-					$b["error"] = 1;
-					$b["success"] = 0;
-					$b["error_msg"] = "error:".$db->mysqlierror();
-
-					array_push($a,$b);
-
-				}
-			}
-		}
-
-		echo json_encode($a);
-
-	}
 
 		// adding for ss4 snail
 
@@ -511,6 +448,12 @@ if(isset($_POST['tag'])) {
 
 //end ss
 
+<<<<<<< HEAD
+>>>>>>> 18d49522400a28739f1e8f2152f70487bb62aed2
+=======
+=======
+>>>>>>> Njire-C
+>>>>>>> ss3-to-main
 
 	else if ($tag == 'so1') {
 

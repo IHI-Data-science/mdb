@@ -152,6 +152,19 @@ if(isset($_GET['q'])) {
 
 	}
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+	else if($q == 'ss3'){
+
+		$prefixtable = $projectid."_";
+		$ss3 = $prefixtable."ss3";
+	
+		$query="SELECT * FROM $ss3";
+		$nodata = "No Data found";
+	
+=======
+=======
+>>>>>>> ss3-to-main
 	else if($q == 'ss2'){
 
 		$prefixtable = $projectid."_";
@@ -170,6 +183,20 @@ if(isset($_GET['q'])) {
 		$query="SELECT * FROM $ss4";
 		$nodata = "No Data found";
 
+<<<<<<< HEAD
+>>>>>>> 18d49522400a28739f1e8f2152f70487bb62aed2
+=======
+=======
+	else if($q == 'ss3'){
+
+		$prefixtable = $projectid."_";
+		$ss3 = $prefixtable."ss3";
+	
+		$query="SELECT * FROM $ss3";
+		$nodata = "No Data found";
+	
+>>>>>>> Njire-C
+>>>>>>> ss3-to-main
 	}
 
 	else{

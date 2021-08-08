@@ -245,7 +245,7 @@ function ss1data($sen, $ssen, $sfr, $bf, $fr,$tx, $sas, $n, $notes, $slc,
 
 
 
-function ss2data($sen,$ssen,$sfr,$hw,$hs,$fr,$tx,$bf,$ndi01,$ndi02,$ndi03,$ndi04,$ndi05,$ndi06,$ndi07,$ndi08,$ndi09,$ndi10,$n,$notes,$slc,$st,$ni,$nb,$sid01,$sid02,$sid03,$sid04,$sid05,$sid06,$sid07,$nd) {
+function ss2data($sen, $ssen, $sfr, $hf, $hbt, $htr, $hw, $hs,$dnh, $fr, $tx, $bfEgg,$bfL1,$bfL2,$bfL3,$bfL4,$L1L2,$L3L4,$tlv, $pu, $vl,$rl, $vt,$no, $notes, $slc, $ni, $nb, $sid01, $sid02, $sid03, $sid04, $sid05, $sid06, $sid07, $nod) {
 
   global $db;
   
@@ -294,15 +294,16 @@ function ss2data($sen,$ssen,$sfr,$hw,$hs,$fr,$tx,$bf,$ndi01,$ndi02,$ndi03,$ndi04
 
   }
 
-  $resultft = $db->mysqliquery("INSERT INTO  $ss1 ( edssid, sen,ssen,sfr,hw,hs,fr,tx,bf,ndi01,ndi02,ndi03,ndi04,ndi05,ndi06,ndi07,ndi08,ndi09,ndi10,n,notes,slc,st,ni,nb,sid01,sid02,sid03,sid04,sid05,sid06,sid07,nd,senfr)
-    VALUES('$edssid','$sen','$ssen','$sfr','$hw','$hs','$fr','$tx','$bf','$ndi01','$ndi02','$ndi03','$ndi04','$ndi05','$ndi06','$ndi07','$ndi08','$ndi09','$ndi10','$n','$notes','$slc','$st','$ni','$nb','$sid01','$sid02','$sid03','$sid04','$sid05','$sid06','$sid07','$nd','$senfr')");
+  $resultft = $db->mysqliquery("INSERT INTO  $ss2 ( edssid, sen,ssen,sfr,hf,hbt,htr,hw,hs,dnh,fr,dip,tx,bfEgg,bfL1,bfL2,bfL3,bfL4,L1L2,L3L4,tlv,notes,slc,ni,nb,sid01,sid02,sid03,sid04,sid05,sid06,sid07,nod,senfr)
+  VALUES('$edssid','$sen','$ssen','$sfr','$hf','$hbt',$htr','$hw','$hs','$dnh','$fr','$dip','$tx','$bfEgg','$bfL1','$bfL2','$bfL3','$bfL4','$L1L2',$L3L4,'$tlv,$pu','$vl','$rl','$vt','$no','$notes','$slc','$ni','$nb','$sid01','$sid02','$sid03','$sid04','$sid05','$sid06','$sid07','$nod','$senfr')");
+
 
         
   if ($resultft) {
 
-    $query_insert_edss2 = "INSERT INTO $ssso (ss2id) SELECT `ss1`.`id`
-    FROM $ssso as ssso RIGHT JOIN $ss1 as ss1 ON (`ssso`.`ss2id` = `ss1`.`id`)
-    WHERE ssso.ss1id IS NULL      
+    $query_insert_edss2 = "INSERT INTO $ssso (ss2id) SELECT `ss2`.`id`
+    FROM $ssso as ssso RIGHT JOIN $ss2 as ss2 ON (`ssso`.`ss2id` = `ss2`.`id`)
+    WHERE ssso.ss2id IS NULL      
     ";
 
    //execute query to insert into EdSs table from Ed1 Table
@@ -316,153 +317,9 @@ function ss2data($sen,$ssen,$sfr,$hw,$hs,$fr,$tx,$bf,$ndi01,$ndi02,$ndi03,$ndi04
 }
 
 
-function ss3data($sen,$fr,$ssen,$sfr,$sd,$dd,$tx,$sas,$mt,$ch,$rep_no,$cnr_no,$exp_tr,$st,$dur) {
-
-  global $db;
-  
-  $projectid = $GLOBALS['pidss'] ;
-  $siteid = $GLOBALS['sidss'] ;
-
-  //table prefix
-  $prefixtable = $projectid."_";
-  $ed1 = $prefixtable."ed1";
-  $ss3 = $prefixtable."ss3";
-  $edss = $prefixtable."edss";
-  $ssso = $prefixtable."ssso";
-
-  $query_1 = "SELECT id FROM projectregsite WHERE site_id='$siteid' AND projectreg_id='$projectid'";
-  //execute query above
-  $result = $db->mysqliquery($query_1);
-  //fetching link
-  //echo "Fetching link <br />";
-  //check if query execute successfull
-  if($result)
-  {
-    //check number of row`s found in table projectregsite
-    //count number of row return
-    $num_row = $db->num_rows($result);
-    //fetch data from database
-    $row = $db->fetch_assoc($result);  
-    //check if number of row is equal to one
-    if($num_row == 1)
-    {     
-
-      $projectregsite = $row["id"]; 
-
-    } 
 
 
-    /*$query_fetch="SELECT edss.id FROM $edss as edss
-    INNER JOIN $ed1 as ed1  ON (edss.ed1id = ed1.id)
-    WHERE ed1.sen=$ssen AND ed1.dsen=$sen AND ed1.projectregsite_id='$projectregsite' AND ed1.fr=$sfr";
 
-    $result2 = $db->mysqliquery($query_fetch);
-
-    $row = $db->fetch_assoc($result2);*/
-
-    $edssid = 0;
-
-    $senfr = $sen.$fr;
-
-  }
-
-
-  $resultft = $db->mysqliquery("INSERT INTO  $ss3 (edssid,sen,fr,ssen,sfr,sd,dd,tx,sas,mt,ch,rep_no,cnr_no,exp_tr,st,dur,senfr)
-    VALUES('$edssid','$sen','$fr','$ssen','$sfr','$sd','$dd','$tx','$sas','$mt','$ch','$rep_no','$cnr_no','$exp_tr','$st','$dur','$senfr')");
-
-        // check for successful store
- /* if ($resultft) {
-
-    $query_insert_edss2 = "INSERT INTO $ssso (ss1id) SELECT `ss1`.`id`
-    FROM $ssso as ssso RIGHT JOIN $ss1 as ss1 ON (`ssso`.`ss1id` = `ss1`.`id`)
-    WHERE ssso.ss1id IS NULL      
-    ";
-
-   //execute query to insert into EdSs table from Ed1 Table
-    $db->mysqliquery($query_insert_edss2);
-
-  }  */
-
-   return $resultft;
-
-
-}
-
-
-function ss3bdata($sen,$fr,$ssen,$sfr,$st,$dur,$rep_1,$rep_2,$rep_3,$rep_4,$cnr_1,$cnr_2) {
-
-  global $db;
-  
-  $projectid = $GLOBALS['pidss'] ;
-  $siteid = $GLOBALS['sidss'] ;
-
-  //table prefix
-  $prefixtable = $projectid."_";
-  $ed1 = $prefixtable."ed1";
-  $ss3 = $prefixtable."ss3b";
-  $edss = $prefixtable."edss";
-  $ssso = $prefixtable."ssso";
-
-  $query_1 = "SELECT id FROM projectregsite WHERE site_id='$siteid' AND projectreg_id='$projectid'";
-  //execute query above
-  $result = $db->mysqliquery($query_1);
-  //fetching link
-  //echo "Fetching link <br />";
-  //check if query execute successfull
-  if($result)
-  {
-    //check number of row`s found in table projectregsite
-    //count number of row return
-    $num_row = $db->num_rows($result);
-    //fetch data from database
-    $row = $db->fetch_assoc($result);  
-    //check if number of row is equal to one
-    if($num_row == 1)
-    {     
-
-      $projectregsite = $row["id"]; 
-
-    } 
-
-
-    $query_fetch="SELECT edss.id FROM $edss as edss
-    INNER JOIN $ed1 as ed1  ON (edss.ed1id = ed1.id)
-    WHERE ed1.sen=$ssen AND ed1.dsen=$sen AND ed1.fr=$sfr";
-
-
-    SELECT edss.id FROM $edss as edss INNER JOIN $ed1 as ed1  ON (edss.ed2id = ed1.id)
-
-    $result2 = $db->mysqliquery($query_fetch);
-
-    $row = $db->fetch_assoc($result2);
-
-    $edssid = 0;
-
-    $senfr = $sen.$fr;
-
-  }
-
-
-  $resultft = $db->mysqliquery("INSERT INTO  $ss3 (edssid,sen,fr,ssen,sfr,st,dur,rep_1,rep_2,rep_3,rep_4,cnr_1,cnr_2)
-    VALUES('$edssid','$sen','$fr','$ssen','$sfr','$st','$dur','$rep_1','$rep_2','$rep_3','$rep_4','$cnr_1','$cnr_2')");
-
-        // check for successful store
- /* if ($resultft) {
-
-    $query_insert_edss2 = "INSERT INTO $ssso (ss1id) SELECT `ss1`.`id`
-    FROM $ssso as ssso RIGHT JOIN $ss1 as ss1 ON (`ssso`.`ss1id` = `ss1`.`id`)
-    WHERE ssso.ss1id IS NULL      
-    ";
-
-   //execute query to insert into EdSs table from Ed1 Table
-    $db->mysqliquery($query_insert_edss2);
-
-  }  */
-
-   return $resultft;
-
-
-}
 
 function ss4data($sen, $ssen, $sfr, $fr,$hc,$wn, $wl,$su,$sa,$dso,$dr,$ph,$co,$wda,$act,
 $de, $ret, $wt,

@@ -31,7 +31,7 @@ function report($type, $projectcode, $db)
     $ss2 = $prefixtable . "ss2";
     $ss3 = $prefixtable . "ss3";
 	$ss4 = $prefixtable . "ss4";
-    $ss3view = $prefixtable . "ss3_view";
+
 
     $edss = $prefixtable . "edss";
     $ssso = $prefixtable . "ssso";
@@ -86,8 +86,7 @@ function report($type, $projectcode, $db)
     $st2colname2 = getcolumnname2($_SESSION['expcode'], $custst, substr($st2, strlen($prefixtable)));
     $st2col = changenametolong(substr($st2, strlen($prefixtable)), $st2colname1, $st2colname2);
 
-    $ss3bcol = str_replace(',ss3.rep_1 AS SS3_Replicate_1_rep_1,ss3.rep_2 AS SS3_Replicate_2_rep_2,ss3.rep_3 AS SS3_Replicate_3_rep_3,ss3.rep_4 AS SS3_Replicate_4_rep_4,ss3.cnr_1 AS SS3_Control_1_cnr_1,ss3.cnr_2 AS SS3_Control_1_cnr_2', '', $ss3col);
-
+   
     //ED1
     if ($type == "11") {
 
@@ -235,17 +234,157 @@ function report($type, $projectcode, $db)
     }
 
 //SS3
-    if ($type == "15") {
+   
+if ($type == "25") {
 
-        $query = "SELECT $ss3col FROM $ss3view as ss3 ORDER BY ss3.sen ASC,ss3.fr ASC";
+    $query = "SELECT $ss3col FROM $ss3 as ss3 ORDER BY ss3.sen ASC,ss3.fr ASC";
 
-        $result = $db->query($query) or die($db->mysqlierror());
+    $result = $db->query($query) or die($db->mysqlierror());
+
+    if (!file_exists("dataset/" . $projectcode)) {
+        mkdir("dataset/" . $projectcode, 0777, true);
+    }
+
+    $filename = "dataset/" . $projectcode . "/" . $prname . "_SS3.csv";
+
+    $file = fopen($filename, "w") or die("Can't open file $name for writing.");
+
+    $row = mysqli_fetch_assoc($result);
+    if ($row) {
+
+        fputcsv($file, array_keys($row));
+    }
+
+    while ($row) {
+
+        fputcsv($file, $row);
+        $row = mysqli_fetch_assoc($result);
+    }
+
+    $gt = $base_url . "/" . $filename;
+
+    echo '<a class="btn btn-primary" href = "' . $filename . '" download>  <i class="fa fa-download"> </i>Download (SS3)</a>';
+
+}
+
+
+
+//ED1SS3
+
+
+if ($type == "1125") {
+    //query to fetch data from custed table for EDs
+    $query = "SELECT ft, p_attri FROM custed WHERE pc='$projectcode' AND ft='ED1'";
+    //execute query
+    $result = $db->query($query) or die(mysqli_error($db));
+    //mysql fetch data from result above
+    $row = mysqli_fetch_array($result);
+    //remove attribute method
+    $meth_remove2 = str_replace("me,", "", $row["p_attri"]);
+
+    //$meth_remove = renamecol($meth_remove2);
+    $meth_remove = renamecol($edcol, "ed1", "ED");
+    //insert string
+    $insert_str = "," . strtolower($row["ft"]) . ".";
+    //And table name in first part andinsert table name after commer
+    $insert_tb = strtolower($row["ft"]) . "." . str_replace(",", $insert_str, $meth_remove);
+
+    $query = "SELECT
+     site.site_name AS Site
+    ,projectreg.pc AS Project
+    ,projectreg.expno AS Experiment
+    ,$edcol
+    ,$ss3col
+    FROM
+    projectregsite
+    INNER JOIN projectreg
+    ON (projectregsite.projectreg_id = projectreg.id)
+    INNER JOIN site
+    ON (projectregsite.site_id = site.site_id)
+    INNER JOIN $ed1 as ed1
+    ON (ed1.projectregsite_id = projectregsite.id)
+    INNER JOIN $edss as edss
+    ON (ed1.id = edss.ed1id)
+    INNER JOIN $ss3 as ss3
+    ON (ss3.edssid = edss.id)
+    LEFT JOIN method
+    ON (ed1.me = method.meth_code)
+    LEFT JOIN taxon
+    ON (ss3.tx = taxon.taxon_code)
+    ORDER BY ed1.sen ASC, ed1.fr ASC";
+    $result = $db->query($query) or die(mysqli_error($db));
+
+    if (!file_exists("dataset/" . $projectcode)) {
+        mkdir("dataset/" . $projectcode, 0777, true);
+    }
+
+    $filename = "dataset/" . $projectcode . "/" . $prname . "_ED1_SS3.csv";
+
+    $file = fopen($filename, "w") or die("Can't open file $name for writing.");
+
+    $row = mysqli_fetch_assoc($result);
+    if ($row) {
+
+        fputcsv($file, array_keys($row));
+    }
+
+    while ($row) {
+
+        fputcsv($file, $row);
+        $row = mysqli_fetch_assoc($result);
+    }
+
+    $gt = $base_url . "/" . $filename;
+
+    echo '<a class="btn btn-primary" href = "' . $filename . '" download>  <i class="fa fa-download"> </i>Download (ED1_SS3)</a>';
+
+}
+ //ENDED1SS3
+
+
+
+
+
+
+    //ED2SS3
+    if ($type == "1225") {
+        //query to fetch data from custed table for EDs
+        $query = "SELECT ft, p_attri FROM custed WHERE pc='$projectcode' AND ft='ED2'";
+        //execute query
+        $result = $db->query($query) or die(mysqli_error($db));
+        //mysql fetch data from result above
+        $row = mysqli_fetch_array($result);
+
+        $query = "SELECT
+		site.site_name AS Site
+		,projectreg.pc AS Project
+		,projectreg.expno AS Experiment
+		,$ed2col
+		,$ss3col
+		FROM
+		projectregsite
+		INNER JOIN projectreg
+		ON (projectregsite.projectreg_id = projectreg.id)
+		INNER JOIN site
+		ON (projectregsite.site_id = site.site_id)
+		INNER JOIN $ed2 as ed2
+		ON (ed2.projectregsite_id = projectregsite.id)
+		INNER JOIN $edss as edss
+		ON (ed2.id = edss.ed2id)
+		INNER JOIN $ss3view as ss3
+		ON (ss3.edssid = edss.id)
+		LEFT JOIN taxon
+		ON (ss3.tx = taxon.taxon_code)
+		LEFT JOIN sexabdominal
+		ON (ss3.sas = sexabdominal.sex_code)
+	    ORDER BY ed2.sen ASC,ed2.fr ASC";
+        $result = $db->query($query) or die(mysqli_error($db));
 
         if (!file_exists("dataset/" . $projectcode)) {
             mkdir("dataset/" . $projectcode, 0777, true);
         }
 
-        $filename = "dataset/" . $projectcode . "/" . $prname . "_SS3.csv";
+        $filename = "dataset/" . $projectcode . "/" . $prname . "_ED2_SS3.csv";
 
         $file = fopen($filename, "w") or die("Can't open file $name for writing.");
 
@@ -263,9 +402,29 @@ function report($type, $projectcode, $db)
 
         $gt = $base_url . "/" . $filename;
 
-        echo '<a class="btn btn-primary" href = "' . $filename . '" download>  <i class="fa fa-download"> </i>Download (SS3)</a>';
+        echo '<a class="btn btn-primary" href = "' . $filename . '" download>  <i class="fa fa-download"> </i>Download (ED2_SS3)</a>';
 
     }
+
+
+//EDSS3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	// ss4
 
@@ -303,64 +462,6 @@ function report($type, $projectcode, $db)
 
 	
 
-    //SS3 transpose
-    if ($type == "1522") {
-
-        $query = "
-		SELECT $ss3bcol,Category,Number_observed
-		 FROM " . $prefixtable . "ss3 ss3 INNER JOIN (
-			SELECT ss3bb.sen,ss3bb.fr,ss3bb.ssen,ss3bb.sfr,ss3bb.st,ss3bb.dur,
-		   cc.Category,
-		   case cc.Category
-			 when 'Replicate_1' then rep_1
-			 when 'Replicate_2' then rep_2
-			 when 'Replicate_3' then rep_3
-			 when 'Replicate_4' then rep_4
-			 when 'Control_1' then cnr_1
-			 when 'Control_2' then cnr_2
-		   end as Number_observed
-		 from " . $prefixtable . "ss3b ss3bb
-		 cross join
-		 (
-		   select 'Replicate_1' as Category
-		   union all select 'Replicate_2'
-		   union all select 'Replicate_3'
-		   union all select 'Replicate_4'
-		   union all select 'Control_1'
-		   union all select 'Control_2'
-		 ) cc
-
-		 ) as ss3b
-	       ON ss3.sen=ss3b.sen AND
-		      ss3.st=ss3b.st AND
-			  ss3.dur=ss3b.dur ORDER BY ss3.sen ASC, ss3.fr ASC,Category ASC";
-
-        $result = $db->query($query) or die($db->mysqlierror());
-
-        if (!file_exists("dataset/" . $projectcode)) {
-            mkdir("dataset/" . $projectcode, 0777, true);
-        }
-
-        $filename = "dataset/" . $projectcode . "/" . $prname . "_SS3b.csv";
-
-        $file = fopen($filename, "w") or die("Can't open file $name for writing.");
-
-        $row = mysqli_fetch_assoc($result);
-        if ($row) {
-
-            fputcsv($file, array_keys($row));
-        }
-
-        while ($row) {
-
-            fputcsv($file, $row);
-            $row = mysqli_fetch_assoc($result);
-        }
-
-        $gt = $base_url . "/" . $filename;
-
-        echo '<a class="btn btn-primary" href = "' . $filename . '" download>  <i class="fa fa-download"> </i>Download (SS3 Transposed)</a>';
-    }
 
 //SO1
     if ($type == "17") {
@@ -785,154 +886,9 @@ if ($type == "1116") {
 
 }
 
-    //ED2SS3
-    if ($type == "1215") {
-        //query to fetch data from custed table for EDs
-        $query = "SELECT ft, p_attri FROM custed WHERE pc='$projectcode' AND ft='ED2'";
-        //execute query
-        $result = $db->query($query) or die(mysqli_error($db));
-        //mysql fetch data from result above
-        $row = mysqli_fetch_array($result);
+   
 
-        $query = "SELECT
-		site.site_name AS Site
-		,projectreg.pc AS Project
-		,projectreg.expno AS Experiment
-		,$ed2col
-		,$ss3col
-		FROM
-		projectregsite
-		INNER JOIN projectreg
-		ON (projectregsite.projectreg_id = projectreg.id)
-		INNER JOIN site
-		ON (projectregsite.site_id = site.site_id)
-		INNER JOIN $ed2 as ed2
-		ON (ed2.projectregsite_id = projectregsite.id)
-		INNER JOIN $edss as edss
-		ON (ed2.id = edss.ed2id)
-		INNER JOIN $ss3view as ss3
-		ON (ss3.edssid = edss.id)
-		LEFT JOIN taxon
-		ON (ss3.tx = taxon.taxon_code)
-		LEFT JOIN sexabdominal
-		ON (ss3.sas = sexabdominal.sex_code)
-	    ORDER BY ed2.sen ASC,ed2.fr ASC";
-        $result = $db->query($query) or die(mysqli_error($db));
-
-        if (!file_exists("dataset/" . $projectcode)) {
-            mkdir("dataset/" . $projectcode, 0777, true);
-        }
-
-        $filename = "dataset/" . $projectcode . "/" . $prname . "_ED2_SS3.csv";
-
-        $file = fopen($filename, "w") or die("Can't open file $name for writing.");
-
-        $row = mysqli_fetch_assoc($result);
-        if ($row) {
-
-            fputcsv($file, array_keys($row));
-        }
-
-        while ($row) {
-
-            fputcsv($file, $row);
-            $row = mysqli_fetch_assoc($result);
-        }
-
-        $gt = $base_url . "/" . $filename;
-
-        echo '<a class="btn btn-primary" href = "' . $filename . '" download>  <i class="fa fa-download"> </i>Download (ED2_SS3)</a>';
-
-    }
-
-    //ED2SS3 Trans
-    if ($type == "121522") {
-        //query to fetch data from custed table for EDs
-        $query = "SELECT ft, p_attri FROM custed WHERE pc='$projectcode' AND ft='ED2'";
-        //execute query
-        $result = $db->query($query) or die(mysqli_error($db));
-        //mysql fetch data from result above
-        $row = mysqli_fetch_array($result);
-
-        $query = "SELECT
-			site.site_name AS Site
-			,projectreg.pc AS Project
-			,projectreg.expno AS Experiment
-			,$ed2col
-			,$ss3bcol,ss3.Category,ss3.Number_observed
-			FROM
-			projectregsite
-			INNER JOIN projectreg
-			ON (projectregsite.projectreg_id = projectreg.id)
-			INNER JOIN site
-			ON (projectregsite.site_id = site.site_id)
-			INNER JOIN $ed2 as ed2
-			ON (ed2.projectregsite_id = projectregsite.id)
-			INNER JOIN $edss as edss
-			ON (ed2.id = edss.ed2id)
-			LEFT JOIN
-			(
-				SELECT ss3.edssid,ss3.sen,ss3.fr,ss3.ssen,ss3.sfr,ss3.sd,ss3.dd,ss3.tx,ss3.sas,ss3.mt,ss3.ch,ss3.rep_no,ss3.cnr_no,ss3.exp_tr,ss3.st,ss3.dur,ss3.notes,Category,Number_observed
-				FROM " . $prefixtable . "ss3 ss3 INNER JOIN (
-					SELECT ss3bb.sen,ss3bb.fr,ss3bb.ssen,ss3bb.sfr,ss3bb.st,ss3bb.dur,
-				cc.Category,
-				case cc.Category
-					when 'Replicate_1' then rep_1
-					when 'Replicate_2' then rep_2
-					when 'Replicate_3' then rep_3
-					when 'Replicate_4' then rep_4
-					when 'Control_1' then cnr_1
-					when 'Control_2' then cnr_2
-				end as Number_observed
-				from " . $prefixtable . "ss3b ss3bb
-				cross join
-				(
-				select 'Replicate_1' as Category
-				union all select 'Replicate_2'
-				union all select 'Replicate_3'
-				union all select 'Replicate_4'
-				union all select 'Control_1'
-				union all select 'Control_2'
-				) cc
-
-				) as ss3b
-				ON ss3.sen=ss3b.sen AND
-					ss3.st=ss3b.st AND
-					ss3.dur=ss3b.dur
-			) as ss3 on (ss3.edssid = edss.id)
-			LEFT JOIN taxon
-			ON (ss3.tx = taxon.taxon_code)
-			LEFT JOIN sexabdominal
-			ON (ss3.sas = sexabdominal.sex_code)
-			ORDER BY ss3.sen ASC, ss3.fr ASC,Category ASC";
-
-        $result = $db->query($query) or die(mysqli_error($db));
-
-        if (!file_exists("dataset/" . $projectcode)) {
-            mkdir("dataset/" . $projectcode, 0777, true);
-        }
-
-        $filename = "dataset/" . $projectcode . "/" . $prname . "_ED2_SS3_Transposed.csv";
-
-        $file = fopen($filename, "w") or die("Can't open file $name for writing.");
-
-        $row = mysqli_fetch_assoc($result);
-        if ($row) {
-
-            fputcsv($file, array_keys($row));
-        }
-
-        while ($row) {
-
-            fputcsv($file, $row);
-            $row = mysqli_fetch_assoc($result);
-        }
-
-        $gt = $base_url . "/" . $filename;
-
-        echo '<a class="btn btn-primary" href = "' . $filename . '" download>  <i class="fa fa-download"> </i>Download (ED2_SS3)</a>';
-
-    }
+   
 
     if ($type == "111317") {
 
@@ -1070,7 +1026,9 @@ if ($type == "1116") {
 
     }
 
-    if ($type == "111517") {
+
+	//ED1SS3SO1
+    if ($type == "112517") {
 
         //query to fetch data from custed table for EDs
         $query = "SELECT ft, p_attri FROM custed WHERE pc='$projectcode' AND ft='ED1'";
@@ -1115,6 +1073,18 @@ if ($type == "1116") {
         if (!file_exists("dataset/" . $projectcode)) {
             mkdir("dataset/" . $projectcode, 0777, true);
         }
+        $ss3query = "SELECT *  FROM custss  WHERE pc=$projectcode AND ft='ss3'";
+        //execute query 
+        $ss3result = $db->query($ss3query);
+        //detect number of row from query execute above
+        $ss3num_row = mysqli_num_rows($ss3result);
+        if($ss3num_row == 1)
+        {
+            //fetch data from query executed above
+            $ss3row = mysqli_fetch_array($ss3result);
+
+               //remove attribute method
+		    $ssen_remove = str_replace("ssen,","",$ss3row["p_attri"]);
 
         $filename = "dataset/" . $projectcode . "/" . $prname . "_ED1_SS3_SO1.csv";
 
@@ -1122,6 +1092,10 @@ if ($type == "1116") {
 
         $row = mysqli_fetch_assoc($result);
         if ($row) {
+          //  $_SESSION["SESS_P_ATTRIss3"] = $ssen_remove; 
+            $ss3col2 =  $ssen_remove;  
+
+            $ss3col =  renamecolss3($ss3col2,"ss1","SS");
 
             fputcsv($file, array_keys($row));
         }
@@ -1189,6 +1163,9 @@ if ($type == "111617") {
 	$filename = "dataset/" . $projectcode . "/" . $prname . "_ED1_SS4_SO1.csv";
 
 	$file = fopen($filename, "w") or die("Can't open file $name for writing.");
+           
+          //  $_SESSION["SESS_P_ATTRIss3"] = $ssen_remove; 
+            $ss1col2 =  $ss1ssen_remove;  
 
 	$row = mysqli_fetch_assoc($result);
 	if ($row) {
@@ -1347,7 +1324,9 @@ if ($type == "111617") {
 
     }
 
-    if ($type == "111518") {
+
+	//ED1SS3SO2
+    if ($type == "112518") {
 
         //query to fetch data from custed table for EDs
         $query = "SELECT ft, p_attri FROM custed WHERE pc='$projectcode' AND ft='ED1'";
@@ -1440,6 +1419,8 @@ if ($type == "111617") {
 		,$edcol
 		,$ss4col
 		,$socol
+		, method.meth_abbre AS ME
+		,$ss3col
 		FROM
 		projectregsite
 		INNER JOIN projectreg
@@ -1455,6 +1436,45 @@ if ($type == "111617") {
 		left JOIN $so1 as so1
         ON (ss4.sen = so1.ssen AND ss4.fr = so1.sfr)
 	    ORDER BY ed1.sen ASC,ed1.fr ASC";
+		$result = $db->query($query ) or die( mysqli_error( $db ) );
+		//
+		// send response headers to the browser
+		// following headers instruct the browser to treat the data as a csv file called EDSS_partialy.csv
+		//
+		/*header('Content-Description: File Transfer');
+		header( 'Content-Type: text/csv' );
+		header( 'Content-Disposition: attachment;filename='.$prname.'_ED1_SS3.csv' );
+		header('Content-Transfer-Encoding: binary');
+		header('Expires: 0');
+		header('Cache-Control:must-revalidate, post-check=0, pre-check=0');
+		header('Pragma: public'); */
+		
+
+		if (!file_exists("dataset/".$projectcode)) {
+		    mkdir("dataset/".$projectcode, 0777, true);
+		}
+
+		$filename = "dataset/".$projectcode."/".$prname."_ED1_SS3.csv";
+
+
+		$file = fopen($filename,"w") or die("Can't open file $name for writing.");
+
+
+		$row = mysqli_fetch_assoc( $result );
+		if ( $row )
+		{
+		//echocsv( array_keys( $row ) );
+		fputcsv($file, array_keys( $row ));
+		}
+		//
+		// output data rows (if atleast one row exists)
+		//
+		while ( $row )
+		{
+		//echocsv( $row );
+		fputcsv($file, $row);
+		$row = mysqli_fetch_assoc( $result );
+		}
 
         $result = $db->query($query) or die(mysqli_error($db));
 
@@ -1625,8 +1645,9 @@ if ($type == "111617") {
         echo '<a class="btn btn-primary" href = "' . $filename . '" download>  <i class="fa fa-download"> </i>Download(ED1_SS2_SO1_ST1)</a>';
 
     }
+	//ED1SS3SO1ST1
 
-    if ($type == "11151719") {
+    if ($type == "11251719") {
 
         //query to fetch data from custed table for EDs
         $query = "SELECT ft, p_attri FROM custed WHERE pc='$projectcode' AND ft='ED1'";

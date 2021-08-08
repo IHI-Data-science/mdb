@@ -25,6 +25,7 @@
                             <li class="<?php echo $disableed2; ?>"><a href="formed2.php">Experimental Design 2</a></li>
                             <li class="<?php echo $disabless1; ?>"><a href="formss1.php">Sample Sorting 1</a></li>
                             <li class="<?php echo $disabless2; ?>"><a href="formss2.php">Sample Sorting 2</a></li>
+                            
                             <li class="<?php echo $disabless3; ?>"><a href="formss3.php">Sample Sorting 3</a></li>
                             <li class="<?php echo $disabless4; ?>"><a href="formss4.php">Sample Sorting 4</a></li>
                             <li class="<?php echo $disableso1; ?>"><a href="formso1.php">Sample Observation 1</a></li>
@@ -44,6 +45,7 @@
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesss2.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesss3.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesss4.php' ? 'id="second-level"' : '');
+                        
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesso1.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesso2.php' ? 'id="second-level"' : '');
                         echo (basename($_SERVER['SCRIPT_FILENAME'])=='datatablesst1.php' ? 'id="second-level"' : '');
@@ -55,6 +57,7 @@
                             <li class="<?php echo $disableed2; ?>"><a href="datatableed2.php">Experimental Design 2</a></li>
                             <li class="<?php echo $disabless1; ?>"><a href="datatabless1.php">Sample Sorting 1</a></li>
                             <li class="<?php echo $disabless2; ?>"><a href="datatabless2.php">Sample Sorting 2</a></li>
+                            
                             <li class="<?php echo $disabless3; ?>"><a href="datatabless3.php">Sample Sorting 3</a></li>
                             <li class="<?php echo $disabless4; ?>"><a href="datatabless4.php">Sample Sorting 4</a></li>
                             <li class="<?php echo $disableso1; ?>"><a href="datatableso1.php">Sample Observation 1</a></li>

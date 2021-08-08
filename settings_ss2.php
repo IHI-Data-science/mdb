@@ -203,23 +203,23 @@ $field2 = "ft";
 
 
                        
-                        $fields_array = array("Serial No. (SEN)","ED Form Serial Number (SSEN)","ED Form row (SFR)","Habitat found (HF)","Habitat type correct (HTC)","Habitat treated (HTR)","Habitat Wet (HW)","Habitat Size (HS)");
-                        array_push($fields_array,"Form row (FR)","Taxon (TX)","Body Form (BF)","Pupae(PU)","Vegetation/rice length (VL)","Treated(VT)");
-                        
-                        array_push($fields_array,"Number Sampled Dipping 1 (NDI01)","Number Sampled Dipping 2 (NDI02)","Number Sampled Dipping 3 (NDI03)","Number Sampled Dipping 4 (NDI04)","Number Sampled Dipping 5 (NDI05)");
-
-                        array_push($fields_array,"Number Sampled Dipping 6 (NDI06)","Number Sampled Dipping 7 (NDI07)","Number Sampled Dipping 8 (NDI08)","Number Sampled Dipping 9 (NDI09)","Number Sampled Dipping 10 (NDI10)");
-
-                        array_push($fields_array,"Total No. Observed (N)","Notes (Notes)","Sample Label Code (SLC)","No. of Individual (NI)","No. of Batches (NB)");
-                        array_push($fields_array,"No. In Batch 1 (SID01)", "No. In Batch 2 (SID02)","No. In Batch 3 (SID03)","No. In Batch 4 (SID04)");
-                        array_push($fields_array,"No. In Batch 5 (SID05)", "No. In Batch 6 (SID06)","No. In Batch 7 (SID07)","No. Discarded (ND)");
-
-
-                      
-
-                        $disabled_fields_array = array("Serial No. (SEN)","ED Form Serial Number (SSEN)","ED Form row (SFR)","Habitat Wet (HW)","Habitat Size (HS)");
-                         array_push($disabled_fields_array, "Form row (FR)","Taxon (TX)","Body Form (BF)");
-
+                         $fields_array = array("Serial No. (SEN)","Form row (FR)","ED Form Serial Number (SSEN)","ED Form row (SFR)","Habitat ID (HF)","Habitat type (HBT)","Habitat treated (HTR)","Habitat Wet (HW)","Habitat Size (HS)","Distance to next house (DNH)","Vegetation (VL)","Rice length (RL)","Treated(VT)");
+                         array_push($fields_array,"Dipping effort (DIP)","Taxon (TX)","bfEgg (bfEgg)","Larval stage_L1 (bfL1)","Larval stage_L2 (bfL2)","Larval stage_L3 (bfL3)","Larval stage_L4 (bfL4)","Larval stage_L1L2 (L1L2)","Larval stage_L3L4 (L3L4)","Total larvae (TLV)","Pupae(PU)");
+                         
+                         // array_push($fields_array,"Number Sampled Dipping 1 (NDI01)","Number Sampled Dipping 2 (NDI02)","Number Sampled Dipping 3 (NDI03)","Number Sampled Dipping 4 (NDI04)","Number Sampled Dipping 5 (NDI05)");
+ 
+                         // array_push($fields_array,"Number Sampled Dipping 6 (NDI06)","Number Sampled Dipping 7 (NDI07)","Number Sampled Dipping 8 (NDI08)","Number Sampled Dipping 9 (NDI09)","Number Sampled Dipping 10 (NDI10)");
+ 
+                         array_push($fields_array,"Notes (Notes)","Sample Label Code (SLC)","No. of Individual (NI)","No. of Batches (NB)");
+                         array_push($fields_array,"No. In Batch 1 (SID01)", "No. In Batch 2 (SID02)","No. In Batch 3 (SID03)","No. In Batch 4 (SID04)");
+                         array_push($fields_array,"No. In Batch 5 (SID05)", "No. In Batch 6 (SID06)","No. In Batch 7 (SID07)","No. Discarded (NOD)");
+ 
+ 
+                       
+ 
+                         $disabled_fields_array = array("Serial No. (SEN)","ED Form Serial Number (SSEN)","ED Form row (SFR)","Habitat Wet (HW)","Habitat Size (HS)");
+                          array_push($disabled_fields_array, "Form row (FR)","Taxon (TX)");
+ 
 
                         echo '<ul style="list-style-type:square">';
 

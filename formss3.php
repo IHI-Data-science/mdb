@@ -8,6 +8,7 @@ $page_title='Sample Sorting';
 page_require_level(3);
 include_once('layouts/head.php');
 
+
 $formtype="SS3";
 $table   ="custss";
 
@@ -137,15 +138,15 @@ function show_report($recorded, $skip, $errors){
                       
                       global $db;
                       
-                      $formtype="SS3";
+                      $formtype="ss3";
                       $table   ="custss";
                       
                       $prefixtable=$projectid."_";
                       
-                      $ed1 =$prefixtable."ed2 ";
-                      $ss1 =$prefixtable."ss3 ";
-                      $edss=$prefixtable."edss ";
-                      $ssso=$prefixtable."ssso ";
+                      $ed1 =$prefixtable."ed1";
+                      $ss1 =$prefixtable."ss3";
+                      $edss=$prefixtable."edss";
+                      $ssso=$prefixtable."ssso";
                       
                       echo '  <div class="text-center">';
                       
@@ -190,8 +191,6 @@ function show_report($recorded, $skip, $errors){
                             $umbersplit=$row["num_split"];
                             
                             $patternattribute=$row["p_attri"];
-                            
-                            //echo $patternattribute;
                             
                             //check if variable $projectregsite is greater than zero
                             
@@ -263,7 +262,7 @@ function show_report($recorded, $skip, $errors){
                                      //Replace all occurrences of  \r in haystack with "".
                                      $line=str_replace("\r", "", $line);
                                      //call function rowIdentifier
-                                     list($rowtype, $data)=rowIdentifier($line, "SS3", $patternattribute);
+                                     list($rowtype, $data)=rowIdentifier($line, "ss3", $patternattribute);
                                      //echo $line."<br />";
                                      //start to detect which type of row
                                      //row contain serial number of ED
@@ -278,15 +277,12 @@ function show_report($recorded, $skip, $errors){
                                      } //row contain rowdata (dataset)
                                      elseif($rowtype==3/* && $pass ==1*/){
                                         
-                                        //$line = str_replace(",","','",$line);
-                                        
                                         //split array $line into $_session["num_split"]   pieces
                                         //$linearray = split(",", $line, $_SESSION["num_split"]);
                                         $line_array=explode(",", $line, $umbersplit);
                                         //combine array $linearray to one variable
-                                        
                                         $line_array="'".implode("', '", $line_array)."'";
-                                        
+                                        //echo $line_array;
                                         //message to user
                                         //  echo "<span class=\"has-padding\"> --> Row number:".$numberline." Prepare information.. ";
                                         //assign value
@@ -294,9 +290,9 @@ function show_report($recorded, $skip, $errors){
                                         //echo $arraycsvss[0];
                                         
                                         $sen  =$arraycsvss[0];
-                                        $ssen =$arraycsvss[2];
-                                        $sfr  =$arraycsvss[3];
-                                        $senfr=$arraycsvss[0].$arraycsvss[1];
+                                        $ssen =$arraycsvss[1];
+                                        $sfr  =$arraycsvss[2];
+                                        $senfr=$arraycsvss[0].$arraycsvss[4];
                                         
                                         //create query for fetching link value from edss entity
                                         $query_fetch="SELECT
@@ -305,7 +301,7 @@ function show_report($recorded, $skip, $errors){
                                               $edss as edss
                                               INNER JOIN
                                               $ed1 as ed1
-                                              ON (edss.ed2id = ed1.id)
+                                              ON (edss.ed1id = ed1.id)
                                               WHERE ed1.sen=$ssen AND ed1.dsen=$sen AND
                                               ed1.projectregsite_id=$projectregsite AND ed1.fr=$sfr";
                                         //echo query_fetch data
@@ -331,10 +327,9 @@ function show_report($recorded, $skip, $errors){
                                               // echo "<font color=\"green\"> Link found. </font>";
                                               //prepare query to insert into SS1
                                               
-                                              $query_part=" INSERT INTO $ss1 (edssid,$patternattribute,senfr) VALUES($edssid,$line_array,$senfr)";
+                                              $query_part="INSERT INTO $ss1 (edssid,$patternattribute,senfr) VALUES($edssid,$line_array,$senfr)";
                                               
-                                              echo $query_part."<br />";
-                                              
+                                              //echo $query_part."<br />";
                                               //execute query
                                               $result=$db->mysqliquery($query_part);
                                               //successful of query
@@ -345,7 +340,7 @@ function show_report($recorded, $skip, $errors){
                                                  //display message to user
                                                  
                                                  if($db->mysqlierrorno()===1062){
-                                                    $error='Dublicate Record:SEN:'.$arraycsvss[0].',SSEN:'.$arraycsvss[2].',SFR:'.$arraycsvss[3];
+                                                    $error='Dublicate Record:SEN:'.$arraycsvss[0].',SSEN:'.$arraycsvss[1].',SFR:'.$arraycsvss[2];
                                                  } else{
                                                     $error=$db->mysqlierror();
                                                  }
@@ -386,7 +381,7 @@ function show_report($recorded, $skip, $errors){
                                }//endifcolumnnotmatch
                                
                                else{
-                                  echo "<span class=\"has-padding\"> <font color=\"red\"> <h3> ** Fields dont much with template ** </h3></font><span> <br />";
+                                  echo "<span class=\"has-padding\"> <font color=\"red\"> <h3> ** Fields dont match with template ** </h3></font><span> <br />";
                                   
                                   echo "
                                       <div class=\"btn-group pull-right\">
@@ -397,8 +392,7 @@ function show_report($recorded, $skip, $errors){
                                }
                                
                                $query_insert_edss="INSERT INTO  $ssso (ss3id) SELECT `ss1`.`id` FROM
-                                  $ssso as ssso RIGHT JOIN  $ss1 as ss1 ON (`ssso`.`ss3id` = `ss1`.`id`) WHERE ssso.ss1id IS NULL
-                                  ";
+                                  $ssso as ssso RIGHT JOIN  $ss1 as ss1 ON (`ssso`.`ss3id` = `ss1`.`id`) WHERE ssso.ss1id IS NULL";
                                
                                $result=$db->query($query_insert_edss);
                                
@@ -468,4 +462,5 @@ function show_report($recorded, $skip, $errors){
 <?php
 }
 ?>
-           
+
+    
