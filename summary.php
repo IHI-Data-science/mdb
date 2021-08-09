@@ -239,6 +239,9 @@ if(isset($_SESSION['expcode'])){
                         <li>
                             <a data-toggle="modal" role="button" data-target="#sumchart9">Larvae density</a>
                         </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart7">Hourly Biting Rate</a>
+                        </li>
                     </ul>
                 </div>
                 
@@ -889,6 +892,51 @@ if(isset($_SESSION['expcode'])){
     </div>
     <!-- / modal9 -->
 
+    <!-- modal7 -->
+    <div id="sumchart7" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Hourly Biting Rate</h5>
+                </div>
+                <div class="has-padding2">
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab71">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab7" href="#tab72">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab71" class="tab-pane fade active in">
+                            <div id="load7"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f7req('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f7req('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f7req('P')">
+                                <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f7req('D')">
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas7" class="chart1"></canvas>
+                            <canvas id="canvas7l" class="chart1"></canvas>
+                            <canvas id="canvas7p" class="chart1"></canvas>
+                            <canvas id="canvas7d" class="chart1"></canvas>
+                        
+                        </div>
+                        <div id="tab72" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl7"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal7 -->
 
 
     <!-- modalf1 -->

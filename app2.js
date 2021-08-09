@@ -1053,6 +1053,99 @@ function f6req(ctype) {
     });
 }
 
+function f7req(ctype) {
+    $.ajax({
+        url: "data2.php?q=sevend",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var time = [];
+                     var biting = [];
+
+                    for (var i in data) {
+                        time.push(data[i].TimeRange);
+                        biting.push(data[i].bitingrate);
+                    }
+
+                    var chartdata = {
+                        labels: time,
+                        datasets: [
+                            {
+                                label: 'Hourly Biting Rate',
+                                backgroundColor: '#49e2ff',
+                                borderColor: '#46d5f1',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: biting
+                            }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas7").show();
+                $("#canvas7l").hide();
+                $("#canvas7p").hide();
+                $("#canvas7d").hide();
+                var canvas = $("#canvas7");
+                BarChart(canvas, chartdata, "Hourly Biting Rate");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas7").hide();
+                $("#canvas7l").show();
+                $("#canvas7p").hide();
+                $("#canvas7d").hide();
+                var canvas = $("#canvas7l");
+                LineChart(canvas, chartdata, " Hourly Biting Rate");
+
+
+            } else if (type == "P") {
+
+                $("#canvas7").hide();
+                $("#canvas7l").hide();
+                $("#canvas7p").show();
+                $("#canvas7d").hide();
+                var canvas = $("#canvas7p");
+                PieChart(canvas, chartdata, " Hourly Biting Rate");
+
+            } else if (type == "D") {
+
+                $("#canvas7").hide();
+                $("#canvas7l").hide();
+                $("#canvas7p").hide();
+                $("#canvas7d").show();
+                var canvas = $("#canvas7d");
+                PolarChart(canvas, chartdata, " Hourly Biting Rate");
+
+
+            }
+
+            $('#tbl7').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f7req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f7req done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load6').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+             f8req('B');
+        }
+
+
+    });
+}
+
 
 function confirmationDelete(anchor) {
 

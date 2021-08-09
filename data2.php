@@ -587,6 +587,32 @@ if($q === 'sevenc'){
 	
 }
 
+//MBR code
+if($q==='sevend'){
+   
+    $query="SELECT concat(ed1.st, '-', ed1.ft) AS TimeRange,  n / (SELECT SUM(n) FROM ".$prefixtable."ss1 WHERE ".$prefixtable."ss1.sas = 6) as bitingrate  FROM
+ 
+             projectregsite
+             INNER JOIN projectreg 
+             ON (projectregsite.projectreg_id = projectreg.id)
+             INNER JOIN site 
+             ON (projectregsite.site_id = site.site_id)
+             INNER JOIN ".$prefixtable."ed1 as ed1
+             ON (ed1.projectregsite_id = projectregsite.id)
+             INNER JOIN ".$prefixtable."edss as edss
+             ON (ed1.id = edss.ed1id)
+             INNER JOIN ".$prefixtable."ss1 as ss1 
+             ON (ss1.edssid = edss.id)
+             LEFT JOIN method 
+             ON (ed1.me = method.meth_code)
+             LEFT JOIN taxon 
+             ON (ss1.tx = taxon.taxon_code)
+             LEFT JOIN sexabdominal 
+             ON (ss1.sas = sexabdominal.sex_code) LEFT JOIN bodypart 
+             ON (ss1.bf = bodypart.body_code) WHERE ss1.sas = 6 ; ";
+ }
+ //to here
+
 
 // if($q==='eight'){
    
