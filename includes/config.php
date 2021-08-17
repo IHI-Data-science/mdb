@@ -18,13 +18,12 @@ define( 'URL', 'http://mosquitodb.io/mdb' );
 // define( 'URL', 'http://localhost/MDB4' ); 
 
 
-/*
-define( 'DB_HOST', 'localhost' );          
-define( 'DB_USER', 'root' );             
-define( 'DB_PASS', '' );            
-define( 'DB_NAME', 'iebsweb2' );       
-define( 'URL', 'http://localhost/mdb' ); 
-*/
+
+// define( 'DB_HOST', 'localhost' );          
+// define( 'DB_USER', 'root' );             
+// define( 'DB_PASS', '' );            
+// define( 'DB_NAME', 'iebsweb5' );       
+// define( 'URL', 'http://localhost/mdb' ); 
 
 
 ?>
