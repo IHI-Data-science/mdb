@@ -44,7 +44,8 @@
     <script type="text/javascript" src="assets/js/api.js"></script>
     <script type="text/javascript" src="app2.js"></script>
     <script type="text/javascript" src="chome.js"></script>
-    
+    <script type="text/javascript" src="assets/js/chartjs-plugin-colorschemes.js"></script>
+
     <script type="text/javascript" src="assets/js/daterange/date.js"></script>
     <script type="text/javascript" src="assets/js/chartjs-plugin-labels.js"></script>
     <script type="text/javascript" src="assets/js/daterange/daterangepicker.jQuery.js"></script>
