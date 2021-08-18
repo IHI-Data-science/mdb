@@ -1048,7 +1048,7 @@ function f6req(ctype) {
         },
         beforeSend: function (data) {
             $('#load5').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div></div></div>');
-
+            f7req('B');
         }
     });
 }
@@ -1154,23 +1154,23 @@ function f8req(ctype) {
         dataType: 'json',
         success: function (data) {
             console.log(data);
-                     var month = [];
+                     var date = [];
                      var anpholes = [];
                      var culex =[];
 
                     for (var i in data) {
-                        month.push(data[i].month);
+                        date.push(data[i].month);
                         anpholes.push(data[i].AnophelesSp);
                         culex.push(data[i].Culex)
                     }
 
                     var chartdata = {
-                        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                        labels: date,
                         datasets: [
                             {
                                 label: 'AnophelesSp',
-                                backgroundColor: '#49e2ff',
-                                borderColor: '#46d5f1',
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
                                 hoverBackgroundColor: '#CCCCCC',
                                 hoverBorderColor: '#666666',
                                 data: anpholes
@@ -1243,12 +1243,116 @@ function f8req(ctype) {
         },
         beforeSend: function (data) {
             $('#load7').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
-             f8req('B');
+              f9req('B');
         }
 
 
     });
-}
+ }
+
+ function f9req(ctype) {
+    $.ajax({
+        url: "data2.php?q=nine",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var date = [];
+                     var l1l2 = [];
+                     var l3l4 =[];
+
+                    for (var i in data) {
+                        date.push(data[i].month);
+                        l1l2.push(data[i].L1L2);
+                        l3l4.push(data[i].L3L4)
+                    }
+
+                    var chartdata = {
+                        labels: date,
+                        datasets: [
+                            {
+                                label: 'Early Stage (L1L2)',
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l1l2
+                            },
+                            {
+
+                            label: 'Late Stage (L3L4)',
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: l3l4
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas9").show();
+                $("#canvas9l").hide();
+                $("#canvas9p").hide();
+                $("#canvas9d").hide();
+                var canvas = $("#canvas9");
+                BarChart(canvas, chartdata, "Larvae Density");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas9").hide();
+                $("#canvas9l").show();
+                $("#canvas9p").hide();
+                $("#canvas9d").hide();
+                var canvas = $("#canvas9l");
+                LineChart(canvas, chartdata, "Larvae Density");
+
+
+            } else if (type == "P") {
+
+                $("#canvas9").hide();
+                $("#canvas9l").hide();
+                $("#canvas9p").show();
+                $("#canvas9d").hide();
+                var canvas = $("#canvas9p");
+                PieChart(canvas, chartdata, "Larvae Density");
+
+            } else if (type == "D") {
+
+                $("#canvas9").hide();
+                $("#canvas9l").hide();
+                $("#canvas9p").hide();
+                $("#canvas9d").show();
+                var canvas = $("#canvas9d");
+                PolarChart(canvas, chartdata, "Larvae Density");
+
+
+            }
+
+            $('#tbl9').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f9req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f9req done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load8').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+            //  f8req('B');
+        }
+
+
+    });
+ }
 
 
 function confirmationDelete(anchor) {

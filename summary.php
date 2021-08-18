@@ -813,7 +813,7 @@ if(isset($_SESSION['expcode'])){
                         <li class="active">
                             <a data-toggle="tab" href="#tab81">Chart</a></li>
                         <li>
-                            <a data-toggle="tab" id="bs-tab8" href="#tab82">Table</a>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab82">Table</a>
                         </li>
                     </ul>
                     <div class="tab-content has-padding">
@@ -906,7 +906,7 @@ if(isset($_SESSION['expcode'])){
                         <li class="active">
                             <a data-toggle="tab" href="#tab71">Chart</a></li>
                         <li>
-                            <a data-toggle="tab" id="bs-tab7" href="#tab72">Table</a>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab72">Table</a>
                         </li>
                     </ul>
                     <div class="tab-content has-padding">

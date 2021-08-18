@@ -590,7 +590,9 @@ if($q === 'sevenc'){
 //MBR code
 if($q==='sevend'){
    
-    $query="SELECT concat(ed1.st, '-', ed1.ft) AS TimeRange,  n / (SELECT SUM(n) FROM ".$prefixtable."ss1 WHERE ".$prefixtable."ss1.sas = 6) AS bitingrate  FROM
+    $query="SELECT 
+            concat(ed1.st, '-', ed1.ft) AS TimeRange,  
+            n / (SELECT SUM(n) FROM ".$prefixtable."ss1 WHERE ".$prefixtable."ss1.sas = 6) AS bitingrate  FROM
  
              projectregsite
              INNER JOIN projectreg 
@@ -609,7 +611,7 @@ if($q==='sevend'){
              ON (ss1.tx = taxon.taxon_code)
              LEFT JOIN sexabdominal 
              ON (ss1.sas = sexabdominal.sex_code) LEFT JOIN bodypart 
-             ON (ss1.bf = bodypart.body_code) WHERE ss1.sas = 6 ; ";
+             ON (ss1.bf = bodypart.body_code) where 1=1 and ss1.sas = 6 ; ";
  }
  //to here
 
@@ -617,8 +619,8 @@ if($q==='sevend'){
 if($q==='eight'){
    
     $query="SELECT MONTHNAME(ed1.dt) AS month, 
-    SUM(CASE WHEN ss2.tx = 1 THEN ss2.n ELSE 0 end) / count(MONTHNAME(ed1.dt)) AS AnophelesSp, 
-    SUM(CASE WHEN ss2.tx = 50 THEN ss2.n ELSE 0 end) / count(MONTHNAME(ed1.dt)) AS Culex 
+    SUM(CASE WHEN ss2.tx = 1 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS AnophelesSp, 
+    SUM(CASE WHEN ss2.tx = 50 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Culex 
     FROM projectregsite 
     INNER JOIN projectreg 
     ON (projectregsite.projectreg_id = projectreg.id) 
@@ -628,45 +630,42 @@ if($q==='eight'){
     ON (ed1.projectregsite_id = projectregsite.id) 
     INNER JOIN ".$prefixtable."edss as edss 
     ON (ed1.id = edss.ed1id) 
-    INNER JOIN ".$prefixtable."ss2 as ss2 
+    INNER JOIN ".$prefixtable."ss2 as ss2
     ON (ss2.edssid = edss.id) 
     LEFT JOIN method 
     ON (ed1.me = method.meth_code) 
     LEFT JOIN taxon 
     ON (ss2.tx = taxon.taxon_code) 
-    where 1=1 AND (MONTHNAME(ed1.dt) IS NOT NULL) GROUP BY MONTHNAME(ed1.dt) ORDER BY MONTHNAME(ed1.dt),taxon.taxon_code ASC ";
+    where 1=1 $wherecon GROUP BY MONTHNAME(ed1.dt) ORDER BY MONTHNAME(ed1.dt),taxon.taxon_code ASC";
      
  }
- 
 
-
-
- 
-//  if($q==='nine'){
+ //larvae density
+ if($q==='nine'){
     
-//     $query="SELECT
-//              MONTHNAME(ed1.dt) AS month,
-//              SUM(CASE WHEN ss2.bf = 6 THEN ss2.n ELSE 0 end) / count(MONTHNAME(dt)) AS L2L3,
-//              SUM(CASE WHEN ss2.bf = 7 THEN ss2.n ELSE 0 end) / count(MONTHNAME(dt)) AS l3L4
+    $query="SELECT
+             MONTHNAME(ed1.dt) AS month,
+             SUM(CASE WHEN ss2.tx = 1 THEN ss2.L1L2 ELSE 0 end) / SUM(ss2.dip) AS L1L2,
+             SUM(CASE WHEN ss2.tx = 50 THEN ss2.L3L4 ELSE 0 end) / SUM(ss2.dip) AS L3L4
  
-//              FROM
-//              projectregsite
-//              INNER JOIN projectreg 
-//              ON (projectregsite.projectreg_id = projectreg.id)
-//              INNER JOIN site 
-//              ON (projectregsite.site_id = site.site_id)
-//              INNER JOIN ".$prefixtable."ed1 as ed1
-//              ON (ed1.projectregsite_id = projectregsite.id)
-//              INNER JOIN ".$prefixtable."edss as edss
-//              ON (ed1.id = edss.ed1id)
-//              INNER JOIN ".$prefixtable."ss2 as ss2
-//              ON (ss2.edssid = edss.id)
-//              LEFT JOIN method 
-//              ON (ed1.me = method.meth_code)
-//              LEFT JOIN taxon 
-//              ON (ss2.tx = taxon.taxon_code)
-//              where 1=1 $wherecon GROUP BY MONTH(ed1.dt) ORDER BY MONTH(ed1.dt),taxon.taxon_code ASC ";  
-//  }
+             FROM
+             projectregsite
+             INNER JOIN projectreg 
+             ON (projectregsite.projectreg_id = projectreg.id)
+             INNER JOIN site 
+             ON (projectregsite.site_id = site.site_id)
+             INNER JOIN ".$prefixtable."ed1 as ed1
+             ON (ed1.projectregsite_id = projectregsite.id)
+             INNER JOIN ".$prefixtable."edss as edss
+             ON (ed1.id = edss.ed1id)
+             INNER JOIN ".$prefixtable."ss2 as ss2
+             ON (ss2.edssid = edss.id)
+             LEFT JOIN method 
+             ON (ed1.me = method.meth_code)
+             LEFT JOIN taxon 
+             ON (ss2.tx = taxon.taxon_code)
+             where 1=1 $wherecon GROUP BY MONTH(ed1.dt) ORDER BY MONTH(ed1.dt),taxon.taxon_code ASC ";  
+ }
  
 
 if($q === 'hone'){
