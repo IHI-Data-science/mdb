@@ -245,6 +245,12 @@ if(isset($_SESSION['expcode'])){
                         <li>
                             <a data-toggle="modal" role="button" data-target="#sumchart9c">Snail Population Summary</a>
                         </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart4c">Daily Snails Caught</a>
+                        </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart5c">Monthly Snails Caught</a>
+                        </li>
                     </ul>
                 </div>
                 
@@ -988,6 +994,98 @@ if(isset($_SESSION['expcode'])){
         </div>
     </div>
     <!-- / modal9c -->
+
+    <!-- / modal4c -->
+    <div id="sumchart4c" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Daily Snails Caught</h5>
+                </div>
+                <div class="has-padding2">
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab4c1">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab4c">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab4c1" class="tab-pane fade active in">
+                            <div id="load1"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f4creq('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f4creq('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f4creq('P')">
+                                <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f4creq('D')">
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas4c" class="chart1"></canvas>
+                            <canvas id="canvas4cl" class="chart1"></canvas>
+                            <canvas id="canvas4cp" class="chart1"></canvas>
+                            <canvas id="canvas4cd" class="chart1"></canvas>
+                            
+                        </div>
+                        <div id="tab4c" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl4c"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal4c -->
+
+    <!-- / modal5c -->
+    <div id="sumchart5c" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Monthly Snails Caught</h5>
+                </div>
+                <div class="has-padding2">
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab5c1">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab5c">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab5c1" class="tab-pane fade active in">
+                            <div id="load1"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f5creq('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f5creq('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f5creq('P')">
+                                <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f5creq('D')">
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas5c" class="chart1"></canvas>
+                            <canvas id="canvas5cl" class="chart1"></canvas>
+                            <canvas id="canvas5cp" class="chart1"></canvas>
+                            <canvas id="canvas5cd" class="chart1"></canvas>
+                            
+                        </div>
+                        <div id="tab5c" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl5c"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal5c -->
 
 
     <!-- modalf1 -->

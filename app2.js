@@ -1449,6 +1449,214 @@ function f8req(ctype) {
         },
         beforeSend: function (data) {
             $('#load9c').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+               f4creq('B');
+        }
+
+
+    });
+ }
+
+ function f4creq(ctype) {
+    $.ajax({
+        url: "data2.php?q=eleven",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var dt = [];
+                     var species1 = [];
+                     var species2 = [];
+
+                    for (var i in data) {
+                        dt.push(data[i].DT);
+                        species1.push(data[i].Biomphalari);
+                        species2.push(data[i].Bulinus);
+                    }
+
+                    var chartdata = {
+                        labels: dt,
+                        datasets: [
+                            {
+                                label: 'Biomphalari',
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: species1
+                            },
+                            {
+
+                            label: 'Bulinus',
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: species2
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas4c").show();
+                $("#canvas4cl").hide();
+                $("#canvas4cp").hide();
+                $("#canvas4cd").hide();
+                var canvas = $("#canvas4c");
+                BarChart(canvas, chartdata, "Daily Snails Caught");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas4c").hide();
+                $("#canvas4cl").show();
+                $("#canvas4cp").hide();
+                $("#canvas4cd").hide();
+                var canvas = $("#canvas4cl");
+                LineChart(canvas, chartdata, "Daily Snails Caught");
+
+
+            } else if (type == "P") {
+
+                $("#canvas4c").hide();
+                $("#canvas4cl").hide();
+                $("#canvas4cp").show();
+                $("#canvas4cd").hide();
+                var canvas = $("#canvas4cp");
+                PieChart(canvas, chartdata, "Daily Snails Caught");
+
+            } else if (type == "D") {
+
+                $("#canvas4c").hide();
+                $("#canvas4cl").hide();
+                $("#canvas4cp").hide();
+                $("#canvas4cd").show();
+                var canvas = $("#canvas4cd");
+                PolarChart(canvas, chartdata, "Daily Snails Caught");
+
+
+            }
+
+            $('#tbl4c').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f4creq error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f4creq done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load9c').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+            f5creq('B');
+        }
+
+
+    });
+ }
+
+ function f5creq(ctype) {
+    $.ajax({
+        url: "data2.php?q=twelve",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var dt = [];
+                     var species1 = [];
+                     var species2 = [];
+
+                    for (var i in data) {
+                        dt.push(data[i].DT);
+                        species1.push(data[i].Biomphalari);
+                        species2.push(data[i].Bulinus);
+                    }
+
+                    var chartdata = {
+                        labels: dt,
+                        datasets: [
+                            {
+                                label: 'Biomphalari',
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: species1
+                            },
+                            {
+
+                            label: 'Bulinus',
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: species2
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas5c").show();
+                $("#canvas5cl").hide();
+                $("#canvas5cp").hide();
+                $("#canvas5cd").hide();
+                var canvas = $("#canvas5c");
+                BarChart(canvas, chartdata, "Monthly Snails Caught");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas5c").hide();
+                $("#canvas5cl").show();
+                $("#canvas5cp").hide();
+                $("#canvas5cd").hide();
+                var canvas = $("#canvas5cl");
+                LineChart(canvas, chartdata, "Monthly Snails Caught");
+
+
+            } else if (type == "P") {
+
+                $("#canvas5c").hide();
+                $("#canvas5cl").hide();
+                $("#canvas5cp").show();
+                $("#canvas5cd").hide();
+                var canvas = $("#canvas5cp");
+                PieChart(canvas, chartdata, "Monthly Snails Caught");
+
+            } else if (type == "D") {
+
+                $("#canvas5c").hide();
+                $("#canvas5cl").hide();
+                $("#canvas5cp").hide();
+                $("#canvas5cd").show();
+                var canvas = $("#canvas5cd");
+                PolarChart(canvas, chartdata, "Monthly Snails Caught");
+
+
+            }
+
+            $('#tbl5c').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f5creq error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f5creq done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load9c').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
             //   f9req('B');
         }
 
