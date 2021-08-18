@@ -12,9 +12,9 @@
 
 define( 'DB_HOST', 'localhost' );          
 define( 'DB_USER', 'root' );             
-define( 'DB_PASS', 'supportideas' );            
-define( 'DB_NAME', 'mdb' );       
-define( 'URL', 'http://localhost/iebsweb' );
+define( 'DB_PASS', '' );            
+define( 'DB_NAME', 'mdb123' );       
+define( 'URL', 'http://localhost/mdb123' );
 
 ?>
 
