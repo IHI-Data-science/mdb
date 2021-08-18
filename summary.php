@@ -800,6 +800,7 @@ if(isset($_SESSION['expcode'])){
     </div>
     <!-- / modal6 -->
 
+    <!-- modal8 -->
     <div id="sumchart8" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">

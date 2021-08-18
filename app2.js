@@ -1146,6 +1146,110 @@ function f7req(ctype) {
     });
 }
 
+function f8req(ctype) {
+    $.ajax({
+        url: "data2.php?q=eight",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var month = [];
+                     var anpholes = [];
+                     var culex =[];
+
+                    for (var i in data) {
+                        month.push(data[i].month);
+                        anpholes.push(data[i].AnophelesSp);
+                        culex.push(data[i].Culex)
+                    }
+
+                    var chartdata = {
+                        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                        datasets: [
+                            {
+                                label: 'AnophelesSp',
+                                backgroundColor: '#49e2ff',
+                                borderColor: '#46d5f1',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: anpholes
+                            },
+                            {
+
+                            label: 'Culex',
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: culex
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas8").show();
+                $("#canvas8l").hide();
+                $("#canvas8p").hide();
+                $("#canvas8d").hide();
+                var canvas = $("#canvas8");
+                BarChart(canvas, chartdata, "Pupae Density");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas8").hide();
+                $("#canvas8l").show();
+                $("#canvas8p").hide();
+                $("#canvas8d").hide();
+                var canvas = $("#canvas8l");
+                LineChart(canvas, chartdata, "Pupae Density");
+
+
+            } else if (type == "P") {
+
+                $("#canvas8").hide();
+                $("#canvas8l").hide();
+                $("#canvas8p").show();
+                $("#canvas8d").hide();
+                var canvas = $("#canvas8p");
+                PieChart(canvas, chartdata, "Pupae Density");
+
+            } else if (type == "D") {
+
+                $("#canvas8").hide();
+                $("#canvas8l").hide();
+                $("#canvas8p").hide();
+                $("#canvas8d").show();
+                var canvas = $("#canvas8d");
+                PolarChart(canvas, chartdata, "Pupae Density");
+
+
+            }
+
+            $('#tbl8').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f8req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f8req done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load7').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+             f8req('B');
+        }
+
+
+    });
+}
+
 
 function confirmationDelete(anchor) {
 
