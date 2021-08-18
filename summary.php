@@ -242,6 +242,9 @@ if(isset($_SESSION['expcode'])){
                         <li>
                             <a data-toggle="modal" role="button" data-target="#sumchart7">Hourly Biting Rate</a>
                         </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart9c">Snail Population Summary</a>
+                        </li>
                     </ul>
                 </div>
                 
@@ -860,7 +863,7 @@ if(isset($_SESSION['expcode'])){
                         <li class="active">
                             <a data-toggle="tab" href="#tab91">Chart</a></li>
                         <li>
-                            <a data-toggle="tab" id="bs-tab9" href="#tab82">Table</a>
+                            <a data-toggle="tab" id="bs-tab9" href="#tab92">Table</a>
                         </li>
                     </ul>
                     <div class="tab-content has-padding">
@@ -938,6 +941,53 @@ if(isset($_SESSION['expcode'])){
         </div>
     </div>
     <!-- / modal7 -->
+
+    <!-- / modal9c -->
+    <div id="sumchart9c" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Snail Population Summary</h5>
+                </div>
+                
+                <div class="has-padding2">
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab9c1">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab9c">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab9c1" class="tab-pane fade active in">
+                            <div id="load1"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default " value="Bar" onClick="f9creq('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f9creq('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f9creq('P')">
+                                <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f9creq('D')">
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas9c"  class="chart1"></canvas>
+                            <canvas id="canvas9cl" class="chart1"></canvas>
+                            <canvas id="canvas9cp" class="chart1"></canvas>
+                            <canvas id="canvas9cd" class="chart1"></canvas>
+                            
+                        </div>
+                        <div id="tab9c" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl9c"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal9c -->
 
 
     <!-- modalf1 -->

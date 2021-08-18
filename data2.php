@@ -666,6 +666,32 @@ if($q==='eight'){
              ON (ss2.tx = taxon.taxon_code)
              where 1=1 $wherecon GROUP BY MONTH(ed1.dt) ORDER BY MONTH(ed1.dt),taxon.taxon_code ASC ";  
  }
+
+ if($q==='ten'){
+    
+    $query = "SELECT
+    SUM(CASE WHEN ss4.spc = 1 
+        THEN ss4.n 
+        ELSE 0 end) AS Biomphalari,
+    SUM(CASE WHEN ss4.spc = 2 
+        THEN ss4.n 
+        ELSE 0 end) AS Bulinus
+
+    FROM
+    projectregsite
+    INNER JOIN projectreg 
+    ON (projectregsite.projectreg_id = projectreg.id)
+    INNER JOIN site 
+    ON (projectregsite.site_id = site.site_id)
+    INNER JOIN ".$prefixtable."ed1 as ed1
+    ON (ed1.projectregsite_id = projectregsite.id)
+    INNER JOIN ".$prefixtable."edss as edss
+    ON (ed1.id = edss.ed1id)
+    INNER JOIN ".$prefixtable."ss4 as ss4
+    ON (ss4.edssid = edss.id)
+    where 1=1 $wherecon ORDER BY ss4.spc ASC";
+
+ }
  
 
 if($q === 'hone'){
