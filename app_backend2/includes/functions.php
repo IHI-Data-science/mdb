@@ -321,7 +321,7 @@ function ss2data($sen, $ssen, $sfr, $hf, $hbt, $htr, $hw, $hs,$dnh, $fr, $tx, $b
 
 
 
-function ss4data($sen, $ssen, $sfr, $fr,$hc,$wn, $wl,$su,$sa,$dso,$dr,$ph,$co,$wda,$act,
+function ss4data($sen, $ssen, $sfr, $fr,$wn, $wl,$su,$sa,$dso,$dr,$ph,$co,$wda,$act,
 $de, $ret, $wt,
  $lwt, $sp, $spc, $n, $sps,  $tc,$nc,$senfr) {
 
@@ -372,8 +372,8 @@ $de, $ret, $wt,
 
   }
 
-  $resultft = $db->mysqliquery("INSERT INTO  $ss4 ( edssid, ssen,sfr,sen,fr,hc,wn, wl,de,ret,wt,lwt,sp,spc, n,sps,tc,nc,senfr)
-    VALUES('$edssid','$ssen','$sfr','$sen','$fr','$hc',$su','$sa','$dso','$dr','$ph','$co','$wda','$act','$wn','$wl','$de','$ret','$wt','$lwt','$sp','$spc','$n','$sps','$tc','$nc','$senfr')");
+  $resultft = $db->mysqliquery("INSERT INTO  $ss4 ( edssid, ssen,sfr,sen,fr,wn, wl,de,ret,wt,lwt,sp,spc, n,sps,tc,nc,senfr)
+    VALUES('$edssid','$ssen','$sfr','$sen','$fr',$su','$sa','$dso','$dr','$ph','$co','$wda','$act','$wn','$wl','$de','$ret','$wt','$lwt','$sp','$spc','$n','$sps','$tc','$nc','$senfr')");
 
         // check for successful store
   if ($resultft) {

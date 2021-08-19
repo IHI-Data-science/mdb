@@ -544,7 +544,7 @@ senfr)
 
 // addition of functions ss4 snail rwanda
 
-function ss4data($sen, $ssen, $sfr, $fr,$hc,$wn, $wl,$su,$sa,$dso,$dr,$ph,$co,$wda,$act,
+function ss4data($sen, $ssen, $sfr, $fr,$wn, $wl,$su,$sa,$dso,$dr,$ph,$co,$wda,$act,
 $de, $ret, $wt,
  $lwt, $sp, $spc, $n, $sps,  $tc,$nc,$senfr) {
 

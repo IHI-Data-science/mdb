@@ -472,7 +472,7 @@ if(isset($_POST['tag'])) {
 		for($i=0; $i<count($data) ; $i++)
 		{
         
-			$res2 = ss4data($data[$i]->sen,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->fr,$data[$i]->hc,$data[$i]->su,$data[$i]->sa,$data[$i]->dso,$data[$i]->dr,$data[$i]->ph,$data[$i]->co,$data[$i]->wda,$data[$i]->act,
+			$res2 = ss4data($data[$i]->sen,$data[$i]->ssen,$data[$i]->sfr,$data[$i]->fr,$data[$i]->su,$data[$i]->sa,$data[$i]->dso,$data[$i]->dr,$data[$i]->ph,$data[$i]->co,$data[$i]->wda,$data[$i]->act,
 			$data[$i]->wn,$data[$i]->wl,$data[$i]->de,$data[$i]->ret,$data[$i]->wt,$data[$i]->lwt,$data[$i]->sp,$data[$i]->spc,$data[$i]->n,$data[$i]->sps,$data[$i]->tc,$data[$i]->nc
 
 			);
