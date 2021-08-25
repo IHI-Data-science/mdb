@@ -219,7 +219,7 @@ if(isset($_POST['submited2'])){
                         array_push($fields_array, "Season (SN)","Agriculture status (AGRT)","Intervention (INVN)","Livestock (LVK)","Roof type (RFE)","Wall type (WLE)","Eaves (EVS)","Block ventilation (BV)","Block ventilation screening (BVS)","Window screening (WSN)","Window screening Condition (WSNC)","Cooking location (CKL)","Cooking Energy source (CKE)");
 
                         array_push($fields_array, "Block (BLK)", "House/Hut (SHH)","Station (STN)","Volunteer initials (VI)","Treatment (TR)","Experimental day (DY)","Temperature (TMP)",
-                          "Humidity (HMD)","Wind speed (WS)","No. Household Sampled (HS)","Sprayed (SP)","Last spray date (LSD)","Insectside (ISE)",
+                          "Humidity (HMD)","Wind speed (WS)","No. Household Sampled (HOS)","Sprayed (SP)","Last spray date (LSD)","Insectside (ISE)",
                           "Valid catch (VC)","Notes (Notes)","GPSlocation (GPS)","Destination Form Serial (DSEN)");
 
 

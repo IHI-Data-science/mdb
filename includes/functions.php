@@ -633,17 +633,22 @@ function sendMail($email, $message, $subject){
 
     $prefix = $prefix."_";
 
-      $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
+    $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment links to SS',
       `projectregsite_id` int(11) NOT NULL COMMENT 'Store value from table projectregsite id',
       `sen` int(6) NOT NULL COMMENT 'unique identifier for ED1 form',
       `fr` int(2) NOT NULL COMMENT 'unique identifier of each row on the data collected',
       `dt` date NOT NULL COMMENT 'date of collection (morning on which the mosquitoes were collected)',
+      `re`  varchar(100) DEFAULT '0' COMMENT 'Region (Define specific Region in the Country)',
+      `di`  varchar(100) DEFAULT '0' COMMENT 'District (Define specific District in a Region )',
+      `sec`  varchar(100) DEFAULT '0' COMMENT 'Sector/Council (Define specific Sector in the District)',
+      `cew`  varchar(100) DEFAULT '0' COMMENT 'Cell/Ward (Define specific Cell/ in the Sector)',
+      `vis`  varchar(100) DEFAULT '0' COMMENT 'Village/Street (Define specific Village/Street in the Cell/Ward)',
       `ea` varchar(100) DEFAULT '0' COMMENT 'Enumaration area (Define geographic location within the study site)',
       `cr` bigint(13) DEFAULT '0' COMMENT 'Cluster (The smallest geographic statistical unit within enumaration area)',
       `cp` int(2) DEFAULT '0' COMMENT 'Compound or Plot (A specific physical area within an identifiable owner)',
-      `tcu` bigint(11) DEFAULT '-99' COMMENT 'Hold Ten Cell Unit',
       `hh` varchar(100) DEFAULT '0' COMMENT 'Household (A person or group of people who live together in the same dwelling unit)',
+      `nah` varchar(100) DEFAULT '0' COMMENT 'Animals in Household (An animal or group of animals who live together with people in same dwelling unit)',
       `sid` int(2) DEFAULT '0' COMMENT 'Structure ID (A free standing building that can have one or more room for residential or commercial use)',
       `me` int(3) NOT NULL DEFAULT '-99' COMMENT 'Method (The method by which the mosquitoes were collected or trapped)',
       `ind` int(1) NOT NULL COMMENT 'hold collection was made indoors a house or hut',
@@ -658,23 +663,14 @@ function sendMail($email, $message, $subject){
       `vi` varchar(25) DEFAULT NULL COMMENT 'Initial of person that caught the mosquitoes',
       `tr` varchar(50) DEFAULT NULL COMMENT 'Treatment (Coding for the unique experimental treatment)',
       `dy` int(3) DEFAULT '-99' COMMENT 'Experiment Day (The consecutive nth day since the experiment commenced)',
-      
       `tmp` varchar(15) DEFAULT NULL COMMENT 'Temperature',
-     
       `hmd` varchar(15) DEFAULT NULL COMMENT 'Humidity',
       `ws` varchar(15) DEFAULT NULL COMMENT 'wind speed',
       `hos` varchar(15) DEFAULT '-99' COMMENT 'Number of household sampled',
-     
-      `vc` int(1) NOT NULL DEFAULT '2' COMMENT 'Legitimacy of the collection',
+      `vc` int(1) NULL DEFAULT '2' COMMENT 'Legitimacy of the collection',
       `notes` text COMMENT 'On site observation about the collection',
       `gps` text COMMENT 'Site geolocation',
-     
       `dsen` int(6) NOT NULL COMMENT 'Destination form serial number',
-      `livestock` int(11) DEFAULT NULL,
-      `hoccupant` int(11) DEFAULT NULL,
-      `heaves` int(11) DEFAULT NULL,
-      `nss` int(11) DEFAULT NULL,
-      `nbh` int(11) DEFAULT NULL,
       `oth` int(11) DEFAULT NULL,
       `sn` int(3) DEFAULT '-99' COMMENT 'Season',
       `agrt` int(3) DEFAULT '-99' COMMENT 'Agriculture',
@@ -683,15 +679,20 @@ function sendMail($email, $message, $subject){
       `rfe` int(3) DEFAULT '-99' COMMENT 'Roof type',
       `wle` int(3) DEFAULT '-99' COMMENT 'Wall type',
       `evs` int(3) DEFAULT '-99' COMMENT 'Eaves',
+      `bv` int(3) DEFAULT '-99' COMMENT 'Block ventilation',
+      `bvs` int(3) DEFAULT '-99' COMMENT 'Block ventilation screening',
       `wsn` int(3) DEFAULT '-99' COMMENT 'Window screening',
       `wsnc` int(3) DEFAULT '-99' COMMENT 'Window screening Condition',
       `ckl` int(3) DEFAULT '-99' COMMENT 'Cooking location',
       `cke` int(3) DEFAULT '-99' COMMENT 'Cooking Energy source',
-      `created_at` timestamp default now(), 
+      `sp` int(3) DEFAULT '-99' COMMENT 'Sprayed',
+      `lsd` date NULL COMMENT 'Last spray date',
+      `ise` int(3) DEFAULT '-99' COMMENT 'Insectside',
+      `created_at` timestamp default now(),  
       `updated_at` timestamp default now(),
-      PRIMARY KEY (`projectregsite_id`,`sen`,`fr`),
-      UNIQUE KEY `id` (`id`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ; ";
+          PRIMARY KEY (`projectregsite_id`,`sen`,`fr`),
+          UNIQUE KEY `id` (`id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ; ";
 
 
           $sql .= "CREATE TABLE IF NOT EXISTS ".$prefix."edss (
