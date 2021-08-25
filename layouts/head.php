@@ -82,6 +82,40 @@
     <script type="text/javascript" src="assets/js/table/jquery.base64.js"></script>
     <script type="text/javascript" src="assets/js/table/bootstrap-table-toolbar.js"></script>
     <script type="text/javascript" src="assets/js/table/bootstrap-table-sticky-header.js"></script>
+
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+<div id="google_translate_element" style="display:none"></div>
+<style> .goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    body{  
+        top: 0px !important;
+     }
+  
+    
+    } 
+
+    </style>
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element');
+}
+
+function translateLanguage(lang) {
+  googleTranslateElementInit();
+  var $frame = $('.goog-te-menu-frame:first');
+  if (!$frame.size()) {
+    alert("Error: Could not find Google translate frame.");
+    return false;
+  }
+  $frame.contents().find('.goog-te-menu2-item span.text:contains(' + lang + ')').get(0).click();
+  return false;
+}
+
+// $(function(){
+//   $('.selectpicker').selectpicker();
+// });
+</script>
 </head>
 
 <body class="static-navbar">
@@ -132,6 +166,11 @@
         <ul class="nav navbar-nav navbar-right collapse" id="navbar-right">
             <li> <a id="tguide"> <span> Guide</span> </a> </li>
             <li> <a href="logout.php"> <i class="fa fa-mail-forward"></i> <span>Logout</span> </a> </li>
+            <li> <select class="selectpicker" data-width="fit" style="background-color:#009551;color:#f5f5f5" onchange="translateLanguage(this.value);">
+               <option data-content='<span class="flag-icon flag-icon-af"></span> English' value="English">English</option>
+               <option  data-content='<span class="flag-icon flag-icon-al"></span> French' value="French">French</option>
+               </select></li> 
+               <!-- to here-->
         </ul>
     </div>
 </div>

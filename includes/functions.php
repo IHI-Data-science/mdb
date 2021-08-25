@@ -663,6 +663,7 @@ function sendMail($email, $message, $subject){
       `vi` varchar(25) DEFAULT NULL COMMENT 'Initial of person that caught the mosquitoes',
       `tr` varchar(50) DEFAULT NULL COMMENT 'Treatment (Coding for the unique experimental treatment)',
       `dy` int(3) DEFAULT '-99' COMMENT 'Experiment Day (The consecutive nth day since the experiment commenced)',
+      `wtc` varchar(15) DEFAULT NULL COMMENT 'Weather Conditions',
       `tmp` varchar(15) DEFAULT NULL COMMENT 'Temperature',
       `hmd` varchar(15) DEFAULT NULL COMMENT 'Humidity',
       `ws` varchar(15) DEFAULT NULL COMMENT 'wind speed',

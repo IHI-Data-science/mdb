@@ -212,11 +212,11 @@ if(isset($_POST['submited2'])){
                          }
 
                        
-                        $fields_array = array("Serial No. (SEN)","Formrow (FR)","Date of collection (DT)","Region (RE)","District (DI)","Sector/Council (SEC)","Cell/Ward (CEW)","Village/Street (VIS)","Enumeration area (EA)");
+                        $fields_array = array("Serial No. (SEN)","Formrow (FR)","Date of collection (DT)","Region/ Province (RE)","District (DI)","Sector/Council (SEC)","Cell/Ward (CEW)","Village/Street (VIS)","Enumeration area (EA)");
                         array_push($fields_array, "Cluster (CR)", "Compound or plot (CP)","Household (HH)","Animals in Household (NAH)","Structure ID (SID)","Method (ME)","Indoor (IND)");
                         array_push($fields_array, "Habitat type (HT)", "Start time (ST)","Finish time (FT)","Holding period (HP)","Round (RND)");
 
-                        array_push($fields_array, "Season (SN)","Agriculture status (AGRT)","Intervention (INVN)","Livestock (LVK)","Roof type (RFE)","Wall type (WLE)","Eaves (EVS)","Block ventilation (BV)","Block ventilation screening (BVS)","Window screening (WSN)","Window screening Condition (WSNC)","Cooking location (CKL)","Cooking Energy source (CKE)");
+                        array_push($fields_array,"Weather Conditions (WTC)", "Season (SN)","Agriculture status (AGRT)","Intervention (INVN)","Livestock (LVK)","Roof type (RFE)","Wall type (WLE)","Eaves (EVS)","Block ventilation (BV)","Block ventilation screening (BVS)","Window screening (WSN)","Window screening Condition (WSNC)","Cooking location (CKL)","Cooking Energy source (CKE)");
 
                         array_push($fields_array, "Block (BLK)", "House/Hut (SHH)","Station (STN)","Volunteer initials (VI)","Treatment (TR)","Experimental day (DY)","Temperature (TMP)",
                           "Humidity (HMD)","Wind speed (WS)","No. Household Sampled (HOS)","Sprayed (SP)","Last spray date (LSD)","Insectside (ISE)",
