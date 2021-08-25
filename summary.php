@@ -1222,7 +1222,7 @@ if(isset($_SESSION['expcode'])){
                         <li class="active">
                             <a data-toggle="tab" href="#tab121">Chart</a></li>
                         <li>
-                            <a data-toggle="tab" id="bs-tab2" href="#tab122">Table</a>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab123">Table</a>
                         </li>
                     </ul>
                     <div class="tab-content has-padding">
@@ -1243,7 +1243,7 @@ if(isset($_SESSION['expcode'])){
                             <canvas id="canvas12d" class="chart1"></canvas>
                             
                         </div>
-                        <div id="tab122" class="tab-pane">
+                        <div id="tab123" class="tab-pane">
                             <div class="table-responsive">
                                 <div id="tbl12"></div>
                             </div>
