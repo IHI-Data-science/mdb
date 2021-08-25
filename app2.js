@@ -1885,15 +1885,22 @@ function f10req(ctype) {
             }
 
 
+    
             var chartdata = {
                 datasets: [{
-                    data: dataset
+                
+
+                    label: 'Mosquitoes KnockedDown',
+                       
+                        data: mti1, mti2, mti3,mti4, mti5, mti6, mts, mtisy1,mtisy2,mtisy3,mtisy4,mtisy3,mtisy4, mtisy5, mtisy6,mtsy
                     
                 }],
                 labels: labels
             };
 
-        
+            
+
+            
 
             $('#tbl10').html(tabledata(chartdata));
 
@@ -2028,15 +2035,20 @@ function f11req(ctype) {
             }
 
 
+        
             var chartdata = {
                 datasets: [{
-                    data: dataset
+                
+
+                    label: 'Mosquitoes KnockedDown',
+                       
+                        data: mt1, mt2, mt3,mt4
                     
                 }],
                 labels: labels
             };
 
-        
+
 
             $('#tbl11').html(tabledata(chartdata));
 
@@ -2228,13 +2240,20 @@ function f12req(ctype) {
 
             var chartdata = {
                 datasets: [{
-                    data: dataset
+                
+
+                    label: 'Mosquitoes KnockedDown',
+                       
+                        data: mtir1, mtir2, mtir3,mtir4,mtir5,mtir6, mtsr1,mtsr2,mtsr3,mtsr4
                     
                 }],
                 labels: labels
             };
 
         
+
+           
+
 
             $('#tbl12').html(tabledata(chartdata));
 
