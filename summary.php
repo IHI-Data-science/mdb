@@ -251,6 +251,19 @@ if(isset($_SESSION['expcode'])){
                         <li>
                             <a data-toggle="modal" role="button" data-target="#sumchart5c">Monthly Snails Caught</a>
                         </li>
+
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart13"> CDC Resistance: Count vs KnockDown Time</a>
+                        </li>
+
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart14"> WHO Cone Resistance: Count vs KnockDown Time</a>
+                        </li>
+
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart15"> WHO Tube Resistance: Count vs KnockDown Time</a>
+                        </li>
+
                     </ul>
                 </div>
                 
@@ -1086,6 +1099,168 @@ if(isset($_SESSION['expcode'])){
         </div>
     </div>
     <!-- / modal5c -->
+
+
+
+
+    <!--modal13 -->
+    <div id="sumchart13" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Res: Count vs KnockDown Time</h5>
+                </div>
+                
+                <div class="has-padding2">
+                    
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab101">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab102">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab101" class="tab-pane fade active in">
+                            <div id="load10"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f10req('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f10req('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f10req('P')">
+                                <!-- <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f10req('D')"> -->
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas10" class="chart1"></canvas>
+                            <canvas id="canvas10l" class="chart1"></canvas>
+                            <canvas id="canvas10p" class="chart1"></canvas>
+                            <canvas id="canvas10d" class="chart1"></canvas>
+                            
+                        </div>
+                        <div id="tab102" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl10"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--modal13-->
+
+
+
+
+
+ <!--modal14 -->
+ <div id="sumchart14" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">WHO Cone Resistance: Count vs KnockDown Time</h5>
+                </div>
+                
+                <div class="has-padding2">
+                    
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab111">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab112">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab111" class="tab-pane fade active in">
+                            <div id="load11"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f11req('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f11req('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f11req('P')">
+                                <!-- <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f11req('D')"> -->
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas11" class="chart1"></canvas>
+                            <canvas id="canvas11l" class="chart1"></canvas>
+                            <canvas id="canvas11p" class="chart1"></canvas>
+                            <canvas id="canvas11d" class="chart1"></canvas>
+                            
+                        </div>
+                        <div id="tab112" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl11"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--modal14-->
+
+
+
+<!--modal15 -->
+<div id="sumchart15" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">WHO Tube Resistance: Count vs KnockDown Time</h5>
+                </div>
+                
+                <div class="has-padding2">
+                    
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab121">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab122">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab121" class="tab-pane fade active in">
+                            <div id="load12"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f12req('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f12req('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f12req('P')">
+                                <!-- <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f12req('D')"> -->
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas12" class="chart1"></canvas>
+                            <canvas id="canvas12l" class="chart1"></canvas>
+                            <canvas id="canvas12p" class="chart1"></canvas>
+                            <canvas id="canvas12d" class="chart1"></canvas>
+                            
+                        </div>
+                        <div id="tab122" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl12"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--modal15-->
+
+
+
+
+
+
 
 
     <!-- modalf1 -->

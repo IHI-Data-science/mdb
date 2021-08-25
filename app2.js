@@ -1657,12 +1657,653 @@ function f8req(ctype) {
         },
         beforeSend: function (data) {
             $('#load9c').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
-            //   f9req('B');
+             f10req('B');
         }
 
 
     });
  }
+
+
+
+
+ //res
+
+function f10req(ctype) {
+    $.ajax({
+        url: "data2.php?q=thirteen",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+
+            var mti1 = [];
+            var mti2 =[];
+            var mti3 = [];
+            var mti4 =[];
+            var mti5 = [];
+            var mti6 =[];
+            var mts=[];
+            var mtisy1 = [];
+            var mtisy2 = [];
+            var mtisy3 = [];
+            var mtisy4 = [];
+            var mtisy5 = [];
+            var mtisy6 = [];
+            var mtsy = [];
+
+            var labelname = ["Mos KD/Dead 0mins", "Mos KD/Dead 15mins", "Mos KD/Dead 30mins", "Mos KD/Dead 45mins",
+             "Mos KD/Dead 60mins","Mos KD/Dead 70mins","Mos KD/Dead 90mins","Mos KD/Dead 105mins",
+             "Mos KD/Dead 120mins", "Mos KD/Dead 1440mins","Mos KD/Dead 4320mins"];
+
+            for (var i in data) {
+                mti1.push(parseInt(data[i].kd_d0));
+                mti1.push(parseInt(data[i].kd_d15));
+                mti1.push(parseInt(data[i].kd_d30));
+                mti1.push(parseInt(data[i].kd_d45));
+                mti1.push(parseInt(data[i].kd_d60));
+                mti1.push(parseInt(data[i].kd_d75));
+                mti1.push(parseInt(data[i].kd_d90));
+                mti1.push(parseInt(data[i].kd_d105));
+                mti1.push(parseInt(data[i].kd_d120));
+                mti1.push(parseInt(data[i].kd_d24));
+                mti1.push(parseInt(data[i].kd_d72));
+           
+                mti2.push(parseInt(data[i].kd_d0));
+                mti2.push(parseInt(data[i].kd_d15));
+                mti2.push(parseInt(data[i].kd_d30));
+                mti2.push(parseInt(data[i].kd_d45));
+                mti2.push(parseInt(data[i].kd_d60));
+                mti2.push(parseInt(data[i].kd_d75));
+                mti2.push(parseInt(data[i].kd_d90));
+                mti2.push(parseInt(data[i].kd_d105));
+                mti2.push(parseInt(data[i].kd_d120));
+                mti2.push(parseInt(data[i].kd_d24));
+                mti2.push(parseInt(data[i].kd_d72));
+            
+
+                mti3.push(parseInt(data[i].kd_d0));
+                mti3.push(parseInt(data[i].kd_d15));
+                mti3.push(parseInt(data[i].kd_d30));
+                mti3.push(parseInt(data[i].kd_d45));
+                mti3.push(parseInt(data[i].kd_d60));
+                mti3.push(parseInt(data[i].kd_d75));
+                mti3.push(parseInt(data[i].kd_d90));
+                mti3.push(parseInt(data[i].kd_d105));
+                mti3.push(parseInt(data[i].kd_d120));
+                mti3.push(parseInt(data[i].kd_d24));
+                mti3.push(parseInt(data[i].kd_d72));
+           
+                mti4.push(parseInt(data[i].kd_d0));
+                mti4.push(parseInt(data[i].kd_d15));
+                mti4.push(parseInt(data[i].kd_d30));
+                mti4.push(parseInt(data[i].kd_d45));
+                mti4.push(parseInt(data[i].kd_d60));
+                mti4.push(parseInt(data[i].kd_d75));
+                mti4.push(parseInt(data[i].kd_d90));
+                mti4.push(parseInt(data[i].kd_d105));
+                mti4.push(parseInt(data[i].kd_d120));
+                mti4.push(parseInt(data[i].kd_d24));
+                mti4.push(parseInt(data[i].kd_d72));
+           
+
+                mti5.push(parseInt(data[i].kd_d0));
+                mti5.push(parseInt(data[i].kd_d15));
+                mti5.push(parseInt(data[i].kd_d30));
+                mti5.push(parseInt(data[i].kd_d45));
+                mti5.push(parseInt(data[i].kd_d60));
+                mti5.push(parseInt(data[i].kd_d75));
+                mti5.push(parseInt(data[i].kd_d90));
+                mti5.push(parseInt(data[i].kd_d105));
+                mti5.push(parseInt(data[i].kd_d120));
+                mti5.push(parseInt(data[i].kd_d24));
+                mti5.push(parseInt(data[i].kd_d72));
+           
+                mti6.push(parseInt(data[i].kd_d0));
+                mti6.push(parseInt(data[i].kd_d15));
+                mti6.push(parseInt(data[i].kd_d30));
+                mti6.push(parseInt(data[i].kd_d45));
+                mti6.push(parseInt(data[i].kd_d60));
+                mti6.push(parseInt(data[i].kd_d75));
+                mti6.push(parseInt(data[i].kd_d90));
+                mti6.push(parseInt(data[i].kd_d105));
+                mti6.push(parseInt(data[i].kd_d120));
+                mti6.push(parseInt(data[i].kd_d24));
+                mti6.push(parseInt(data[i].kd_d72));
+
+                mts.push(parseInt(data[i].kd_d0));
+                mts.push(parseInt(data[i].kd_d15));
+                mts.push(parseInt(data[i].kd_d30));
+                mts.push(parseInt(data[i].kd_d45));
+                mts.push(parseInt(data[i].kd_d60));
+                mts.push(parseInt(data[i].kd_d75));
+                mts.push(parseInt(data[i].kd_d90));
+                mts.push(parseInt(data[i].kd_d105));
+                mts.push(parseInt(data[i].kd_d120));
+                mts.push(parseInt(data[i].kd_d24));
+                mts.push(parseInt(data[i].kd_d72));
+
+                mtisy1.push(parseInt(data[i].kd_d0));
+                mtisy1.push(parseInt(data[i].kd_d15));
+                mtisy1.push(parseInt(data[i].kd_d30));
+                mtisy1.push(parseInt(data[i].kd_d45));
+                mtisy1.push(parseInt(data[i].kd_d60));
+                mtisy1.push(parseInt(data[i].kd_d75));
+                mtisy1.push(parseInt(data[i].kd_d90));
+                mtisy1.push(parseInt(data[i].kd_d105));
+                mtisy1.push(parseInt(data[i].kd_d120));
+                mtisy1.push(parseInt(data[i].kd_d24));
+                mtisy1.push(parseInt(data[i].kd_d72));
+
+                mtisy2.push(parseInt(data[i].kd_d0));
+                mtisy2.push(parseInt(data[i].kd_d15));
+                mtisy2.push(parseInt(data[i].kd_d30));
+                mtisy2.push(parseInt(data[i].kd_d45));
+                mtisy2.push(parseInt(data[i].kd_d60));
+                mtisy2.push(parseInt(data[i].kd_d75));
+                mtisy2.push(parseInt(data[i].kd_d90));
+                mtisy2.push(parseInt(data[i].kd_d105));
+                mtisy2.push(parseInt(data[i].kd_d120));
+                mtisy2.push(parseInt(data[i].kd_d24));
+                mtisy2.push(parseInt(data[i].kd_d72));
+
+
+                mtisy3.push(parseInt(data[i].kd_d0));
+                mtisy3.push(parseInt(data[i].kd_d15));
+                mtisy3.push(parseInt(data[i].kd_d30));
+                mtisy3.push(parseInt(data[i].kd_d45));
+                mtisy3.push(parseInt(data[i].kd_d60));
+                mtisy3.push(parseInt(data[i].kd_d75));
+                mtisy3.push(parseInt(data[i].kd_d90));
+                mtisy3.push(parseInt(data[i].kd_d105));
+                mtisy3.push(parseInt(data[i].kd_d120));
+                mtisy3.push(parseInt(data[i].kd_d24));
+                mtisy3.push(parseInt(data[i].kd_d72));
+                
+                mtisy4.push(parseInt(data[i].kd_d0));
+                mtisy4.push(parseInt(data[i].kd_d15));
+                mtisy4.push(parseInt(data[i].kd_d30));
+                mtisy4.push(parseInt(data[i].kd_d45));
+                mtisy4.push(parseInt(data[i].kd_d60));
+                mtisy4.push(parseInt(data[i].kd_d75));
+                mtisy4.push(parseInt(data[i].kd_d90));
+                mtisy4.push(parseInt(data[i].kd_d105));
+                mtisy4.push(parseInt(data[i].kd_d120));
+                mtisy4.push(parseInt(data[i].kd_d24));
+                mtisy4.push(parseInt(data[i].kd_d72));
+
+                mtisy5.push(parseInt(data[i].kd_d0));
+                mtisy5.push(parseInt(data[i].kd_d15));
+                mtisy5.push(parseInt(data[i].kd_d30));
+                mtisy5.push(parseInt(data[i].kd_d45));
+                mtisy5.push(parseInt(data[i].kd_d60));
+                mtisy5.push(parseInt(data[i].kd_d75));
+                mtisy5.push(parseInt(data[i].kd_d90));
+                mtisy5.push(parseInt(data[i].kd_d105));
+                mtisy5.push(parseInt(data[i].kd_d120));
+                mtisy5.push(parseInt(data[i].kd_d24));
+                mtisy5.push(parseInt(data[i].kd_d72));
+
+                mtisy6.push(parseInt(data[i].kd_d0));
+                mtisy6.push(parseInt(data[i].kd_d15));
+                mtisy6.push(parseInt(data[i].kd_d30));
+                mtisy6.push(parseInt(data[i].kd_d45));
+                mtisy6.push(parseInt(data[i].kd_d60));
+                mtisy6.push(parseInt(data[i].kd_d75));
+                mtisy6.push(parseInt(data[i].kd_d90));
+                mtisy6.push(parseInt(data[i].kd_d105));
+                mtisy6.push(parseInt(data[i].kd_d120));
+                mtisy6.push(parseInt(data[i].kd_d24));
+                mtisy6.push(parseInt(data[i].kd_d72));
+
+
+                mtsy.push(parseInt(data[i].kd_d0));
+                mtsy.push(parseInt(data[i].kd_d15));
+                mtsy.push(parseInt(data[i].kd_d30));
+                mtsy.push(parseInt(data[i].kd_d45));
+                mtsy.push(parseInt(data[i].kd_d60));
+                mtsy.push(parseInt(data[i].kd_d75));
+                mtsy.push(parseInt(data[i].kd_d90));
+                mtsy.push(parseInt(data[i].kd_d105));
+                mtsy.push(parseInt(data[i].kd_d120));
+                mtsy.push(parseInt(data[i].kd_d24));
+                mtsy.push(parseInt(data[i].kd_d72));
+
+            }
+
+            var dataset = mti1, mti2, mti3,mti4, mti5, mti6, mts, mtisy1,mtisy2,mtisy3,mtisy4,mtisy3,mtisy4, mtisy5, mtisy6,mtsy;
+            var labels = labelname;
+
+            var list = [];
+
+            list = sortdata(dataset, labels);
+
+            for (var k = 0; k < list.length; k++) {
+                dataset[k] = list[k].data;
+                labels[k] = list[k].label;
+            }
+
+
+            var chartdata = {
+                datasets: [{
+                    data: dataset
+                    
+                }],
+                labels: labels
+            };
+
+        
+
+            $('#tbl10').html(tabledata(chartdata));
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas10").show();
+                $("#canvas10l").hide();
+                $("#canvas10p").hide();
+                $("#canvas10d").hide();
+                var canvas = $("#canvas10");
+                BarChart(canvas, chartdata, "Res: Count vs KnockDown Time");
+
+            } else if (type == "L") {
+
+                $("#canvas10").hide();
+                $("#canvas10l").show();
+                $("#canvas10p").hide();
+                $("#canvas10d").hide();
+                var canvas = $("#canvas10l");
+                LineChart(canvas, chartdata, "Res: Count vs KnockDown Time");
+
+
+            } else if (type == "P") {
+
+                $("#canvas10").hide();
+                $("#canvas10l").hide();
+                $("#canvas10p").show();
+                $("#canvas10d").hide();
+                var canvas = $("#canvas10p");
+                PieChart(canvas, chartdata, "Res: Count vs KnockDown Time");
+
+            } else if (type == "D") {
+
+                $("#canvas10").hide();
+                $("#canvas10l").hide();
+                $("#canvas10p").hide();
+                $("#canvas10d").show();
+                var canvas = $("#canvas10d");
+                PolarChart(canvas, chartdata, "Res: Count vs KnockDown Time");
+
+
+            }
+
+            $('#tbl10').html(tabledata(chartdata));
+
+
+        },
+        error: function (data) {
+            console.log("Request f10req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load10').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div></div></div>');
+         f11req('B');
+        }
+    });
+}
+
+
+//coneres
+
+
+function f11req(ctype) {
+    $.ajax({
+        url: "data2.php?q=fourteen",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+
+            var mt1 = [];
+            var mt2 =[];
+            var mt3 = [];
+            var mt4 =[];
+            
+         
+            var labelname = ["Mos KD 3Omin", "Mos KD 60min", "Mos KD Day1", "Mos KD Day2", "Mos KD Day3","Mos KD 30min",
+            "Mos KD 60min","Mos KD Day1","Mos KD Day2",
+             "Mos KD Day3", "Mos KD 30min", "Mos KD 60min", "Mos KD Day1", "Mos KD Day2","Mos KD 30min","Mos KD 60min","Mos KD Day1",
+             "Mos KD Day1", "Mos KD Day2", "Mos KD Day3"];
+
+            for (var i in data) {
+                mt1.push(parseInt(data[i].mkd1));
+                mt1.push(parseInt(data[i].mkd2));
+                mt1.push(parseInt(data[i].mkd3));
+                mt1.push(parseInt(data[i].mkd4));
+                mt1.push(parseInt(data[i].mkd5));
+           
+                mt2.push(parseInt(data[i].mkd6));
+                mt2.push(parseInt(data[i].mkd7));
+                mt2.push(parseInt(data[i].mkd8));
+                mt2.push(parseInt(data[i].mkd9));
+                mt2.push(parseInt(data[i].mkd10));
+           
+
+                mt3.push(parseInt(data[i].mkd11));
+                mt3.push(parseInt(data[i].mkd12));
+                mt3.push(parseInt(data[i].mkd13));
+                mt3.push(parseInt(data[i].mkd14));
+                mt3.push(parseInt(data[i].mkd15));
+           
+
+       
+                mt4.push(parseInt(data[i].mkd16));
+                mt4.push(parseInt(data[i].mkd17));
+                mt4.push(parseInt(data[i].mkd18));
+                mt4.push(parseInt(data[i].mkd19));
+                mt4.push(parseInt(data[i].mkd20));
+           
+
+            }
+           
+          
+
+            var dataset = mt1, mt2, mt3,mt4;
+            var labels = labelname;
+
+            var list = [];
+
+            list = sortdata(dataset, labels);
+
+            for (var k = 0; k < list.length; k++) {
+                dataset[k] = list[k].data;
+                labels[k] = list[k].label;
+            }
+
+
+            var chartdata = {
+                datasets: [{
+                    data: dataset
+                    
+                }],
+                labels: labels
+            };
+
+        
+
+            $('#tbl11').html(tabledata(chartdata));
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas11").show();
+                $("#canvas11l").hide();
+                $("#canvas11p").hide();
+                $("#canvas11d").hide();
+                var canvas = $("#canvas11");
+                BarChart(canvas, chartdata, "WHO Cone Resistance: Count vs KnockDown Time");
+
+            } else if (type == "L") {
+
+                $("#canvas11").hide();
+                $("#canvas11l").show();
+                $("#canvas11p").hide();
+                $("#canvas11d").hide();
+                var canvas = $("#canvas11l");
+                LineChart(canvas, chartdata, "WHO Cone Resistance: Count vs KnockDown Time");
+
+
+            } else if (type == "P") {
+
+                $("#canvas11").hide();
+                $("#canvas11l").hide();
+                $("#canvas11p").show();
+                $("#canvas11d").hide();
+                var canvas = $("#canvas11p");
+                PieChart(canvas, chartdata, "WHO Cone Resistance: Count vs KnockDown Time");
+
+            } else if (type == "D") {
+
+                $("#canvas11").hide();
+                $("#canvas11l").hide();
+                $("#canvas11p").hide();
+                $("#canvas11d").show();
+                var canvas = $("#canvas11d");
+                PolarChart(canvas, chartdata, "WHO Cone Resistance: Count vs KnockDown Time");
+
+
+            }
+
+            $('#tbl11').html(tabledata(chartdata));
+
+
+        },
+        error: function (data) {
+            console.log("Request f11req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load11').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div></div></div>');
+         f12req('B');
+        }
+    });
+}
+
+
+//endconeres
+
+
+//tuberes
+
+function f12req(ctype) {
+    $.ajax({
+        url: "data2.php?q=fifteen",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+
+            var mtir1 = [];
+            var mtir2 =[];
+            var mtir3 = [];
+            var mtir4 =[];
+            var mtir5 = [];
+            var mtir6 =[];
+            var mtsr1 =[];
+            var mtsr2 =[];
+            var mtsr3 =[];
+            var mtsr4 =[];
+         
+            var labelname = ["Mos KD Day1", "Mos KD Day2", "Mos KD Day3", "Mos KD Day4", "Mos KD Day5","Mos KD Day6","Mos KD Day7"];
+
+            for (var i in data) {
+                mtir1.push(parseInt(data[i].kd_d1d));
+                mtir1.push(parseInt(data[i].kd_d2d));
+                mtir1.push(parseInt(data[i].kd_d3d));
+                mtir1.push(parseInt(data[i].kd_d4d));
+                mtir1.push(parseInt(data[i].kd_d5d));
+                mtir1.push(parseInt(data[i].kd_d6d));
+                mtir1.push(parseInt(data[i].kd_d7d));
+           
+                mtir2.push(parseInt(data[i].kd_d1d));
+                mtir2.push(parseInt(data[i].kd_d2d));
+                mtir2.push(parseInt(data[i].kd_d3d));
+                mtir2.push(parseInt(data[i].kd_d4d));
+                mtir2.push(parseInt(data[i].kd_d5d));
+                mtir2.push(parseInt(data[i].kd_d6d));
+                mtir2.push(parseInt(data[i].kd_d7d));
+
+                mtir3.push(parseInt(data[i].kd_d1d));
+                mtir3.push(parseInt(data[i].kd_d2d));
+                mtir3.push(parseInt(data[i].kd_d3d));
+                mtir3.push(parseInt(data[i].kd_d4d));
+                mtir3.push(parseInt(data[i].kd_d5d));
+                mtir3.push(parseInt(data[i].kd_d6d));
+                mtir3.push(parseInt(data[i].kd_d7d));
+           
+                mtir4.push(parseInt(data[i].kd_d1d));
+                mtir4.push(parseInt(data[i].kd_d2d));
+                mtir4.push(parseInt(data[i].kd_d3d));
+                mtir4.push(parseInt(data[i].kd_d4d));
+                mtir4.push(parseInt(data[i].kd_d5d));
+                mtir4.push(parseInt(data[i].kd_d6d));
+                mtir4.push(parseInt(data[i].kd_d7d));
+
+                mtir5.push(parseInt(data[i].kd_d1d));
+                mtir5.push(parseInt(data[i].kd_d2d));
+                mtir5.push(parseInt(data[i].kd_d3d));
+                mtir5.push(parseInt(data[i].kd_d4d));
+                mtir5.push(parseInt(data[i].kd_d5d));
+                mtir5.push(parseInt(data[i].kd_d6d));
+                mtir5.push(parseInt(data[i].kd_d7d));
+           
+                mtir6.push(parseInt(data[i].kd_d1d));
+                mtir6.push(parseInt(data[i].kd_d2d));
+                mtir6.push(parseInt(data[i].kd_d3d));
+                mtir6.push(parseInt(data[i].kd_d4d));
+                mtir6.push(parseInt(data[i].kd_d5d));
+                mtir6.push(parseInt(data[i].kd_d6d));
+                mtir6.push(parseInt(data[i].kd_d7d));
+
+                mtsr1.push(parseInt(data[i].kd_d1d));
+                mtsr1.push(parseInt(data[i].kd_d2d));
+                mtsr1.push(parseInt(data[i].kd_d3d));
+                mtsr1.push(parseInt(data[i].kd_d4d));
+                mtsr1.push(parseInt(data[i].kd_d5d));
+                mtsr1.push(parseInt(data[i].kd_d6d));
+                mtsr1.push(parseInt(data[i].kd_d7d));
+
+                mtsr2.push(parseInt(data[i].kd_d1d));
+                mtsr2.push(parseInt(data[i].kd_d2d));
+                mtsr2.push(parseInt(data[i].kd_d3d));
+                mtsr2.push(parseInt(data[i].kd_d4d));
+                mtsr2.push(parseInt(data[i].kd_d5d));
+                mtsr2.push(parseInt(data[i].kd_d6d));
+                mtsr2.push(parseInt(data[i].kd_d7d));
+
+                mtsr3.push(parseInt(data[i].kd_d1d));
+                mtsr3.push(parseInt(data[i].kd_d2d));
+                mtsr3.push(parseInt(data[i].kd_d3d));
+                mtsr3.push(parseInt(data[i].kd_d4d));
+                mtsr3.push(parseInt(data[i].kd_d5d));
+                mtsr3.push(parseInt(data[i].kd_d6d));
+                mtsr3.push(parseInt(data[i].kd_d7d));
+
+                mtsr4.push(parseInt(data[i].kd_d1d));
+                mtsr4.push(parseInt(data[i].kd_d2d));
+                mtsr4.push(parseInt(data[i].kd_d3d));
+                mtsr4.push(parseInt(data[i].kd_d4d));
+                mtsr4.push(parseInt(data[i].kd_d5d));
+                mtsr4.push(parseInt(data[i].kd_d6d));
+                mtsr4.push(parseInt(data[i].kd_d7d));
+            }
+           
+          
+
+            var dataset = mtir1, mtir2, mtir3,mtir4,mtir5,mtir6, mtsr1,mtsr2,mtsr3,mtsr4;
+            var labels = labelname;
+
+            var list = [];
+
+            list = sortdata(dataset, labels);
+
+            for (var k = 0; k < list.length; k++) {
+                dataset[k] = list[k].data;
+                labels[k] = list[k].label;
+            }
+
+
+            var chartdata = {
+                datasets: [{
+                    data: dataset
+                    
+                }],
+                labels: labels
+            };
+
+        
+
+            $('#tbl12').html(tabledata(chartdata));
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas12").show();
+                $("#canvas12l").hide();
+                $("#canvas12p").hide();
+                $("#canvas12d").hide();
+                var canvas = $("#canvas12");
+                BarChart(canvas, chartdata, "WHO Tube Resistance: Count vs KnockDown Time");
+
+            } else if (type == "L") {
+
+                $("#canvas12").hide();
+                $("#canvas12l").show();
+                $("#canvas12p").hide();
+                $("#canvas12d").hide();
+                var canvas = $("#canvas12l");
+                LineChart(canvas, chartdata, "WHO Tube Resistance: Count vs KnockDown Time");
+
+
+            } else if (type == "P") {
+
+                $("#canvas12").hide();
+                $("#canvas12l").hide();
+                $("#canvas12p").show();
+                $("#canvas12d").hide();
+                var canvas = $("#canvas12p");
+                PieChart(canvas, chartdata, "WHO Tube Resistance: Count vs KnockDown Time");
+
+            } else if (type == "D") {
+
+                $("#canvas12").hide();
+                $("#canvas12l").hide();
+                $("#canvas12p").hide();
+                $("#canvas12d").show();
+                var canvas = $("#canvas12d");
+                PolarChart(canvas, chartdata, "WHO Tube Resistance: Count vs KnockDown Time");
+
+
+            }
+
+            $('#tbl12').html(tabledata(chartdata));
+
+
+        },
+        error: function (data) {
+            console.log("Request f12req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load12').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div></div></div>');
+
+        }
+    });
+}
+
+//tuberes
+
+
+
+
 
 
 function confirmationDelete(anchor) {
