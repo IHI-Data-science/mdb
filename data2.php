@@ -751,7 +751,96 @@ if($q==='eight'){
     where 1=1 $wherecon GROUP BY MONTHNAME(ed1.dt) ORDER BY MONTHNAME(ed1.dt)";
 
  }
+
+
+
+
+
+ //res
  
+if($q==='thirteen'){
+   
+    $query="SELECT
+
+             `kd_d0`,`kd_d15`, `kd_d30`, `kd_d45`,`kd_d60`, `kd_d75`,
+              `kd_d90`, `kd_d105`, `kd_d120`
+              
+
+             FROM
+             projectregsite
+             INNER JOIN projectreg
+             ON (projectregsite.projectreg_id = projectreg.id)
+             INNER JOIN site
+             ON (projectregsite.site_id = site.site_id)
+             INNER JOIN ".$prefixtable."ed1 as ed1
+             ON (ed1.projectregsite_id = projectregsite.id)
+             INNER JOIN ".$prefixtable."edss as edss
+             ON (ed1.id = edss.ed1id)
+             INNER JOIN ".$prefixtable."ss3 as ss3
+             ON (ss3.edssid = edss.id)
+
+             GROUP BY `MTI1`, `MTI2`, `MTI3`, `MTI4`, `MTI5`, `MTI6`, `MTS`,
+             `MTISY1`,`MTISY2`, `MTISY3`, `MTISY4`,`MTISY5`, `MTISY6`, `MTSY`" ;
+
+           }
+ 
+//whoconeres
+ 
+if($q==='fourteen'){
+   
+    $query="SELECT
+
+             `mkd1`,`mkd2`, `mkd3`, `mkd4`,`mkd5`,`mkd6`,`mkd7`,`mkd8`,`mkd9`, `mkd10`,
+ 
+           
+             `mkd11`,`mkd12`, `mkd13`, `mkd14`, `mkd15`,`mkd16`,`mkd17`,`mkd18`,`mkd19`, `mkd20`
+ 
+
+             FROM
+             projectregsite
+             INNER JOIN projectreg
+             ON (projectregsite.projectreg_id = projectreg.id)
+             INNER JOIN site
+             ON (projectregsite.site_id = site.site_id)
+             INNER JOIN ".$prefixtable."ed1 as ed1
+             ON (ed1.projectregsite_id = projectregsite.id)
+             INNER JOIN ".$prefixtable."edss as edss
+             ON (ed1.id = edss.ed1id)
+             INNER JOIN ".$prefixtable."ss3 as ss3
+             ON (ss3.edssid = edss.id)
+
+            GROUP BY `MT1`, `MT2`, `MT3`, `MT4`" ;
+
+           }
+
+
+//whotuberes
+ 
+if($q==='fifteen'){
+   
+    $query="SELECT
+
+        `kd_d1d`, `kd_d2d`, `kd_d3d`, `kd_d4d`, `kd_d5d`,`kd_d6d`,`kd_d7d`
+ 
+
+             FROM
+             projectregsite
+             INNER JOIN projectreg
+             ON (projectregsite.projectreg_id = projectreg.id)
+             INNER JOIN site
+             ON (projectregsite.site_id = site.site_id)
+             INNER JOIN ".$prefixtable."ed1 as ed1
+             ON (ed1.projectregsite_id = projectregsite.id)
+             INNER JOIN ".$prefixtable."edss as edss
+             ON (ed1.id = edss.ed1id)
+             INNER JOIN ".$prefixtable."ss3 as ss3
+             ON (ss3.edssid = edss.id)
+
+            GROUP BY `mtir1`, `mtir2`, `mtir3`, `mtir4`, `mtir5`, `mtir6`" ;
+
+           }
+
+
 
 if($q === 'hone'){
     

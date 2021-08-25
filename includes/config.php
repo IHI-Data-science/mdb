@@ -14,8 +14,8 @@ define( 'URL', 'http://mosquitodb.io/mdb' );
 // define( 'DB_HOST', 'localhost' );          
 // define( 'DB_USER', 'root' );             
 // define( 'DB_PASS', '' );            
-// define( 'DB_NAME', 'mdb123' );       
-// define( 'URL', 'http://localhost/mdb123' ); 
+// define( 'DB_NAME', 'mdb' );       
+// define( 'URL', 'http://localhost:81/mdb' ); 
 
 
 
