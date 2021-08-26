@@ -192,14 +192,13 @@ if(isset($_SESSION['expcode'])){
     
     <!-- charts -->
     <div class="panel panel-default">
-        <div class="panel-heading"><h6 class="panel-title">Data Summary</h6>
-        </div>
+        <div class="panel-heading"><h6 class="panel-title">Data Summary</h6></div>
         <div class="has-padding">
             
             <div class="row">
                 <div class="col-md-6">
                     <ul class="nav nav-list">
-                        <li class="nav-header">Summary Graphs</li>
+                        <li class="nav-header"> Adult Mosquito Summary Graphs</li>
                         <li>
                             <a data-toggle="modal" role="button" data-target="#sumchart1">Anopheline Mosquito Population Summary </a>
                         </li>
@@ -233,37 +232,6 @@ if(isset($_SESSION['expcode'])){
                         <li>
                             <a data-toggle="modal" role="button" data-target="#sumchart6">An. funestus abdominal status</a>
                         </li>
-                        <li>
-                            <a data-toggle="modal" role="button" data-target="#sumchart8">Pupae density</a>
-                        </li>
-                        <li>
-                            <a data-toggle="modal" role="button" data-target="#sumchart9">Larvae density</a>
-                        </li>
-                        <li>
-                            <a data-toggle="modal" role="button" data-target="#sumchart7">Hourly Biting Rate</a>
-                        </li>
-                        <li>
-                            <a data-toggle="modal" role="button" data-target="#sumchart9c">Snail Population Summary</a>
-                        </li>
-                        <li>
-                            <a data-toggle="modal" role="button" data-target="#sumchart4c">Daily Snails Caught</a>
-                        </li>
-                        <li>
-                            <a data-toggle="modal" role="button" data-target="#sumchart5c">Monthly Snails Caught</a>
-                        </li>
-
-                        <li>
-                            <a data-toggle="modal" role="button" data-target="#sumchart13"> CDC Resistance: Count vs KnockDown Time</a>
-                        </li>
-
-                        <li>
-                            <a data-toggle="modal" role="button" data-target="#sumchart14"> WHO Cone Resistance: Count vs KnockDown Time</a>
-                        </li>
-
-                        <li>
-                            <a data-toggle="modal" role="button" data-target="#sumchart15"> WHO Tube Resistance: Count vs KnockDown Time</a>
-                        </li>
-
                     </ul>
                 </div>
                 
@@ -282,12 +250,83 @@ if(isset($_SESSION['expcode'])){
                         <li>
                             <a data-toggle="modal" role="button" data-target="#freqchart4">Compound or plot</a>
                         </li>
-                      
                         <li>
                             <a data-toggle="modal" role="button" data-target="#freqchart5">Location</a>
                         </li>
                         <li>
                             <a data-toggle="modal" role="button" data-target="#freqchart6">Treatment</a>
+                        </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart7">Hourly Biting Rate</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <br>
+
+<div class="row">
+    <div class="col-md-6">
+                    <ul class="nav nav-list">
+                        <li class="nav-header">Larvaciding Summary Graphs</li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart8c">Pupae density - Daily</a>
+                        </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart88">Pupae density - Weekly</a>
+                        </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart8">Pupae density - Monthly</a>
+                        </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart77">Larvae density - Daily</a>
+                        </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart78">Larvae density - Weekly</a>
+                        </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart9">Larvae density - Monthly</a>
+                        </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart55">Larvae Population Summary</a>
+                        </li>
+                    </ul>
+                </div>
+
+                
+    <div class="col-md-6">
+                    <ul class="nav nav-list">
+                        <li class="nav-header">Snail Summary Graphs</li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart9c">Snail Population Summary</a>
+                        </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart4c">Snails Caught - Daily</a>
+                        </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart44">Snails Caught - Weekly</a>
+                        </li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart5c">Snails Caught - Monthly</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+<br>
+<div class="row">
+    <div class="col-md-6">
+                    <ul class="nav nav-list">
+                        <li class="nav-header">SS3 / Resistance Summary Graphs</li>
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart13"> CDC Resistance: Count vs KnockDown Time</a>
+                        </li>
+
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart14"> WHO Cone Resistance: Count vs KnockDown Time</a>
+                        </li>
+
+                        <li>
+                            <a data-toggle="modal" role="button" data-target="#sumchart15"> WHO Tube Resistance: Count vs KnockDown Time</a>
                         </li>
                     </ul>
                 </div>
@@ -828,7 +867,7 @@ if(isset($_SESSION['expcode'])){
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h5 class="modal-title">Pupae Density</h5>
+                    <h5 class="modal-title">Pupae Density - Monthly</h5>
                 </div>
                 <div class="has-padding2">
                     <ul class="nav nav-pills nav-jt">
@@ -868,6 +907,99 @@ if(isset($_SESSION['expcode'])){
     </div>
     <!-- / modal8 -->
 
+    <!-- modal8c -->
+    <div id="sumchart8c" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Pupae Density - Daily</h5>
+                </div>
+                <div class="has-padding2">
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab8c1">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab8c2">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab8c1" class="tab-pane fade active in">
+                            <div id="load8"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f8creq('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f8creq('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f8creq('P')">
+                                <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f8creq('D')">
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas8c" class="chart1"></canvas>
+                            <canvas id="canvas8cl" class="chart1"></canvas>
+                            <canvas id="canvas8cp" class="chart1"></canvas>
+                            <canvas id="canvas8cd" class="chart1"></canvas>
+                        
+                        </div>
+                        <div id="tab8c2" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl8c"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal8 -->
+
+    <!-- modal8d -->
+    <div id="sumchart88" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Pupae Density - Weekly</h5>
+                </div>
+                <div class="has-padding2">
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab881">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab882">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab881" class="tab-pane fade active in">
+                            <div id="load8"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f88req('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f88req('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f88req('P')">
+                                <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f88req('D')">
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas88" class="chart1"></canvas>
+                            <canvas id="canvas88l" class="chart1"></canvas>
+                            <canvas id="canvas88p" class="chart1"></canvas>
+                            <canvas id="canvas88d" class="chart1"></canvas>
+                        
+                        </div>
+                        <div id="tab882" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl88"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal8 -->
+
+
 
     <!-- modal9 -->
     <div id="sumchart9" class="modal fade" tabindex="-1" role="dialog">
@@ -875,7 +1007,7 @@ if(isset($_SESSION['expcode'])){
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h5 class="modal-title">Larvae Density</h5>
+                    <h5 class="modal-title">Larvae Density - Monthly</h5>
                 </div>
                 <div class="has-padding2">
                     <ul class="nav nav-pills nav-jt">
@@ -914,6 +1046,98 @@ if(isset($_SESSION['expcode'])){
         </div>
     </div>
     <!-- / modal9 -->
+
+    <!-- modal77 -->
+    <div id="sumchart77" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Larvae Density - Daily</h5>
+                </div>
+                <div class="has-padding2">
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab771">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab77" href="#tab772">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab771" class="tab-pane fade active in">
+                            <div id="load77"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f77req('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f77req('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f77req('P')">
+                                <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f77req('D')">
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas77" class="chart1"></canvas>
+                            <canvas id="canvas77l" class="chart1"></canvas>
+                            <canvas id="canvas77p" class="chart1"></canvas>
+                            <canvas id="canvas77d" class="chart1"></canvas>
+                        
+                        </div>
+                        <div id="tab772" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl77"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal77 -->
+
+    <!-- modal78 -->
+    <div id="sumchart78" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Larvae Density - Weekly</h5>
+                </div>
+                <div class="has-padding2">
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab781">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab78" href="#tab782">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab781" class="tab-pane fade active in">
+                            <div id="load78"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f78req('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f78req('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f78req('P')">
+                                <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f78req('D')">
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas78" class="chart1"></canvas>
+                            <canvas id="canvas78l" class="chart1"></canvas>
+                            <canvas id="canvas78p" class="chart1"></canvas>
+                            <canvas id="canvas78d" class="chart1"></canvas>
+                        
+                        </div>
+                        <div id="tab782" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl78"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal78 -->
 
     <!-- modal7 -->
     <div id="sumchart7" class="modal fade" tabindex="-1" role="dialog">
@@ -1014,7 +1238,7 @@ if(isset($_SESSION['expcode'])){
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h5 class="modal-title">Daily Snails Caught</h5>
+                    <h5 class="modal-title">Snails Caught - Daily</h5>
                 </div>
                 <div class="has-padding2">
                     <ul class="nav nav-pills nav-jt">
@@ -1054,13 +1278,105 @@ if(isset($_SESSION['expcode'])){
     </div>
     <!-- / modal4c -->
 
+    <!-- modal44 -->
+    <div id="sumchart44" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Snails Caught - Weekly</h5>
+                </div>
+                <div class="has-padding2">
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab441">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab44">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab441" class="tab-pane fade active in">
+                            <div id="load1"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f44req('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f44req('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f44req('P')">
+                                <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f44req('D')">
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas44" class="chart1"></canvas>
+                            <canvas id="canvas44l" class="chart1"></canvas>
+                            <canvas id="canvas44p" class="chart1"></canvas>
+                            <canvas id="canvas44d" class="chart1"></canvas>
+                            
+                        </div>
+                        <div id="tab44" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl44"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal44 -->
+
+    <!-- / modal55 -->
+    <div id="sumchart55" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h5 class="modal-title">Larvae Population Summary</h5>
+                </div>
+                <div class="has-padding2">
+                    <ul class="nav nav-pills nav-jt">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab551">Chart</a></li>
+                        <li>
+                            <a data-toggle="tab" id="bs-tab2" href="#tab55">Table</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content has-padding">
+                        <div id="tab551" class="tab-pane fade active in">
+                            <div id="load1"></div>
+                            
+                            <div class="text-right">
+                                <input type="button" class="btn btn-xs btn-default" value="Bar" onClick="f55req('B')">
+                                <input type="button" class="btn btn-xs btn-default" value="Line" onClick="f55req('L')">
+                                <input type="button" class="btn btn-xs btn-default" value="Pie" onClick="f55req('P')">
+                                <input type="button" class="btn btn-xs btn-default" value="Polar Area" onClick="f55req('D')">
+                            </div>
+                            
+                            <br/>
+                            <canvas id="canvas55" class="chart1"></canvas>
+                            <canvas id="canvas55l" class="chart1"></canvas>
+                            <canvas id="canvas55p" class="chart1"></canvas>
+                            <canvas id="canvas55d" class="chart1"></canvas>
+                            
+                        </div>
+                        <div id="tab55" class="tab-pane">
+                            <div class="table-responsive">
+                                <div id="tbl55"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal55 -->
+
     <!-- / modal5c -->
     <div id="sumchart5c" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h5 class="modal-title">Monthly Snails Caught</h5>
+                    <h5 class="modal-title">Snails Caught - Monthly</h5>
                 </div>
                 <div class="has-padding2">
                     <ul class="nav nav-pills nav-jt">
