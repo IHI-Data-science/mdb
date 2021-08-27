@@ -391,6 +391,7 @@ function f2req(ctype) {
                        
                         {
                             label: 'TotalFemale',
+                            fill: false,
                             backgroundColor: "#c85200",
                             hoverBorderColor: "#c85200",
                             data: tx6
@@ -399,6 +400,7 @@ function f2req(ctype) {
 
                         {
                             label: 'Total Male',
+                            fill: false,
                             backgroundColor: "#5fa2ce",
                             hoverBorderColor: "#5fa2ce",
                             data: tx1
@@ -501,6 +503,7 @@ function f2reqc(ctype) {
                     
                         {
                             label: 'TotalFemale',
+                            fill: false,
                             backgroundColor: "#c85200",
                             hoverBorderColor: "#c85200",
                             data: tx6
@@ -508,6 +511,7 @@ function f2reqc(ctype) {
 
                         {
                             label: 'Total Male',
+                            fill: false,
                             backgroundColor: "#5fa2ce",
                             hoverBorderColor: "#5fa2ce",
                             data: tx1
@@ -1074,6 +1078,7 @@ function f7req(ctype) {
                         datasets: [
                             {
                                 label: 'Hourly Biting Rate',
+                                fill: false,
                                 backgroundColor: '#49e2ff',
                                 borderColor: '#46d5f1',
                                 hoverBackgroundColor: '#CCCCCC',
@@ -1157,11 +1162,14 @@ function f8req(ctype) {
                      var date = [];
                      var anpholes = [];
                      var culex =[];
+                     var Aedes =[];
+
 
                     for (var i in data) {
                         date.push(data[i].month);
                         anpholes.push(data[i].AnophelesSp);
-                        culex.push(data[i].Culex)
+                        culex.push(data[i].Culex);
+                        Aedes.push(data[i].Aedes);
                     }
 
                     var chartdata = {
@@ -1169,6 +1177,7 @@ function f8req(ctype) {
                         datasets: [
                             {
                                 label: 'AnophelesSp',
+                                fill: false,
                                 backgroundColor: '#d40b0b',
                                 borderColor: '#d40b0b',
                                 hoverBackgroundColor: '#CCCCCC',
@@ -1178,11 +1187,22 @@ function f8req(ctype) {
                             {
 
                             label: 'Culex',
+                            fill: false,
                             backgroundColor: '#49e2ff',
-                            borderColor: '#46d5f1',
+                            borderColor: '#49e2ff',
                             hoverBackgroundColor: '#CCCCCC',
                             hoverBorderColor: '#666666',
                             data: culex
+                        },
+                        {
+
+                            label: 'Aedes',
+                            fill: false,
+                            backgroundColor: '#46f162',
+                            borderColor: '#46f162',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: Aedes
                         }
                         ]
                     };
@@ -1243,6 +1263,242 @@ function f8req(ctype) {
         },
         beforeSend: function (data) {
             $('#load7').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+              f8creq('B');
+        }
+
+
+    });
+ }
+
+ function f8creq(ctype) {
+    $.ajax({
+        url: "data2.php?q=eightc",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var date = [];
+                     var anpholes = [];
+                     var culex =[];
+                     var Aedes = [];
+
+                    for (var i in data) {
+                        date.push(data[i].DT);
+                        anpholes.push(data[i].AnophelesSp);
+                        culex.push(data[i].Culex);
+                        Aedes.push(data[i].Aedes)
+                    }
+
+                    var chartdata = {
+                        labels: date,
+                        datasets: [
+                            {
+                                label: 'AnophelesSp',
+                                fill: false,
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: anpholes
+                            },
+                            {
+
+                            label: 'Culex',
+                            fill: false,
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: culex
+                        },
+                        {
+
+                            label: 'Aedes',
+                            fill: false,
+                            backgroundColor: '#46f162',
+                            borderColor: '#46f162',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: Aedes
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas8c").show();
+                $("#canvas8cl").hide();
+                $("#canvas8cp").hide();
+                $("#canvas8cd").hide();
+                var canvas = $("#canvas8c");
+                BarChart(canvas, chartdata, "Pupae Density");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas8c").hide();
+                $("#canvas8cl").show();
+                $("#canvas8cp").hide();
+                $("#canvas8cd").hide();
+                var canvas = $("#canvas8cl");
+                LineChart(canvas, chartdata, "Pupae Density");
+
+
+            } else if (type == "P") {
+
+                $("#canvas8c").hide();
+                $("#canvas8cl").hide();
+                $("#canvas8cp").show();
+                $("#canvas8cd").hide();
+                var canvas = $("#canvas8cp");
+                PieChart(canvas, chartdata, "Pupae Density");
+
+            } else if (type == "D") {
+
+                $("#canvas8c").hide();
+                $("#canvas8cl").hide();
+                $("#canvas8cp").hide();
+                $("#canvas8cd").show();
+                var canvas = $("#canvas8cd");
+                PolarChart(canvas, chartdata, "Pupae Density");
+
+
+            }
+
+            $('#tbl8c').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f8creq error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f8creq done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load8').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+              f88req('B');
+        }
+
+
+    });
+ }
+
+ function f88req(ctype) {
+    $.ajax({
+        url: "data2.php?q=eightyeight",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var date = [];
+                     var anpholes = [];
+                     var culex =[];
+                     var Aedes = [];
+
+                    for (var i in data) {
+                        date.push(data[i].weekyear);
+                        anpholes.push(data[i].AnophelesSp);
+                        culex.push(data[i].Culex);
+                        Aedes.push(data[i].Aedes)
+                    }
+
+                    var chartdata = {
+                        labels: date,
+                        datasets: [
+                            {
+                                label: 'AnophelesSp',
+                                fill: false,
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: anpholes
+                            },
+                            {
+
+                            label: 'Culex',
+                            fill: false,
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: culex
+                        },
+                        {
+
+                            label: 'Aedes',
+                            fill: false,
+                            backgroundColor: '#46f162',
+                            borderColor: '#46f162',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: Aedes
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas88").show();
+                $("#canvas88l").hide();
+                $("#canvas88p").hide();
+                $("#canvas88d").hide();
+                var canvas = $("#canvas88");
+                BarChart(canvas, chartdata, "Pupae Density");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas88").hide();
+                $("#canvas88l").show();
+                $("#canvas88p").hide();
+                $("#canvas88d").hide();
+                var canvas = $("#canvas88l");
+                LineChart(canvas, chartdata, "Pupae Density");
+
+
+            } else if (type == "P") {
+
+                $("#canvas88").hide();
+                $("#canvas88l").hide();
+                $("#canvas88p").show();
+                $("#canvas88d").hide();
+                var canvas = $("#canvas88p");
+                PieChart(canvas, chartdata, "Pupae Density");
+
+            } else if (type == "D") {
+
+                $("#canvas88").hide();
+                $("#canvas88l").hide();
+                $("#canvas88p").hide();
+                $("#canvas88d").show();
+                var canvas = $("#canvas88d");
+                PolarChart(canvas, chartdata, "Pupae Density");
+
+
+            }
+
+            $('#tbl88').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f88req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f88req done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load8c').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
               f9req('B');
         }
 
@@ -1261,18 +1517,63 @@ function f8req(ctype) {
                      var date = [];
                      var l1l2 = [];
                      var l3l4 =[];
+                     var l1 =[];
+                     var l2 =[];
+                     var l3 =[];
+                     var l4 =[];
 
                     for (var i in data) {
                         date.push(data[i].month);
                         l1l2.push(data[i].L1L2);
-                        l3l4.push(data[i].L3L4)
+                        l3l4.push(data[i].L3L4);
+                        l1.push(data[i].L1);
+                        l2.push(data[i].L2);
+                        l3.push(data[i].L3);
+                        l4.push(data[i].L4);
                     }
 
                     var chartdata = {
                         labels: date,
                         datasets: [
                             {
+                                label: 'L1',
+                                fill: false,
+                                backgroundColor: '#3832a8',
+                                borderColor: '#3832a8',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l1
+                            },
+                            {
+                                label: 'L2',
+                                fill: false,
+                                backgroundColor: '#a8323e',
+                                borderColor: '#a8323e',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l2
+                            },
+                            {
+                                label: 'L3',
+                                fill: false,
+                                backgroundColor: '#d0db35',
+                                borderColor: '#d0db35',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l3
+                            },
+                            {
+                                label: 'L4',
+                                fill: false,
+                                backgroundColor: '#35cddb',
+                                borderColor: '#35cddb',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l4
+                            },
+                            {
                                 label: 'Early Stage (L1L2)',
+                                fill: false,
                                 backgroundColor: '#d40b0b',
                                 borderColor: '#d40b0b',
                                 hoverBackgroundColor: '#CCCCCC',
@@ -1282,6 +1583,7 @@ function f8req(ctype) {
                             {
 
                             label: 'Late Stage (L3L4)',
+                            fill: false,
                             backgroundColor: '#49e2ff',
                             borderColor: '#46d5f1',
                             hoverBackgroundColor: '#CCCCCC',
@@ -1346,13 +1648,453 @@ function f8req(ctype) {
             $('.loader').fadeOut();
         },
         beforeSend: function (data) {
-            $('#load8').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+            $('#load8c').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
             f9creq('B');
         }
 
 
     });
  }
+
+ function f77req(ctype) {
+    $.ajax({
+        url: "data2.php?q=seventyseven",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var date = [];
+                     var l1l2 = [];
+                     var l3l4 =[];
+                     var l1 =[];
+                     var l2 =[];
+                     var l3 =[];
+                     var l4 =[];
+
+                    for (var i in data) {
+                        date.push(data[i].DT);
+                        l1l2.push(data[i].L1L2);
+                        l3l4.push(data[i].L3L4);
+                        l1.push(data[i].L1);
+                        l2.push(data[i].L2);
+                        l3.push(data[i].L3);
+                        l4.push(data[i].L4);
+                    }
+
+                    var chartdata = {
+                        labels: date,
+                        datasets: [
+                            {
+                                label: 'L1',
+                                fill: false,
+                                backgroundColor: '#3832a8',
+                                borderColor: '#3832a8',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l1
+                            },
+                            {
+                                label: 'L2',
+                                fill: false,
+                                backgroundColor: '#a8323e',
+                                borderColor: '#a8323e',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l2
+                            },
+                            {
+                                label: 'L3',
+                                fill: false,
+                                backgroundColor: '#d0db35',
+                                borderColor: '#d0db35',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l3
+                            },
+                            {
+                                label: 'L4',
+                                fill: false,
+                                backgroundColor: '#35cddb',
+                                borderColor: '#35cddb',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l4
+                            },
+                            {
+                                label: 'Early Stage (L1L2)',
+                                fill: false,
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l1l2
+                            },
+                            {
+
+                            label: 'Late Stage (L3L4)',
+                            fill: false,
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: l3l4
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas77").show();
+                $("#canvas77l").hide();
+                $("#canvas77p").hide();
+                $("#canvas77d").hide();
+                var canvas = $("#canvas77");
+                BarChart(canvas, chartdata, "Larvae Density");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas77").hide();
+                $("#canvas77l").show();
+                $("#canvas77p").hide();
+                $("#canvas77d").hide();
+                var canvas = $("#canvas77l");
+                LineChart(canvas, chartdata, "Larvae Density");
+
+
+            } else if (type == "P") {
+
+                $("#canvas77").hide();
+                $("#canvas77l").hide();
+                $("#canvas77p").show();
+                $("#canvas77d").hide();
+                var canvas = $("#canvas77p");
+                PieChart(canvas, chartdata, "Larvae Density");
+
+            } else if (type == "D") {
+
+                $("#canvas77").hide();
+                $("#canvas77l").hide();
+                $("#canvas77p").hide();
+                $("#canvas77d").show();
+                var canvas = $("#canvas77d");
+                PolarChart(canvas, chartdata, "Larvae Density");
+
+
+            }
+
+            $('#tbl77').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f77req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f77req done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load9').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+            f9creq('B');
+        }
+
+
+    });
+ }
+
+ function f78req(ctype) {
+    $.ajax({
+        url: "data2.php?q=seventyeight",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var date = [];
+                     var l1l2 = [];
+                     var l3l4 =[];
+                     var l1 =[];
+                     var l2 =[];
+                     var l3 =[];
+                     var l4 =[];
+
+
+                    for (var i in data) {
+                        date.push(data[i].weekyear);
+                        l1l2.push(data[i].L1L2);
+                        l3l4.push(data[i].L3L4);
+                        l1.push(data[i].L1);
+                        l2.push(data[i].L2);
+                        l3.push(data[i].L3);
+                        l4.push(data[i].L4);
+                    }
+
+                    var chartdata = {
+                        labels: date,
+                        datasets: [
+                            {
+                                label: 'L1',
+                                fill: false,
+                                backgroundColor: '#3832a8',
+                                borderColor: '#3832a8',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l1
+                            },
+                            {
+                                label: 'L2',
+                                fill: false,
+                                backgroundColor: '#a8323e',
+                                borderColor: '#a8323e',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l2
+                            },
+                            {
+                                label: 'L3',
+                                fill: false,
+                                backgroundColor: '#d0db35',
+                                borderColor: '#d0db35',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l3
+                            },
+                            {
+                                label: 'L4',
+                                fill: false,
+                                backgroundColor: '#35cddb',
+                                borderColor: '#35cddb',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l4
+                            },
+                            {
+                                label: 'Early Stage (L1L2)',
+                                fill: false,
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l1l2
+                            },
+                            {
+
+                            label: 'Late Stage (L3L4)',
+                            fill: false,
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: l3l4
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas78").show();
+                $("#canvas78l").hide();
+                $("#canvas78p").hide();
+                $("#canvas78d").hide();
+                var canvas = $("#canvas78");
+                BarChart(canvas, chartdata, "Larvae Density");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas78").hide();
+                $("#canvas78l").show();
+                $("#canvas78p").hide();
+                $("#canvas78d").hide();
+                var canvas = $("#canvas78l");
+                LineChart(canvas, chartdata, "Larvae Density");
+
+
+            } else if (type == "P") {
+
+                $("#canvas78").hide();
+                $("#canvas78l").hide();
+                $("#canvas78p").show();
+                $("#canvas78d").hide();
+                var canvas = $("#canvas78p");
+                PieChart(canvas, chartdata, "Larvae Density");
+
+            } else if (type == "D") {
+
+                $("#canvas78").hide();
+                $("#canvas78l").hide();
+                $("#canvas78p").hide();
+                $("#canvas78d").show();
+                var canvas = $("#canvas78d");
+                PolarChart(canvas, chartdata, "Larvae Density");
+
+
+            }
+
+            $('#tbl78').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f78req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f78req done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load77').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+            f9creq('B');
+        }
+
+
+    });
+ }
+
+ function f55req(ctype) {
+    $.ajax({
+        url: "data2.php?q=fiftyfive",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var tx = [];
+                     var l1l2 = [];
+                     var l3l4 =[];
+                     var l1 =[];
+                     var l2 =[];
+                     var l3 =[];
+                     var l4 =[];
+
+
+                    for (var i in data) {
+                        tx.push(data[i].TaxonName);
+                        l1l2.push(data[i].L1L2);
+                        l3l4.push(data[i].L3L4);
+                        l1.push(data[i].L1);
+                        l2.push(data[i].L2);
+                        l3.push(data[i].L3);
+                        l4.push(data[i].L4);
+                    }
+
+                    var chartdata = {
+                        labels: tx,
+                        datasets: [
+                            {
+                                label: 'L1',
+                                fill: false,
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l1
+                            },
+                            {
+                                label: 'L2',
+                                fill: false,
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l2
+                            },
+                            {
+                                label: 'L3',
+                                fill: false,
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l3
+                            },
+                            {
+                                label: 'L4',
+                                fill: false,
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l4
+                            },
+                            {
+                                label: 'L1L2',
+                                fill: false,
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l1l2
+                            },
+                            {
+                                label: 'L3L4',
+                                fill: false,
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l3l4
+                            }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas55").show();
+                $("#canvas55l").hide();
+                $("#canvas55p").hide();
+                $("#canvas55d").hide();
+                var canvas = $("#canvas55");
+                BarChart(canvas, chartdata, "Larvae Population Summary");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas55").hide();
+                $("#canvas55l").show();
+                $("#canvas55p").hide();
+                $("#canvas55d").hide();
+                var canvas = $("#canvas55l");
+                LineChart(canvas, chartdata, "Larvae Population Summary");
+
+
+            } else if (type == "P") {
+
+                $("#canvas55").hide();
+                $("#canvas55l").hide();
+                $("#canvas55p").show();
+                $("#canvas55d").hide();
+                var canvas = $("#canvas55p");
+                PieChart(canvas, chartdata, "Larvae Population Summary");
+
+            } else if (type == "D") {
+
+                $("#canvas55").hide();
+                $("#canvas55l").hide();
+                $("#canvas55p").hide();
+                $("#canvas55d").show();
+                var canvas = $("#canvas55d");
+                PolarChart(canvas, chartdata, "Larvae Population Summary");
+
+
+            }
+
+            $('#tbl55').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f55req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f55req done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load78').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+            f9creq('B');
+        }
+
+
+    });
+ }
+
 
  function f9creq(ctype) {
     $.ajax({
@@ -1375,6 +2117,7 @@ function f8req(ctype) {
                         datasets: [
                             {
                                 label: 'Biomphalari',
+                                fill: false,
                                 backgroundColor: '#d40b0b',
                                 borderColor: '#d40b0b',
                                 hoverBackgroundColor: '#CCCCCC',
@@ -1384,6 +2127,7 @@ function f8req(ctype) {
                             {
 
                             label: 'Bulinus',
+                            fill: false,
                             backgroundColor: '#49e2ff',
                             borderColor: '#46d5f1',
                             hoverBackgroundColor: '#CCCCCC',
@@ -1448,6 +2192,112 @@ function f8req(ctype) {
             $('.loader').fadeOut();
         },
         beforeSend: function (data) {
+            $('#load77').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+               f44req('B');
+        }
+
+
+    });
+ }
+
+ function f44req(ctype) {
+    $.ajax({
+        url: "data2.php?q=fortyfour",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var species1 = [];
+                     var species2 = [];
+                     var DT = [];
+
+                    for (var i in data) {
+                        species1.push(data[i].Biomphalari);
+                        species2.push(data[i].Bulinus);
+                        DT.push(data[i].weekyear);
+                    }
+
+                    var chartdata = {
+                        labels: DT,
+                        datasets: [
+                            {
+                                label: 'Biomphalari',
+                                fill: false,
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: species1
+                            },
+                            {
+
+                            label: 'Bulinus',
+                            fill: false,
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: species2
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas44").show();
+                $("#canvas44l").hide();
+                $("#canvas44p").hide();
+                $("#canvas44d").hide();
+                var canvas = $("#canvas44");
+                BarChart(canvas, chartdata, "Snail Weekly Summary");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas44").hide();
+                $("#canvas44l").show();
+                $("#canvas44p").hide();
+                $("#canvas44d").hide();
+                var canvas = $("#canvas44l");
+                LineChart(canvas, chartdata, "Snail Weekly Summary");
+
+
+            } else if (type == "P") {
+
+                $("#canvas44").hide();
+                $("#canvas44l").hide();
+                $("#canvas44p").show();
+                $("#canvas44d").hide();
+                var canvas = $("#canvas44p");
+                PieChart(canvas, chartdata, "Snail Weekly Summary");
+
+            } else if (type == "D") {
+
+                $("#canvas44").hide();
+                $("#canvas44l").hide();
+                $("#canvas44p").hide();
+                $("#canvas44d").show();
+                var canvas = $("#canvas44d");
+                PolarChart(canvas, chartdata, "Snail Weekly Summary");
+
+
+            }
+
+            $('#tbl44').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f44req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f44req done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
             $('#load9c').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
                f4creq('B');
         }
@@ -1479,6 +2329,7 @@ function f8req(ctype) {
                         datasets: [
                             {
                                 label: 'Biomphalari',
+                                fill: false,
                                 backgroundColor: '#d40b0b',
                                 borderColor: '#d40b0b',
                                 hoverBackgroundColor: '#CCCCCC',
@@ -1488,6 +2339,7 @@ function f8req(ctype) {
                             {
 
                             label: 'Bulinus',
+                            fill: false,
                             backgroundColor: '#49e2ff',
                             borderColor: '#46d5f1',
                             hoverBackgroundColor: '#CCCCCC',
@@ -1583,6 +2435,7 @@ function f8req(ctype) {
                         datasets: [
                             {
                                 label: 'Biomphalari',
+                                fill: false,
                                 backgroundColor: '#d40b0b',
                                 borderColor: '#d40b0b',
                                 hoverBackgroundColor: '#CCCCCC',
@@ -1592,6 +2445,7 @@ function f8req(ctype) {
                             {
 
                             label: 'Bulinus',
+                            fill: false,
                             backgroundColor: '#49e2ff',
                             borderColor: '#46d5f1',
                             hoverBackgroundColor: '#CCCCCC',
