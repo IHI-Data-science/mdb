@@ -94,7 +94,7 @@ $field2 = "ft";
     }else{
     
         $sql = "DELETE FROM ".$db->escape($table);
-        $sql .= " WHERE ".$db->escape($field)."=".$_SESSION['expcode']." AND ".$db->escape($field2)."="."'ss3'";
+        $sql .= " WHERE ".$db->escape($field)."=".$_SESSION['expcode']." AND ".$db->escape($field2)."="."'SS3'";
         $sql .= " LIMIT 1";
 
       
@@ -193,8 +193,8 @@ $field2 = "ft";
     </button>
     <ul class="dropdown-menu">
     <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="cdctest.php">CDC Test</a></li>
-        <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="whoconetest.php">WHO Cone Test</a></li>
-        <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="whotubetest.php">WHO TubeTest</a></li>
+        <li class=""><a tabindex="-1" href="whoconetest.php">WHO Cone Test</a></li>
+        <li class=""><a tabindex="-1" href="whotubetest.php">WHO TubeTest</a></li>
         
     </ul>
 </div>
@@ -239,7 +239,7 @@ $field2 = "ft";
                          array_push($fields_array, "GPS Accuracy (GA)",
                           "GPS Data Source (GDS)", "Specify GPS data source (SGDS)");
                            
-                       array_push($fields_array,"Nets distributed in past 3 years? (NDis)",
+                       array_push($fields_array,"Nets distributed in past 3 years (NDis)",
                        "Mosquito Origin (MO)", "Mosquito Species Tested (MST)", "Mosquito Age (MA)");
 
 
@@ -357,12 +357,12 @@ $field2 = "ft";
             array_push($disabled_fields_array, "GPS Accuracy (GA)",
              "GPS Data Source (GDS)", "Specify GPS data source (SGDS)");
               
-          array_push($disabled_fields_array,"Nets distributed in past 3 years? (NDis)",
+          array_push($disabled_fields_array,"Nets distributed in past 3 years (NDis)",
           "Mosquito Origin (MO)", "Mosquito Species Tested (MST)", "Mosquito Age (MA)");
 
 
 
-        array_push($disabled_fields_array,"Type of Bottle Bioassay (TB)", "Bioassay for Intensity Assay? (BIA)");
+        array_push($disabled_fields_array,"Type of Bottle Bioassay (TB)", "Bioassay for Intensity Assay (BIA)");
         
         array_push($disabled_fields_array,"Insecticide Tested (IT)","What Synergist Was Tested (SynT)", 
         "Insecticide Concentration (IC)", 
