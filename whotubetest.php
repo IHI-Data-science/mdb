@@ -187,8 +187,8 @@ $field2 = "ft";
     <ul class="dropdown-menu">
 
 
-        <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="cdctest.php">CDC  Test</a></li>
-         <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="whoconetest.php">WHO Cone Test</a></li>
+        <li class=""><a tabindex="-1" href="cdctest.php">CDC  Test</a></li>
+         <li class=""><a tabindex="-1" href="whoconetest.php">WHO Cone Test</a></li>
         <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="whotubetest.php">WHO Tube Test</a></li>
     </ul>
 </div>
@@ -231,7 +231,7 @@ $field2 = "ft";
                     
                     array_push($fields_array,"GPS Accuracy (GA)", "GPS Data Source (GDS)","Specify GPS data source (SGDS)");
                                        
-                    array_push($fields_array,"Nets distributed in past 3 years? (NDis)",
+                    array_push($fields_array,"Nets distributed in past 3 years (NDis)",
                   "Mosquito Origin (MO)", "Mosquito Species Tested (MST)", "Mosquito Age (MA)");
 
                   array_push ($fields_array,
@@ -381,7 +381,7 @@ $field2 = "ft";
                       
                       array_push($disabled_fields_array,"Date of Test (DOT)","GPS Accuracy (GA)", "GPS Data Source (GDS)","Specify GPS data source (SGDS)");
                        
-                       array_push($disabled_fields_array,"Nets distributed in past 3 years? (NDis)", "Mosquito Origin (MO)", "Mosquito Species Tested (MST)","Mosquito Age (MA)");
+                       array_push($disabled_fields_array,"Nets distributed in past 3 years (NDis)", "Mosquito Origin (MO)", "Mosquito Species Tested (MST)","Mosquito Age (MA)");
                        array_push($disabled_fields_array,"Exposure Period Max Temp (ETMax)", "Exposure Period Min Temp (ETMin)", 
                        "Holding Period Max Temp (HTMax)","Holding Period Min Temp (HTMin)", "Exposure Period Max Humidity (EHMax)", 
                        "Exposure Period Min Humidity (EHMin)","Holding Period Max Humidity (HHMax)", "Holding Period Min Humidity (HHMin)");

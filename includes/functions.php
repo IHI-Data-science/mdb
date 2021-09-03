@@ -969,9 +969,9 @@ function sendMail($email, $message, $subject){
 
 
     `tb` varchar(30) NOT NULL COMMENT 'type of bottle bioassay',
-    `bia` varchar(30) NOT NULL COMMENT 'is it bioassay for intensity assay?',
+    `bia` varchar(30) NOT NULL COMMENT 'is it bioassay for intensity assay',
     `it` varchar(30) NOT NULL COMMENT 'type of insecticide tested',
-    `SynT` varchar(30) NOT NULL COMMENT 'what synergist was tested?',
+    `SynT` varchar(30) NOT NULL COMMENT 'what synergist was tested',
     `ic` varchar(30) NOT NULL COMMENT 'insecticide concentration',
     `sc` int(50) NOT NULL COMMENT 'synergist concentration',
     `SRTemp` varchar(50) NOT NULL COMMENT 'Storage room temperature',
