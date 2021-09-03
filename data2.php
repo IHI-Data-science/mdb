@@ -621,7 +621,7 @@ if($q==='eight'){
     $query="SELECT MONTHNAME(ed1.dt) AS month, 
     SUM(CASE WHEN ss2.tx = 1 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS AnophelesSp, 
     SUM(CASE WHEN ss2.tx = 50 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Culex,
-    SUM(CASE WHEN ss2.tx = 99 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Aedes 
+    SUM(CASE WHEN ss2.tx = 70 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Aedes 
     FROM projectregsite 
     INNER JOIN projectreg 
     ON (projectregsite.projectreg_id = projectreg.id) 
@@ -647,7 +647,7 @@ if($q==='eight'){
     $query="SELECT ed1.dt AS DT, 
     SUM(CASE WHEN ss2.tx = 1 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS AnophelesSp, 
     SUM(CASE WHEN ss2.tx = 50 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Culex,
-    SUM(CASE WHEN ss2.tx = 99 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Aedes 
+    SUM(CASE WHEN ss2.tx = 70 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Aedes 
     FROM projectregsite 
     INNER JOIN projectreg 
     ON (projectregsite.projectreg_id = projectreg.id) 
@@ -673,7 +673,7 @@ if($q==='eight'){
     $query="SELECT CONCAT(YEAR(ed1.dt), ' WK-', WEEK(ed1.dt)) AS weekyear,
     SUM(CASE WHEN ss2.tx = 1 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS AnophelesSp, 
     SUM(CASE WHEN ss2.tx = 50 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Culex,
-    SUM(CASE WHEN ss2.tx = 99 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Aedes 
+    SUM(CASE WHEN ss2.tx = 70 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Aedes 
     FROM projectregsite 
     INNER JOIN projectreg 
     ON (projectregsite.projectreg_id = projectreg.id) 
