@@ -243,37 +243,37 @@ $field2 = "ft";
                   "Holding Period Max Humidity (HHMax)", "Holding Period Min Humidity (HHMin)");
                    
                   array_push($fields_array, "Exposed Location of Control Mosquitoes(ELCM)", 
-                  "No of Mosquitoes Tested - Cone Height 0.5m (MT1)",
-                  "No of Mosquitoes Tested - Cone Height 1.0m (MT2)", 
-                  "No of Mosquitoes Tested - Cone Height 2.0m (MT3)",
-                  "No of Mosquitoes Tested - Cone Height Other (MT4)");
+                  "No of Mosquitoes Tested Cone Height 0.5m (MT1)",
+                  "No of Mosquitoes Tested Cone Height 1.0m (MT2)", 
+                  "No of Mosquitoes Tested Cone Height 2.0m (MT3)",
+                  "No of Mosquitoes Tested Cone Height Other (MT4)");
 
-                  array_push($fields_array, "Mosquitoes K/D 30min - Cone Height 0.5m (MKD1)",
-                  "Mosquitoes K/D 60min - Cone Height 0.5m (MKD2)",
-                   "Mosquitoes K/D Day1 - Cone Height 0.5m (MKD3)",
-                  "Mosquitoes K/D Day2 - Cone Height 0.5m (MKD4)",
-                   "Mosquitoes K/D Day3 - Cone Height 0.5m (MKD5)");
+                  array_push($fields_array, "Mosquitoes K/D 30min Cone Height 0.5m (MKD1)",
+                  "Mosquitoes K/D 60min Cone Height 0.5m (MKD2)",
+                   "Mosquitoes K/D Day1 Cone Height 0.5m (MKD3)",
+                  "Mosquitoes K/D Day2 Cone Height 0.5m (MKD4)",
+                   "Mosquitoes K/D Day3 Cone Height 0.5m (MKD5)");
 
-                        array_push($fields_array, "Mosquitoes K/D 30min - Cone Height 1.0m (MKD6)",
-                  "Mosquitoes K/D 60min - Cone Height 1.0m (MKD7)", 
-                  "Mosquitoes K/D Day1 - Cone Height 1.0m (MKD8)",
-                  "Mosquitoes K/D Day2 - Cone Height 1.0m (MKD9)", 
-                  "Mosquitoes K/D Day3 - Cone Height 1.0m (MKD10)");
+                        array_push($fields_array, "Mosquitoes K/D 30min Cone Height 1.0m (MKD6)",
+                  "Mosquitoes K/D 60min Cone Height 1.0m (MKD7)", 
+                  "Mosquitoes K/D Day1 Cone Height 1.0m (MKD8)",
+                  "Mosquitoes K/D Day2 Cone Height 1.0m (MKD9)", 
+                  "Mosquitoes K/D Day3 Cone Height 1.0m (MKD10)");
 
-                  array_push($fields_array, "Mosquitoes K/D 30min - Cone Height 1.5m (MKD11)");
+                  array_push($fields_array, "Mosquitoes K/D 30min Cone Height 1.5m (MKD11)");
 
 
-                  array_push($fields_array, "Mosquitoes K/D 60min - Cone Height 1.5m (MKD12)",
+                  array_push($fields_array, "Mosquitoes K/D 60min Cone Height 1.5m (MKD12)",
                   
-                    "Mosquitoes K/D Day1 - Cone Height 1.5m (MKD13)",
-                  "Mosquitoes K/D Day2 - Cone Height 1.5m (MKD14)", 
-                  "Mosquitoes K/D Day3 - Cone Height 1.5m (MKD15)");
+                    "Mosquitoes K/D Day1 Cone Height 1.5m (MKD13)",
+                  "Mosquitoes K/D Day2 Cone Height 1.5m (MKD14)", 
+                  "Mosquitoes K/D Day3 Cone Height 1.5m (MKD15)");
 
-                  array_push($fields_array, "Mosquitoes K/D 30min - Cone Height 2.0m (MKD16)",
-                  "Mosquitoes K/D 60min - Cone Height 2.0m (MKD17)",
-                   "Mosquitoes K/D Day1 - Cone Height 2.0m (MKD18)",
-                  "Mosquitoes K/D Day2 - Cone Height 2.0m (MKD19)",  
-                   "Mosquitoes K/D Day3 - Cone Height 2.0m (MKD20)");
+                  array_push($fields_array, "Mosquitoes K/D 30min Cone Height 2.0m (MKD16)",
+                  "Mosquitoes K/D 60min Cone Height 2.0m (MKD17)",
+                   "Mosquitoes K/D Day1 Cone Height 2.0m (MKD18)",
+                  "Mosquitoes K/D Day2 Cone Height 2.0m (MKD19)",  
+                   "Mosquitoes K/D Day3 Cone Height 2.0m (MKD20)");
 
 
                    array_push ($fields_array, "Mosquitoes K/D net other1 mins (O1)",

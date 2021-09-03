@@ -193,8 +193,8 @@ $field2 = "ft";
     </button>
     <ul class="dropdown-menu">
     <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="cdctest.php">CDC Test</a></li>
-        <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="whoconetest.php">WHO Cone Test</a></li>
-        <li class="<?php echo $ss3ft; ?>"><a tabindex="-1" href="whotubetest.php">WHO TubeTest</a></li>
+        <li class=""><a tabindex="-1" href="whoconetest.php">WHO Cone Test</a></li>
+        <li class=""><a tabindex="-1" href="whotubetest.php">WHO TubeTest</a></li>
         
     </ul>
 </div>
