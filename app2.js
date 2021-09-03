@@ -1217,7 +1217,7 @@ function f8req(ctype) {
                 $("#canvas8p").hide();
                 $("#canvas8d").hide();
                 var canvas = $("#canvas8");
-                BarChart(canvas, chartdata, "Pupae Density");
+                BarChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
             } 
             if (type == "L") {
@@ -1227,7 +1227,7 @@ function f8req(ctype) {
                 $("#canvas8p").hide();
                 $("#canvas8d").hide();
                 var canvas = $("#canvas8l");
-                LineChart(canvas, chartdata, "Pupae Density");
+                LineChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
 
             } else if (type == "P") {
@@ -1237,7 +1237,7 @@ function f8req(ctype) {
                 $("#canvas8p").show();
                 $("#canvas8d").hide();
                 var canvas = $("#canvas8p");
-                PieChart(canvas, chartdata, "Pupae Density");
+                PieChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
             } else if (type == "D") {
 
@@ -1246,7 +1246,7 @@ function f8req(ctype) {
                 $("#canvas8p").hide();
                 $("#canvas8d").show();
                 var canvas = $("#canvas8d");
-                PolarChart(canvas, chartdata, "Pupae Density");
+                PolarChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
 
             }
@@ -1335,7 +1335,7 @@ function f8req(ctype) {
                 $("#canvas8cp").hide();
                 $("#canvas8cd").hide();
                 var canvas = $("#canvas8c");
-                BarChart(canvas, chartdata, "Pupae Density");
+                BarChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
             } 
             if (type == "L") {
@@ -1345,7 +1345,7 @@ function f8req(ctype) {
                 $("#canvas8cp").hide();
                 $("#canvas8cd").hide();
                 var canvas = $("#canvas8cl");
-                LineChart(canvas, chartdata, "Pupae Density");
+                LineChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
 
             } else if (type == "P") {
@@ -1355,7 +1355,7 @@ function f8req(ctype) {
                 $("#canvas8cp").show();
                 $("#canvas8cd").hide();
                 var canvas = $("#canvas8cp");
-                PieChart(canvas, chartdata, "Pupae Density");
+                PieChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
             } else if (type == "D") {
 
@@ -1364,7 +1364,7 @@ function f8req(ctype) {
                 $("#canvas8cp").hide();
                 $("#canvas8cd").show();
                 var canvas = $("#canvas8cd");
-                PolarChart(canvas, chartdata, "Pupae Density");
+                PolarChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
 
             }
@@ -1453,7 +1453,7 @@ function f8req(ctype) {
                 $("#canvas88p").hide();
                 $("#canvas88d").hide();
                 var canvas = $("#canvas88");
-                BarChart(canvas, chartdata, "Pupae Density");
+                BarChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
             } 
             if (type == "L") {
@@ -1463,7 +1463,7 @@ function f8req(ctype) {
                 $("#canvas88p").hide();
                 $("#canvas88d").hide();
                 var canvas = $("#canvas88l");
-                LineChart(canvas, chartdata, "Pupae Density");
+                LineChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
 
             } else if (type == "P") {
@@ -1473,7 +1473,7 @@ function f8req(ctype) {
                 $("#canvas88p").show();
                 $("#canvas88d").hide();
                 var canvas = $("#canvas88p");
-                PieChart(canvas, chartdata, "Pupae Density");
+                PieChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
             } else if (type == "D") {
 
@@ -1482,7 +1482,7 @@ function f8req(ctype) {
                 $("#canvas88p").hide();
                 $("#canvas88d").show();
                 var canvas = $("#canvas88d");
-                PolarChart(canvas, chartdata, "Pupae Density");
+                PolarChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
 
             }
@@ -1603,7 +1603,7 @@ function f8req(ctype) {
                 $("#canvas9p").hide();
                 $("#canvas9d").hide();
                 var canvas = $("#canvas9");
-                BarChart(canvas, chartdata, "Larvae Density");
+                BarChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
             } 
             if (type == "L") {
@@ -1613,7 +1613,7 @@ function f8req(ctype) {
                 $("#canvas9p").hide();
                 $("#canvas9d").hide();
                 var canvas = $("#canvas9l");
-                LineChart(canvas, chartdata, "Larvae Density");
+                LineChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
 
             } else if (type == "P") {
@@ -1623,7 +1623,7 @@ function f8req(ctype) {
                 $("#canvas9p").show();
                 $("#canvas9d").hide();
                 var canvas = $("#canvas9p");
-                PieChart(canvas, chartdata, "Larvae Density");
+                PieChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
             } else if (type == "D") {
 
@@ -1632,7 +1632,7 @@ function f8req(ctype) {
                 $("#canvas9p").hide();
                 $("#canvas9d").show();
                 var canvas = $("#canvas9d");
-                PolarChart(canvas, chartdata, "Larvae Density");
+                PolarChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
 
             }
@@ -1753,7 +1753,7 @@ function f8req(ctype) {
                 $("#canvas77p").hide();
                 $("#canvas77d").hide();
                 var canvas = $("#canvas77");
-                BarChart(canvas, chartdata, "Larvae Density");
+                BarChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
             } 
             if (type == "L") {
@@ -1763,7 +1763,7 @@ function f8req(ctype) {
                 $("#canvas77p").hide();
                 $("#canvas77d").hide();
                 var canvas = $("#canvas77l");
-                LineChart(canvas, chartdata, "Larvae Density");
+                LineChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
 
             } else if (type == "P") {
@@ -1773,7 +1773,7 @@ function f8req(ctype) {
                 $("#canvas77p").show();
                 $("#canvas77d").hide();
                 var canvas = $("#canvas77p");
-                PieChart(canvas, chartdata, "Larvae Density");
+                PieChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
             } else if (type == "D") {
 
@@ -1782,7 +1782,7 @@ function f8req(ctype) {
                 $("#canvas77p").hide();
                 $("#canvas77d").show();
                 var canvas = $("#canvas77d");
-                PolarChart(canvas, chartdata, "Larvae Density");
+                PolarChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
 
             }
@@ -1904,7 +1904,7 @@ function f8req(ctype) {
                 $("#canvas78p").hide();
                 $("#canvas78d").hide();
                 var canvas = $("#canvas78");
-                BarChart(canvas, chartdata, "Larvae Density");
+                BarChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
             } 
             if (type == "L") {
@@ -1914,7 +1914,7 @@ function f8req(ctype) {
                 $("#canvas78p").hide();
                 $("#canvas78d").hide();
                 var canvas = $("#canvas78l");
-                LineChart(canvas, chartdata, "Larvae Density");
+                LineChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
 
             } else if (type == "P") {
@@ -1924,7 +1924,7 @@ function f8req(ctype) {
                 $("#canvas78p").show();
                 $("#canvas78d").hide();
                 var canvas = $("#canvas78p");
-                PieChart(canvas, chartdata, "Larvae Density");
+                PieChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
             } else if (type == "D") {
 
@@ -1933,7 +1933,7 @@ function f8req(ctype) {
                 $("#canvas78p").hide();
                 $("#canvas78d").show();
                 var canvas = $("#canvas78d");
-                PolarChart(canvas, chartdata, "Larvae Density");
+                PolarChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
 
             }
