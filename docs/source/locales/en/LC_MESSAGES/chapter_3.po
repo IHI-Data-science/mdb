@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Ifakara Health Institute (IHI)
+# This file is distributed under the same license as the MosquitoDb package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MosquitoDb \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-02 12:45+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../chapter_3/Add project.rst:2
+msgid "Add a project"
+msgstr "Add a project"
+
+#: ../../chapter_3/Add project.rst:4
+msgid "**Step 1**: Click Projects"
+msgstr "**Step 1**: Click Projects"
+
+#: ../../chapter_3/Add project.rst:5
+msgid "**Step 2**: Click Manage Project"
+msgstr "**Step 2**: Click Manage Projec"
+
+#: ../../chapter_3/Add project.rst:6
+msgid "**Step 3**: Click +Add Project"
+msgstr "**Step 3**: Click +Add Project"
+
+#: ../../chapter_3/Add project.rst:16
+msgid "**Step 4**: Enter project details;"
+msgstr "**Step 4**: Enter project details;"
+
+#: ../../chapter_3/Add project.rst:17
+msgid "**a**: Project name – long format (e.g., Producing User Guide)"
+msgstr "**a**: Project name – long format (e.g., Producing User Guide)"
+
+#: ../../chapter_3/Add project.rst:18
+msgid "**b**: Project code – Abbreviation of the project name(e.g., TEG)"
+msgstr "**b**: Project code – Abbreviation of the project name(e.g., TEG)"
+
+#: ../../chapter_3/Add project.rst:19
+msgid ""
+"**c**: Experiment number (e.g., 1 if it's the first experiment for the "
+"project"
+msgstr "**c**: Experiment number (e.g., 1 if it's the first experiment for the project"
+
+#: ../../chapter_3/Add project.rst:20
+msgid ""
+"**d**: Select site name from a dropdown menu (if not available – Add a "
+"site?)"
+msgstr "**d**: Select site name from a dropdown menu (if not available – Add a site?)"
+
+#: ../../chapter_3/Add project.rst:21
+msgid "**e**: Select appropriate date - same for expected end date"
+msgstr "**e**: Select appropriate date - same for expected end date"
+
+#: ../../chapter_3/Add project.rst:22
+msgid ""
+"**f**: Select responsible scientist from dropdown menu (e.g., Project "
+"Leader)"
+msgstr "Select responsible scientist from dropdown menu (e.g., Project Leader)"
+
+#: ../../chapter_3/Add ../../chapter_3/Grant access an existing project.rst:12
+#: project.rst:24 to
+msgid "Then click \"Submit\""
+msgstr "Then click \"Submit\""
+
+#: ../../chapter_3/Grant access an existing project.rst:2 to
+msgid "Grant access to an existing project"
+msgstr "Grant access to an existing project"
+
+#: ../../chapter_3/Grant ../../chapter_3/add-experiment.rst:4 access an
+#: existing project.rst:4 to
+msgid "**Step 1**: Click Projects then Manage Project"
+msgstr "**Step 1**: Click Projects then Manage Project"
+
+#: ../../chapter_3/Grant ../../chapter_3/add-experiment.rst:5 access an
+#: existing project.rst:5 to
+msgid "**Step 2**: Search your project based on the project code (e.g., MXTG)"
+msgstr "**Step 2**: Search your project based on the project code (e.g., MXTG)"
+
+#: ../../chapter_3/Grant access an existing project.rst:6 to
+msgid "**Step 3**: Click on Grant/Revoke button"
+msgstr "**Step 3**: Click on Grant/Revoke button"
+
+#: ../../chapter_3/Grant access an existing project.rst:10 to
+msgid "**Step 4**: Select the user you want on the user dropdown"
+msgstr "**Step 4**: Select the user you want on the user dropdown"
+
+#: ../../chapter_3/add-experiment.rst:2
+msgid "Add an experiment to a project"
+msgstr "Add an experiment to a project"
+
+#: ../../chapter_3/add-experiment.rst:6
+msgid "**Step 3**: Click on **+Exp** button"
+msgstr "**Step 3**: Click on **+Exp** button"
+
+#: ../../chapter_3/add-experiment.rst:10
+msgid "**Step 4**: Enter new experiment details;"
+msgstr "**Step 4**: Enter new experiment details;"
+
+#: ../../chapter_3/add-experiment.rst:11
+msgid "**a**: Experiment number (e.g., 002)"
+msgstr "**a**: Experiment number (e.g., 002)"
+
+#: ../../chapter_3/add-experiment.rst:12
+msgid ""
+"**b**: Select site name from a drop downmenu (if not available – Add a "
+"site?)"
+msgstr "Select site name from a drop downmenu (if not available – Add a site?)"
+
+#: ../../chapter_3/add-experiment.rst:13
+msgid "**c**: Select appropriate date - same for expected end date"
+msgstr "**c**: Select appropriate date - same for expected end date"
+
+#: ../../chapter_3/add-experiment.rst:15
+msgid "**NB**: The rest of the fields are filled by default"
+msgstr "**NB**: The rest of the fields are filled by default"
+
+#: ../../chapter_3/add-experiment.rst:17
+msgid "**d**: Click \"Add Experiment\""
+msgstr "**d**: Click \"Add Experiment\""
+
+#: ../../chapter_3/index.rst:2
+msgid "Project Management"
+msgstr "Project Management"
+

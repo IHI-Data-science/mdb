@@ -1,0 +1,210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Ifakara Health Institute (IHI)
+# This file is distributed under the same license as the MosquitoDb package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MosquitoDb \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-02 12:45+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../chapter_4/data-entry.rst:2
+msgid "Data entry"
+msgstr "Data entry"
+
+#: ../../chapter_4/data-entry.rst:4
+msgid ""
+"On completion of your experiment, you can upload data to the system "
+"through the Web application or the android application."
+msgstr "On completion of your experiment, you can upload data to the system through the Web application or the android application."
+
+#: ../../chapter_4/data-entry.rst:6
+msgid ""
+"**NB:** This can be done after customising the forms following the steps "
+"in 4.2.1"
+msgstr "**NB:** This can be done after customising the forms following the steps in 4.2.1"
+
+#: ../../chapter_4/data-entry.rst:9
+msgid "Selecting the data entry form"
+msgstr "Selecting the data entry form"
+
+#: ../../chapter_4/data-entry.rst:11
+msgid "**Step 1**: Click Forms on the Menu"
+msgstr "**Step 1**: Click Forms on the Menu"
+
+#: ../../chapter_4/data-entry.rst:12
+msgid ""
+"**Step 2**: Guide the cursor to the top of the form type that you want "
+"the select the specific form from the dropdown"
+msgstr "**Step 2**: Guide the cursor to the top of the form type that you want the select the specific form from the dropdown"
+
+#: ../../chapter_4/data-entry.rst:16
+msgid ""
+"**Step 3**: Click Download Template, then enter the data in the "
+"downloaded excel sheet"
+msgstr "**Step 3**: Click Download Template, then enter the data in the downloaded excel sheet"
+
+#: ../../chapter_4/data-entry.rst:18
+msgid "**Step 4**: Click Upload File and select the filled excel file"
+msgstr "**Step 4**: Click Upload File and select the filled excel file"
+
+#: ../../chapter_4/data-entry.rst:19
+msgid "**Step 5**: Click Submit"
+msgstr "**Step 5**: Click Submit"
+
+#: ../../chapter_4/data-table.rst:2
+msgid "Customize data table labels"
+msgstr "Customise data table labels"
+
+#: ../../chapter_4/data-table.rst:4
+msgid "You can edit the name label names of the data tables."
+msgstr "You can edit the name label names of the data tables."
+
+#: ../../chapter_4/data-table.rst:7
+msgid "**Step 1**: Click System Administration then Customization"
+msgstr "**Step 1**: Click System Administration then Customization"
+
+#: ../../chapter_4/data-table.rst:8
+msgid "**Step 2**: Click Customiza Labels"
+msgstr "**Step 2**: Click Customize Labels"
+
+#: ../../chapter_4/data-table.rst:9
+msgid "**Step 3**: Select the labels you want and deselct the one you don't want"
+msgstr "**Step 3**: Select the labels you want and deselect the one you don't want"
+
+#: ../../chapter_4/data-table.rst:10
+msgid "**Step 4**: Click Submit"
+msgstr "**Step 4**: Click Submit"
+
+#: ../../chapter_4/forms.rst:2 ../../chapter_4/index.rst:2
+msgid "Forms Management"
+msgstr "Forms Management"
+
+#: ../../chapter_4/forms.rst:4
+msgid ""
+"MosquitoDb assits with data collection through data collection forms , "
+"that are  customized and readily available to fit different vector "
+"specific projects and/or experiments. Though they were previously made "
+"specifically for mosquito data collection, they are now being adapted to "
+"other vectors starting with Snails."
+msgstr "MosquitoDb assists with data collection through data collection forms, that are  customised and readily available to fit different vector specific projects and/or experiments. Though they were previously made specifically for mosquito data collection, they are now being adapted to other vectors starting with Snails"
+
+#: ../../chapter_4/forms.rst:6
+msgid ""
+"The available forms are filled with specific field and the user can "
+"easily add other fields that they will need in their experiment."
+msgstr "The available forms are filled with specific field and the user can easily add other fields that they will need in their experiment."
+
+#: ../../chapter_4/set-up.rst:2
+msgid "Setting up the forms"
+msgstr "Setting up the forms"
+
+#: ../../chapter_4/set-up.rst:4
+msgid ""
+"Inorder to start working on the forms, make sure you have created a "
+"project first following the steps on 3.1."
+msgstr "In order to start working on the forms, make sure you have created a project first following the steps on 3.1."
+
+#: ../../chapter_4/set-up.rst:6
+msgid "The forms on MosquitoDb are used as below;"
+msgstr "The forms on MosquitoDb are used as below;"
+
+#: ../../chapter_4/set-up.rst:8
+msgid "**a**: Experimental Design 1 is used to collect field data"
+msgstr "**a**: Experimental Design 1 is used to collect field data"
+
+#: ../../chapter_4/set-up.rst:9
+msgid "**b**: Experimental Design 2 collects from semi-fields"
+msgstr "**b**: Experimental Design 2 collects from semi-fields"
+
+#: ../../chapter_4/set-up.rst:10
+msgid "**c**: Sample Sorting 1 collects mature mosquito data"
+msgstr "**c**: Sample Sorting 1 collects mature mosquito data"
+
+#: ../../chapter_4/set-up.rst:11
+msgid "**d**: Sample Sorting 2 collects immature mosquito data"
+msgstr "**d**: Sample Sorting 2 collects immature mosquito data"
+
+#: ../../chapter_4/set-up.rst:12
+msgid "**e**: Sample Sorting 3 collects resistance data"
+msgstr "**e**: Sample Sorting 3 collects resistance data"
+
+#: ../../chapter_4/set-up.rst:13
+msgid "**f**: Sample Sorting 4 collects snail data"
+msgstr "**f**: Sample Sorting 4 collects snail data"
+
+#: ../../chapter_4/set-up.rst:14
+msgid "**g**: Sample Observation 1 laboratory data collected from field"
+msgstr "**g**: Sample Observation 1 laboratory data collected from field"
+
+#: ../../chapter_4/set-up.rst:15
+msgid "**h**: Sample Observation 2 laboratory data collected from semi-field"
+msgstr "**h**: Sample Observation 2 laboratory data collected from semi-field"
+
+#: ../../chapter_4/set-up.rst:16
+msgid "**i**: Sample Storage 1 collects storage data from field"
+msgstr "**i**: Sample Storage 1 collects storage data from field"
+
+#: ../../chapter_4/set-up.rst:17
+msgid "**j**: Sample Storage 2 collects storage data from semi-field"
+msgstr "**j**: Sample Storage 2 collects storage data from semi-field"
+
+#: ../../chapter_4/set-up.rst:20
+msgid "After creating a project select the project and experiment then;"
+msgstr "After creating a project select the project and experiment then;"
+
+#: ../../chapter_4/set-up.rst:24
+msgid "Customize form fields"
+msgstr "Customise form fields"
+
+#: ../../chapter_4/set-up.rst:26 ../../chapter_4/set-up.rst:41
+msgid "**Step 1**: Click Sytem Administration then Customization"
+msgstr "**Step 1**: Click System Administration then Customisation"
+
+#: ../../chapter_4/set-up.rst:27
+msgid ""
+"**Step 2**: Choose the forms that you want to have in your experiment e.g"
+" Experimental Design, then choose either Experimental Design 1 or 2."
+msgstr "**Step 2**: Choose the forms that you want to have in your experiment e.g Experimental Design, then choose either Experimental Design 1 or 2"
+
+#: ../../chapter_4/set-up.rst:29
+msgid "**Step 3**: Check or uncheck any non-mandatory field"
+msgstr "**Step 3**: Check or uncheck any non-mandatory field"
+
+#: ../../chapter_4/set-up.rst:31
+msgid ""
+"**Step 4**: Click Save Fields or Delete Saved to uncheck the non-"
+"mandatory fields"
+msgstr "Click Save Fields or Delete Saved to uncheck the non-mandatory fields""
+
+#: ../../chapter_4/set-up.rst:33
+msgid "**Do the same for all forms that you need in your experiment**"
+msgstr "**Do the same for all forms that you need in your experiment**"
+
+#: ../../chapter_4/set-up.rst:39
+msgid "Customize template"
+msgstr "Customize template"
+
+#: ../../chapter_4/set-up.rst:42
+msgid "**Step 2**: Click Customize General Template"
+msgstr "**Step 2**: Click Customise General Template"
+
+#: ../../chapter_4/set-up.rst:43
+msgid "**Step 3**: Click Download on the field you want to customize e.g Methods"
+msgstr "**Step 3**: Click Download on the field you want to customise e.g Methods"
+
+#: ../../chapter_4/set-up.rst:44
+msgid ""
+"**Step 4**: After editing the Methods on excel file, click Choose File "
+"and choose the edited excel file then click Import to upload the data"
+msgstr "**Step 4**: After editing the Methods on excel file, click Choose File, choose the edited excel file then click Import to upload the data"
+
