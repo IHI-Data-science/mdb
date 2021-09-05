@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Ifakara Health Institute (IHI)
+# This file is distributed under the same license as the MosquitoDb package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MosquitoDb \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-02 12:45+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../chapter_6/dashboard.rst:2
+msgid "Data Summary"
+msgstr "Data Summary"
+
+#: ../../chapter_6/dashboard.rst:4
+msgid "**Step 1**: Click Summary"
+msgstr "**Step 1**: Click Summary"
+
+#: ../../chapter_6/dashboard.rst:5
+msgid ""
+"**Step 2**: Select the project code and Experiment number you want to "
+"view data"
+msgstr "**Step 2**: Select the project code and Experiment number you want to view data"
+
+#: ../../chapter_6/dashboard.rst:6
+msgid ""
+"**Step 3**: Filter data from the tabs i.e Method, Location, Date e.t.c "
+"click \"Clear\" to clear the selections for re-entry.(Optional Step)"
+msgstr "**Step 3**: Filter data from the tabs i.e Method, Location, Date e.t.c click \"Clear\" to clear the selections for re-entry.(Optional Step)"
+
+#: ../../chapter_6/dashboard.rst:7
+msgid ""
+"**Step 4**: Click the summary you want to view on Data summary table or "
+"Frequency graphs based on the data available and/or filtered."
+msgstr "**Step 4**: Click the summary you want to view on Data summary table or Frequency graphs based on the data available and/or filtered."
+
+#: ../../chapter_6/dashboard-management.rst:2
+msgid "Datasets"
+msgstr "Datasets"
+
+#: ../../chapter_6/dashboard-management.rst:4
+msgid ""
+"To view datasets of a specific project, select the project and experiment"
+" number then;"
+msgstr "To view datasets of a specific project, select the project and experiment"
+" number then;"
+
+#: ../../chapter_6/dashboard-management.rst:6
+msgid "**Step 1**: Click Tables on the Menu"
+msgstr "**Step 1**: Click Tables on the Menu"
+
+#: ../../chapter_6/dashboard-management.rst:7
+msgid ""
+"**Step 2**: Select the form from which you want to view the data e.g "
+"Experimental Design 1 to view the data collected using ED1"
+msgstr "**Step 2**: Select the form from which you want to view the data e.g Experimental Design 1 to view the data collected using ED1"
+
+#: ../../chapter_6/dashboard-management.rst:8
+msgid ""
+"**Step 3**: You can now view the data and search a specific data that you"
+" want."
+msgstr "**Step 3**: You can now view and search for specific data"
+
+#: ../../chapter_6/downloading-data.rst:2
+msgid "Downloading Data"
+msgstr "Downloading Data"
+
+#: ../../chapter_6/downloading-data.rst:4
+msgid "**Step 1**: Select project and experiment then Click Dataset"
+msgstr "**Step 1**: Select project and experiment then Click Dataset"
+
+#: ../../chapter_6/downloading-data.rst:5
+msgid ""
+"**Step 2**: Select the form from which you want data from e.g Sample "
+"Sorting Data"
+msgstr "**Step 2**: Select the form from which you want data from e.g Sample Sorting Data"
+
+#: ../../chapter_6/downloading-data.rst:6
+msgid "**Step 3**: Then select the specific Sample Sorting data e.g SS2"
+msgstr "**Step 3**: Then select the specific Sample Sorting data e.g SS2"
+
+#: ../../chapter_6/downloading-data.rst:7
+msgid "**Step 4**: Clikc Generate Dataset"
+msgstr "**Step 4**: Click Generate Dataset"
+
+#: ../../chapter_6/downloading-data.rst:14
+msgid "If you want to select data from different forms then;"
+msgstr "If you want to select data from different forms then;"
+
+#: ../../chapter_6/downloading-data.rst:16
+msgid ""
+"**a**: Select the forms you want e.g Experimental Design and Sample "
+"Sorting"
+msgstr "**a**: Select the forms you want e.g Experimental Design and Sample Sorting"
+
+#: ../../chapter_6/downloading-data.rst:17
+msgid "**b**: Select the specific forms e.g ED1 and SS2"
+msgstr "**b**: Select the specific forms e.g ED1 and SS2"
+
+#: ../../chapter_6/downloading-data.rst:18
+msgid "**c**: Select Other options, then click Transpose"
+msgstr "**c**: Select Other options, then click Transpose"
+
+#: ../../chapter_6/downloading-data.rst:19
+msgid "**d**: Click Generate Dataset"
+msgstr "**d**: Click Generate Dataset"
+
+#: ../../chapter_6/index.rst:2
+msgid "Data Visualization"
+msgstr "Data Visualization"
+
+#: ../../chapter_6/viewing-graphs.rst:2
+msgid "Working with Charts"
+msgstr "Working with Charts"
+
+#: ../../chapter_6/viewing-graphs.rst:4
+msgid ""
+"**a**: You can view different charts by selecting either Bar, Line , Pie "
+"or Polar Area"
+msgstr "You can view different charts by selecting either Bar, Line , Pie or Polar Area"
+
+#: ../../chapter_6/viewing-graphs.rst:5
+msgid "**b**: You can select Table to view the data in tabular form"
+msgstr "**b**: You can select Table to view the data in tabular form"
+
