@@ -1,4 +1,0 @@
-Experiment Management
-=====================
-
-.. image:: ../_images/experiment.PNG
