@@ -373,12 +373,12 @@ $de, $ret, $wt,
   }
 
   $resultft = $db->mysqliquery("INSERT INTO  $ss4 ( edssid, ssen,sfr,sen,fr,hc,wn, wl,de,ret,wt,lwt,sp,spc, n,sps,tc,nc,senfr)
-    VALUES('$edssid','$ssen','$sfr','$sen','$fr','$hc',$su','$sa','$dso','$dr','$ph','$co','$wda','$act','$wn','$wl','$de','$ret','$wt','$lwt','$sp','$spc','$n','$sps','$tc','$nc','$senfr')");
+    VALUES('$edssid','$ssen','$sfr','$sen','$fr','$hc','$su','$sa','$dso','$dr','$ph','$co','$wda','$act','$wn','$wl','$de','$ret','$wt','$lwt','$sp','$spc','$n','$sps','$tc','$nc','$senfr')");
 
         // check for successful store
   if ($resultft) {
 
-    $query_insert_edss4 = "INSERT INTO $ssso (ss4id) SELECT `ss1`.`id`
+    $query_insert_edss4 = "INSERT INTO $ssso (ss4id) SELECT `ss4`.`id`
     FROM $ssso as ssso RIGHT JOIN $ss4 as ss1 ON (`ssso`.`ss4id` = `ss1`.`id`)
     WHERE ssso.ss1id IS NULL      
     ";

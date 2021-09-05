@@ -391,6 +391,7 @@ function f2req(ctype) {
                        
                         {
                             label: 'TotalFemale',
+                            fill: false,
                             backgroundColor: "#c85200",
                             hoverBorderColor: "#c85200",
                             data: tx6
@@ -399,6 +400,7 @@ function f2req(ctype) {
 
                         {
                             label: 'Total Male',
+                            fill: false,
                             backgroundColor: "#5fa2ce",
                             hoverBorderColor: "#5fa2ce",
                             data: tx1
@@ -501,6 +503,7 @@ function f2reqc(ctype) {
                     
                         {
                             label: 'TotalFemale',
+                            fill: false,
                             backgroundColor: "#c85200",
                             hoverBorderColor: "#c85200",
                             data: tx6
@@ -508,6 +511,7 @@ function f2reqc(ctype) {
 
                         {
                             label: 'Total Male',
+                            fill: false,
                             backgroundColor: "#5fa2ce",
                             hoverBorderColor: "#5fa2ce",
                             data: tx1
@@ -1074,6 +1078,7 @@ function f7req(ctype) {
                         datasets: [
                             {
                                 label: 'Hourly Biting Rate',
+                                fill: false,
                                 backgroundColor: '#49e2ff',
                                 borderColor: '#46d5f1',
                                 hoverBackgroundColor: '#CCCCCC',
@@ -1157,11 +1162,14 @@ function f8req(ctype) {
                      var date = [];
                      var anpholes = [];
                      var culex =[];
+                     var Aedes =[];
+
 
                     for (var i in data) {
                         date.push(data[i].month);
                         anpholes.push(data[i].AnophelesSp);
-                        culex.push(data[i].Culex)
+                        culex.push(data[i].Culex);
+                        Aedes.push(data[i].Aedes);
                     }
 
                     var chartdata = {
@@ -1169,6 +1177,7 @@ function f8req(ctype) {
                         datasets: [
                             {
                                 label: 'AnophelesSp',
+                                fill: false,
                                 backgroundColor: '#d40b0b',
                                 borderColor: '#d40b0b',
                                 hoverBackgroundColor: '#CCCCCC',
@@ -1178,11 +1187,22 @@ function f8req(ctype) {
                             {
 
                             label: 'Culex',
+                            fill: false,
                             backgroundColor: '#49e2ff',
-                            borderColor: '#46d5f1',
+                            borderColor: '#49e2ff',
                             hoverBackgroundColor: '#CCCCCC',
                             hoverBorderColor: '#666666',
                             data: culex
+                        },
+                        {
+
+                            label: 'Aedes',
+                            fill: false,
+                            backgroundColor: '#46f162',
+                            borderColor: '#46f162',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: Aedes
                         }
                         ]
                     };
@@ -1197,7 +1217,7 @@ function f8req(ctype) {
                 $("#canvas8p").hide();
                 $("#canvas8d").hide();
                 var canvas = $("#canvas8");
-                BarChart(canvas, chartdata, "Pupae Density");
+                BarChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
             } 
             if (type == "L") {
@@ -1207,7 +1227,7 @@ function f8req(ctype) {
                 $("#canvas8p").hide();
                 $("#canvas8d").hide();
                 var canvas = $("#canvas8l");
-                LineChart(canvas, chartdata, "Pupae Density");
+                LineChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
 
             } else if (type == "P") {
@@ -1217,7 +1237,7 @@ function f8req(ctype) {
                 $("#canvas8p").show();
                 $("#canvas8d").hide();
                 var canvas = $("#canvas8p");
-                PieChart(canvas, chartdata, "Pupae Density");
+                PieChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
             } else if (type == "D") {
 
@@ -1226,7 +1246,7 @@ function f8req(ctype) {
                 $("#canvas8p").hide();
                 $("#canvas8d").show();
                 var canvas = $("#canvas8d");
-                PolarChart(canvas, chartdata, "Pupae Density");
+                PolarChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
 
 
             }
@@ -1243,6 +1263,242 @@ function f8req(ctype) {
         },
         beforeSend: function (data) {
             $('#load7').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+              f8creq('B');
+        }
+
+
+    });
+ }
+
+ function f8creq(ctype) {
+    $.ajax({
+        url: "data2.php?q=eightc",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var date = [];
+                     var anpholes = [];
+                     var culex =[];
+                     var Aedes = [];
+
+                    for (var i in data) {
+                        date.push(data[i].DT);
+                        anpholes.push(data[i].AnophelesSp);
+                        culex.push(data[i].Culex);
+                        Aedes.push(data[i].Aedes)
+                    }
+
+                    var chartdata = {
+                        labels: date,
+                        datasets: [
+                            {
+                                label: 'AnophelesSp',
+                                fill: false,
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: anpholes
+                            },
+                            {
+
+                            label: 'Culex',
+                            fill: false,
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: culex
+                        },
+                        {
+
+                            label: 'Aedes',
+                            fill: false,
+                            backgroundColor: '#46f162',
+                            borderColor: '#46f162',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: Aedes
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas8c").show();
+                $("#canvas8cl").hide();
+                $("#canvas8cp").hide();
+                $("#canvas8cd").hide();
+                var canvas = $("#canvas8c");
+                BarChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas8c").hide();
+                $("#canvas8cl").show();
+                $("#canvas8cp").hide();
+                $("#canvas8cd").hide();
+                var canvas = $("#canvas8cl");
+                LineChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
+
+
+            } else if (type == "P") {
+
+                $("#canvas8c").hide();
+                $("#canvas8cl").hide();
+                $("#canvas8cp").show();
+                $("#canvas8cd").hide();
+                var canvas = $("#canvas8cp");
+                PieChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
+
+            } else if (type == "D") {
+
+                $("#canvas8c").hide();
+                $("#canvas8cl").hide();
+                $("#canvas8cp").hide();
+                $("#canvas8cd").show();
+                var canvas = $("#canvas8cd");
+                PolarChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
+
+
+            }
+
+            $('#tbl8c').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f8creq error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f8creq done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load8').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+              f88req('B');
+        }
+
+
+    });
+ }
+
+ function f88req(ctype) {
+    $.ajax({
+        url: "data2.php?q=eightyeight",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var date = [];
+                     var anpholes = [];
+                     var culex =[];
+                     var Aedes = [];
+
+                    for (var i in data) {
+                        date.push(data[i].weekyear);
+                        anpholes.push(data[i].AnophelesSp);
+                        culex.push(data[i].Culex);
+                        Aedes.push(data[i].Aedes)
+                    }
+
+                    var chartdata = {
+                        labels: date,
+                        datasets: [
+                            {
+                                label: 'AnophelesSp',
+                                fill: false,
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: anpholes
+                            },
+                            {
+
+                            label: 'Culex',
+                            fill: false,
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: culex
+                        },
+                        {
+
+                            label: 'Aedes',
+                            fill: false,
+                            backgroundColor: '#46f162',
+                            borderColor: '#46f162',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: Aedes
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas88").show();
+                $("#canvas88l").hide();
+                $("#canvas88p").hide();
+                $("#canvas88d").hide();
+                var canvas = $("#canvas88");
+                BarChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas88").hide();
+                $("#canvas88l").show();
+                $("#canvas88p").hide();
+                $("#canvas88d").hide();
+                var canvas = $("#canvas88l");
+                LineChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
+
+
+            } else if (type == "P") {
+
+                $("#canvas88").hide();
+                $("#canvas88l").hide();
+                $("#canvas88p").show();
+                $("#canvas88d").hide();
+                var canvas = $("#canvas88p");
+                PieChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
+
+            } else if (type == "D") {
+
+                $("#canvas88").hide();
+                $("#canvas88l").hide();
+                $("#canvas88p").hide();
+                $("#canvas88d").show();
+                var canvas = $("#canvas88d");
+                PolarChart(canvas, chartdata, "Pupae Density (Total Pupae/Dipping Effort)");
+
+
+            }
+
+            $('#tbl88').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f88req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f88req done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load8c').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
               f9req('B');
         }
 
@@ -1261,18 +1517,63 @@ function f8req(ctype) {
                      var date = [];
                      var l1l2 = [];
                      var l3l4 =[];
+                     var l1 =[];
+                     var l2 =[];
+                     var l3 =[];
+                     var l4 =[];
 
                     for (var i in data) {
                         date.push(data[i].month);
                         l1l2.push(data[i].L1L2);
-                        l3l4.push(data[i].L3L4)
+                        l3l4.push(data[i].L3L4);
+                        l1.push(data[i].L1);
+                        l2.push(data[i].L2);
+                        l3.push(data[i].L3);
+                        l4.push(data[i].L4);
                     }
 
                     var chartdata = {
                         labels: date,
                         datasets: [
                             {
+                                label: 'L1',
+                                fill: false,
+                                backgroundColor: '#3832a8',
+                                borderColor: '#3832a8',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l1
+                            },
+                            {
+                                label: 'L2',
+                                fill: false,
+                                backgroundColor: '#a8323e',
+                                borderColor: '#a8323e',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l2
+                            },
+                            {
+                                label: 'L3',
+                                fill: false,
+                                backgroundColor: '#d0db35',
+                                borderColor: '#d0db35',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l3
+                            },
+                            {
+                                label: 'L4',
+                                fill: false,
+                                backgroundColor: '#35cddb',
+                                borderColor: '#35cddb',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l4
+                            },
+                            {
                                 label: 'Early Stage (L1L2)',
+                                fill: false,
                                 backgroundColor: '#d40b0b',
                                 borderColor: '#d40b0b',
                                 hoverBackgroundColor: '#CCCCCC',
@@ -1282,6 +1583,7 @@ function f8req(ctype) {
                             {
 
                             label: 'Late Stage (L3L4)',
+                            fill: false,
                             backgroundColor: '#49e2ff',
                             borderColor: '#46d5f1',
                             hoverBackgroundColor: '#CCCCCC',
@@ -1301,7 +1603,7 @@ function f8req(ctype) {
                 $("#canvas9p").hide();
                 $("#canvas9d").hide();
                 var canvas = $("#canvas9");
-                BarChart(canvas, chartdata, "Larvae Density");
+                BarChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
             } 
             if (type == "L") {
@@ -1311,7 +1613,7 @@ function f8req(ctype) {
                 $("#canvas9p").hide();
                 $("#canvas9d").hide();
                 var canvas = $("#canvas9l");
-                LineChart(canvas, chartdata, "Larvae Density");
+                LineChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
 
             } else if (type == "P") {
@@ -1321,7 +1623,7 @@ function f8req(ctype) {
                 $("#canvas9p").show();
                 $("#canvas9d").hide();
                 var canvas = $("#canvas9p");
-                PieChart(canvas, chartdata, "Larvae Density");
+                PieChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
             } else if (type == "D") {
 
@@ -1330,7 +1632,7 @@ function f8req(ctype) {
                 $("#canvas9p").hide();
                 $("#canvas9d").show();
                 var canvas = $("#canvas9d");
-                PolarChart(canvas, chartdata, "Larvae Density");
+                PolarChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
 
 
             }
@@ -1346,13 +1648,453 @@ function f8req(ctype) {
             $('.loader').fadeOut();
         },
         beforeSend: function (data) {
-            $('#load8').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+            $('#load8c').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
             f9creq('B');
         }
 
 
     });
  }
+
+ function f77req(ctype) {
+    $.ajax({
+        url: "data2.php?q=seventyseven",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var date = [];
+                     var l1l2 = [];
+                     var l3l4 =[];
+                     var l1 =[];
+                     var l2 =[];
+                     var l3 =[];
+                     var l4 =[];
+
+                    for (var i in data) {
+                        date.push(data[i].DT);
+                        l1l2.push(data[i].L1L2);
+                        l3l4.push(data[i].L3L4);
+                        l1.push(data[i].L1);
+                        l2.push(data[i].L2);
+                        l3.push(data[i].L3);
+                        l4.push(data[i].L4);
+                    }
+
+                    var chartdata = {
+                        labels: date,
+                        datasets: [
+                            {
+                                label: 'L1',
+                                fill: false,
+                                backgroundColor: '#3832a8',
+                                borderColor: '#3832a8',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l1
+                            },
+                            {
+                                label: 'L2',
+                                fill: false,
+                                backgroundColor: '#a8323e',
+                                borderColor: '#a8323e',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l2
+                            },
+                            {
+                                label: 'L3',
+                                fill: false,
+                                backgroundColor: '#d0db35',
+                                borderColor: '#d0db35',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l3
+                            },
+                            {
+                                label: 'L4',
+                                fill: false,
+                                backgroundColor: '#35cddb',
+                                borderColor: '#35cddb',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l4
+                            },
+                            {
+                                label: 'Early Stage (L1L2)',
+                                fill: false,
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l1l2
+                            },
+                            {
+
+                            label: 'Late Stage (L3L4)',
+                            fill: false,
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: l3l4
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas77").show();
+                $("#canvas77l").hide();
+                $("#canvas77p").hide();
+                $("#canvas77d").hide();
+                var canvas = $("#canvas77");
+                BarChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas77").hide();
+                $("#canvas77l").show();
+                $("#canvas77p").hide();
+                $("#canvas77d").hide();
+                var canvas = $("#canvas77l");
+                LineChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
+
+
+            } else if (type == "P") {
+
+                $("#canvas77").hide();
+                $("#canvas77l").hide();
+                $("#canvas77p").show();
+                $("#canvas77d").hide();
+                var canvas = $("#canvas77p");
+                PieChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
+
+            } else if (type == "D") {
+
+                $("#canvas77").hide();
+                $("#canvas77l").hide();
+                $("#canvas77p").hide();
+                $("#canvas77d").show();
+                var canvas = $("#canvas77d");
+                PolarChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
+
+
+            }
+
+            $('#tbl77').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f77req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f77req done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load9').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+            f9creq('B');
+        }
+
+
+    });
+ }
+
+ function f78req(ctype) {
+    $.ajax({
+        url: "data2.php?q=seventyeight",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var date = [];
+                     var l1l2 = [];
+                     var l3l4 =[];
+                     var l1 =[];
+                     var l2 =[];
+                     var l3 =[];
+                     var l4 =[];
+
+
+                    for (var i in data) {
+                        date.push(data[i].weekyear);
+                        l1l2.push(data[i].L1L2);
+                        l3l4.push(data[i].L3L4);
+                        l1.push(data[i].L1);
+                        l2.push(data[i].L2);
+                        l3.push(data[i].L3);
+                        l4.push(data[i].L4);
+                    }
+
+                    var chartdata = {
+                        labels: date,
+                        datasets: [
+                            {
+                                label: 'L1',
+                                fill: false,
+                                backgroundColor: '#3832a8',
+                                borderColor: '#3832a8',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l1
+                            },
+                            {
+                                label: 'L2',
+                                fill: false,
+                                backgroundColor: '#a8323e',
+                                borderColor: '#a8323e',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l2
+                            },
+                            {
+                                label: 'L3',
+                                fill: false,
+                                backgroundColor: '#d0db35',
+                                borderColor: '#d0db35',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l3
+                            },
+                            {
+                                label: 'L4',
+                                fill: false,
+                                backgroundColor: '#35cddb',
+                                borderColor: '#35cddb',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l4
+                            },
+                            {
+                                label: 'Early Stage (L1L2)',
+                                fill: false,
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: l1l2
+                            },
+                            {
+
+                            label: 'Late Stage (L3L4)',
+                            fill: false,
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: l3l4
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas78").show();
+                $("#canvas78l").hide();
+                $("#canvas78p").hide();
+                $("#canvas78d").hide();
+                var canvas = $("#canvas78");
+                BarChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas78").hide();
+                $("#canvas78l").show();
+                $("#canvas78p").hide();
+                $("#canvas78d").hide();
+                var canvas = $("#canvas78l");
+                LineChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
+
+
+            } else if (type == "P") {
+
+                $("#canvas78").hide();
+                $("#canvas78l").hide();
+                $("#canvas78p").show();
+                $("#canvas78d").hide();
+                var canvas = $("#canvas78p");
+                PieChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
+
+            } else if (type == "D") {
+
+                $("#canvas78").hide();
+                $("#canvas78l").hide();
+                $("#canvas78p").hide();
+                $("#canvas78d").show();
+                var canvas = $("#canvas78d");
+                PolarChart(canvas, chartdata, "Larvae Density (Total Larvae/Dipping Effort)");
+
+
+            }
+
+            $('#tbl78').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f78req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f78req done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load77').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+            f9creq('B');
+        }
+
+
+    });
+ }
+
+ function f55req(ctype) {
+    $.ajax({
+        url: "data2.php?q=fiftyfive",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var tx = [];
+                     var l1l2 = [];
+                     var l3l4 =[];
+                     var l1 =[];
+                     var l2 =[];
+                     var l3 =[];
+                     var l4 =[];
+
+
+                    for (var i in data) {
+                        tx.push(data[i].TaxonName);
+                        l1l2.push(data[i].L1L2);
+                        l3l4.push(data[i].L3L4);
+                        l1.push(data[i].L1);
+                        l2.push(data[i].L2);
+                        l3.push(data[i].L3);
+                        l4.push(data[i].L4);
+                    }
+
+                    var chartdata = {
+                        labels: tx,
+                        datasets: [
+                            {
+                                label: 'L1',
+                                fill: false,
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l1
+                            },
+                            {
+                                label: 'L2',
+                                fill: false,
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l2
+                            },
+                            {
+                                label: 'L3',
+                                fill: false,
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l3
+                            },
+                            {
+                                label: 'L4',
+                                fill: false,
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l4
+                            },
+                            {
+                                label: 'L1L2',
+                                fill: false,
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l1l2
+                            },
+                            {
+                                label: 'L3L4',
+                                fill: false,
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l3l4
+                            }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas55").show();
+                $("#canvas55l").hide();
+                $("#canvas55p").hide();
+                $("#canvas55d").hide();
+                var canvas = $("#canvas55");
+                BarChart(canvas, chartdata, "Larvae Population Summary");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas55").hide();
+                $("#canvas55l").show();
+                $("#canvas55p").hide();
+                $("#canvas55d").hide();
+                var canvas = $("#canvas55l");
+                LineChart(canvas, chartdata, "Larvae Population Summary");
+
+
+            } else if (type == "P") {
+
+                $("#canvas55").hide();
+                $("#canvas55l").hide();
+                $("#canvas55p").show();
+                $("#canvas55d").hide();
+                var canvas = $("#canvas55p");
+                PieChart(canvas, chartdata, "Larvae Population Summary");
+
+            } else if (type == "D") {
+
+                $("#canvas55").hide();
+                $("#canvas55l").hide();
+                $("#canvas55p").hide();
+                $("#canvas55d").show();
+                var canvas = $("#canvas55d");
+                PolarChart(canvas, chartdata, "Larvae Population Summary");
+
+
+            }
+
+            $('#tbl55').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f55req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f55req done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load78').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+            f9creq('B');
+        }
+
+
+    });
+ }
+
 
  function f9creq(ctype) {
     $.ajax({
@@ -1375,6 +2117,7 @@ function f8req(ctype) {
                         datasets: [
                             {
                                 label: 'Biomphalari',
+                                fill: false,
                                 backgroundColor: '#d40b0b',
                                 borderColor: '#d40b0b',
                                 hoverBackgroundColor: '#CCCCCC',
@@ -1384,6 +2127,7 @@ function f8req(ctype) {
                             {
 
                             label: 'Bulinus',
+                            fill: false,
                             backgroundColor: '#49e2ff',
                             borderColor: '#46d5f1',
                             hoverBackgroundColor: '#CCCCCC',
@@ -1448,6 +2192,112 @@ function f8req(ctype) {
             $('.loader').fadeOut();
         },
         beforeSend: function (data) {
+            $('#load77').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
+               f44req('B');
+        }
+
+
+    });
+ }
+
+ function f44req(ctype) {
+    $.ajax({
+        url: "data2.php?q=fortyfour",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+                     var species1 = [];
+                     var species2 = [];
+                     var DT = [];
+
+                    for (var i in data) {
+                        species1.push(data[i].Biomphalari);
+                        species2.push(data[i].Bulinus);
+                        DT.push(data[i].weekyear);
+                    }
+
+                    var chartdata = {
+                        labels: DT,
+                        datasets: [
+                            {
+                                label: 'Biomphalari',
+                                fill: false,
+                                backgroundColor: '#d40b0b',
+                                borderColor: '#d40b0b',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: species1
+                            },
+                            {
+
+                            label: 'Bulinus',
+                            fill: false,
+                            backgroundColor: '#49e2ff',
+                            borderColor: '#46d5f1',
+                            hoverBackgroundColor: '#CCCCCC',
+                            hoverBorderColor: '#666666',
+                            data: species2
+                        }
+                        ]
+                    };
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas44").show();
+                $("#canvas44l").hide();
+                $("#canvas44p").hide();
+                $("#canvas44d").hide();
+                var canvas = $("#canvas44");
+                BarChart(canvas, chartdata, "Snail Weekly Summary");
+
+            } 
+            if (type == "L") {
+
+                $("#canvas44").hide();
+                $("#canvas44l").show();
+                $("#canvas44p").hide();
+                $("#canvas44d").hide();
+                var canvas = $("#canvas44l");
+                LineChart(canvas, chartdata, "Snail Weekly Summary");
+
+
+            } else if (type == "P") {
+
+                $("#canvas44").hide();
+                $("#canvas44l").hide();
+                $("#canvas44p").show();
+                $("#canvas44d").hide();
+                var canvas = $("#canvas44p");
+                PieChart(canvas, chartdata, "Snail Weekly Summary");
+
+            } else if (type == "D") {
+
+                $("#canvas44").hide();
+                $("#canvas44l").hide();
+                $("#canvas44p").hide();
+                $("#canvas44d").show();
+                var canvas = $("#canvas44d");
+                PolarChart(canvas, chartdata, "Snail Weekly Summary");
+
+
+            }
+
+            $('#tbl44').html(tabledata(chartdata));
+        },
+        error: function (data) {
+            console.log("Request f44req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            console.log("Request f44req done");
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
             $('#load9c').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
                f4creq('B');
         }
@@ -1479,6 +2329,7 @@ function f8req(ctype) {
                         datasets: [
                             {
                                 label: 'Biomphalari',
+                                fill: false,
                                 backgroundColor: '#d40b0b',
                                 borderColor: '#d40b0b',
                                 hoverBackgroundColor: '#CCCCCC',
@@ -1488,6 +2339,7 @@ function f8req(ctype) {
                             {
 
                             label: 'Bulinus',
+                            fill: false,
                             backgroundColor: '#49e2ff',
                             borderColor: '#46d5f1',
                             hoverBackgroundColor: '#CCCCCC',
@@ -1583,6 +2435,7 @@ function f8req(ctype) {
                         datasets: [
                             {
                                 label: 'Biomphalari',
+                                fill: false,
                                 backgroundColor: '#d40b0b',
                                 borderColor: '#d40b0b',
                                 hoverBackgroundColor: '#CCCCCC',
@@ -1592,6 +2445,7 @@ function f8req(ctype) {
                             {
 
                             label: 'Bulinus',
+                            fill: false,
                             backgroundColor: '#49e2ff',
                             borderColor: '#46d5f1',
                             hoverBackgroundColor: '#CCCCCC',
@@ -1657,12 +2511,666 @@ function f8req(ctype) {
         },
         beforeSend: function (data) {
             $('#load9c').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div> </div></div>');
-            //   f9req('B');
+             f10req('B');
         }
 
 
     });
  }
+
+
+
+
+ //res
+
+function f10req(ctype) {
+    $.ajax({
+        url: "data2.php?q=thirteen",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+
+            var mti1 = [];
+            var mti2 =[];
+            var mti3 = [];
+            var mti4 =[];
+            var mti5 = [];
+            var mti6 =[];
+            var mts=[];
+            var mtisy1 = [];
+            var mtisy2 = [];
+            var mtisy3 = [];
+            var mtisy4 = [];
+            var mtisy5 = [];
+            var mtisy6 = [];
+            var mtsy = [];
+
+            var labelname = ["Mos KD/Dead 0mins", "Mos KD/Dead 15mins", "Mos KD/Dead 30mins", "Mos KD/Dead 45mins",
+             "Mos KD/Dead 60mins","Mos KD/Dead 70mins","Mos KD/Dead 90mins","Mos KD/Dead 105mins",
+             "Mos KD/Dead 120mins", "Mos KD/Dead 1440mins","Mos KD/Dead 4320mins"];
+
+            for (var i in data) {
+                mti1.push(parseInt(data[i].kd_d0));
+                mti1.push(parseInt(data[i].kd_d15));
+                mti1.push(parseInt(data[i].kd_d30));
+                mti1.push(parseInt(data[i].kd_d45));
+                mti1.push(parseInt(data[i].kd_d60));
+                mti1.push(parseInt(data[i].kd_d75));
+                mti1.push(parseInt(data[i].kd_d90));
+                mti1.push(parseInt(data[i].kd_d105));
+                mti1.push(parseInt(data[i].kd_d120));
+                mti1.push(parseInt(data[i].kd_d24));
+                mti1.push(parseInt(data[i].kd_d72));
+           
+                mti2.push(parseInt(data[i].kd_d0));
+                mti2.push(parseInt(data[i].kd_d15));
+                mti2.push(parseInt(data[i].kd_d30));
+                mti2.push(parseInt(data[i].kd_d45));
+                mti2.push(parseInt(data[i].kd_d60));
+                mti2.push(parseInt(data[i].kd_d75));
+                mti2.push(parseInt(data[i].kd_d90));
+                mti2.push(parseInt(data[i].kd_d105));
+                mti2.push(parseInt(data[i].kd_d120));
+                mti2.push(parseInt(data[i].kd_d24));
+                mti2.push(parseInt(data[i].kd_d72));
+            
+
+                mti3.push(parseInt(data[i].kd_d0));
+                mti3.push(parseInt(data[i].kd_d15));
+                mti3.push(parseInt(data[i].kd_d30));
+                mti3.push(parseInt(data[i].kd_d45));
+                mti3.push(parseInt(data[i].kd_d60));
+                mti3.push(parseInt(data[i].kd_d75));
+                mti3.push(parseInt(data[i].kd_d90));
+                mti3.push(parseInt(data[i].kd_d105));
+                mti3.push(parseInt(data[i].kd_d120));
+                mti3.push(parseInt(data[i].kd_d24));
+                mti3.push(parseInt(data[i].kd_d72));
+           
+                mti4.push(parseInt(data[i].kd_d0));
+                mti4.push(parseInt(data[i].kd_d15));
+                mti4.push(parseInt(data[i].kd_d30));
+                mti4.push(parseInt(data[i].kd_d45));
+                mti4.push(parseInt(data[i].kd_d60));
+                mti4.push(parseInt(data[i].kd_d75));
+                mti4.push(parseInt(data[i].kd_d90));
+                mti4.push(parseInt(data[i].kd_d105));
+                mti4.push(parseInt(data[i].kd_d120));
+                mti4.push(parseInt(data[i].kd_d24));
+                mti4.push(parseInt(data[i].kd_d72));
+           
+
+                mti5.push(parseInt(data[i].kd_d0));
+                mti5.push(parseInt(data[i].kd_d15));
+                mti5.push(parseInt(data[i].kd_d30));
+                mti5.push(parseInt(data[i].kd_d45));
+                mti5.push(parseInt(data[i].kd_d60));
+                mti5.push(parseInt(data[i].kd_d75));
+                mti5.push(parseInt(data[i].kd_d90));
+                mti5.push(parseInt(data[i].kd_d105));
+                mti5.push(parseInt(data[i].kd_d120));
+                mti5.push(parseInt(data[i].kd_d24));
+                mti5.push(parseInt(data[i].kd_d72));
+           
+                mti6.push(parseInt(data[i].kd_d0));
+                mti6.push(parseInt(data[i].kd_d15));
+                mti6.push(parseInt(data[i].kd_d30));
+                mti6.push(parseInt(data[i].kd_d45));
+                mti6.push(parseInt(data[i].kd_d60));
+                mti6.push(parseInt(data[i].kd_d75));
+                mti6.push(parseInt(data[i].kd_d90));
+                mti6.push(parseInt(data[i].kd_d105));
+                mti6.push(parseInt(data[i].kd_d120));
+                mti6.push(parseInt(data[i].kd_d24));
+                mti6.push(parseInt(data[i].kd_d72));
+
+                mts.push(parseInt(data[i].kd_d0));
+                mts.push(parseInt(data[i].kd_d15));
+                mts.push(parseInt(data[i].kd_d30));
+                mts.push(parseInt(data[i].kd_d45));
+                mts.push(parseInt(data[i].kd_d60));
+                mts.push(parseInt(data[i].kd_d75));
+                mts.push(parseInt(data[i].kd_d90));
+                mts.push(parseInt(data[i].kd_d105));
+                mts.push(parseInt(data[i].kd_d120));
+                mts.push(parseInt(data[i].kd_d24));
+                mts.push(parseInt(data[i].kd_d72));
+
+                mtisy1.push(parseInt(data[i].kd_d0));
+                mtisy1.push(parseInt(data[i].kd_d15));
+                mtisy1.push(parseInt(data[i].kd_d30));
+                mtisy1.push(parseInt(data[i].kd_d45));
+                mtisy1.push(parseInt(data[i].kd_d60));
+                mtisy1.push(parseInt(data[i].kd_d75));
+                mtisy1.push(parseInt(data[i].kd_d90));
+                mtisy1.push(parseInt(data[i].kd_d105));
+                mtisy1.push(parseInt(data[i].kd_d120));
+                mtisy1.push(parseInt(data[i].kd_d24));
+                mtisy1.push(parseInt(data[i].kd_d72));
+
+                mtisy2.push(parseInt(data[i].kd_d0));
+                mtisy2.push(parseInt(data[i].kd_d15));
+                mtisy2.push(parseInt(data[i].kd_d30));
+                mtisy2.push(parseInt(data[i].kd_d45));
+                mtisy2.push(parseInt(data[i].kd_d60));
+                mtisy2.push(parseInt(data[i].kd_d75));
+                mtisy2.push(parseInt(data[i].kd_d90));
+                mtisy2.push(parseInt(data[i].kd_d105));
+                mtisy2.push(parseInt(data[i].kd_d120));
+                mtisy2.push(parseInt(data[i].kd_d24));
+                mtisy2.push(parseInt(data[i].kd_d72));
+
+
+                mtisy3.push(parseInt(data[i].kd_d0));
+                mtisy3.push(parseInt(data[i].kd_d15));
+                mtisy3.push(parseInt(data[i].kd_d30));
+                mtisy3.push(parseInt(data[i].kd_d45));
+                mtisy3.push(parseInt(data[i].kd_d60));
+                mtisy3.push(parseInt(data[i].kd_d75));
+                mtisy3.push(parseInt(data[i].kd_d90));
+                mtisy3.push(parseInt(data[i].kd_d105));
+                mtisy3.push(parseInt(data[i].kd_d120));
+                mtisy3.push(parseInt(data[i].kd_d24));
+                mtisy3.push(parseInt(data[i].kd_d72));
+                
+                mtisy4.push(parseInt(data[i].kd_d0));
+                mtisy4.push(parseInt(data[i].kd_d15));
+                mtisy4.push(parseInt(data[i].kd_d30));
+                mtisy4.push(parseInt(data[i].kd_d45));
+                mtisy4.push(parseInt(data[i].kd_d60));
+                mtisy4.push(parseInt(data[i].kd_d75));
+                mtisy4.push(parseInt(data[i].kd_d90));
+                mtisy4.push(parseInt(data[i].kd_d105));
+                mtisy4.push(parseInt(data[i].kd_d120));
+                mtisy4.push(parseInt(data[i].kd_d24));
+                mtisy4.push(parseInt(data[i].kd_d72));
+
+                mtisy5.push(parseInt(data[i].kd_d0));
+                mtisy5.push(parseInt(data[i].kd_d15));
+                mtisy5.push(parseInt(data[i].kd_d30));
+                mtisy5.push(parseInt(data[i].kd_d45));
+                mtisy5.push(parseInt(data[i].kd_d60));
+                mtisy5.push(parseInt(data[i].kd_d75));
+                mtisy5.push(parseInt(data[i].kd_d90));
+                mtisy5.push(parseInt(data[i].kd_d105));
+                mtisy5.push(parseInt(data[i].kd_d120));
+                mtisy5.push(parseInt(data[i].kd_d24));
+                mtisy5.push(parseInt(data[i].kd_d72));
+
+                mtisy6.push(parseInt(data[i].kd_d0));
+                mtisy6.push(parseInt(data[i].kd_d15));
+                mtisy6.push(parseInt(data[i].kd_d30));
+                mtisy6.push(parseInt(data[i].kd_d45));
+                mtisy6.push(parseInt(data[i].kd_d60));
+                mtisy6.push(parseInt(data[i].kd_d75));
+                mtisy6.push(parseInt(data[i].kd_d90));
+                mtisy6.push(parseInt(data[i].kd_d105));
+                mtisy6.push(parseInt(data[i].kd_d120));
+                mtisy6.push(parseInt(data[i].kd_d24));
+                mtisy6.push(parseInt(data[i].kd_d72));
+
+
+                mtsy.push(parseInt(data[i].kd_d0));
+                mtsy.push(parseInt(data[i].kd_d15));
+                mtsy.push(parseInt(data[i].kd_d30));
+                mtsy.push(parseInt(data[i].kd_d45));
+                mtsy.push(parseInt(data[i].kd_d60));
+                mtsy.push(parseInt(data[i].kd_d75));
+                mtsy.push(parseInt(data[i].kd_d90));
+                mtsy.push(parseInt(data[i].kd_d105));
+                mtsy.push(parseInt(data[i].kd_d120));
+                mtsy.push(parseInt(data[i].kd_d24));
+                mtsy.push(parseInt(data[i].kd_d72));
+
+            }
+
+            var dataset = mti1, mti2, mti3,mti4, mti5, mti6, mts, mtisy1,mtisy2,mtisy3,mtisy4,mtisy3,mtisy4, mtisy5, mtisy6,mtsy;
+            var labels = labelname;
+
+            var list = [];
+
+            list = sortdata(dataset, labels);
+
+            for (var k = 0; k < list.length; k++) {
+                dataset[k] = list[k].data;
+                labels[k] = list[k].label;
+            }
+
+
+    
+            var chartdata = {
+                datasets: [{
+                
+
+                    label: 'Mosquitoes KnockedDown',
+                       
+                        data: mti1, mti2, mti3,mti4, mti5, mti6, mts, mtisy1,mtisy2,mtisy3,mtisy4,mtisy3,mtisy4, mtisy5, mtisy6,mtsy
+                    
+                }],
+                labels: labels
+            };
+
+            
+
+            
+
+            $('#tbl10').html(tabledata(chartdata));
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas10").show();
+                $("#canvas10l").hide();
+                $("#canvas10p").hide();
+                $("#canvas10d").hide();
+                var canvas = $("#canvas10");
+                BarChart(canvas, chartdata, "Res: Count vs KnockDown Time");
+
+            } else if (type == "L") {
+
+                $("#canvas10").hide();
+                $("#canvas10l").show();
+                $("#canvas10p").hide();
+                $("#canvas10d").hide();
+                var canvas = $("#canvas10l");
+                LineChart(canvas, chartdata, "Res: Count vs KnockDown Time");
+
+
+            } else if (type == "P") {
+
+                $("#canvas10").hide();
+                $("#canvas10l").hide();
+                $("#canvas10p").show();
+                $("#canvas10d").hide();
+                var canvas = $("#canvas10p");
+                PieChart(canvas, chartdata, "Res: Count vs KnockDown Time");
+
+            } else if (type == "D") {
+
+                $("#canvas10").hide();
+                $("#canvas10l").hide();
+                $("#canvas10p").hide();
+                $("#canvas10d").show();
+                var canvas = $("#canvas10d");
+                PolarChart(canvas, chartdata, "Res: Count vs KnockDown Time");
+
+
+            }
+
+            $('#tbl10').html(tabledata(chartdata));
+
+
+        },
+        error: function (data) {
+            console.log("Request f10req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load10').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div></div></div>');
+         f11req('B');
+        }
+    });
+}
+
+
+//coneres
+
+
+function f11req(ctype) {
+    $.ajax({
+        url: "data2.php?q=fourteen",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+
+            var mt1 = [];
+            var mt2 =[];
+            var mt3 = [];
+            var mt4 =[];
+            
+         
+            var labelname = ["Mos KD 3Omin", "Mos KD 60min", "Mos KD Day1", "Mos KD Day2", "Mos KD Day3","Mos KD 30min",
+            "Mos KD 60min","Mos KD Day1","Mos KD Day2",
+             "Mos KD Day3", "Mos KD 30min", "Mos KD 60min", "Mos KD Day1", "Mos KD Day2","Mos KD 30min","Mos KD 60min","Mos KD Day1",
+             "Mos KD Day1", "Mos KD Day2", "Mos KD Day3"];
+
+            for (var i in data) {
+                mt1.push(parseInt(data[i].mkd1));
+                mt1.push(parseInt(data[i].mkd2));
+                mt1.push(parseInt(data[i].mkd3));
+                mt1.push(parseInt(data[i].mkd4));
+                mt1.push(parseInt(data[i].mkd5));
+           
+                mt2.push(parseInt(data[i].mkd6));
+                mt2.push(parseInt(data[i].mkd7));
+                mt2.push(parseInt(data[i].mkd8));
+                mt2.push(parseInt(data[i].mkd9));
+                mt2.push(parseInt(data[i].mkd10));
+           
+
+                mt3.push(parseInt(data[i].mkd11));
+                mt3.push(parseInt(data[i].mkd12));
+                mt3.push(parseInt(data[i].mkd13));
+                mt3.push(parseInt(data[i].mkd14));
+                mt3.push(parseInt(data[i].mkd15));
+           
+
+       
+                mt4.push(parseInt(data[i].mkd16));
+                mt4.push(parseInt(data[i].mkd17));
+                mt4.push(parseInt(data[i].mkd18));
+                mt4.push(parseInt(data[i].mkd19));
+                mt4.push(parseInt(data[i].mkd20));
+           
+
+            }
+           
+          
+
+            var dataset = mt1, mt2, mt3,mt4;
+            var labels = labelname;
+
+            var list = [];
+
+            list = sortdata(dataset, labels);
+
+            for (var k = 0; k < list.length; k++) {
+                dataset[k] = list[k].data;
+                labels[k] = list[k].label;
+            }
+
+
+        
+            var chartdata = {
+                datasets: [{
+                
+
+                    label: 'Mosquitoes KnockedDown',
+                       
+                        data: mt1, mt2, mt3,mt4
+                    
+                }],
+                labels: labels
+            };
+
+
+
+            $('#tbl11').html(tabledata(chartdata));
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas11").show();
+                $("#canvas11l").hide();
+                $("#canvas11p").hide();
+                $("#canvas11d").hide();
+                var canvas = $("#canvas11");
+                BarChart(canvas, chartdata, "WHO Cone Resistance: Count vs KnockDown Time");
+
+            } else if (type == "L") {
+
+                $("#canvas11").hide();
+                $("#canvas11l").show();
+                $("#canvas11p").hide();
+                $("#canvas11d").hide();
+                var canvas = $("#canvas11l");
+                LineChart(canvas, chartdata, "WHO Cone Resistance: Count vs KnockDown Time");
+
+
+            } else if (type == "P") {
+
+                $("#canvas11").hide();
+                $("#canvas11l").hide();
+                $("#canvas11p").show();
+                $("#canvas11d").hide();
+                var canvas = $("#canvas11p");
+                PieChart(canvas, chartdata, "WHO Cone Resistance: Count vs KnockDown Time");
+
+            } else if (type == "D") {
+
+                $("#canvas11").hide();
+                $("#canvas11l").hide();
+                $("#canvas11p").hide();
+                $("#canvas11d").show();
+                var canvas = $("#canvas11d");
+                PolarChart(canvas, chartdata, "WHO Cone Resistance: Count vs KnockDown Time");
+
+
+            }
+
+            $('#tbl11').html(tabledata(chartdata));
+
+
+        },
+        error: function (data) {
+            console.log("Request f11req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load11').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div></div></div>');
+         f12req('B');
+        }
+    });
+}
+
+
+//endconeres
+
+
+//tuberes
+
+function f12req(ctype) {
+    $.ajax({
+        url: "data2.php?q=fifteen",
+        method: "GET",
+
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+
+            var mtir1 = [];
+            var mtir2 =[];
+            var mtir3 = [];
+            var mtir4 =[];
+            var mtir5 = [];
+            var mtir6 =[];
+            var mtsr1 =[];
+            var mtsr2 =[];
+            var mtsr3 =[];
+            var mtsr4 =[];
+         
+            var labelname = ["Mos KD Day1", "Mos KD Day2", "Mos KD Day3", "Mos KD Day4", "Mos KD Day5","Mos KD Day6","Mos KD Day7"];
+
+            for (var i in data) {
+                mtir1.push(parseInt(data[i].kd_d1d));
+                mtir1.push(parseInt(data[i].kd_d2d));
+                mtir1.push(parseInt(data[i].kd_d3d));
+                mtir1.push(parseInt(data[i].kd_d4d));
+                mtir1.push(parseInt(data[i].kd_d5d));
+                mtir1.push(parseInt(data[i].kd_d6d));
+                mtir1.push(parseInt(data[i].kd_d7d));
+           
+                mtir2.push(parseInt(data[i].kd_d1d));
+                mtir2.push(parseInt(data[i].kd_d2d));
+                mtir2.push(parseInt(data[i].kd_d3d));
+                mtir2.push(parseInt(data[i].kd_d4d));
+                mtir2.push(parseInt(data[i].kd_d5d));
+                mtir2.push(parseInt(data[i].kd_d6d));
+                mtir2.push(parseInt(data[i].kd_d7d));
+
+                mtir3.push(parseInt(data[i].kd_d1d));
+                mtir3.push(parseInt(data[i].kd_d2d));
+                mtir3.push(parseInt(data[i].kd_d3d));
+                mtir3.push(parseInt(data[i].kd_d4d));
+                mtir3.push(parseInt(data[i].kd_d5d));
+                mtir3.push(parseInt(data[i].kd_d6d));
+                mtir3.push(parseInt(data[i].kd_d7d));
+           
+                mtir4.push(parseInt(data[i].kd_d1d));
+                mtir4.push(parseInt(data[i].kd_d2d));
+                mtir4.push(parseInt(data[i].kd_d3d));
+                mtir4.push(parseInt(data[i].kd_d4d));
+                mtir4.push(parseInt(data[i].kd_d5d));
+                mtir4.push(parseInt(data[i].kd_d6d));
+                mtir4.push(parseInt(data[i].kd_d7d));
+
+                mtir5.push(parseInt(data[i].kd_d1d));
+                mtir5.push(parseInt(data[i].kd_d2d));
+                mtir5.push(parseInt(data[i].kd_d3d));
+                mtir5.push(parseInt(data[i].kd_d4d));
+                mtir5.push(parseInt(data[i].kd_d5d));
+                mtir5.push(parseInt(data[i].kd_d6d));
+                mtir5.push(parseInt(data[i].kd_d7d));
+           
+                mtir6.push(parseInt(data[i].kd_d1d));
+                mtir6.push(parseInt(data[i].kd_d2d));
+                mtir6.push(parseInt(data[i].kd_d3d));
+                mtir6.push(parseInt(data[i].kd_d4d));
+                mtir6.push(parseInt(data[i].kd_d5d));
+                mtir6.push(parseInt(data[i].kd_d6d));
+                mtir6.push(parseInt(data[i].kd_d7d));
+
+                mtsr1.push(parseInt(data[i].kd_d1d));
+                mtsr1.push(parseInt(data[i].kd_d2d));
+                mtsr1.push(parseInt(data[i].kd_d3d));
+                mtsr1.push(parseInt(data[i].kd_d4d));
+                mtsr1.push(parseInt(data[i].kd_d5d));
+                mtsr1.push(parseInt(data[i].kd_d6d));
+                mtsr1.push(parseInt(data[i].kd_d7d));
+
+                mtsr2.push(parseInt(data[i].kd_d1d));
+                mtsr2.push(parseInt(data[i].kd_d2d));
+                mtsr2.push(parseInt(data[i].kd_d3d));
+                mtsr2.push(parseInt(data[i].kd_d4d));
+                mtsr2.push(parseInt(data[i].kd_d5d));
+                mtsr2.push(parseInt(data[i].kd_d6d));
+                mtsr2.push(parseInt(data[i].kd_d7d));
+
+                mtsr3.push(parseInt(data[i].kd_d1d));
+                mtsr3.push(parseInt(data[i].kd_d2d));
+                mtsr3.push(parseInt(data[i].kd_d3d));
+                mtsr3.push(parseInt(data[i].kd_d4d));
+                mtsr3.push(parseInt(data[i].kd_d5d));
+                mtsr3.push(parseInt(data[i].kd_d6d));
+                mtsr3.push(parseInt(data[i].kd_d7d));
+
+                mtsr4.push(parseInt(data[i].kd_d1d));
+                mtsr4.push(parseInt(data[i].kd_d2d));
+                mtsr4.push(parseInt(data[i].kd_d3d));
+                mtsr4.push(parseInt(data[i].kd_d4d));
+                mtsr4.push(parseInt(data[i].kd_d5d));
+                mtsr4.push(parseInt(data[i].kd_d6d));
+                mtsr4.push(parseInt(data[i].kd_d7d));
+            }
+           
+          
+
+            var dataset = mtir1, mtir2, mtir3,mtir4,mtir5,mtir6, mtsr1,mtsr2,mtsr3,mtsr4;
+            var labels = labelname;
+
+            var list = [];
+
+            list = sortdata(dataset, labels);
+
+            for (var k = 0; k < list.length; k++) {
+                dataset[k] = list[k].data;
+                labels[k] = list[k].label;
+            }
+
+
+            var chartdata = {
+                datasets: [{
+                
+
+                    label: 'Mosquitoes KnockedDown',
+                       
+                        data: mtir1, mtir2, mtir3,mtir4,mtir5,mtir6, mtsr1,mtsr2,mtsr3,mtsr4
+                    
+                }],
+                labels: labels
+            };
+
+        
+
+           
+
+
+            $('#tbl12').html(tabledata(chartdata));
+
+
+            var type = ctype;
+
+            if (type == "B") {
+
+                $("#canvas12").show();
+                $("#canvas12l").hide();
+                $("#canvas12p").hide();
+                $("#canvas12d").hide();
+                var canvas = $("#canvas12");
+                BarChart(canvas, chartdata, "WHO Tube Resistance: Count vs KnockDown Time");
+
+            } else if (type == "L") {
+
+                $("#canvas12").hide();
+                $("#canvas12l").show();
+                $("#canvas12p").hide();
+                $("#canvas12d").hide();
+                var canvas = $("#canvas12l");
+                LineChart(canvas, chartdata, "WHO Tube Resistance: Count vs KnockDown Time");
+
+
+            } else if (type == "P") {
+
+                $("#canvas12").hide();
+                $("#canvas12l").hide();
+                $("#canvas12p").show();
+                $("#canvas12d").hide();
+                var canvas = $("#canvas12p");
+                PieChart(canvas, chartdata, "WHO Tube Resistance: Count vs KnockDown Time");
+
+            } else if (type == "D") {
+
+                $("#canvas12").hide();
+                $("#canvas12l").hide();
+                $("#canvas12p").hide();
+                $("#canvas12d").show();
+                var canvas = $("#canvas12d");
+                PolarChart(canvas, chartdata, "WHO Tube Resistance: Count vs KnockDown Time");
+
+
+            }
+
+            $('#tbl12').html(tabledata(chartdata));
+
+
+        },
+        error: function (data) {
+            console.log("Request f12req error");
+            console.log(data);
+        },
+        complete: function (data) {
+            $('.loader').fadeOut();
+        },
+        beforeSend: function (data) {
+            $('#load12').html('<div class="loader"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div></div></div>');
+      
+        }
+    });
+}
 
 
 function confirmationDelete(anchor) {

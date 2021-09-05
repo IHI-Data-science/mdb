@@ -615,12 +615,13 @@ if($q==='sevend'){
  }
  //to here
 
-//pupae density
+//pupae density monthly
 if($q==='eight'){
    
     $query="SELECT MONTHNAME(ed1.dt) AS month, 
     SUM(CASE WHEN ss2.tx = 1 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS AnophelesSp, 
-    SUM(CASE WHEN ss2.tx = 50 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Culex 
+    SUM(CASE WHEN ss2.tx = 50 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Culex,
+    SUM(CASE WHEN ss2.tx = 70 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Aedes 
     FROM projectregsite 
     INNER JOIN projectreg 
     ON (projectregsite.projectreg_id = projectreg.id) 
@@ -640,13 +641,70 @@ if($q==='eight'){
      
  }
 
- //larvae density
+ //pupae density daily
+ if($q==='eightc'){
+   
+    $query="SELECT ed1.dt AS DT, 
+    SUM(CASE WHEN ss2.tx = 1 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS AnophelesSp, 
+    SUM(CASE WHEN ss2.tx = 50 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Culex,
+    SUM(CASE WHEN ss2.tx = 70 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Aedes 
+    FROM projectregsite 
+    INNER JOIN projectreg 
+    ON (projectregsite.projectreg_id = projectreg.id) 
+    INNER JOIN site 
+    ON (projectregsite.site_id = site.site_id) 
+    INNER JOIN ".$prefixtable."ed1 as ed1 
+    ON (ed1.projectregsite_id = projectregsite.id) 
+    INNER JOIN ".$prefixtable."edss as edss 
+    ON (ed1.id = edss.ed1id) 
+    INNER JOIN ".$prefixtable."ss2 as ss2
+    ON (ss2.edssid = edss.id) 
+    LEFT JOIN method 
+    ON (ed1.me = method.meth_code) 
+    LEFT JOIN taxon 
+    ON (ss2.tx = taxon.taxon_code) 
+    where 1=1 $wherecon GROUP BY ed1.dt, taxon.taxon_code ASC";
+     
+ }
+
+//  pupae density weekly
+ if($q==='eightyeight'){
+   
+    $query="SELECT CONCAT(YEAR(ed1.dt), ' WK-', WEEK(ed1.dt)) AS weekyear,
+    SUM(CASE WHEN ss2.tx = 1 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS AnophelesSp, 
+    SUM(CASE WHEN ss2.tx = 50 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Culex,
+    SUM(CASE WHEN ss2.tx = 70 THEN ss2.pu ELSE 0 end) / SUM(ss2.dip) AS Aedes 
+    FROM projectregsite 
+    INNER JOIN projectreg 
+    ON (projectregsite.projectreg_id = projectreg.id) 
+    INNER JOIN site 
+    ON (projectregsite.site_id = site.site_id) 
+    INNER JOIN ".$prefixtable."ed1 as ed1 
+    ON (ed1.projectregsite_id = projectregsite.id) 
+    INNER JOIN ".$prefixtable."edss as edss 
+    ON (ed1.id = edss.ed1id) 
+    INNER JOIN ".$prefixtable."ss2 as ss2
+    ON (ss2.edssid = edss.id) 
+    LEFT JOIN method 
+    ON (ed1.me = method.meth_code) 
+    LEFT JOIN taxon 
+    ON (ss2.tx = taxon.taxon_code) 
+    where 1=1 $wherecon GROUP BY weekyear ORDER BY ed1.dt,taxon.taxon_code ASC";
+     
+ }
+
+ //larvae density monthly
  if($q==='nine'){
     
     $query="SELECT
              MONTHNAME(ed1.dt) AS month,
-             SUM(CASE WHEN ss2.tx = 1 THEN ss2.L1L2 ELSE 0 end) / SUM(ss2.dip) AS L1L2,
-             SUM(CASE WHEN ss2.tx = 50 THEN ss2.L3L4 ELSE 0 end) / SUM(ss2.dip) AS L3L4
+             SUM(ss2.bfL1) / SUM(ss2.dip) AS L1,
+             SUM(ss2.bfL2) / SUM(ss2.dip) AS L2,
+             SUM(ss2.bfL3) / SUM(ss2.dip) AS L3,
+             SUM(ss2.bfL4) / SUM(ss2.dip) AS L4,
+             SUM(ss2.L1L2) / SUM(ss2.dip) AS L1L2,
+             SUM(ss2.L3L4) / SUM(ss2.dip) AS L3L4
+             
  
              FROM
              projectregsite
@@ -665,6 +723,101 @@ if($q==='eight'){
              LEFT JOIN taxon 
              ON (ss2.tx = taxon.taxon_code)
              where 1=1 $wherecon GROUP BY MONTH(ed1.dt) ORDER BY MONTH(ed1.dt),taxon.taxon_code ASC ";  
+ }
+
+ // larva density daily
+
+ if($q==='seventyseven'){
+    
+    $query="SELECT
+             ed1.dt AS DT,
+             SUM(ss2.bfL1) / SUM(ss2.dip) AS L1,
+             SUM(ss2.bfL2) / SUM(ss2.dip) AS L2,
+             SUM(ss2.bfL3) / SUM(ss2.dip) AS L3,
+             SUM(ss2.bfL4) / SUM(ss2.dip) AS L4,
+             SUM(ss2.L1L2) / SUM(ss2.dip) AS L1L2,
+             SUM(ss2.L3L4) / SUM(ss2.dip) AS L3L4
+ 
+             FROM
+             projectregsite
+             INNER JOIN projectreg 
+             ON (projectregsite.projectreg_id = projectreg.id)
+             INNER JOIN site 
+             ON (projectregsite.site_id = site.site_id)
+             INNER JOIN ".$prefixtable."ed1 as ed1
+             ON (ed1.projectregsite_id = projectregsite.id)
+             INNER JOIN ".$prefixtable."edss as edss
+             ON (ed1.id = edss.ed1id)
+             INNER JOIN ".$prefixtable."ss2 as ss2
+             ON (ss2.edssid = edss.id)
+             LEFT JOIN method 
+             ON (ed1.me = method.meth_code)
+             LEFT JOIN taxon 
+             ON (ss2.tx = taxon.taxon_code)
+             where 1=1 $wherecon GROUP BY ed1.dt, taxon.taxon_code ASC ";  
+ }
+
+  // larva density weekly
+
+  if($q==='seventyeight'){
+    
+    $query="SELECT
+             CONCAT(YEAR(ed1.dt), ' WK-', WEEK(ed1.dt)) AS weekyear,
+             SUM(ss2.bfL1) / SUM(ss2.dip) AS L1,
+             SUM(ss2.bfL2) / SUM(ss2.dip) AS L2,
+             SUM(ss2.bfL3) / SUM(ss2.dip) AS L3,
+             SUM(ss2.bfL4) / SUM(ss2.dip) AS L4,
+             SUM(ss2.L1L2) / SUM(ss2.dip) AS L1L2,
+             SUM(ss2.L3L4) / SUM(ss2.dip) AS L3L4
+ 
+             FROM
+             projectregsite
+             INNER JOIN projectreg 
+             ON (projectregsite.projectreg_id = projectreg.id)
+             INNER JOIN site 
+             ON (projectregsite.site_id = site.site_id)
+             INNER JOIN ".$prefixtable."ed1 as ed1
+             ON (ed1.projectregsite_id = projectregsite.id)
+             INNER JOIN ".$prefixtable."edss as edss
+             ON (ed1.id = edss.ed1id)
+             INNER JOIN ".$prefixtable."ss2 as ss2
+             ON (ss2.edssid = edss.id)
+             LEFT JOIN method 
+             ON (ed1.me = method.meth_code)
+             LEFT JOIN taxon 
+             ON (ss2.tx = taxon.taxon_code)
+             where 1=1 $wherecon GROUP BY weekyear ORDER BY ed1.dt,taxon.taxon_code ASC ";  
+ }
+
+ //larvae population
+ if($q==='fiftyfive'){
+    
+    $query="SELECT
+             taxon.taxon_name AS TaxonName,
+             SUM(ss2.bfL1) / SUM(ss2.dip) AS L1,
+             SUM(ss2.bfL2) / SUM(ss2.dip) AS L2,
+             SUM(ss2.bfL3) / SUM(ss2.dip) AS L3,
+             SUM(ss2.bfL4) / SUM(ss2.dip) AS L4,
+             SUM(ss2.L1L2) / SUM(ss2.dip) AS L1L2,
+             SUM(ss2.L3L4) / SUM(ss2.dip) AS L3L4
+ 
+             FROM
+             projectregsite
+             INNER JOIN projectreg 
+             ON (projectregsite.projectreg_id = projectreg.id)
+             INNER JOIN site 
+             ON (projectregsite.site_id = site.site_id)
+             INNER JOIN ".$prefixtable."ed1 as ed1
+             ON (ed1.projectregsite_id = projectregsite.id)
+             INNER JOIN ".$prefixtable."edss as edss
+             ON (ed1.id = edss.ed1id)
+             INNER JOIN ".$prefixtable."ss2 as ss2
+             ON (ss2.edssid = edss.id)
+             LEFT JOIN method 
+             ON (ed1.me = method.meth_code)
+             LEFT JOIN taxon 
+             ON (ss2.tx = taxon.taxon_code)
+             where 1=1 $wherecon GROUP BY taxon.taxon_name ORDER BY ss2.tx ASC";  
  }
 
  if($q==='ten'){
@@ -722,6 +875,37 @@ if($q==='eight'){
 
  }
 
+ //weekly snail summary
+
+ if($q==='fortyfour'){
+    
+    $query = "SELECT
+    CONCAT(YEAR(ed1.dt), ' WK-', WEEK(ed1.dt)) AS weekyear,
+    SUM(CASE WHEN ss4.spc = 1 
+        THEN ss4.n 
+        ELSE 0 end) AS Biomphalari,
+    SUM(CASE WHEN ss4.spc = 2 
+        THEN ss4.n 
+        ELSE 0 end) AS Bulinus
+    
+    FROM
+    projectregsite
+    INNER JOIN projectreg 
+    ON (projectregsite.projectreg_id = projectreg.id)
+    INNER JOIN site 
+    ON (projectregsite.site_id = site.site_id)
+    INNER JOIN ".$prefixtable."ed1 as ed1
+    ON (ed1.projectregsite_id = projectregsite.id)
+    INNER JOIN ".$prefixtable."edss as edss
+    ON (ed1.id = edss.ed1id)
+    INNER JOIN ".$prefixtable."ss4 as ss4
+    ON (ss4.edssid = edss.id)
+    LEFT JOIN method 
+    ON (ed1.me = method.meth_code)
+    where 1=1 $wherecon GROUP BY weekyear ORDER BY ed1.dt ASC";
+
+ }
+
  if($q==='twelve'){
     
     $query = "SELECT
@@ -750,7 +934,97 @@ if($q==='eight'){
     where 1=1 $wherecon GROUP BY MONTHNAME(ed1.dt) ORDER BY MONTHNAME(ed1.dt)";
 
  }
+
+
+
+
+
+ //res
  
+if($q==='thirteen'){
+   
+    $query="SELECT
+
+             `kd_d0`,`kd_d15`, `kd_d30`, `kd_d45`,`kd_d60`, `kd_d75`,
+              `kd_d90`, `kd_d105`, `kd_d120`
+              
+
+             FROM
+             projectregsite
+             INNER JOIN projectreg
+             ON (projectregsite.projectreg_id = projectreg.id)
+             INNER JOIN site
+             ON (projectregsite.site_id = site.site_id)
+             INNER JOIN ".$prefixtable."ed1 as ed1
+             ON (ed1.projectregsite_id = projectregsite.id)
+             INNER JOIN ".$prefixtable."edss as edss
+             ON (ed1.id = edss.ed1id)
+             INNER JOIN ".$prefixtable."ss3 as ss3
+             ON (ss3.edssid = edss.id)
+
+             GROUP BY `MTI1`, `MTI2`, `MTI3`, `MTI4`, `MTI5`, `MTI6`, `MTS`,
+             `MTISY1`,`MTISY2`, `MTISY3`, `MTISY4`,`MTISY5`, `MTISY6`, `MTSY`" ;
+
+           }
+ 
+//whoconeres
+ 
+if($q==='fourteen'){
+   
+    $query="SELECT
+
+             `mkd1`,`mkd2`, `mkd3`, `mkd4`,`mkd5`,`mkd6`,`mkd7`,`mkd8`,`mkd9`, `mkd10`,
+ 
+           
+             `mkd11`,`mkd12`, `mkd13`, `mkd14`, `mkd15`,`mkd16`,`mkd17`,`mkd18`,`mkd19`, `mkd20`
+ 
+
+             FROM
+             projectregsite
+             INNER JOIN projectreg
+             ON (projectregsite.projectreg_id = projectreg.id)
+             INNER JOIN site
+             ON (projectregsite.site_id = site.site_id)
+             INNER JOIN ".$prefixtable."ed1 as ed1
+             ON (ed1.projectregsite_id = projectregsite.id)
+             INNER JOIN ".$prefixtable."edss as edss
+             ON (ed1.id = edss.ed1id)
+             INNER JOIN ".$prefixtable."ss3 as ss3
+             ON (ss3.edssid = edss.id)
+
+            GROUP BY `MT1`, `MT2`, `MT3`, `MT4`" ;
+
+           }
+
+
+//whotuberes
+ 
+if($q==='fifteen'){
+   
+    $query="SELECT
+
+        `kd_d1d`, `kd_d2d`, `kd_d3d`, `kd_d4d`, `kd_d5d`,`kd_d6d`,`kd_d7d`
+ 
+
+             FROM
+             projectregsite
+             INNER JOIN projectreg
+             ON (projectregsite.projectreg_id = projectreg.id)
+             INNER JOIN site
+             ON (projectregsite.site_id = site.site_id)
+             INNER JOIN ".$prefixtable."ed1 as ed1
+             ON (ed1.projectregsite_id = projectregsite.id)
+             INNER JOIN ".$prefixtable."edss as edss
+             ON (ed1.id = edss.ed1id)
+             INNER JOIN ".$prefixtable."ss3 as ss3
+             ON (ss3.edssid = edss.id)
+
+            GROUP BY `mtir1`, `mtir2`, `mtir3`, `mtir4`, `mtir5`, `mtir6`" ;
+
+           }
+
+
+      
 
 if($q === 'hone'){
     
