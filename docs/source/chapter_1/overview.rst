@@ -6,4 +6,4 @@ MosquitoDB’s web-based application is a secure application that can store, lin
 It ensures Quality data collection, Proper linkage between projects and users, Secure storage, Standardized datasets, Easy sharing of data within the team and interactive visualization of stored data.
 
 
-.. image:: ../_images/home2.PNG
+.. image:: docs/source/_images/Picture3.png/home2.PNG
