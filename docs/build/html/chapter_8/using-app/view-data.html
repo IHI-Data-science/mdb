@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>8.3.5. View Data &mdash; MosquitoDb 25th August 2021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.3.6. Submit Data" href="submit-data.html" />
+    <link rel="prev" title="8.3.4. Edit Data" href="dataedit.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> MosquitoDb
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../chapter_1/index.html">1. Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter_2/index.html">2. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter_3/index.html">3. Project Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter_4/index.html">4. Forms Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter_5/index.html">5. User Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter_6/index.html">6. Data Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter_7/index.html">7. Settings</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">8. MosquitoDB App</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../iebsapp.html">8.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup-app.html">8.2. App setup</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">8.3. Using the App</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="login.html">8.3.1. Login</a></li>
+<li class="toctree-l3"><a class="reference internal" href="choose-project.html">8.3.2. Accessing a project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enter-data/index.html">8.3.3. Enter Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dataedit.html">8.3.4. Edit Data</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">8.3.5. View Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="submit-data.html">8.3.6. Submit Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapter_9/index.html">9. Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MosquitoDb</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html"><span class="section-number">8. </span>MosquitoDB App</a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">8.3. </span>Using the App</a> &raquo;</li>
+        
+      <li><span class="section-number">8.3.5. </span>View Data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/chapter_8/using-app/view-data.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="view-data">
+<h1><span class="section-number">8.3.5. </span>View Data<a class="headerlink" href="#view-data" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><strong>Step 1:</strong> On the Home Page, Select <strong>View Data</strong>, then select the form whose data you want to view and e.g Sample Sorting</div>
+<div class="line"><strong>Step 2:</strong> Select the data set you want to view</div>
+<div class="line"><strong>Step 3:</strong> Click View</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/viewdata.PNG"><img alt="../../_images/viewdata.PNG" src="../../_images/viewdata.PNG" style="width: 30%;" /></a>
+<a class="reference internal image-reference" href="../../_images/viewdata2.PNG"><img alt="../../_images/viewdata2.PNG" src="../../_images/viewdata2.PNG" style="width: 30%;" /></a>
+<a class="reference internal image-reference" href="../../_images/viewdata3.PNG"><img alt="../../_images/viewdata3.PNG" src="../../_images/viewdata3.PNG" style="width: 30%;" /></a>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="submit-data.html" class="btn btn-neutral float-right" title="8.3.6. Submit Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dataedit.html" class="btn btn-neutral float-left" title="8.3.4. Edit Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Ifakara Health Institute (IHI).
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
