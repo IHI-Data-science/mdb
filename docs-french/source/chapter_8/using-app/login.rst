@@ -7,11 +7,11 @@ Connexion
 | **Étape 1:** Lors de l'exécution de l'application, vous serez invité à sélectionner la langue de votre choix, soit le français ou l'anglais. 
 
 
-.. image:: ../../_images/language.JPEG
+.. image:: ../../_images/language.jpeg
    :width: 45%
 
 
 | **Étape 2:** Saisissez vos identifiants de connexion puis cliquez sur Connexion. 
 
 
-.. image:: ../../_images/login.PNG
+.. image:: ../../_images/login.png

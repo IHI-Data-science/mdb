@@ -1,47 +1,47 @@
-Setting up the forms
-====================
+Mise en place des formulaires
+=============================
 
-Inorder to start working on the forms, make sure you have created a project first following the steps on 3.1. 
+Afin de commencer à travailler sur les formulaires, assurez-vous que vous avez d'abord créé un projet en suivant les étapes de 3.1.
 
-The forms on MosquitoDb are used as below; 
+Les formulaires sur MosquitoDb sont utilisés comme ci-dessous ;
 
-| **a**: Experimental Design 1 is used to collect field data
-| **b**: Experimental Design 2 collects from semi-fields
-| **c**: Sample Sorting 1 collects mature mosquito data
-| **d**: Sample Sorting 2 collects immature mosquito data
-| **e**: Sample Sorting 3 collects resistance data
-| **f**: Sample Sorting 4 collects snail data
-| **g**: Sample Observation 1 laboratory data collected from field
-| **h**: Sample Observation 2 laboratory data collected from semi-field
-| **i**: Sample Storage 1 collects storage data from field
-| **j**: Sample Storage 2 collects storage data from semi-field 
-
-
-After creating a project select the project and experiment then; 
+| **a**: Le plan expérimental 1 est utilisé pour collecter des données sur le terrain
+| **b**: Experimental Design 2 collecte à partir de semi-champs
+| **c**: Sample Sorting 1 collecte des données sur les moustiques matures
+| **d**: Sample Sorting 2 collecte des données sur les moustiques immatures
+| **e**: Sample Sorting 3 collecte les données de résistance
+| **f**: Sample Sorting 4 collecte des données sur les escargots
+| **g**: Echantillon Observation 1 données de laboratoire collectées sur le terrain
+| **h**: Echantillon Observation 2 données de laboratoire collectées à partir de semi-terrain
+| **i**: Sample Storage 1 collecte les données de stockage sur le terrain
+| **j**: Sample Storage 2 collecte les données de stockage à partir du semi-terrain 
 
 
-Customize form fields
----------------------
+Après avoir créé un projet, sélectionnez le projet et expérimentez ensuite ;
 
-| **Step 1**: Click Sytem Administration then Customization
-| **Step 2**: Choose the forms that you want to have in your experiment e.g Experimental Design, then choose either Experimental Design 1 or 2.
 
-| **Step 3**: Check or uncheck any non-mandatory field 
+Personnaliser les champs de formulaire
+-----------------------------------------
 
-| **Step 4**: Click Save Fields or Delete Saved to uncheck the non-mandatory fields 
+| **Étape 1**: Cliquez sur Administration du système puis Personnalisation
+| **Étape 2**: Choisissez les formes que vous souhaitez avoir dans votre expérience, par exemple la conception expérimentale, puis choisissez la conception expérimentale 1 ou 2.
 
-**Do the same for all forms that you need in your experiment**
+| **Étape 3**: Cochez ou décochez tout champ non obligatoire 
+
+| **Étape 4**: Cliquez sur Enregistrer les champs ou sur Supprimer enregistré pour décocher les champs non obligatoires
+
+**Faites de même pour tous les formulaires dont vous avez besoin dans votre expérience**
 
 .. image:: ../_images/customize.PNG 
 
 
-Customize template
-------------------
+Personnaliser le modèle
+------------------------
 
-| **Step 1**: Click Sytem Administration then Customization
-| **Step 2**: Click Customize General Template 
-| **Step 3**: Click Download on the field you want to customize e.g Methods
-| **Step 4**: After editing the Methods on excel file, click Choose File and choose the edited excel file then click Import to upload the data
+| **Étape 1**: Cliquez sur Administration du système puis Personnalisation
+| **Étape 2**: Cliquez sur Personnaliser le modèle général
+| **Étape 3**: Cliquez sur Télécharger sur le champ que vous souhaitez personnaliser, par exemple Méthodes
+| **Étape 4**: Après avoir modifié les méthodes sur le fichier Excel, cliquez sur Choisir un fichier et choisissez le fichier Excel modifié, puis cliquez sur Importer pour télécharger les données
 
 .. image:: ../_images/customize1.PNG
 

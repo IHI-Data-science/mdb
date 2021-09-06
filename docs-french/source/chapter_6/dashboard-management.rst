@@ -8,8 +8,8 @@ Pour afficher les ensembles de données d'un projet spécifique, sélectionnez e
 | **Étape 3**: Vous pouvez maintenant afficher les données et rechercher une donnée spécifique que vous souhaitez.
 
 
-.. image:: ../_images/dataset.PNG 
+.. image:: ../_images/dataset.png 
    
 
-.. image:: ../_images/dataset2.PNG
+.. image:: ../_images/dataset2.png
 

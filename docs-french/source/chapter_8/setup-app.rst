@@ -15,16 +15,16 @@ Si vous avez l'apk, alors;
 |             **c:** Faites défiler jusqu'à "Installer des applications inconnues" et autorisez-le.
 
 
-.. image:: ../_images/picture2.PNG
+.. image:: ../_images/picture2.png
    :width: 45%
 
 
-.. image:: ../_images/picture3.PNG
+.. image:: ../_images/picture3.png
    :width: 45%
 
 
 | **Étape 2:** Installez l'application
 
-.. image:: ../_images/picture1.PNG
+.. image:: ../_images/picture1.png
    :width: 45%
 

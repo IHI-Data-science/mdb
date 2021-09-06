@@ -8,12 +8,12 @@ Une fois enregistré dans Mosquito DB, vous pouvez modifier vos informations d'u
 | **Étape 3**: Après l'édition, cliquez sur Mettre à jour pour enregistrer vos modifications
 
 
-.. image:: ../_images/edit.PNG 
+.. image:: ../_images/edit.png 
    :width: 45%
 
-.. image:: ../_images/edit1.PNG
+.. image:: ../_images/edit1.png
    :width: 45%
 
-.. image:: ../_images/edit3.PNG
+.. image:: ../_images/edit3.png
 
 

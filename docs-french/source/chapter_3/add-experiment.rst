@@ -5,7 +5,7 @@ Ajouter une expérience à un projet
 | **Étape 2**: Recherchez votre projet en fonction du code du projet (par exemple, MXTG) 
 | **Étape 3**: Cliquez sur le bouton **+Exp**
 
-.. image:: ../_images/newexperiment.PNG 
+.. image:: ../_images/newexperiment.png 
 
 | **Étape 4**: Saisissez les nouveaux détails de l'expérience ; 
 |            **a**: Numéro d'expérience (par exemple, 002)
@@ -17,5 +17,5 @@ Ajouter une expérience à un projet
 | **d**: Cliquez sur "Ajouter une expérience"
 
 
-.. image:: ../_images/newexperiment1.PNG
+.. image:: ../_images/newexperiment1.png
 

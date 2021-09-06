@@ -5,12 +5,12 @@ Afficher les données
 | **Étape 2:** Sélectionnez l'ensemble de données que vous souhaitez afficher
 | **Étape 3:** Cliquez sur Afficher 
 
-.. image:: ../../_images/viewdata.PNG
+.. image:: ../../_images/viewdata.png
    :width: 30%
 
-.. image:: ../../_images/viewdata2.PNG
+.. image:: ../../_images/viewdata2.png
    :width: 30%
 
-.. image:: ../../_images/viewdata3.PNG
+.. image:: ../../_images/viewdata3.png
    :width: 30%
 

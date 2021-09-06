@@ -8,10 +8,10 @@ Tri des échantillons
 | **Étape 3:** SEN est généré automatiquement à partir de ED1, vous pouvez continuer à remplir vos données. 
 | **Étape 4:** Enregistrez vos données dans votre appareil, avant de les envoyer vers le cloud.
 
-.. image:: ../../../_images/ssform.PNG
+.. image:: ../../../_images/ssform.png
    :width: 22%
 
-.. image:: ../../../_images/ssforms2.PNG
+.. image:: ../../../_images/ssforms2.png
    :width: 77%
 
 

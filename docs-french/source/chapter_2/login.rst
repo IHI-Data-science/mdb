@@ -8,6 +8,6 @@ Connectez-vous à votre compte
 Si vous ne vous souvenez plus de votre mot de passe enregistré, cliquez sur Réinitialiser et un e-mail vous sera envoyé par e-mail pour les instructions de réinitialisation du mot de passe.
 
 
-.. image:: ../_images/login2.PNG
+.. image:: ../_images/login2.png
    :width: 45%
 

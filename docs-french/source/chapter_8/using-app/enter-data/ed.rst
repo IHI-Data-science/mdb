@@ -11,13 +11,13 @@ Conception expérimentale
 | **a:** Cliquez pour afficher les données préenregistrées  
 | **b:** Cliquez pour générer automatiquement le numéro de série.
 
-.. image:: ../../../_images/enterdata.PNG
+.. image:: ../../../_images/enterdata.png
    :width: 30%
 
-.. image:: ../../../_images/enterdata2.PNG
+.. image:: ../../../_images/enterdata2.png
    :width: 30%
 
-.. image:: ../../../_images/enterdata3.PNG
+.. image:: ../../../_images/enterdata3.png
    :width: 30%
 
 

@@ -6,7 +6,7 @@
 Bienvenue dans la documentation de MosquitoDb !
 ===============================================
 
-.. image:: _images/banner3.PNG
+.. image:: _images/banner3.png
 
 .. toctree::
    :maxdepth: 2

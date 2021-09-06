@@ -7,12 +7,12 @@ Soumettre des données
 | **Étape 2:** Vous verrez tous les ensembles de données que vous avez entrés. 
 | **Étape 3:** Cliquez sur l'icône du nuage pour pousser toutes vos données simultanément.  
 
-.. image:: ../../_images/submit.PNG
+.. image:: ../../_images/submit.png
    :width: 30%
 
-.. image:: ../../_images/submitdata.PNG
+.. image:: ../../_images/submitdata.png
    :width: 30%
 
-.. image:: ../../_images/pushdata.PNG
+.. image:: ../../_images/pushdata.png
    :width: 30%
 

@@ -7,7 +7,7 @@ Téléchargement de données
 | **Étape 4**: Cliquez sur Générer un jeu de données
 
 
-.. image:: ../_images/generatedataset.PNG
+.. image:: ../_images/generatedataset.png
 
 
 
@@ -19,5 +19,5 @@ Si vous souhaitez sélectionner des données à partir de différents formulaire
 | **d**: Cliquez sur Générer un jeu de données
 
 
-.. image:: ../_images/generate2.PNG
+.. image:: ../_images/generate2.png
 

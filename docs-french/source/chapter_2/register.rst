@@ -7,9 +7,9 @@ Lors de la soumission, le système enverra un "e-mail d'activation" à votre e-m
 
 Si vous êtes un utilisateur francophone, cliquez sur le bouton de langue pour passer à votre langue préférée.
 
-.. image:: ../_images/register2_50.PNG 
+.. image:: ../_images/register2_50.png
    :width: 45%
 
-.. image:: ../_images/register3.PNG
+.. image:: ../_images/register3.png
    :width: 45%
 

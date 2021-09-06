@@ -9,7 +9,7 @@ Vous pouvez modifier les noms d'étiquette de nom des tables de données.
 | **Étape 4**: Cliquez sur Soumettre
 
 
-.. image:: ../_images/labels.PNG
+.. image:: ../_images/labels.png
 
 
 

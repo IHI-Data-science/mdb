@@ -8,23 +8,23 @@ Accéder à un projet
 | **Étape 3:** Cliquez sur le menu déroulant pour sélectionner le projet auquel vous souhaitez accéder, puis cliquez sur **Télécharger le projet**
 | **Étape 4:** Cliquez sur **Télécharger des sites**
 
-.. image:: ../../_images/menubar.PNG
+.. image:: ../../_images/menubar.png
    :width: 30%
 
-.. image:: ../../_images/selectproject.PNG
+.. image:: ../../_images/selectproject.png
    :width: 30%
 
-.. image:: ../../_images/selectsites.PNG
+.. image:: ../../_images/selectsites.png
    :width: 30%
 
 
 | **Étape 5:** Sur la page Paramètres, cliquez sur **Site**, puis choisissez le site sur lequel se trouve votre projet
 | **Étape 6:** Sur la même page, cliquez sur "Nombre de lignes de formulaire dans ED1" si vous utilisez ED1 ou "Nombre de lignes de formulaire dans ED2" si vous utilisez ED2. Définissez ensuite le nombre de lignes que vous utiliserez dans votre formulaire ED et cliquez sur **OK**
 
-.. image:: ../../_images/selectsite.PNG
+.. image:: ../../_images/selectsite.png
    :width: 30%
 
-.. image:: ../../_images/selectrows.PNG
+.. image:: ../../_images/selectrows.png
    :width: 30%
 
 

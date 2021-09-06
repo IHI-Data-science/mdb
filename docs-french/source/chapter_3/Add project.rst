@@ -6,10 +6,10 @@ Ajouter un projet
 | **Étape 3**: Cliquez sur +Ajouter un projet
 
 
-.. image:: ../_images/addproject.PNG 
+.. image:: ../_images/addproject.png 
    :width: 25%
 
-.. image:: ../_images/addproject2.PNG
+.. image:: ../_images/addproject2.png
    :width: 65%
 
 
@@ -24,4 +24,4 @@ Ajouter un projet
 | Cliquez ensuite sur « Envoyer »
 
 
-.. image:: ../_images/addproject3.PNG
+.. image:: ../_images/addproject3.png

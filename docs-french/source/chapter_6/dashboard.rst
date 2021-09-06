@@ -7,5 +7,5 @@ Résumé des données
 | **Étape 4**: Cliquez sur le résumé que vous souhaitez afficher dans le tableau récapitulatif des données ou les graphiques de fréquence en fonction des données disponibles et/ou filtrées.
 
 
-.. image:: ../_images/summary.PNG
+.. image:: ../_images/summary.png
 

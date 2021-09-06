@@ -10,4 +10,4 @@ Travailler avec la page d'accueil
 - N'autorisez l'accès qu'aux membres de votre équipe et à vos collaborateurs - ou à ceux avec qui vous avez accepté de partager des données. 
 
 
-.. image:: ../_images/homepage2.PNG
+.. image:: ../_images/homepage2.png

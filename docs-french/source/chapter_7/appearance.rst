@@ -8,10 +8,10 @@ Vous pouvez modifier l'organisation et l'apparence de Mosquito ;
 | **Étape 3**: Entrez le nom de l'organisation et sélectionnez le thème de votre choix dans la liste déroulante, cliquez sur Soumettre pour enregistrer vos modifications
 
 
-.. image:: ../_images/customise.PNG 
+.. image:: ../_images/customise.png 
    :width: 25%
 
-.. image:: ../_images/customise1.PNG
+.. image:: ../_images/customise1.png
    :width: 65%
 
-.. image:: ../_images/customise2.PNG
+.. image:: ../_images/customise2.png
