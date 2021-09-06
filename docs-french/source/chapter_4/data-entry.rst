@@ -11,7 +11,7 @@ Sélection du formulaire de saisie
 | **Étape 1**: Cliquez sur Formulaires dans le menu
 | **Étape 2**: Guidez le curseur vers le haut du type de formulaire que vous souhaitez sélectionner le formulaire spécifique dans la liste déroulante
 
-.. image:: ../_images/mainmenu.png
+.. image:: ../_images/mainmenu.PNG
 
 | **Étape 3**: Cliquez sur Télécharger le modèle, puis saisissez les données dans la feuille Excel téléchargée
 

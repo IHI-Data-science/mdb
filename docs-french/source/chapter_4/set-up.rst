@@ -32,7 +32,7 @@ Personnaliser les champs de formulaire
 
 **Faites de même pour tous les formulaires dont vous avez besoin dans votre expérience**
 
-.. image:: ../_images/customize.PNG 
+.. image:: ../_images/customize.png 
 
 
 Personnaliser le modèle
@@ -43,9 +43,9 @@ Personnaliser le modèle
 | **Étape 3**: Cliquez sur Télécharger sur le champ que vous souhaitez personnaliser, par exemple Méthodes
 | **Étape 4**: Après avoir modifié les méthodes sur le fichier Excel, cliquez sur Choisir un fichier et choisissez le fichier Excel modifié, puis cliquez sur Importer pour télécharger les données
 
-.. image:: ../_images/customize1.PNG
+.. image:: ../_images/customize1.png
 
-.. image:: ../_images/customize2.PNG 
+.. image:: ../_images/customize2.png 
 
 
 
