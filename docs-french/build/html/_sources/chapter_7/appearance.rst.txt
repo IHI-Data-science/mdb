@@ -1,11 +1,11 @@
-Appearance
+Apparence
 ==========
 
-You can change your organization and appearacne of MosquitoDb; 
+Vous pouvez modifier l'organisation et l'apparence de Mosquito ;
 
-| **Step 1**: Click System Administration then Customization
-| **Step 2**: Click Customize Theme  
-| **Step 3**: Enter the organization name and select your theme of choice from the dropdown , click Submit to save your changes
+| **Étape 1**: Cliquez sur Administration système puis Personnalisation
+| **Étape 2**: Cliquez sur Personnaliser le thème 
+| **Étape 3**: Entrez le nom de l'organisation et sélectionnez le thème de votre choix dans la liste déroulante, cliquez sur Soumettre pour enregistrer vos modifications
 
 
 .. image:: ../_images/customise.PNG 

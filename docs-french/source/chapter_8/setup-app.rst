@@ -1,18 +1,18 @@
-App setup
-=========
+Configuration de l'application
+===============================
 
-To use MosquitoDb App, first download the App from PlayStore by searching MosquitoDb. 
+Pour utiliser l'application Mosquito DB, téléchargez d'abord l'application depuis PlayStore en recherchant Mosquito.
 
-Install the first app who's owner is **Samson Kiware**
+Installez la première application dont le propriétaire est **Samson Kiware**
 
-**OR**
+**OU**
 
-If you have the apk, then; 
+Si vous avez l'apk, alors; 
 
-| **Step 1:** Allow Unknown sources to install apps on your phone 
-|             **a:** Go to Settings, then apps
-|             **b:** Select the app from which you got the apk e.g WhatsApp
-|             **c:** Scroll down to "Install Unknown apps" and allow it.
+| **Étape 1:** Autoriser les sources inconnues à installer des applications sur votre téléphone
+|             **a:** Allez dans Paramètres, puis applications
+|             **b:** Sélectionnez l'application à partir de laquelle vous avez obtenu l'apk, par exemple WhatsApp
+|             **c:** Faites défiler jusqu'à "Installer des applications inconnues" et autorisez-le.
 
 
 .. image:: ../_images/picture2.PNG
@@ -23,7 +23,7 @@ If you have the apk, then;
    :width: 45%
 
 
-| **Step 2:** Install the app
+| **Étape 2:** Installez l'application
 
 .. image:: ../_images/picture1.PNG
    :width: 45%

@@ -1,9 +1,9 @@
-View Data
-==========
+Afficher les données
+=====================
 
-| **Step 1:** On the Home Page, Select **View Data**, then select the form whose data you want to view and e.g Sample Sorting 
-| **Step 2:** Select the data set you want to view
-| **Step 3:** Click View 
+| **Étape 1:** Sur la page d'accueil, sélectionnez **Afficher les données**, puis sélectionnez le formulaire dont vous souhaitez afficher les données et, par exemple, le tri des échantillons
+| **Étape 2:** Sélectionnez l'ensemble de données que vous souhaitez afficher
+| **Étape 3:** Cliquez sur Afficher 
 
 .. image:: ../../_images/viewdata.PNG
    :width: 30%

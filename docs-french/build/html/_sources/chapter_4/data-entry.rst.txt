@@ -1,26 +1,26 @@
-Data entry
-==========
+La saisie des données
+======================
 
-On completion of your experiment, you can upload data to the system through the Web application or the android application. 
+À la fin de votre expérience, vous pouvez télécharger des données sur le système via l'application Web ou l'application Android. 
 
-**NB:** This can be done after customizng the forms following the steps in 4.2.1 
+**NB:** Cela peut être fait après avoir personnalisé le formulaire en suivant les étapes de 4.2.1
 
-Selecting the data entry form
------------------------------
+Sélection du formulaire de saisie
+----------------------------------
 
-| **Step 1**: Click Forms on the Menu
-| **Step 2**: Guide the cursor to the top of the form type that you want the select the specific form from the dropdown
+| **Étape 1**: Cliquez sur Formulaires dans le menu
+| **Étape 2**: Guidez le curseur vers le haut du type de formulaire que vous souhaitez sélectionner le formulaire spécifique dans la liste déroulante
 
 .. image:: ../_images/mainmenu.PNG
 
-| **Step 3**: Click Download Template, then enter the data in the downloaded excel sheet 
+| **Étape 3**: Cliquez sur Télécharger le modèle, puis saisissez les données dans la feuille Excel téléchargée
 
-| **Step 4**: Click Upload File and select the filled excel file
-| **Step 5**: Click Submit
+| **Étape 4**: Cliquez sur Télécharger le fichier et sélectionnez le fichier Excel rempli
+| **Étape 5**: Cliquez sur Soumettre
 
 .. image:: ../_images/mainmenu2.PNG
 
-.. Importing data in CSV format
-.. ----------------------------
+.. Importation de données au format CSV
+.. -------------------------------------
 
 .. .. image:: ../_images/forms.PNG

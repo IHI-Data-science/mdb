@@ -1,12 +1,12 @@
-Sample Sorting
-===============
+Tri des échantillons
+=====================
 
-**NB:** You have to fill in data in ED Forms, before you can enter Sample Sorting Data. 
+**NB:** Vous devez remplir les données dans les formulaires ED avant de pouvoir saisir les données de tri des échantillons. 
 
-| **Step 1:** Select Sample Sorting
-| **Step 2:** Select the form for which you want to enter Data e.g Sample Sorting 1
-| **Step 3:** SEN is generated automatically from ED1, you can continue filling your data. 
-| **Step 4:** Save your data in your device, before sending to the cloud. 
+| **Étape 1:** Sélectionner le tri des échantillons
+| **Étape 2:** Sélectionnez le formulaire pour lequel vous souhaitez saisir des données, par exemple Tri d'échantillons 1
+| **Étape 3:** SEN est généré automatiquement à partir de ED1, vous pouvez continuer à remplir vos données. 
+| **Étape 4:** Enregistrez vos données dans votre appareil, avant de les envoyer vers le cloud.
 
 .. image:: ../../../_images/ssform.PNG
    :width: 22%
@@ -15,4 +15,4 @@ Sample Sorting
    :width: 77%
 
 
-**Please follow the same steps to enter Sample Observation(SO) and Sample Storage(ST) Data**
+**Veuillez suivre les mêmes étapes pour saisir les données d'observation d'échantillon (SO) et de stockage d'échantillon (ST)**

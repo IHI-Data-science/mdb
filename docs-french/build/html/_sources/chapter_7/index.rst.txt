@@ -1,5 +1,5 @@
-Settings
-========
+Paramètres
+===========
 
 
 .. toctree::

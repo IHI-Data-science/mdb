@@ -1,15 +1,15 @@
-Experimental Design
-====================
+Conception expérimentale
+=========================
 
-| **Step 1:** On the Home Page, Select **Enter Data**
-| **Step 2:** Select the form for which you want to enter Data e.g Experimental Design Form ( Review Chapter 4.2, for the use of the forms). Then choose the form number according to your experiment e.g if you're working on the field, then use ED1
+| **Étape 1:** Sur la page d'accueil, sélectionnez **Entrer des données**
+| **Étape 2:** Sélectionnez le formulaire pour lequel vous souhaitez saisir des données, par exemple un formulaire de conception expérimentale (Revoyez le chapitre 4.2, pour l'utilisation des formulaires). Choisissez ensuite le numéro du formulaire en fonction de votre expérience par exemple si vous travaillez sur le terrain, utilisez alors ED1
 
-**NB:** You have to fill in data in ED Forms, then you can continue adding data in other forms e.g SS2
+**NB:** Vous devez remplir les données dans les formulaires ED, puis vous pouvez continuer à ajouter des données dans d'autres formulaires, par exemple SS2
 
 
-| **Step 3:** On the ED Form, you can start filling in your data
-| **a:** Click to view pre-recorded data  
-| **b:** Click to auto generate Serial No. 
+| **Étape 3:** Sur le formulaire ED, vous pouvez commencer à remplir vos données
+| **a:** Cliquez pour afficher les données préenregistrées  
+| **b:** Cliquez pour générer automatiquement le numéro de série.
 
 .. image:: ../../../_images/enterdata.PNG
    :width: 30%
@@ -21,8 +21,8 @@ Experimental Design
    :width: 30%
 
 
-| **Step 5:** When you're done entering Click Save. This saves the data in your device before pushing it to the cloud. 
-| **Step 6:** To enter another set of data for the same experiment, click this is not the last entry on the popup. 
+| **Étape 5:** Lorsque vous avez terminé, cliquez sur Enregistrer. Cela enregistre les données dans votre appareil avant de les transférer vers le cloud. 
+| **Étape 6:** Pour saisir un autre ensemble de données pour la même expérience, cliquez sur ce n'est pas la dernière entrée de la fenêtre contextuelle. 
 
 
 

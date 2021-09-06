@@ -1,10 +1,10 @@
-Overview
+Aperçu
 ========
 
-The MosquitoDb application is used for data collection in the field and also view data from particular experiments when working in the field. 
+L'application Mosquito DB est utilisée pour la collecte de données sur le terrain et permet également d'afficher les données d'expériences particulières lors du travail sur le terrain.
 
 Requirements:
-| Operating system OS “Android – <4.0 Version”
-| Smart Phones or Tablets
-| Access to Internet – Upload & Downloading Projects
-| Install Android Package Kit(APK’s)- for MosquitoDB file
+| Système d'exploitation OS « Android – Version <4.0”
+| Téléphones intelligents ou tablettes
+| Accès à Internet – Téléchargement et téléchargement de projets
+| Installer Android Package Kit (APK) - pour le fichier Mosquito DB

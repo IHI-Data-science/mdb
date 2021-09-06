@@ -1,20 +1,20 @@
-Add an experiment to a project
-==============================
+Ajouter une expérience à un projet
+====================================
 
-| **Step 1**: Click Projects then Manage Project
-| **Step 2**: Search your project based on the project code (e.g., MXTG) 
-| **Step 3**: Click on **+Exp** button
+| **Étape 1**: Cliquez sur Projets puis sur Gérer le projet
+| **Étape 2**: Recherchez votre projet en fonction du code du projet (par exemple, MXTG) 
+| **Étape 3**: Cliquez sur le bouton **+Exp**
 
 .. image:: ../_images/newexperiment.PNG 
 
-| **Step 4**: Enter new experiment details; 
-|            **a**: Experiment number (e.g., 002)
-|            **b**: Select site name from a drop downmenu (if not available – Add a site?)
-|            **c**: Select appropriate date - same for expected end date 
+| **Étape 4**: Saisissez les nouveaux détails de l'expérience ; 
+|            **a**: Numéro d'expérience (par exemple, 002)
+|            **b**: Sélectionnez le nom du site dans un menu déroulant (si non disponible – Ajouter un site ?)
+|            **c**: Sélectionnez la date appropriée - même pour la date de fin prévue 
 
-| **NB**: The rest of the fields are filled by default
+| **NB**: Les autres champs sont remplis par défaut
 
-| **d**: Click "Add Experiment"
+| **d**: Cliquez sur "Ajouter une expérience"
 
 
 .. image:: ../_images/newexperiment1.PNG

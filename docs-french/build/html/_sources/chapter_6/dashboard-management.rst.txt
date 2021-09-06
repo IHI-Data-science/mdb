@@ -1,11 +1,11 @@
-Datasets
-=========
+Ensembles de données
+=====================
 
-To view datasets of a specific project, select the project and experiment number then; 
+Pour afficher les ensembles de données d'un projet spécifique, sélectionnez ensuite le numéro du projet et de l'expérience ; 
 
-| **Step 1**: Click Tables on the Menu
-| **Step 2**: Select the form from which you want to view the data e.g Experimental Design 1 to view the data collected using ED1
-| **Step 3**: You can now view the data and search a specific data that you want.
+| **Étape 1**: Cliquez sur Tableaux dans le menu
+| **Étape 2**: Sélectionnez le formulaire à partir duquel vous souhaitez afficher les données, par exemple Experimental Design 1 pour afficher les données collectées à l'aide de ED1
+| **Étape 3**: Vous pouvez maintenant afficher les données et rechercher une donnée spécifique que vous souhaitez.
 
 
 .. image:: ../_images/dataset.PNG 

@@ -1,11 +1,11 @@
-Edit Profile
-=============
+Editer le profil
+=================
 
-Once registered in MosquitoDb you can change your user details through the steps below; 
+Une fois enregistré dans Mosquito DB, vous pouvez modifier vos informations d'utilisateur en suivant les étapes ci-dessous ;
 
-| **Step 1**: Click on your name on the top left of the page, then select Profile on the dropdown
-| **Step 2**: Click Edit Profile to change your details or Edit password to chnage your password
-| **Step 3**: After editing, click Update to save your changes
+| **Étape 1**: Cliquez sur votre nom en haut à gauche de la page, puis sélectionnez Profil dans la liste déroulante
+| **Étape 2**: Cliquez sur Modifier le profil pour modifier vos informations ou Modifier le mot de passe pour modifier votre mot de passe
+| **Étape 3**: Après l'édition, cliquez sur Mettre à jour pour enregistrer vos modifications
 
 
 .. image:: ../_images/edit.PNG 

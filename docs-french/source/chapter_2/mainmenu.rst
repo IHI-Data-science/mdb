@@ -1,13 +1,13 @@
-Working with the main menu
-==========================
+Travailler avec le menu principal
+==================================
 
-**Once logged in note that;** 
+**Une fois connecté, notez que ;** 
 
-- Only users provided with access to a specific project(s) can access those projects
-- Only projects added into the system can be accessed
-- Only Project Investigators or Leaders add project to the system
-- Only Project Investigators or Leaders who have added a project can grant access to registered users
-- Only give access to members in your team and collaborators – or those you have agreed to share data with. 
+- Seuls les utilisateurs ayant accès à un ou plusieurs projets spécifiques peuvent accéder à ces projets
+- Seuls les projets ajoutés au système sont accessibles
+- Seuls les enquêteurs ou les chefs de projet ajoutent un projet au système
+- Seuls les enquêteurs ou les chefs de projet qui ont ajouté un projet peuvent accorder l'accès aux utilisateurs enregistrés
+- N'accordez l'accès qu'aux membres de votre équipe et à vos collaborateurs, ou à ceux avec qui vous avez accepté de partager des données. 
 
 
 .. image:: ../_images/mainmenu.PNG

@@ -1,5 +1,5 @@
-Data Visualization
-===================
+Visualisation de données
+=========================
 
 .. toctree::
    :maxdepth: 1

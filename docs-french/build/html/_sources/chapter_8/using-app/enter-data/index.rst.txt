@@ -1,5 +1,5 @@
-Enter Data
-===========
+Entrer des données
+===================
 
 
 .. toctree::

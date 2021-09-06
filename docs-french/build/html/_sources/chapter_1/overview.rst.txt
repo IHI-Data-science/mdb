@@ -1,10 +1,8 @@
-Overview
+Aperçu
 ========
 
-MosquitoDB’s web-based application is a secure application that can store, link, facilitate data sharing, and generate summarized reports from field and laboratory mosquito-based data collected/recorded from either paper-or-electronic based data collection forms in standardized formats.
-
-It ensures Quality data collection, Proper linkage between projects and users, Secure storage, Standardized datasets, Easy sharing of data within the team and interactive visualization of stored data.
-
+L'application Web de MosquitoDB est une application sécurisée qui peut stocker, lier, faciliter le partage de données et générer des rapports résumés à partir de données de terrain et de laboratoire sur les moustiques collectées/enregistrées à partir de formulaires de collecte de données papier ou électroniques dans des formats standardisés.
+Il garantit une collecte de données de qualité, un lien approprié entre les projets et les utilisateurs, un stockage sécurisé, des ensembles de données standardisés, un partage facile des données au sein de l'équipe et une visualisation interactive des données stockées.
 
 .. image:: ../_images/home2.PNG
 

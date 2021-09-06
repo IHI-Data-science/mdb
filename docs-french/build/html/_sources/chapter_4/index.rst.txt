@@ -1,5 +1,5 @@
-Forms Management
-================
+Gestion des formulaires
+=========================
 
 .. toctree::
    :maxdepth: 1

@@ -1,13 +1,12 @@
-Accessing a project
-===================
+Accéder à un projet
+====================
 
-**NB:** Inorder to access a project, you should have been given access from MosquitoDB Web, by the Project Owner or create your own project in MosquitoDB Web, then access it from the App. 
+**NB:** Pour accéder à un projet, vous devez avoir obtenu l'accès depuis MosquitoDB Web, par le propriétaire du projet ou créer votre propre projet dans MosquitoDB Web, puis y accéder depuis l'application.
 
-
-| **Step 1:** Click on the Menu Bar, then select Settings 
-| **Step 2:** Select Download project 
-| **Step 3:** Click on the dropdown to select the project you want to access, then click **Download Project**
-| **Step 4:** Click **Download Sites** 
+| **Étape 1:** Cliquez sur la barre de menus, puis sélectionnez Paramètres
+| **Étape 2:** Sélectionnez Télécharger le projet
+| **Étape 3:** Cliquez sur le menu déroulant pour sélectionner le projet auquel vous souhaitez accéder, puis cliquez sur **Télécharger le projet**
+| **Étape 4:** Cliquez sur **Télécharger des sites**
 
 .. image:: ../../_images/menubar.PNG
    :width: 30%
@@ -19,8 +18,8 @@ Accessing a project
    :width: 30%
 
 
-| **Step 5:** On the Settings page, click **Site**, then choose the Site that your project is in
-| **Step 6:** On the same page, click "Number of Formrows in ED1" if you are using ED1 or "Number of Formrows in ED2" if you're using ED2. Then set the no of rows you'll use in your ED Form and click **OK**
+| **Étape 5:** Sur la page Paramètres, cliquez sur **Site**, puis choisissez le site sur lequel se trouve votre projet
+| **Étape 6:** Sur la même page, cliquez sur "Nombre de lignes de formulaire dans ED1" si vous utilisez ED1 ou "Nombre de lignes de formulaire dans ED2" si vous utilisez ED2. Définissez ensuite le nombre de lignes que vous utiliserez dans votre formulaire ED et cliquez sur **OK**
 
 .. image:: ../../_images/selectsite.PNG
    :width: 30%

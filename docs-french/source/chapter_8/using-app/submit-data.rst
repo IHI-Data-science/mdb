@@ -1,12 +1,11 @@
-Submit Data
-============
+Soumettre des données
+======================
 
-**NB:** This feature is used to send data to the cloud, to use it, you must have already entered data through the forms.
+**NB :** Cette fonctionnalité est utilisée pour envoyer des données vers le cloud, pour l'utiliser, vous devez déjà avoir saisi des données via les formulaires.
 
-
-| **Step 1:** On the Home Page, Select **Submit Data**, then select the form whose data you want to submit and e.g Sample Sorting 
-| **Step 2:** You'll see all the data sets that you have entered. 
-| **Step 3:** Click the cloud icone, to push all your data simultaneously.  
+| **Étape 1:** Sur la page d'accueil, sélectionnez **Soumettre les données**, puis sélectionnez le formulaire dont vous souhaitez soumettre les données et, par exemple, le tri des échantillons
+| **Étape 2:** Vous verrez tous les ensembles de données que vous avez entrés. 
+| **Étape 3:** Cliquez sur l'icône du nuage pour pousser toutes vos données simultanément.  
 
 .. image:: ../../_images/submit.PNG
    :width: 30%

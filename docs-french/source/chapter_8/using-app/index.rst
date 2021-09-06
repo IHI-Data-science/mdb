@@ -1,5 +1,5 @@
-Using the App
-=============
+Utilisation de l'application
+=============================
 
 
 .. toctree::

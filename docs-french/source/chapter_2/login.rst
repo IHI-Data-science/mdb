@@ -1,13 +1,11 @@
-Login to your account
-=====================
+Connectez-vous à votre compte
+==============================
 
-- Enter your registered email address e.g. janicestephen36@gmail.com
-- Enter your registered password **********
-- Then Click the "Login Button" to login to Mosquito database
+- Entrez votre adresse e-mail enregistrée, par ex. janicestephen36@gmail.com
+- Entrez votre mot de passe enregistré **********
+- Cliquez ensuite sur le "Bouton de connexion" pour vous connecter à la base de données Mosquito
 
-
-If you can’t remember your registered password click on Reset and an Email will be sent to your email for password reset instructions.
-
+Si vous ne vous souvenez plus de votre mot de passe enregistré, cliquez sur Réinitialiser et un e-mail vous sera envoyé par e-mail pour les instructions de réinitialisation du mot de passe.
 
 
 .. image:: ../_images/login2.PNG

@@ -1,22 +1,22 @@
-Downloading Data
-================
+Téléchargement de données
+===========================
 
-| **Step 1**: Select project and experiment then Click Dataset 
-| **Step 2**: Select the form from which you want data from e.g Sample Sorting Data
-| **Step 3**: Then select the specific Sample Sorting data e.g SS2
-| **Step 4**: Clikc Generate Dataset
+| **Étape 1**: Sélectionnez le projet et l'expérimentation, puis cliquez sur Dataset
+| **Étape 2**: Sélectionnez le formulaire à partir duquel vous voulez des données, par exemple des données de tri d'échantillons
+| **Étape 3**: Sélectionnez ensuite les données de tri d'échantillons spécifiques, par exemple SS2
+| **Étape 4**: Cliquez sur Générer un jeu de données
 
 
 .. image:: ../_images/generatedataset.PNG
 
 
 
-If you want to select data from different forms then; 
+Si vous souhaitez sélectionner des données à partir de différents formulaires, alors ;
 
-| **a**: Select the forms you want e.g Experimental Design and Sample Sorting
-| **b**: Select the specific forms e.g ED1 and SS2
-| **c**: Select Other options, then click Transpose
-| **d**: Click Generate Dataset
+| **a**: Sélectionnez les formulaires que vous souhaitez, par exemple la conception expérimentale et le tri des échantillons
+| **b**: Sélectionnez les formulaires spécifiques, par exemple ED1 et SS2
+| **c**: Sélectionnez Autres options, puis cliquez sur Transposer
+| **d**: Cliquez sur Générer un jeu de données
 
 
 .. image:: ../_images/generate2.PNG

@@ -1,5 +1,5 @@
-User Management
-===============
+Gestion des utilisateurs
+=========================
 
 
 .. toctree::

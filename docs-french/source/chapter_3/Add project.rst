@@ -1,9 +1,9 @@
-Add a project
-=============
+Ajouter un projet
+==================
 
-| **Step 1**: Click Projects
-| **Step 2**: Click Manage Project
-| **Step 3**: Click +Add Project
+| **Étape 1**: Cliquez sur Projets
+| **Étape 2**: Cliquez sur Gérer le projet
+| **Étape 3**: Cliquez sur +Ajouter un projet
 
 
 .. image:: ../_images/addproject.PNG 
@@ -13,15 +13,15 @@ Add a project
    :width: 65%
 
 
-| **Step 4**: Enter project details; 
-|            **a**: Project name – long format (e.g., Producing User Guide)
-|            **b**: Project code – Abbreviation of the project name(e.g., TEG)
-|            **c**: Experiment number (e.g., 1 if it's the first experiment for the project
-|            **d**: Select site name from a drop downmenu (if not available – Add a site?)
-|            **e**: Select appropriate date - same for expected end date
-|            **f**: Select responsible scientist from dropdown menu (e.g., Project Leader)
+| **Étape 4**: Entrez les détails du projet ;
+|            **a**: Nom du projet - format long (par exemple, Guide de l'utilisateur de production)
+|            **b**: Code du projet - Abréviation du nom du projet (par exemple, TEG)
+|            **c**: Numéro de l'expérience (par exemple, 1 s'il s'agit de la première expérience du projet
+|            **d**: Sélectionnez le nom du site dans un menu déroulant
+|            **e**: Sélectionnez la date appropriée - même pour la date de fin prévue
+|            **f**: Sélectionnez le scientifique responsable dans le menu déroulant (par exemple, chef de projet)
 
-| Then click "Submit"
+| Cliquez ensuite sur « Envoyer »
 
 
 .. image:: ../_images/addproject3.PNG

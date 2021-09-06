@@ -1,11 +1,11 @@
-Key Features
-====================
+Principales caractéristiques
+=============================
 
 
-MosquitoDB's key features include ; 
+Les principales caractéristiques de Mosquito DB incluent; 
 
-- Easy Data collection for all person's in the research team 
-- Securely storing all the uploaded infortion 
-- Linking this information to all required personnel
-- Easy and interactive visualisations of all stored data. 
+- Collecte de données facile pour toutes les personnes de l'équipe de recherche 
+- Stockage sécurisé de toutes les informations téléchargées 
+- Lier ces informations à tout le personnel requis
+- Visualisations faciles et interactives de toutes les données stockées. 
 

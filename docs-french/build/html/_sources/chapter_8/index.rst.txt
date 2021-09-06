@@ -1,5 +1,5 @@
-MosquitoDB App
-===============
+Application MosquitoDB
+=======================
 
 
 .. toctree::

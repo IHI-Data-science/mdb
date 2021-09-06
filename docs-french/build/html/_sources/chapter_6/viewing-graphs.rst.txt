@@ -1,8 +1,8 @@
-Working with Charts
-===================
+Travailler avec des graphiques
+===============================
 
-| **a**: You can view different charts by selecting either Bar, Line , Pie or Polar Area 
-| **b**: You can select Table to view the data in tabular form
+| **a**: Vous pouvez afficher différents graphiques en sélectionnant Bar, Line , Pie ou Polar Area
+| **b**: Vous pouvez sélectionner Tableau pour afficher les données sous forme de tableau
 
 
 

@@ -1,15 +1,15 @@
-Grant access to an existing project
-====================================
+Accorder l'accès à un projet existant
+======================================
 
-| **Step 1**: Click Projects then Manage Project
-| **Step 2**: Search your project based on the project code (e.g., MXTG) 
-| **Step 3**: Click on Grant/Revoke button
+| **Étape 1**: Cliquez sur Projets puis sur Gérer le projet
+| **Étape 2**: Recherchez votre projet en fonction du code du projet (par exemple, MXTG) 
+| **Étape 3**: Cliquez sur le bouton Accorder/Révoquer
 
 .. image:: ../_images/adduser1.PNG 
 
-| **Step 4**: Select the user you want on the user dropdown 
+| **Étape 4**: Sélectionnez l'utilisateur que vous voulez dans la liste déroulante des utilisateurs 
 
-| Then click "Submit"
+| Cliquez ensuite sur « Envoyer »
 
 
 
