@@ -9,23 +9,23 @@ Accessing a project
 | **Step 3:** Click on the dropdown to select the project you want to access, then click **Download Project**
 | **Step 4:** Click **Download Sites** 
 
-.. image:: ../../_images/menubar.PNG
+.. image:: ../../_images/menubar.png
    :width: 30%
 
-.. image:: ../../_images/selectproject.PNG
+.. image:: ../../_images/selectproject.png
    :width: 30%
 
-.. image:: ../../_images/selectsites.PNG
+.. image:: ../../_images/selectsites.png
    :width: 30%
 
 
 | **Step 5:** On the Settings page, click **Site**, then choose the Site that your project is in
 | **Step 6:** On the same page, click "Number of Formrows in ED1" if you are using ED1 or "Number of Formrows in ED2" if you're using ED2. Then set the no of rows you'll use in your ED Form and click **OK**
 
-.. image:: ../../_images/selectsite.PNG
+.. image:: ../../_images/selectsite.png
    :width: 30%
 
-.. image:: ../../_images/selectrows.PNG
+.. image:: ../../_images/selectrows.png
    :width: 30%
 
 

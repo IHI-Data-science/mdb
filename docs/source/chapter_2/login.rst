@@ -10,6 +10,6 @@ If you can’t remember your registered password click on Reset and an Email wil
 
 
 
-.. image:: ../_images/login2.PNG
+.. image:: ../_images/login2.png
    :width: 45%
 

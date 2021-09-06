@@ -8,8 +8,8 @@ To view datasets of a specific project, select the project and experiment number
 | **Step 3**: You can now view the data and search a specific data that you want.
 
 
-.. image:: ../_images/dataset.PNG 
+.. image:: ../_images/dataset.png 
    
 
-.. image:: ../_images/dataset2.PNG
+.. image:: ../_images/dataset2.png
 

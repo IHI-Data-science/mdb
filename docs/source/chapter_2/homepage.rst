@@ -10,4 +10,4 @@ Working with home page
 - Only give access to members in your team and collaborators – or those you have agreed to share data with. 
 
 
-.. image:: ../_images/homepage2.PNG
+.. image:: ../_images/homepage2.png

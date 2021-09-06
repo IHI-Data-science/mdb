@@ -6,10 +6,10 @@ Add a project
 | **Step 3**: Click +Add Project
 
 
-.. image:: ../_images/addproject.PNG 
+.. image:: ../_images/addproject.png 
    :width: 25%
 
-.. image:: ../_images/addproject2.PNG
+.. image:: ../_images/addproject2.png
    :width: 65%
 
 
@@ -24,4 +24,4 @@ Add a project
 | Then click "Submit"
 
 
-.. image:: ../_images/addproject3.PNG
+.. image:: ../_images/addproject3.png

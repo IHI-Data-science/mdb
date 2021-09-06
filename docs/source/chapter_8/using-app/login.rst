@@ -7,11 +7,11 @@ Login
 | **Step 1:** On running the app you'll be prompted to select the language of your choice either French or English. 
 
 
-.. image:: ../../_images/language.JPEG
+.. image:: ../../_images/language.jpeg
    :width: 45%
 
 
 | **Step 2:** Enter your login credentials then click Login. 
 
 
-.. image:: ../../_images/login.PNG
+.. image:: ../../_images/login.png
