@@ -8,9 +8,9 @@ Upon submitting the system will send an "Activation Email" to your registered em
 If you're a French speaking user, click the language button to switch to your preffered language. 
 
 
-.. image:: ../_images/register2_50.PNG 
+.. image:: ../_images/register2_50.png 
    :width: 45%
 
-.. image:: ../_images/register3.PNG
+.. image:: ../_images/register3.png
    :width: 45%
 

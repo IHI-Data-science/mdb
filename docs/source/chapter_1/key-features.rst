@@ -4,8 +4,8 @@ Key Features
 
 MosquitoDB's key features include ; 
 
-- Easy Data collection for all person's in the research team 
-- Securely storing all the uploaded infortion 
-- Linking this information to all required personnel
-- Easy and interactive visualisations of all stored data. 
+- It facilitates data collection for all person's in the research team 
+- It facilitates the secure storage of field data 
+- It facilitates data sharing for relevant persons in the team and in other organizations
+- It facilitates interactive visualisation of stored data.  
 
