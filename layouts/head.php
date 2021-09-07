@@ -130,7 +130,7 @@
         </div>
         
         <ul class="nav navbar-nav navbar-right collapse" id="navbar-right">
-            <li> <a href = "https://mosquitodb.readthedocs.io/" id="tguide"> <span> Guide</span> </a> </li>
+            <li> <a href = "https://mosquitodb.readthedocs.io/" target="_blank" id="tguide"> <span> Guide</span> </a> </li>
             <li> <a href="logout.php"> <i class="fa fa-mail-forward"></i> <span>Logout</span> </a> </li>
         </ul>
     </div>
