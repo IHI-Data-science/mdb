@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Bienvenue dans la documentation de MosquitoDb !
+Bienvenue dans la documentation de MosquitoDB !
 ===============================================
 
 .. image:: _images/banner3.png

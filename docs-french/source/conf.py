@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'MosquitoDb'
+project = 'MosquitoDB'
 copyright = '2021, Ifakara Health Institute (IHI)'
 author = 'Janice Maige'
 
