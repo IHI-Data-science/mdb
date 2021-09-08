@@ -636,6 +636,7 @@ function sendMail($email, $message, $subject){
     $sql = "CREATE TABLE IF NOT EXISTS ".$prefix."ed1 (
       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Hold data which is auto increment links to SS',
       `projectregsite_id` int(11) NOT NULL COMMENT 'Store value from table projectregsite id',
+      `staffid` varchar(10) COMMENT 'staff unique identifier for ED1 form',
       `sen` int(6) NOT NULL COMMENT 'unique identifier for ED1 form',
       `fr` int(2) NOT NULL COMMENT 'unique identifier of each row on the data collected',
       `dt` date NOT NULL COMMENT 'date of collection (morning on which the mosquitoes were collected)',
