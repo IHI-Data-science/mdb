@@ -262,10 +262,29 @@ if(isset($_SESSION['expcode'])){
             </div>
         </div>
 EOT;
+
+$col2=<<< EOT
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h6 class="panel-title">Larvae Population Summary</h6>
+    </div>
+    <div class="has-padding2">
+        <div class="table-responsive has-padding2">
+             <div id="tblhomes">
+    <div id="load3"></div>
+    </div>
+        </div>
+    </div>
+</div>
+EOT;
        
        if(in_array("ED1", $edformtype)){
           echo $col;
        }
+
+        if(in_array("ED1", $edformtype)){
+        echo $col2;
+     }
        
        include_once 'layouts/foot.php';
        ?>

@@ -262,160 +262,160 @@ function renamecol($edcol,$tablename,$formname){
 
    }
 
-   function renamecolss3($edcol,$tablename,$formname){
+//    function renamecolss3($edcol,$tablename,$formname){
 
-       $tablename = $tablename.'.';
+//        $tablename = $tablename.'.';
 
-	     $columns = explode(',', $edcol); 
+// 	     $columns = explode(',', $edcol); 
         
-       $new = array();
+//        $new = array();
 
-      foreach($columns as $item){
+//       foreach($columns as $item){
 
-        if( $item == 'sen')
-        {
-          $new[] = $tablename.'sen AS '.$formname.'_SEN';
-        }
-         if( $item == 'ssen')
-        {
-          $new[] = $tablename.'ssen AS '.$formname.'_SSEN';
-        }
-         if( $item == 'sfr')
-        {
-          $new[] = $tablename.'sfr AS '.$formname.'_SFR';
-        }
-         if( $item == 'sd')
-        {
-          $new[] = $tablename.'sd AS '.$formname.'_SD';
-        }
-         if( $item == 'fd')
-        {
-          $new[] = $tablename.'fd AS '.$formname.'_FD';
-        }
-         if( $item == 'fr')
-        {
-          $new[] = $tablename.'fr AS '.$formname.'_FR';
-        }
-         if( $item == 'dd')
-        {
-          $new[] = $tablename.'dd AS '.$formname.'_DD';
-        }
-         if( $item == 'tx')
-        {
-          $new[] = $tablename.'tx AS '.$formname.'_TX';
-        }
-         if( $item == 'sas')
-        {
-          $new[] = $tablename.'sas AS '.$formname.'_SAS';
-        }
-         if( $item == 'mt')
-        {
-          $new[] = $tablename.'mt AS '.$formname.'_MT';
-        }
-         if( $item == 'ch')
-        {
-          $new[] = $tablename.'ch AS '.$formname.'_CH';
-        }
-         if( $item == 'la')
-        {
-          $new[] = $tablename.'la AS '.$formname.'_LA';
-        }
-         if( $item == 'ft')
-        {
-          $new[] = $tablename.'ft AS '.$formname.'_FT';
-        }
-         if( $item == 'bf')
-        {
-          $new[] = $tablename.'bf AS '.$formname.'_BF';
-        }
-         if( $item == 'hp')
-        {
-          $new[] = $tablename.'hp AS '.$formname.'_HP';
-        }
-         if( $item == 'oth5')
-        {
-          $new[] = $tablename.'oth5 AS '.$formname.'_OTH5';
-        }
-         if( $item == 'oth6')
-        {
-          $new[] = $tablename.'oth6 AS '.$formname.'_OTH6';
-        }
-         if( $item == 'oth7')
-        {
-          $new[] = $tablename.'oth7 AS '.$formname.'_OTH7';
-        }
-         if( $item == 'oth8')
-        {
-          $new[] = $tablename.'oth8 AS '.$formname.'_OTH8';
-        }
-         if( $item == 'n')
-        {
-          $new[] = $tablename.'n AS '.$formname.'_N';
-        }
+//         if( $item == 'sen')
+//         {
+//           $new[] = $tablename.'sen AS '.$formname.'_SEN';
+//         }
+//          if( $item == 'ssen')
+//         {
+//           $new[] = $tablename.'ssen AS '.$formname.'_SSEN';
+//         }
+//          if( $item == 'sfr')
+//         {
+//           $new[] = $tablename.'sfr AS '.$formname.'_SFR';
+//         }
+//          if( $item == 'sd')
+//         {
+//           $new[] = $tablename.'sd AS '.$formname.'_SD';
+//         }
+//          if( $item == 'fd')
+//         {
+//           $new[] = $tablename.'fd AS '.$formname.'_FD';
+//         }
+//          if( $item == 'fr')
+//         {
+//           $new[] = $tablename.'fr AS '.$formname.'_FR';
+//         }
+//          if( $item == 'dd')
+//         {
+//           $new[] = $tablename.'dd AS '.$formname.'_DD';
+//         }
+//          if( $item == 'tx')
+//         {
+//           $new[] = $tablename.'tx AS '.$formname.'_TX';
+//         }
+//          if( $item == 'sas')
+//         {
+//           $new[] = $tablename.'sas AS '.$formname.'_SAS';
+//         }
+//          if( $item == 'mt')
+//         {
+//           $new[] = $tablename.'mt AS '.$formname.'_MT';
+//         }
+//          if( $item == 'ch')
+//         {
+//           $new[] = $tablename.'ch AS '.$formname.'_CH';
+//         }
+//          if( $item == 'la')
+//         {
+//           $new[] = $tablename.'la AS '.$formname.'_LA';
+//         }
+//          if( $item == 'ft')
+//         {
+//           $new[] = $tablename.'ft AS '.$formname.'_FT';
+//         }
+//          if( $item == 'bf')
+//         {
+//           $new[] = $tablename.'bf AS '.$formname.'_BF';
+//         }
+//          if( $item == 'hp')
+//         {
+//           $new[] = $tablename.'hp AS '.$formname.'_HP';
+//         }
+//          if( $item == 'oth5')
+//         {
+//           $new[] = $tablename.'oth5 AS '.$formname.'_OTH5';
+//         }
+//          if( $item == 'oth6')
+//         {
+//           $new[] = $tablename.'oth6 AS '.$formname.'_OTH6';
+//         }
+//          if( $item == 'oth7')
+//         {
+//           $new[] = $tablename.'oth7 AS '.$formname.'_OTH7';
+//         }
+//          if( $item == 'oth8')
+//         {
+//           $new[] = $tablename.'oth8 AS '.$formname.'_OTH8';
+//         }
+//          if( $item == 'n')
+//         {
+//           $new[] = $tablename.'n AS '.$formname.'_N';
+//         }
 
-         if( $item == 'slc')
-        {
-          $new[] = $tablename.'slc AS '.$formname.'_SLC';
-        }
-         if( $item == 'st')
-        {
-          $new[] = $tablename.'st AS '.$formname.'_ST';
-        }
+//          if( $item == 'slc')
+//         {
+//           $new[] = $tablename.'slc AS '.$formname.'_SLC';
+//         }
+//          if( $item == 'st')
+//         {
+//           $new[] = $tablename.'st AS '.$formname.'_ST';
+//         }
 
-         if( $item == 'ni')
-        {
-          $new[] = $tablename.'ni AS '.$formname.'_NI';
-        }
+//          if( $item == 'ni')
+//         {
+//           $new[] = $tablename.'ni AS '.$formname.'_NI';
+//         }
 
-         if( $item == 'nb')
-        {
-          $new[] = $tablename.'nb AS '.$formname.'_NB';
-        }
-         if( $item == 'sid01')
-        {
-          $new[] = $tablename.'sid01 AS '.$formname.'_SID01';
-        }
-          if( $item == 'sid02')
-        {
-          $new[] = $tablename.'sid02 AS '.$formname.'_SID02';
-        }
-          if( $item == 'sid03')
-        {
-          $new[] = $tablename.'sid03 AS '.$formname.'_SID03';
-        }
-          if( $item == 'sid04')
-        {
-          $new[] = $tablename.'sid04 AS '.$formname.'_SID04';
-        }
-          if( $item == 'sid05')
-        {
-          $new[] = $tablename.'sid05 AS '.$formname.'_SID05';
-        }
-          if( $item == 'sid06')
-        {
-          $new[] = $tablename.'sid06 AS '.$formname.'_SID06';
-        }
-          if( $item == 'sid07')
-        {
-          $new[] = $tablename.'sid07 AS '.$formname.'_SID07';
-        }
-          if( $item == 'nd')
-        {
-          $new[] = $tablename.'nd AS '.$formname.'_ND';
-        }
+//          if( $item == 'nb')
+//         {
+//           $new[] = $tablename.'nb AS '.$formname.'_NB';
+//         }
+//          if( $item == 'sid01')
+//         {
+//           $new[] = $tablename.'sid01 AS '.$formname.'_SID01';
+//         }
+//           if( $item == 'sid02')
+//         {
+//           $new[] = $tablename.'sid02 AS '.$formname.'_SID02';
+//         }
+//           if( $item == 'sid03')
+//         {
+//           $new[] = $tablename.'sid03 AS '.$formname.'_SID03';
+//         }
+//           if( $item == 'sid04')
+//         {
+//           $new[] = $tablename.'sid04 AS '.$formname.'_SID04';
+//         }
+//           if( $item == 'sid05')
+//         {
+//           $new[] = $tablename.'sid05 AS '.$formname.'_SID05';
+//         }
+//           if( $item == 'sid06')
+//         {
+//           $new[] = $tablename.'sid06 AS '.$formname.'_SID06';
+//         }
+//           if( $item == 'sid07')
+//         {
+//           $new[] = $tablename.'sid07 AS '.$formname.'_SID07';
+//         }
+//           if( $item == 'nd')
+//         {
+//           $new[] = $tablename.'nd AS '.$formname.'_ND';
+//         }
        
 
-    }
+//     }
 
 
-      $str = implode (",", $new);
+//       $str = implode (",", $new);
 
 
-      return $str ;
+//       return $str ;
 
 
 
-}
+// }
 
  function renamecolss1($edcol,$tablename,$formname){
 

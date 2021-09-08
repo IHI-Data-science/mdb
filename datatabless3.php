@@ -48,10 +48,10 @@ include_once('layouts/head.php');
                    data-pagination="true"
                    data-show-refresh="false"
                    data-show-columns="true"
-                   data-page-size="200"
-                   data-page-list="[200,500,1000,2000,5000,8000,10000,All]"
+                   data-page-size="100"
+                   data-page-list="[100,500,1000,2000,5000,8000,10000,All]"
                    data-show-export="true"
-                   data-export-options='{"fileName": "ss3-<?php echo date('Y-m-d'); ?>"}'
+                   data-export-options='{"fileName": "SS3-<?php echo date('Y-m-d'); ?>"}'
                    data-advanced-search="true"
                    data-search="true">
                 <thead>

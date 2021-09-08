@@ -328,6 +328,8 @@ if(isset($_SESSION['expcode'])){
                         <li>
                             <a data-toggle="modal" role="button" data-target="#sumchart15"> WHO Tube Resistance: Count vs KnockDown Time</a>
                         </li>
+
+
                     </ul>
                 </div>
             </div>
@@ -1571,13 +1573,6 @@ if(isset($_SESSION['expcode'])){
     </div>
 
 <!--modal15-->
-
-
-
-
-
-
-
 
     <!-- modalf1 -->
     <div id="freqchart1" class="modal fade" tabindex="-1" role="dialog">

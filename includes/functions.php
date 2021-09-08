@@ -972,9 +972,9 @@ function sendMail($email, $message, $subject){
 
 
     `tb` varchar(30) NOT NULL COMMENT 'type of bottle bioassay',
-    `bia` varchar(30) NOT NULL COMMENT 'is it bioassay for intensity assay?',
+    `bia` varchar(30) NOT NULL COMMENT 'is it bioassay for intensity assay',
     `it` varchar(30) NOT NULL COMMENT 'type of insecticide tested',
-    `SynT` varchar(30) NOT NULL COMMENT 'what synergist was tested?',
+    `SynT` varchar(30) NOT NULL COMMENT 'what synergist was tested',
     `ic` varchar(30) NOT NULL COMMENT 'insecticide concentration',
     `sc` int(50) NOT NULL COMMENT 'synergist concentration',
     `SRTemp` varchar(50) NOT NULL COMMENT 'Storage room temperature',
@@ -1080,41 +1080,41 @@ function sendMail($email, $message, $subject){
    `spd` varchar (30) NULL COMMENT 'Date of Spray',
     `liu` varchar (30) NULL COMMENT 'Last Insecticide Used',
     `elcm` varchar (30) NULL COMMENT 'Exposed Location of Control Mosquitoes',
-    `mt1` varchar (30) NULL COMMENT 'No of Mosquitoes Tested - Cone Height 0.5m',
-    `mt2` varchar (30) NULL COMMENT 'No of Mosquitoes Tested - Cone Height 1.0m', 
-    `mt3` varchar (30) NULL COMMENT 'No of Mosquitoes Tested - Cone Height 2.0m', 
+    `mt1` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Cone Height 0.5m',
+    `mt2` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Cone Height 1.0m', 
+    `mt3` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Cone Height 2.0m', 
 
-    `mt4` varchar (30) NULL COMMENT 'No of Mosquitoes Tested - Cone Height Other',
-
-
-   `mkd1` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min - Cone Height 0.5m', 
-   `mkd2` varchar (30) NULL COMMENT 'Mosquitoes K/D 60min - Cone Height 0.5m',
-   `mkd3` varchar (30) NULL COMMENT 'Mosquitoes K/D Day1 - Cone Height 0.5m',
-   `mkd4` varchar (30) NULL COMMENT 'Mosquitoes K/D Day2 - Cone Height 0.5m',
-   `mkd5` varchar (30) NULL COMMENT 'Mosquitoes K/D Day3 - Cone Height 0.5m',
-
-   `mkd6` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min - Cone Height 1.0m',
-   `mkd7` varchar (30) NULL COMMENT 'Mosquitoes K/D 60min - Cone Height 1.0m',
-   `mkd8` varchar (30) NULL COMMENT 'Mosquitoes K/D Day1 - Cone Height 1.0m',
-   `mkd9` varchar (30) NULL COMMENT 'Mosquitoes K/D Day2 - Cone Height 1.0m',
-
-   `mkd10` varchar (30) NULL COMMENT 'Mosquitoes K/D Day3 - Cone Height 1.0m',
-
-   `mkd11` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min - Cone Height 1.5m',
-
-   `mkd12` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min - Cone Height 1.5m',
-
-   `mkd13` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min - Cone Height 1.5m',
+    `mt4` varchar (30) NULL COMMENT 'No of Mosquitoes Tested Cone Height Other',
 
 
-   `mkd14` varchar (30) NULL COMMENT 'Mosquitoes K/D Day2 - Cone Height 1.5m',
-    `mkd15` varchar (30) NULL COMMENT 'Mosquitoes K/D Day3 - Cone Height 1.5m',
+   `mkd1` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min Cone Height 0.5m', 
+   `mkd2` varchar (30) NULL COMMENT 'Mosquitoes K/D 60min Cone Height 0.5m',
+   `mkd3` varchar (30) NULL COMMENT 'Mosquitoes K/D Day1 Cone Height 0.5m',
+   `mkd4` varchar (30) NULL COMMENT 'Mosquitoes K/D Day2 Cone Height 0.5m',
+   `mkd5` varchar (30) NULL COMMENT 'Mosquitoes K/D Day3 Cone Height 0.5m',
 
-    `mkd16` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min - Cone Height 2.0m',
-    `mkd17` varchar (30) NULL COMMENT 'Mosquitoes K/D 60min - Cone Height 2.0m',
-    `mkd18` varchar (30) NULL COMMENT 'Mosquitoes K/D Day1 - Cone Height 2.0m',
-    `mkd19` varchar (30) NULL COMMENT 'Mosquitoes K/D Day2 - Cone Height 2.0m',
-    `mkd20` varchar (30) NULL COMMENT 'Mosquitoes K/D Day3 - Cone Height 2.0m',
+   `mkd6` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min Cone Height 1.0m',
+   `mkd7` varchar (30) NULL COMMENT 'Mosquitoes K/D 60min Cone Height 1.0m',
+   `mkd8` varchar (30) NULL COMMENT 'Mosquitoes K/D Day1 Cone Height 1.0m',
+   `mkd9` varchar (30) NULL COMMENT 'Mosquitoes K/D Day2 Cone Height 1.0m',
+
+   `mkd10` varchar (30) NULL COMMENT 'Mosquitoes K/D Day3 Cone Height 1.0m',
+
+   `mkd11` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min Cone Height 1.5m',
+
+   `mkd12` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min Cone Height 1.5m',
+
+   `mkd13` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min Cone Height 1.5m',
+
+
+   `mkd14` varchar (30) NULL COMMENT 'Mosquitoes K/D Day2 Cone Height 1.5m',
+    `mkd15` varchar (30) NULL COMMENT 'Mosquitoes K/D Day3 Cone Height 1.5m',
+
+    `mkd16` varchar (30) NULL COMMENT 'Mosquitoes K/D 30min Cone Height 2.0m',
+    `mkd17` varchar (30) NULL COMMENT 'Mosquitoes K/D 60min Cone Height 2.0m',
+    `mkd18` varchar (30) NULL COMMENT 'Mosquitoes K/D Day1 Cone Height 2.0m',
+    `mkd19` varchar (30) NULL COMMENT 'Mosquitoes K/D Day2 Cone Height 2.0m',
+    `mkd20` varchar (30) NULL COMMENT 'Mosquitoes K/D Day3 Cone Height 2.0m',
 
 
 
@@ -1220,13 +1220,6 @@ function sendMail($email, $message, $subject){
  `edsy2` varchar (30) NULL COMMENT 'Expiry Date - Rep2 Synergist Control',
  `edsy3` varchar (30) NULL COMMENT 'Expiry Date - Rep3 Synergist Control',
  `edsy4` varchar (30) NULL COMMENT 'Expiry Date - Rep4 Synergist Control',
-
-
-
-
-
-
-
 
 
       `senfr` int(11) NOT NULL,

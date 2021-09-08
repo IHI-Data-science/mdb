@@ -68,6 +68,39 @@ if($q==='hzero'){
    
 }
 
+if($q==='htwenty'){
+   
+   if(in_array( "ED1" ,$edformtype )){
+         $query="SELECT
+         taxon.taxon_name AS TaxonName,
+         SUM(ss2.bfL1) / SUM(ss2.dip) AS L1,
+         SUM(ss2.bfL2) / SUM(ss2.dip) AS L2,
+         SUM(ss2.bfL3) / SUM(ss2.dip) AS L3,
+         SUM(ss2.bfL4) / SUM(ss2.dip) AS L4,
+         SUM(ss2.L1L2) / SUM(ss2.dip) AS L1L2,
+         SUM(ss2.L3L4) / SUM(ss2.dip) AS L3L4
+
+         FROM
+         projectregsite
+         INNER JOIN projectreg 
+         ON (projectregsite.projectreg_id = projectreg.id)
+         INNER JOIN site 
+         ON (projectregsite.site_id = site.site_id)
+         INNER JOIN ".$prefixtable."ed1 as ed1
+         ON (ed1.projectregsite_id = projectregsite.id)
+         INNER JOIN ".$prefixtable."edss as edss
+         ON (ed1.id = edss.ed1id)
+         INNER JOIN ".$prefixtable."ss2 as ss2
+         ON (ss2.edssid = edss.id)
+         LEFT JOIN method 
+         ON (ed1.me = method.meth_code)
+         LEFT JOIN taxon 
+         ON (ss2.tx = taxon.taxon_code)
+         where 1=1 $wherecon GROUP BY taxon.taxon_name ORDER BY ss2.tx ASC";
+   }
+   
+}
+
 if($q==='hone'){
    
    (in_array("ea", $checked_fields) ? $ea=TRUE : $ea=FALSE);

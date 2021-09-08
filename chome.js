@@ -98,6 +98,104 @@ $(document).ready(function () {
     }
 
 
+    function fjreq() {
+        $.ajax({
+            url: "datahome.php?q=htwenty",
+            method: "GET",
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+               setTimeout(function() { 
+                console.log(data);
+                //var taxon = ["An. gambiae s.l.","An. funestus","Culex sp.","Mansonia sp."];
+                var tx = [];
+                var l1l2 = [];
+                var l3l4 =[];
+                var l1 =[];
+                var l2 =[];
+                var l3 =[];
+                var l4 =[];
+
+                for (var i in data) {
+                    tx.push(italicize(data[i].TaxonName));
+                    l1l2.push(data[i].L1L2);
+                    l3l4.push(data[i].L3L4);
+                    l1.push(data[i].L1);
+                    l2.push(data[i].L2);
+                    l3.push(data[i].L3);
+                    l4.push(data[i].L4);
+                }
+
+                var chartdata =
+                    {
+                        labels: tx,
+                        datasets: [
+                            {
+                                label: 'L1',
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l1
+                            },
+
+                            {
+                                label: 'L2',
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l2
+                            },
+
+                            {
+                                label: 'L3',
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l3
+                            },
+
+                            {
+                                label: 'L4',
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l4
+                            },
+
+                            {
+                                label: 'L1L2 (Early Stage)',
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l1l2
+                            },
+
+                            {
+                                label: 'L3L4 (Late Stage)',
+                                backgroundColor: randomColor(),
+                                hoverBorderColor: randomColor(),
+                                data: l3l4
+                            }
+                        ]
+                    };
+
+
+                $('#tblhomes').html(tabledata(chartdata));
+               
+               }, 4000); 
+
+            },
+            error: function (data) {
+                console.log("Request f2req error");
+                console.log(data);
+            },
+            complete: function (data) {
+                $('.loader22').fadeOut();
+            },
+            beforeSend: function (data) {
+                $('#load3').html('<div class="loader22" style="height:100px;"><div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div></div></div>');
+                f1req();
+            }
+
+        });
+    }
+
+
     function f1req() {
         $.ajax({
             url: "datahome.php?q=hone",
@@ -745,6 +843,8 @@ $(document).ready(function () {
 
 
     fhreq();
+    fjreq();
+
 
     //$('#drange').daterangepicker();
 
