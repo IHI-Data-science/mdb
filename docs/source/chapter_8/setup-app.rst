@@ -15,16 +15,16 @@ If you have the apk, then;
 |             **c:** Scroll down to "Install Unknown apps" and allow it.
 
 
-.. image:: ../_images/picture2.png
+.. image:: ../_images/Picture2.png
    :width: 45%
 
 
-.. image:: ../_images/picture3.png
+.. image:: ../_images/Picture3.png
    :width: 45%
 
 
 | **Step 2:** Install the app
 
-.. image:: ../_images/picture1.png
+.. image:: ../_images/Picture1.png
    :width: 45%
 
