@@ -1,4 +1,4 @@
 Method
 =======
 
-.. image:: ../_images/methoded1.PNG
+.. image:: ../_images/methoded1.png

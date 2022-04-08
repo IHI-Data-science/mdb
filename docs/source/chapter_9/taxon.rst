@@ -1,4 +1,4 @@
 Taxon
 ======
 
-.. image:: ../_images/taxon.PNG
+.. image:: ../_images/taxon.png
