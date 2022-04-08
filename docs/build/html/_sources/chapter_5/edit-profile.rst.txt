@@ -8,12 +8,12 @@ Once registered in MosquitoDb you can change your user details through the steps
 | **Step 3**: After editing, click Update to save your changes
 
 
-.. image:: ../_images/edit.PNG 
+.. image:: ../_images/edit.png 
    :width: 45%
 
-.. image:: ../_images/edit1.PNG
+.. image:: ../_images/edit1.png
    :width: 45%
 
-.. image:: ../_images/edit3.PNG
+.. image:: ../_images/edit3.png
 
 

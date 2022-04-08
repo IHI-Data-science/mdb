@@ -7,7 +7,7 @@ Downloading Data
 | **Step 4**: Clikc Generate Dataset
 
 
-.. image:: ../_images/generatedataset.PNG
+.. image:: ../_images/generatedataset.png
 
 
 
@@ -19,5 +19,5 @@ If you want to select data from different forms then;
 | **d**: Click Generate Dataset
 
 
-.. image:: ../_images/generate2.PNG
+.. image:: ../_images/generate2.png
 

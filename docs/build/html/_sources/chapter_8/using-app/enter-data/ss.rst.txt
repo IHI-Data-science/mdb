@@ -8,10 +8,10 @@ Sample Sorting
 | **Step 3:** SEN is generated automatically from ED1, you can continue filling your data. 
 | **Step 4:** Save your data in your device, before sending to the cloud. 
 
-.. image:: ../../../_images/ssform.PNG
+.. image:: ../../../_images/ssform.png
    :width: 22%
 
-.. image:: ../../../_images/ssforms2.PNG
+.. image:: ../../../_images/ssforms2.png
    :width: 77%
 
 

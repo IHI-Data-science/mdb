@@ -5,7 +5,7 @@ Add an experiment to a project
 | **Step 2**: Search your project based on the project code (e.g., MXTG) 
 | **Step 3**: Click on **+Exp** button
 
-.. image:: ../_images/newexperiment.PNG 
+.. image:: ../_images/newexperiment.png 
 
 | **Step 4**: Enter new experiment details; 
 |            **a**: Experiment number (e.g., 002)
@@ -17,5 +17,5 @@ Add an experiment to a project
 | **d**: Click "Add Experiment"
 
 
-.. image:: ../_images/newexperiment1.PNG
+.. image:: ../_images/newexperiment1.png
 

@@ -18,9 +18,9 @@ Selecting the data entry form
 | **Step 4**: Click Upload File and select the filled excel file
 | **Step 5**: Click Submit
 
-.. image:: ../_images/mainmenu2.PNG
+.. image:: ../_images/mainmenu2.png
 
 .. Importing data in CSV format
 .. ----------------------------
 
-.. .. image:: ../_images/forms.PNG
+.. .. image:: ../_images/forms.png

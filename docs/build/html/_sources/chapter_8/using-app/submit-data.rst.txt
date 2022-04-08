@@ -8,12 +8,12 @@ Submit Data
 | **Step 2:** You'll see all the data sets that you have entered. 
 | **Step 3:** Click the cloud icone, to push all your data simultaneously.  
 
-.. image:: ../../_images/submit.PNG
+.. image:: ../../_images/submit.png
    :width: 30%
 
-.. image:: ../../_images/submitdata.PNG
+.. image:: ../../_images/submitdata.png
    :width: 30%
 
-.. image:: ../../_images/pushdata.PNG
+.. image:: ../../_images/pushdata.png
    :width: 30%
 

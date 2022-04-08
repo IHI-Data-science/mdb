@@ -32,7 +32,7 @@ Customize form fields
 
 **Do the same for all forms that you need in your experiment**
 
-.. image:: ../_images/customize.PNG 
+.. image:: ../_images/customize.png 
 
 
 Customize template
@@ -43,9 +43,9 @@ Customize template
 | **Step 3**: Click Download on the field you want to customize e.g Methods
 | **Step 4**: After editing the Methods on excel file, click Choose File and choose the edited excel file then click Import to upload the data
 
-.. image:: ../_images/customize1.PNG
+.. image:: ../_images/customize1.png
 
-.. image:: ../_images/customize2.PNG 
+.. image:: ../_images/customize2.png 
 
 
 

@@ -7,5 +7,5 @@ Data Summary
 | **Step 4**: Click the summary you want to view on Data summary table or Frequency graphs based on the data available and/or filtered.
 
 
-.. image:: ../_images/summary.PNG
+.. image:: ../_images/summary.png
 

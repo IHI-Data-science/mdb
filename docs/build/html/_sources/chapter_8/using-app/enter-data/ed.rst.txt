@@ -11,13 +11,13 @@ Experimental Design
 | **a:** Click to view pre-recorded data  
 | **b:** Click to auto generate Serial No. 
 
-.. image:: ../../../_images/enterdata.PNG
+.. image:: ../../../_images/enterdata.png
    :width: 30%
 
-.. image:: ../../../_images/enterdata2.PNG
+.. image:: ../../../_images/enterdata2.png
    :width: 30%
 
-.. image:: ../../../_images/enterdata3.PNG
+.. image:: ../../../_images/enterdata3.png
    :width: 30%
 
 

@@ -10,7 +10,7 @@ You can edit the name label names of the data tables.
 | **Step 4**: Click Submit
 
 
-.. image:: ../_images/labels.PNG
+.. image:: ../_images/labels.png
 
 
 

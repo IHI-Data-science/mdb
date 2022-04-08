@@ -6,9 +6,9 @@ Working with Charts
 
 
 
-.. image:: ../_images/chart.PNG 
+.. image:: ../_images/chart.png 
    
 
-.. image:: ../_images/table.PNG
+.. image:: ../_images/table.png
    
 
